@@ -19,7 +19,11 @@ flutter_blcs
 └── test        
 
 ## 文件
-1. Global：管理APP的全局变量
+1. Global:管理APP的全局变量
+2. Git:封装网络请求
+3. CacheObject:网络接口缓存
+4. ChangeNotifierProvider:信息变更通知
+
 
 
 

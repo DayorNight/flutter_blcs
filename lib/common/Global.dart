@@ -2,9 +2,11 @@
 // 提供五套可选主题色
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/common/CacheObject.dart';
 import 'package:flutter_blcs/models/cacheConfig.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/profile.dart';
+import 'Git.dart';
 
 const _themes = <MaterialColor>[
   Colors.blue,
