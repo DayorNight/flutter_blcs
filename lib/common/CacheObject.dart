@@ -26,6 +26,11 @@ class NetCache extends Interceptor {
 
   @override
   onRequest(RequestOptions options, RequestInterceptorHandler handler) async {
+    print("\n================== 请求数据 ==========================");
+    print("url = ${options.uri.toString()}");
+    print("headers = ${options.headers}");
+    print("params = ${options.data}");
+
     if (!Global.profile.cache!.enable) {
       return handler.next(options);
     }
@@ -62,6 +67,10 @@ class NetCache extends Interceptor {
 
   @override
   onResponse(Response response, ResponseInterceptorHandler handler) async {
+    print("\n================== 响应数据 ==========================");
+    print("code = ${response.statusCode}");
+    print("data = ${response.data}");
+    print("\n");
     // 如果启用缓存，将返回结果保存到缓存
     if (Global.profile.cache!.enable) {
       _saveCache(response);
@@ -84,5 +93,15 @@ class NetCache extends Interceptor {
 
   void delete(String key) {
     cache.remove(key);
+  }
+
+  @override
+  void onError(DioError err, ErrorInterceptorHandler handler) {
+    print("\n================== 错误响应数据 ======================");
+    print("type = ${err.type}");
+    print("message = ${err.message}");
+    print("stackTrace = ${err.stackTrace}");
+    print("\n");
+    super.onError(err, handler);
   }
 }

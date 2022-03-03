@@ -23,6 +23,7 @@ flutter_blcs
 2. Git:封装网络请求
 3. CacheObject:网络接口缓存
 4. ChangeNotifierProvider:信息变更通知
+5. GmLocalizations:提供本地化值
 
 
 

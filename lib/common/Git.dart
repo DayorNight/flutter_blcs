@@ -1,18 +1,26 @@
-import 'dart:async';
+// import 'dart:async';
+// import 'dart:convert';
+// import 'dart:io';
+// import 'package:dio/dio.dart';
+// import 'package:dio/adapter.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter_blcs/common/Global.dart';
+// import 'package:flutter_blcs/models/index.dart';
+
 import 'dart:convert';
 import 'dart:io';
-import 'package:dio/dio.dart';
-import 'package:dio/adapter.dart';
-import 'package:flutter/material.dart';
 
-import '../models/repo.dart';
-import '../models/user.dart';
-import 'Global.dart';
-///封装网络请求
+import 'package:dio/adapter.dart';
+import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_blcs/common/Global.dart';
+import 'package:flutter_blcs/models/repo.dart';
+import 'package:flutter_blcs/models/user.dart';
+
 class Git {
   // 在网络请求过程中可能会需要使用当前的context信息，比如在请求失败时
   // 打开一个新路由，而打开新路由需要context信息。
-  Git([this.context]) {
+  Git(BuildContext context) {
     _options = Options(extra: {"context": context});
   }
 
@@ -68,8 +76,8 @@ class Git {
   }
 
   //获取用户项目列表
-  Future<List<Repo>> getRepos(
-      {Map<String, dynamic> queryParameters, //query参数，用于接收分页信息
+  Future<List<Repo>?> getRepos(
+      {Map<String, dynamic>? queryParameters, //query参数，用于接收分页信息
         refresh = false}) async {
     if (refresh) {
       // 列表下拉刷新，需要删除缓存（拦截器中会读取这些信息）
@@ -80,6 +88,6 @@ class Git {
       queryParameters: queryParameters,
       options: _options,
     );
-    return r.data!.map((e) => Repo.fromJson(e)).toList();
+    return r.data?.map((e) => Repo.fromJson(e)).toList();
   }
 }

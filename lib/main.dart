@@ -1,29 +1,77 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/common/ChangeNotifierProvider.dart';
 import 'package:flutter_blcs/common/Global.dart';
+import 'package:flutter_blcs/generated/l10n.dart';
+import 'package:flutter_blcs/routes/home_page.dart';
+import 'package:flutter_blcs/widgets/LanguageRoute.dart';
+import 'package:flutter_blcs/widgets/LoginRoute.dart';
+import 'package:flutter_blcs/widgets/ThemeChangeRoute.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:provider/provider.dart';
 
 void main() =>Global.init().then((value) => runApp(MyApp()));
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(value: ThemeModel()),
+        ChangeNotifierProvider.value(value: UserModel()),
+        ChangeNotifierProvider.value(value: LocaleModel()),
+      ],
+      child: Consumer2<ThemeModel,LocaleModel>(
+          builder: (BuildContext context,themeModel,localeModel,child){
+            return MaterialApp(
+              theme: ThemeData(
+                primarySwatch: themeModel.theme,
+              ),
+              onGenerateTitle: (context){
+                return S.of(context).title;
+              },
+              home: HomeRoute(),
+              //当前的系统语言设置
+              locale: localeModel.getLocale(),
+              //supportedLocales 表示我们的应用支持的语言列表
+              supportedLocales: [
+                const Locale('zh',''),
+                ...S.delegate.supportedLocales
+              ],
+              //列表中的元素是生成本地化值集合的工厂
+              localizationsDelegates: [
+                //为Material 组件库提供的本地化的字符串和其他值，它可以使Material 组件支持多语言
+                GlobalMaterialLocalizations.delegate,
+                //定义组件默认的文本方向，从左到右或从右到左，这是因为有些语言的阅读习惯并不是从左到右，比如如阿拉伯语就是从右向左的
+                GlobalWidgetsLocalizations.delegate,
+                S.delegate
+              ],
+              //回调来监听locale改变的事件
+              localeResolutionCallback: (_locale,supportedLocales){
+                if(localeModel.getLocale() != null){
+                  //如果已经选定语言，则不跟随系统
+                  return localeModel.getLocale();
+                } else {
+                  //跟随系统
+                  Locale locale;
+                  if(supportedLocales.contains(_locale)){
+                    locale = _locale!;
+                  } else {
+                    //如果系统语言不是中文简体或美国英语，则默认使用美国英语
+                    locale= Locale('en', 'US');
+                  }
+                  return locale;
+                }
+              },
+              routes: <String,WidgetBuilder>{
+                "login": (context) => LoginRoute(),
+                "themes": (context) => ThemeChangeRoute(),
+                "language": (context) => LanguageRoute(),
+              },
+            );
+          }),
     );
   }
 }
