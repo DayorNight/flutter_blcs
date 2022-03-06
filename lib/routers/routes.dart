@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/view/forget_psd_view.dart';
 import 'package:flutter_blcs/view/login_view.dart';
+import 'package:flutter_blcs/view/main_view.dart';
+import 'package:flutter_blcs/view/register_view.dart';
+import 'package:flutter_blcs/view/setting_theme.dart';
 
 Map<String, WidgetBuilder> routes = {
-  "/":(BuildContext context) => LoginView()
+  "/":(BuildContext context) => LoginView(),
+  "registerView":(BuildContext context) => RegisterView(),
+  "forgetPsdView":(BuildContext context) => ForgetPsdView(),
+  "mainView":(BuildContext context) => MainView(),
+  "themeView":(BuildContext context) => SettingThemeView(),
 };

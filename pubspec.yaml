@@ -19,10 +19,13 @@ dependencies:
   dio: ^4.0.4
   # RSA加密
   encrypt: ^5.0.1
+  # 全局状态管理
+  provider: ^6.0.2
+
 #  http: any
 #  http_parser: any
-#  # 持久化操作
-#  shared_preferences: any
+  # 持久化操作
+  shared_preferences: ^2.0.13
 #  # 缓存清理
 #  path_provider: any
 #  # 图片显示，可缓存

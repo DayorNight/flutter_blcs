@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blcs/utils/rsa_utils.dart';
+import 'package:flutter_blcs/viewmodel/login_viewmodel.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
+import '../global/global.dart';
+///登录页面
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
 
@@ -10,6 +14,31 @@ class LoginView extends StatefulWidget {
 
 class _LoginViewState extends State<LoginView> {
   GlobalKey _key = GlobalKey<FormState>();
+  late TextEditingController _user;
+  late TextEditingController _pass;
+
+  @override
+  void dispose() {
+    super.dispose();
+    _user.dispose();
+    _pass.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _user = TextEditingController();
+    _pass = TextEditingController();
+    loadData();
+  }
+
+  void loadData() async {
+    SharedPreferences sp = await SharedPreferences.getInstance();
+    String? token = sp.getString("token");
+    print(token);
+    Global.getInstance().dio.options.headers["token"] = token;
+    context.read<LoginViewModel>().tokenLogin(token!);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +67,7 @@ class _LoginViewState extends State<LoginView> {
               child: Column(
                 children: [
                   TextFormField(
+                    controller: _user,
                     keyboardType: TextInputType.phone,
                     decoration: const InputDecoration(
                       counterText:'',//隐藏最大长度字数
@@ -49,12 +79,17 @@ class _LoginViewState extends State<LoginView> {
                       if(value == null || value.isEmpty){
                         return '未输入手机号';
                       }
+                      return null;
                     },
+                    focusNode: FocusNode(
+                        canRequestFocus: false //取消自动获取焦点
+                    ),
                     textInputAction: TextInputAction.next,
                     maxLength: 11,
-                      enableSuggestions:false
+                    enableSuggestions:false,
                   ),
                   TextFormField(
+                    controller: _pass,
                     keyboardType: TextInputType.text,
                     decoration: const InputDecoration(
                       hintText: '请输入密码',
@@ -68,7 +103,11 @@ class _LoginViewState extends State<LoginView> {
                       if(value.length<6){
                         return '密码不能小于6位数';
                       }
+                      return null;
                     },
+                    focusNode: FocusNode(
+                      canRequestFocus: false
+                    ),
                     obscureText: true,
                     textInputAction: TextInputAction.send,
                     onFieldSubmitted:  (String){
@@ -90,31 +129,22 @@ class _LoginViewState extends State<LoginView> {
                 ),
               ),
               onTap: (){
-                print("忘记密码");
-                // Navigator.of(context).pushNamed("forgetPsd");
+                Navigator.of(context).pushNamed("forgetPsdView");
               },
             ),
             SizedBox(height: 16),
             Container(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: (){
-                  // (_key.currentState as FormState).toString();
-                  print((_key.currentState as FormState).validate());
-                  // print("登录");
-                  // Navigator.of(context).pushNamed("forgetPsd");
-                },
+                onPressed:_login,
                 child: Text("登录"),
               ),
             ),
             Container(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: (){
-                  print("注册");
-                  // Navigator.of(context).pushNamed("forgetPsd");
-                },
-                  child: Text("注册")
+                onPressed: _register,
+                child: Text("注册")
               ),
             ),
           ],
@@ -122,16 +152,24 @@ class _LoginViewState extends State<LoginView> {
       ),
     );
   }
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    test();
+
+  void _login() async{
+    var validate = (_key.currentState as FormState).validate();
+    Navigator.of(context).popAndPushNamed('mainView');
+    // if(validate) {
+    //   if (_user.text.isEmpty) {
+    //     print("账号不能为空");
+    //     return;
+    //   } else if (_pass.text.isEmpty) {
+    //     print("密码不能为空");
+    //     return;
+    //   }
+    //   context.read<LoginViewModel>().login(_user.text,_pass.text);
+    // }
   }
-  void test() async{
-    String result = await encodeString("content");
-    print("result== $result");
-    var s = await decrypt(result);
-    print("s== $s");
+
+  void _register(){
+    Navigator.of(context).pushNamed("registerView");
   }
+
 }

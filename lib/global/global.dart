@@ -6,6 +6,7 @@ class Global{
   static Global? _instance;
   late Dio dio;
   String? token;
+  Map? user;
   static Global getInstance(){
     if(_instance == null) _instance = new Global();
     return _instance!;
@@ -18,9 +19,9 @@ class Global{
       connectTimeout: 5000,//连接超时时间
       sendTimeout: 5000,//发送超时时间
       receiveTimeout: 5000,//接收超时时间
-      headers: {
-        "token":"123456",
-      },
+      // headers: {
+      //   "token":"123456",
+      // },
       contentType:Headers.formUrlEncodedContentType,//请求数据类型 jsonContentType
       responseType: ResponseType.json,//接收数据类型
     );
