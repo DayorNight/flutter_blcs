@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/utils/comment_view.dart';
 ///注册页面
 class RegisterView extends StatefulWidget {
   const RegisterView({Key? key}) : super(key: key);
@@ -10,14 +11,34 @@ class RegisterView extends StatefulWidget {
 
 class _RegisterViewState extends State<RegisterView> {
   GlobalKey _key = GlobalKey<FormState>();
+  var _sex = true;
+  late TextEditingController _user;
+  late TextEditingController _code;
+  late TextEditingController _pass;
+  late TextEditingController _time;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _user = TextEditingController();
+    _code = TextEditingController();
+    _pass = TextEditingController();
+    _time = TextEditingController();
+  }
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _user.dispose();
+    _code.dispose();
+    _pass.dispose();
+    _time.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        title: Text('注册'),
-        centerTitle: true,
-      ),
+      appBar: getAppBar("注册"),
       body: Padding(
         padding: EdgeInsets.all(20),
         child: Form(
@@ -25,6 +46,7 @@ class _RegisterViewState extends State<RegisterView> {
             child: Column(
               children: [
                 TextFormField(
+                  controller:_user,
                   keyboardType: TextInputType.phone,
                   maxLength: 11,
                   decoration: InputDecoration(
@@ -38,9 +60,11 @@ class _RegisterViewState extends State<RegisterView> {
                     if(value ==null || value.isEmpty){
                       return '请输入手机号';
                     }
+                    return null;
                   },
                 ),
                 TextFormField(
+                  controller: _code,
                   keyboardType: TextInputType.number,
                   maxLength: 4,
                   decoration: InputDecoration(
@@ -53,11 +77,14 @@ class _RegisterViewState extends State<RegisterView> {
                     if(value ==null || value.isEmpty){
                       return '请输入验证码';
                     }
+                    return null;
                   },
                 ),
                 TextFormField(
+                  controller: _pass,
                   keyboardType: TextInputType.text,
                   maxLength: 11,
+                  obscureText: true,
                   decoration: InputDecoration(
                     counterText: '',
                     icon : Text('登录密码'),
@@ -71,18 +98,23 @@ class _RegisterViewState extends State<RegisterView> {
                     if(value.length<6){
                       return '密码不能小于6位数';
                     }
+                    return null;
                   },
                 ),
                 Row(
                   children: [
                     Text("  性  别  "),
                     SizedBox(width: 12,),
-                    Switch(value: true, onChanged: (change){
+                    Switch(value: _sex, onChanged: (change){
+                      setState(() {
+                        this._sex = change;
+                      });
                     }),
                     Text("男"),
                   ],
                 ),
                 TextFormField(
+                  controller: _time,
                   keyboardType: TextInputType.datetime,
                   decoration: InputDecoration(
                     counterText: '',
@@ -94,14 +126,24 @@ class _RegisterViewState extends State<RegisterView> {
                 Container(
                   margin: EdgeInsets.only(top: 20),
                   width: double.infinity,
-                  child: ElevatedButton(onPressed: (){
-                    Navigator.of(context).pop();
-                  }, child: Text('注册')),
+                  child: ElevatedButton(
+                      onPressed: (){_register();},
+                      child: Text('注册')),
                 )
               ],
             ),
         ),
       ),
     );
+  }
+
+  ///注册
+  void _register(){
+    print("user= ${_user.text}");
+    print("code= ${_code.text}");
+    print("pass= ${_pass.text}");
+    print("time= ${_time.text}");
+    print("sex= $_sex");
+    Navigator.of(context).pop();
   }
 }

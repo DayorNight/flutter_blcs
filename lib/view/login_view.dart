@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../global/global.dart';
+import '../utils/comment_view.dart';
 ///登录页面
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -44,11 +45,7 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        title: Text("登陆"),
-        centerTitle: true,
-        elevation: 10,
-      ),
+      appBar: getAppBar("登录"),
       body: Padding(
         padding: EdgeInsets.fromLTRB(20, 40, 20, 20),
         child: Column(
