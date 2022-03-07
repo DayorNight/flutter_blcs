@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/utils/comment_view.dart';
 ///注册页面
@@ -53,7 +52,10 @@ class _RegisterViewState extends State<RegisterView> {
                     counterText: '',
                     hintText: '请输入手机号',
                     icon : Text('手机账号'),
-                    suffixIcon: ElevatedButton(child: Text('发送验证码'),onPressed: (){},),
+                    suffixIcon: ElevatedButton(
+                      child: Text('发送验证码'),
+                      onPressed: (){},
+                    ),
                   ),
                   textInputAction: TextInputAction.next,
                   validator: (value){
@@ -118,8 +120,12 @@ class _RegisterViewState extends State<RegisterView> {
                   keyboardType: TextInputType.datetime,
                   decoration: InputDecoration(
                     counterText: '',
-                    hintText: '请输入出生日期',
+                    hintText: '请选择出生日期',
                     icon : Text('出生日期'),
+                    suffixIcon: ElevatedButton(
+                      onPressed: _selectTime,
+                      child: Text('日期'),
+                    ),
                   ),
                   textInputAction: TextInputAction.send,
                 ),
@@ -145,5 +151,15 @@ class _RegisterViewState extends State<RegisterView> {
     print("time= ${_time.text}");
     print("sex= $_sex");
     Navigator.of(context).pop();
+  }
+  void _selectTime() async{
+     DateTime? time = await showDatePicker(context: context, initialDate: DateTime.now(), firstDate: DateTime(2000), lastDate: DateTime(2100));
+     print(time);
+     if(time==null) return;
+     var _date = "${time.year} - ${time.month} - ${time.day}";
+     setState(() {
+       _time.text = _date;
+     });
+
   }
 }
