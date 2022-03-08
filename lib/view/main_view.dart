@@ -1,3 +1,4 @@
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/bean/draw_list.dart';
 ///首页
@@ -34,7 +35,7 @@ class _MainViewState extends State<MainView> {
                      currentAccountPictureSize: Size.square(100),
                      accountName: Text("blcs"),
                      accountEmail: Text('xxxxxxx@qq.com')),
-                 ListView.builder(itemBuilder: _drawList,itemCount: _datas.length, shrinkWrap: true,),
+                 // ListView.builder(itemBuilder: _drawList,itemCount: _datas.length, shrinkWrap: true,),
                  // ListTile(
                  //   leading: Icon(Icons.account_circle),
                  //   title: Text('Profile'),
@@ -48,6 +49,18 @@ class _MainViewState extends State<MainView> {
                ],
              ),
       ),
+      body: Container(
+        width: double.infinity,
+        height: 200,
+        child: Swiper(
+          itemBuilder: (BuildContext context,int index){
+            return Image.network("https://via.placeholder.com/350x150",fit: BoxFit.fill,);
+          },
+          itemCount: 3,
+          pagination: SwiperPagination(),
+          control: SwiperControl(),
+        ),
+      )
     );
   }
   ///前往主题设置

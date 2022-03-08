@@ -21,24 +21,26 @@ dependencies:
   encrypt: ^5.0.1
   # 全局状态管理
   provider: ^6.0.2
+  # 持久化操作
+  shared_preferences: ^2.0.13
+  # 轮播图
+  card_swiper : ^2.0.1
+  #屏幕适配
+  flutter_screenutil: ^5.3.1
 
 #  http: any
 #  http_parser: any
-  # 持久化操作
-  shared_preferences: ^2.0.13
 #  # 缓存清理
 #  path_provider: any
 #  # 图片显示，可缓存
 #  ok_image: any
-#  #屏幕适配
-#  screen_ratio_adapter: any
+
 #  # 图片拍照
 #  image_picker: any
 #  # 日期选择
 #  flutter_datetime_picker: any
 #  # 图形报表
 #  flutter_chart_csx: any
-
 #  # UI框架
 #  weui: any
 #  # 左滑删除
@@ -49,8 +51,7 @@ dependencies:
 #  flutter_luban: any
 #  # 全局状态管理
 #  provider: any
-#  # 轮播图
-#  flutter_swiper: any
+
 #  crypto: any
 
 dev_dependencies:
