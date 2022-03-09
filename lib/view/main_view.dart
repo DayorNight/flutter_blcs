@@ -26,53 +26,68 @@ class _MainViewState extends State<MainView> {
           IconButton(onPressed: _theme, icon: Icon(Icons.settings))
         ],
       ),
-      drawer: Drawer(
-        child: ListView(
-               padding: EdgeInsets.zero,
-               children: <Widget>[
-                 UserAccountsDrawerHeader(
-                     currentAccountPicture: Icon(Icons.circle),
-                     currentAccountPictureSize: Size.square(100),
-                     accountName: Text("blcs"),
-                     accountEmail: Text('xxxxxxx@qq.com')),
-                 // ListView.builder(itemBuilder: _drawList,itemCount: _datas.length, shrinkWrap: true,),
-                 // ListTile(
-                 //   leading: Icon(Icons.account_circle),
-                 //   title: Text('Profile'),
-                 //   trailing: Icon(Icons.arrow_forward_sharp),
-                 // ),
-                 // ListTile(
-                 //   leading: Icon(Icons.settings),
-                 //   title: Text('Settings'),
-                 //   trailing: Icon(Icons.exit_to_app,color: Colors.blue,),
-                 // ),
-               ],
-             ),
-      ),
       body: Container(
         width: double.infinity,
         height: 200,
         child: Swiper(
           itemBuilder: (BuildContext context,int index){
-            return Image.network("https://via.placeholder.com/350x150",fit: BoxFit.fill,);
+            return Image.network("https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2491682377,1019940373&fm=26&gp=0.jpg",fit: BoxFit.fill,);
           },
           itemCount: 3,
           pagination: SwiperPagination(),
           control: SwiperControl(),
         ),
-      )
+      ),
+      drawer: Drawer(
+    child: ListView(
+           padding: EdgeInsets.zero,
+           children: <Widget>[
+             UserAccountsDrawerHeader( //用户信息栏
+               accountName: Text("blcs"),
+               accountEmail: Text("xxxxxx@xxx.com"),
+               currentAccountPicture: CircleAvatar(
+                   backgroundImage: AssetImage("images/ic_avator.png"),
+               ),
+               otherAccountsPictures: <Widget>[  //其他账号头像
+                 IconButton(onPressed: (){
+                   Navigator.of(context).pop();
+                 }, icon: Icon(Icons.exit_to_app_rounded))
+               ],
+               onDetailsPressed: (){}, //下拉箭头
+               decoration: BoxDecoration(  //背景图片
+                 image: DecorationImage(
+                     image: NetworkImage('https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2491682377,1019940373&fm=26&gp=0.jpg'),
+                     fit: BoxFit.cover	//图片不变性裁剪居中显示
+                 ),
+               ),
+             ),
+             ListView.builder(itemBuilder: _itemBuilder,itemCount:_datas.length,shrinkWrap: true,),
+             ListTile(
+               leading: Icon(Icons.settings),
+               title: Text('Setting'),
+               trailing: Icon(Icons.arrow_forward_ios_rounded) ,
+               onTap: (){
+                 print("Setting");
+               },
+             ),
+           ],
+         ),
+      ),
     );
   }
-  ///前往主题设置
+  /// 前往主题设置
   void _theme(){
     Navigator.of(context).pushNamed('themeView');
   }
-
-  Widget _drawList(BuildContext context,int index){
+  /// draw list
+  Widget _itemBuilder(BuildContext context,int index){
     return ListTile(
       leading: Icon(_datas[index].icon),
       title: Text(_datas[index].title),
       trailing: Icon(_datas[index].trailing),
+      onTap: (){
+        print("index $index");
+      },
     );
   }
 
@@ -89,4 +104,3 @@ class _MainViewState extends State<MainView> {
     });
   }
 }
-
