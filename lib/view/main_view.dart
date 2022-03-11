@@ -61,7 +61,12 @@ class _MainViewState extends State<MainView> {
                  ),
                ),
              ),
-             ListView.builder(itemBuilder: _itemBuilder,itemCount:_datas.length,shrinkWrap: true,),
+             ListView.builder(
+               itemBuilder: _itemBuilder,
+               itemCount:_datas.length,
+               shrinkWrap: true,
+               padding: EdgeInsets.zero,
+             ),
              ListTile(
                leading: Icon(Icons.settings),
                title: Text('Setting'),
@@ -86,6 +91,13 @@ class _MainViewState extends State<MainView> {
       title: Text(_datas[index].title),
       trailing: Icon(_datas[index].trailing),
       onTap: (){
+        var title = _datas[index].title;
+        if(title=='主题切换'){
+          print("主题切换");
+          Navigator.of(context).pushNamed('themeView');
+        }else if(title=='语言切换'){
+          print("语言切换");
+        }
         print("index $index");
       },
     );
@@ -94,9 +106,11 @@ class _MainViewState extends State<MainView> {
   late List<DrawListBean> _datas;
   void initData() async{
     var datas =<DrawListBean>[];
-    var drawListBean = DrawListBean(Icons.message, 'Messages', Icons.arrow_forward_sharp);
-    datas.add(drawListBean);
-    datas.add(drawListBean);
+    var themeSelect = DrawListBean(Icons.ac_unit, '主题切换', Icons.arrow_forward_sharp);
+    var languageSelect = DrawListBean(Icons.message, '语言切换', Icons.arrow_forward_sharp);
+    var drawListBean = DrawListBean(Icons.message, 'message', Icons.arrow_forward_sharp);
+    datas.add(themeSelect);
+    datas.add(languageSelect);
     datas.add(drawListBean);
     datas.add(drawListBean);
     setState(() {
