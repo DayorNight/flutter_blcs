@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/global/global_theme.dart';
 import 'package:flutter_blcs/view/login_view.dart';
 import 'package:flutter_blcs/view/main_view.dart';
+import 'package:flutter_blcs/viewmodel/language_viewmodel.dart';
 import 'package:flutter_blcs/viewmodel/login_viewmodel.dart';
 import 'package:flutter_blcs/viewmodel/theme_viewmodel.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -19,6 +21,7 @@ void main() async {
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (context) => LoginViewModel()),
+      ChangeNotifierProvider(create: (context) => LanguageViewModel()),
       ChangeNotifierProvider(create: (context) => themeViewModel),
     ],
     child: MyApp(),
@@ -32,10 +35,11 @@ class MyApp extends StatefulWidget {
 
 GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 GlobalKey<ScaffoldMessengerState> scaffoldKey = GlobalKey();
-
 class _MyAppState extends State<MyApp> {
+
   @override
   Widget build(BuildContext context) {
+    var locale = Provider.of<LanguageViewModel>(context).getLocale();
     return MaterialApp(
       ///提供全局的 navigatorKey.currentContext
       navigatorKey: navigatorKey,
@@ -49,7 +53,7 @@ class _MyAppState extends State<MyApp> {
       routes: routes,
 
       ///初始路由，如果设置了该参数并且在 routes 找到了对应的key，将会展示对应的 Widget ，否则展示 home  //开发阶段快速定位页面
-      initialRoute: "mainView",
+      initialRoute: "/",
 
       ///当跳转路由时，如果在 routes 找不到对应的 key ，会执行该回调，会调用会返回一个 RouteSettings ，该对象中有 name 路由名称、 arguments 路由参数。
       onGenerateRoute: (settings) {
@@ -78,6 +82,7 @@ class _MyAppState extends State<MyApp> {
       //   return Scaffold();
       // },
       ///Android：任务管理器的程序快照之上的title
+      // title: S.of(context).appName,
       title: '玉米',
 
       ///如果非空，则调用此回调函数以生成任务管理器标题字符串，否则会使用 title 。每次重建页面时该方法就会回调执行。
@@ -102,7 +107,7 @@ class _MyAppState extends State<MyApp> {
       darkTheme: ThemeData(primarySwatch: black),
 
       ///白天模式和暗黑模式模式切换，默认值为 ThemeMode.system 跟随系统
-      themeMode: ThemeMode.light,
+      themeMode: Provider.of<ThemeViewModel>(context).getThemeMode,
 
       ///当系统请求“高对比度”时使用的 ThemeData ，当该值为空时会用 theme 应用该主题
       highContrastTheme: ThemeData(
@@ -113,34 +118,33 @@ class _MyAppState extends State<MyApp> {
           primarySwatch: themes[Provider.of<ThemeViewModel>(context).getColor]),
 
       ///主要用于语言切换时，如果为 null 时使用系统区域
-      // locale: Locale('zh', 'CN'),
+      locale: locale==''?null:Locale(locale,''),
       ///本地化委托
-      // localizationsDelegates: [
-      //   GlobalMaterialLocalizations.delegate,
-      //   GlobalWidgetsLocalizations.delegate,
-      // ],
+      localizationsDelegates: [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
       ///监听系统语言切换事件，一些安卓系统特性，可设置多语言列表，默认以第一个列表为默认语言
-      // localeListResolutionCallback: (locales, supportedLocales) {
-      //   print("localeListResolutionCallback:locales= ${locales.toString()}");
-      //   print(
-      //       "localeListResolutionCallback:supportedLocales= ${supportedLocales.toString()}");
-      //   // 系统切换语言时调用
-      //   return Locale("zh", 'CN');
-      // },
+      localeListResolutionCallback: (locales, supportedLocales) {
+        print("localeListResolutionCallback:locales= ${locales?.elementAt(0)}");
+        print(
+            "localeListResolutionCallback:supportedLocales= ${supportedLocales.toString()}");
+        // return locales!.elementAt(0);
+      },
 
       ///监听系统语言切换事件
-      // localeResolutionCallback: (locale, supportedLocales) {
-      //   print("localeResolutionCallback:languageCode= ${locale?.languageCode}");
-      //   print("localeResolutionCallback:countryCode= ${locale?.countryCode}");
-      //   print(
-      //       "localeResolutionCallback:supportedLocales= ${supportedLocales.toString()}");
-      // },
+      localeResolutionCallback: (locale, supportedLocales) {
+        print("localeResolutionCallback:languageCode= ${locale?.languageCode}");
+        print("localeResolutionCallback:countryCode= ${locale?.countryCode}");
+        print(
+            "localeResolutionCallback:supportedLocales= ${supportedLocales.toString()}");
+        // return Locale(locale!.languageCode,'');
+      },
 
       ///当前应用支持的 Locale 列表
-      // supportedLocales: [
-      //   Locale('en', 'US'), //美国英语
-      //   Locale("zh", 'CN'), //中文简体
-      // ],
+      supportedLocales: S.delegate.supportedLocales,
 
       ///在 debug 模式下展示基线网格
       debugShowMaterialGrid: false,

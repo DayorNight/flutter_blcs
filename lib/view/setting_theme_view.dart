@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/global/global_theme.dart';
 import 'package:flutter_blcs/viewmodel/theme_viewmodel.dart';
 import 'package:provider/provider.dart';
@@ -18,7 +19,7 @@ class _SettingThemeViewState extends State<SettingThemeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('主题'),
+        title: Text(S.of(context).switch_theme),
         centerTitle: true,
       ),
       body: Padding(
@@ -27,12 +28,15 @@ class _SettingThemeViewState extends State<SettingThemeView> {
           children: [
             Row(
               children: [
-                Text("黑夜模式"),
+                Text(S.of(context).dark_theme),
                 Switch(
                     value: _switchTheme,
                     onChanged: (value) {
-                      setState(() {
+                      setState(() async {
                         this._switchTheme = value;
+                        context
+                            .read<ThemeViewModel>()
+                            .setMode(value ? ThemeMode.dark : ThemeMode.light);
                       });
                     }),
               ],
@@ -57,7 +61,7 @@ class _SettingThemeViewState extends State<SettingThemeView> {
         height: 50,
         margin: EdgeInsets.only(bottom: 20),
         decoration: BoxDecoration(
-          color: _switchTheme?darkThemes[index]:themes[index],
+          color: themes[index],
           borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
         child: Provider.of<ThemeViewModel>(context).getColor == index

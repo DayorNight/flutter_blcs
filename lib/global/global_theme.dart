@@ -1,25 +1,15 @@
 import 'package:flutter/material.dart';
 const List themes = [
+  Colors.indigo,
   Colors.pink,
   Colors.purple,
-  Colors.indigo,
   Colors.cyan,
   Colors.teal,
   Colors.green,
   Colors.orange,
-  black,
 ];
-const List darkThemes = [
-  Colors.grey,
-  Colors.black12,
-  Colors.black26,
-  Colors.black38,
-  Colors.black45,
-  Colors.black54,
-  Colors.black87,
-  black,
-];
-const MaterialColor white1 = const MaterialColor(
+
+const MaterialColor white = const MaterialColor(
   0xFFFFFFFF,
   const <int, Color>{
     50: const Color(0xFFFFFFFF),
