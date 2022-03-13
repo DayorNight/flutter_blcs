@@ -1,6 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/common/init_launch.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/global/global_theme.dart';
+import 'package:flutter_blcs/utils/handle_error_log.dart';
 import 'package:flutter_blcs/view/login_view.dart';
 import 'package:flutter_blcs/view/main_view.dart';
 import 'package:flutter_blcs/viewmodel/language_viewmodel.dart';
@@ -13,20 +17,29 @@ import 'routers/routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SharedPreferences sp = await SharedPreferences.getInstance();
-  int _color = sp.getInt("color") ?? 0;
-  ThemeViewModel themeViewModel = ThemeViewModel();
-  print("_color $_color");
-  themeViewModel.setColor(_color);
-  runApp(MultiProvider(
-    providers: [
-      ChangeNotifierProvider(create: (context) => LoginViewModel()),
-      ChangeNotifierProvider(create: (context) => LanguageViewModel()),
-      ChangeNotifierProvider(create: (context) => themeViewModel),
-    ],
-    child: MyApp(),
-  ));
+  ///初始化应用配置
+  var initLaunch = InitLaunch();
+  ///初始化主题
+  ThemeViewModel themeViewModel = await initLaunch.initTheme();
+  ///初始化语言
+  LanguageViewModel languageViewModel =await initLaunch.initLanguage();
+  ///处理flutter为我们捕获的异常
+  handleError();
+  ///初始化程序
+  runZoned(
+      () => runApp(MultiProvider(
+            providers: [
+              ChangeNotifierProvider(create: (context) => LoginViewModel()),
+              ChangeNotifierProvider(create: (context) => languageViewModel),
+              ChangeNotifierProvider(create: (context) => themeViewModel),
+            ],
+            child: MyApp(),
+          )),
+      zoneSpecification: getZoneSpecification()
+  );
 }
+
+
 
 class MyApp extends StatefulWidget {
   @override
@@ -35,8 +48,8 @@ class MyApp extends StatefulWidget {
 
 GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 GlobalKey<ScaffoldMessengerState> scaffoldKey = GlobalKey();
-class _MyAppState extends State<MyApp> {
 
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     var locale = Provider.of<LanguageViewModel>(context).getLocale();
@@ -82,7 +95,6 @@ class _MyAppState extends State<MyApp> {
       //   return Scaffold();
       // },
       ///Android：任务管理器的程序快照之上的title
-      // title: S.of(context).appName,
       title: '玉米',
 
       ///如果非空，则调用此回调函数以生成任务管理器标题字符串，否则会使用 title 。每次重建页面时该方法就会回调执行。
@@ -118,7 +130,8 @@ class _MyAppState extends State<MyApp> {
           primarySwatch: themes[Provider.of<ThemeViewModel>(context).getColor]),
 
       ///主要用于语言切换时，如果为 null 时使用系统区域
-      locale: locale==''?null:Locale(locale,''),
+      locale: locale == '' ? null : Locale(locale, ''),
+
       ///本地化委托
       localizationsDelegates: [
         S.delegate,
@@ -126,6 +139,7 @@ class _MyAppState extends State<MyApp> {
         GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],
+
       ///监听系统语言切换事件，一些安卓系统特性，可设置多语言列表，默认以第一个列表为默认语言
       localeListResolutionCallback: (locales, supportedLocales) {
         print("localeListResolutionCallback:locales= ${locales?.elementAt(0)}");

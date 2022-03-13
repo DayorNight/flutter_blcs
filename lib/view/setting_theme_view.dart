@@ -81,7 +81,7 @@ class _SettingThemeViewState extends State<SettingThemeView> {
       ),
       onTap: () async {
         SharedPreferences sp = await SharedPreferences.getInstance();
-        sp.setInt("color", index);
+        sp.setInt("themeColor", index);
         context.read<ThemeViewModel>().setColor(index);
       },
     );

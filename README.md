@@ -4,11 +4,8 @@
 
 flutter_blcs
 ├── android
-├── fonts       //保存Icon文件
-├── l10n-arb    //多语言支持
 ├── imgs        //保存图片
 ├── ios         
-├── jsons       //Json文件
 ├── lib         //代码部分
     ├── common  //一些工具类，如通用方法类、网络接口类、保存全局变量的静态类等
     ├── l10n    //国际化相关的类都在此目录下
@@ -18,8 +15,11 @@ flutter_blcs
     └── widgets //APP内封装的一些Widget组件都在该目录下
 └── test        
 
-## 文件
-
 ## 步骤
 1. 启动图修改
 2. RSA加密
+
+## 功能
+1. 切换主题 SettingThemeView
+2. 切换语言 SwitchLanguageView
+3. 异常捕获
