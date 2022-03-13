@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/view/demo_view.dart';
 import 'package:flutter_blcs/view/forget_psd_view.dart';
 import 'package:flutter_blcs/view/login_view.dart';
 import 'package:flutter_blcs/view/main_view.dart';
@@ -13,4 +14,5 @@ Map<String, WidgetBuilder> routes = {
   "mainView":(BuildContext context) => MainView(),
   "themeView":(BuildContext context) => SettingThemeView(),
   "languageView":(BuildContext context) => SwitchLanguageView(),
+  "demoView":(BuildContext context) => DemoView(),
 };

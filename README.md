@@ -15,11 +15,7 @@ flutter_blcs
     └── widgets //APP内封装的一些Widget组件都在该目录下
 └── test        
 
-## 步骤
-1. 启动图修改
-2. RSA加密
-
 ## 功能
 1. 切换主题 SettingThemeView
 2. 切换语言 SwitchLanguageView
-3. 异常捕获
+3. 异常捕获 handleError

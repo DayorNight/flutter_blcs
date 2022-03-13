@@ -14,11 +14,12 @@ class MainView extends StatefulWidget {
 class _MainViewState extends State<MainView> {
   late S _s;
   late List<DrawListBean> _datas;
+  DateTime? _lastPressedAt; //上次点击时间
   @override
   Widget build(BuildContext context) {
     _s = S.of(context);
     initData();
-    return Scaffold(
+    return WillPopScope(child: Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: Text(_s.home),
@@ -40,6 +41,7 @@ class _MainViewState extends State<MainView> {
           control: SwiperControl(),
         ),
       ),
+      ///左侧抽屉
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -67,7 +69,7 @@ class _MainViewState extends State<MainView> {
                     image: NetworkImage(
                         'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2491682377,1019940373&fm=26&gp=0.jpg'),
                     fit: BoxFit.cover //图片不变性裁剪居中显示
-                    ),
+                ),
               ),
             ),
             ListView.builder(
@@ -87,11 +89,20 @@ class _MainViewState extends State<MainView> {
           ],
         ),
       ),
-    );
+      ///左侧抽屉是否支持手势滑动
+      drawerEnableOpenDragGesture: true,
+    ), onWillPop: () async {
+      if (_lastPressedAt == null || DateTime.now().difference(_lastPressedAt!) > Duration(seconds: 1)) {
+        //两次点击间隔超过1秒则重新计时
+        _lastPressedAt = DateTime.now();
+        return false;
+      }
+      return true;
+    });
   }
   /// 前往主题设置
   void _theme() {
-    Navigator.of(context).pushNamed('themeView');
+    Navigator.of(context).pushNamed('demoView');
   }
 
   /// draw list
@@ -115,7 +126,7 @@ class _MainViewState extends State<MainView> {
   void initData() async {
     var datas = <DrawListBean>[];
     var themeSelect = DrawListBean(
-        Icons.ac_unit, _s.switch_language, Icons.arrow_forward_sharp);
+        Icons.ac_unit, _s.switch_theme, Icons.arrow_forward_sharp);
     var languageSelect = DrawListBean(
         Icons.message, _s.switch_language, Icons.arrow_forward_sharp);
     var drawListBean =

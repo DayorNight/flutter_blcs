@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/init_launch.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
@@ -12,7 +11,6 @@ import 'package:flutter_blcs/viewmodel/login_viewmodel.dart';
 import 'package:flutter_blcs/viewmodel/theme_viewmodel.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'routers/routes.dart';
 
 void main() async {
@@ -38,8 +36,6 @@ void main() async {
       zoneSpecification: getZoneSpecification()
   );
 }
-
-
 
 class MyApp extends StatefulWidget {
   @override

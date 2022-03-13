@@ -35,7 +35,7 @@ class _SwitchLanguageViewState extends State<SwitchLanguageView> {
               print(locale);
               context.read<LanguageViewModel>().setLocale(locale);
               SharedPreferences sp =await SharedPreferences.getInstance();
-              sp.setInt("init_language", index);
+              sp.setString("init_language", locale);
             },
             child: Container(
               decoration: BoxDecoration(

@@ -18,7 +18,7 @@ class InitLaunch{
   ///初始化语言
   Future<LanguageViewModel> initLanguage() async {
     SharedPreferences sp = await SharedPreferences.getInstance();
-    String _language = sp.getString("init_language") ?? "zh";
+    String _language = sp.getString("init_language") ?? "";
     LanguageViewModel languageViewModel = LanguageViewModel();
     print("language $_language");
     languageViewModel.setLocale(_language);
