@@ -25,6 +25,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "appName": MessageLookupByLibrary.simpleMessage("Corn"),
         "dark_theme": MessageLookupByLibrary.simpleMessage("Dark Theme"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "home_fun": MessageLookupByLibrary.simpleMessage("Function"),
+        "home_me": MessageLookupByLibrary.simpleMessage("Me"),
+        "home_view": MessageLookupByLibrary.simpleMessage("Widget"),
         "select_language":
             MessageLookupByLibrary.simpleMessage("Select Language"),
         "switch_language":

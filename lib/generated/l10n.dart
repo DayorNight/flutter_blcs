@@ -109,6 +109,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Widget`
+  String get home_view {
+    return Intl.message(
+      'Widget',
+      name: 'home_view',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Function`
+  String get home_fun {
+    return Intl.message(
+      'Function',
+      name: 'home_fun',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Me`
+  String get home_me {
+    return Intl.message(
+      'Me',
+      name: 'home_me',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

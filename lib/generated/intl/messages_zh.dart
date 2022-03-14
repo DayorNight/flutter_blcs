@@ -25,6 +25,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "appName": MessageLookupByLibrary.simpleMessage("玉米"),
         "dark_theme": MessageLookupByLibrary.simpleMessage("暗夜模式"),
         "home": MessageLookupByLibrary.simpleMessage("首页"),
+        "home_fun": MessageLookupByLibrary.simpleMessage("功能"),
+        "home_me": MessageLookupByLibrary.simpleMessage("我的"),
+        "home_view": MessageLookupByLibrary.simpleMessage("UI"),
         "select_language": MessageLookupByLibrary.simpleMessage("选择语言"),
         "switch_language": MessageLookupByLibrary.simpleMessage("切换语言"),
         "switch_theme": MessageLookupByLibrary.simpleMessage("切换主题")

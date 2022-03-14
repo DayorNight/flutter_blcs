@@ -4,5 +4,8 @@
   "switch_theme": "Switch Theme",
   "switch_language": "Switch Language",
   "select_language": "Select Language",
-  "dark_theme": "Dark Theme"
+  "dark_theme": "Dark Theme",
+  "home_view": "Widget",
+  "home_fun": "Function",
+  "home_me": "Me"
 }

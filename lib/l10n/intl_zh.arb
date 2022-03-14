@@ -4,5 +4,8 @@
   "switch_theme": "切换主题",
   "switch_language": "切换语言",
   "select_language": "选择语言",
-  "dark_theme": "暗夜模式"
+  "dark_theme": "暗夜模式",
+  "home_view": "UI",
+  "home_fun": "功能",
+  "home_me": "我的"
 }
