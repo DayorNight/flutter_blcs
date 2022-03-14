@@ -13,13 +13,10 @@ class DemoView extends StatefulWidget {
 
 class _DemoViewState extends State<DemoView>
     with SingleTickerProviderStateMixin {
-  late TabController _tabController;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    _tabController = TabController(length: 2, vsync: this);
   }
 
   final PageController controller = PageController();
