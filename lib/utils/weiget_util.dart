@@ -14,7 +14,7 @@ PreferredSizeWidget getAppBar(String title) {
 Widget getBanner(List<String> datas) {
   return Container(
     width: double.infinity,
-    height: 200,
+    height: 150,
     child: Swiper(
       itemBuilder: (BuildContext context, int index) {
         return Container(

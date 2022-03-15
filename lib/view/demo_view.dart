@@ -21,18 +21,26 @@ class _DemoViewState extends State<DemoView>
 
   final PageController controller = PageController();
 
+  final List<String> entries = <String>['A', 'B', 'C', 'D', 'E', 'F', 'H', 'G','I','J',];
+  final List<int> colorCodes = <int>[900, 800,700,600,500,400,300,200,100,0];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: getAppBar("Demo"),
-      body: PageView(
-          controller: controller,
-          onPageChanged: (index){},
-          children: [
-            WeigetView(),
-            MeView(),
-            FunctionView()
-          ]
+      body: Column(
+        children: [
+          ListView.builder(
+            shrinkWrap: true,
+              itemCount: entries.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Container(
+                  height: 100,
+                  color: Colors.amber[colorCodes[index]],
+                  child: Center(child: Text('Entry ${entries[index]}')),
+                );
+              }
+          )
+        ],
       ),
     );
   }

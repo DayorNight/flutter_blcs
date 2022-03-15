@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/utils/weiget_util.dart';
 
@@ -13,7 +11,7 @@ class WeigetView extends StatefulWidget {
 
 class _WeigetViewState extends State<WeigetView> {
   var banners = ["Flutter", "Kotlin", "Android"];
-  List _hor_weiget = [
+  final List _horWeiget = [
     "Scaffold",
     "Scaffold",
     "Scaffold",
@@ -24,31 +22,92 @@ class _WeigetViewState extends State<WeigetView> {
     "Scaffold"
   ];
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
+  /// 加载list
+  Widget? _loadList(BuildContext context, int index) {
+    return Container(
+      margin: EdgeInsets.only(left:10,right:10,bottom: 10),
+      padding: EdgeInsets.all(10),
+      decoration: BoxDecoration(
+          color: Theme.of(context).primaryColor,
+          borderRadius: BorderRadius.all(Radius.circular(10))),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          getBanner(banners),
-          GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 4,
-
-            ),
-            itemBuilder:(context,index){
-              return Container(
-                alignment: Alignment.center,
-                child: Column(
-                  children: [
-                    Icon(Icons.android_rounded),
-                    Text(_hor_weiget[index])
-                  ],
-                ),
-              );
-            },
+          Text(
+            _horWeiget[index],
+            style: TextStyle(fontSize: 22, color: Colors.white),
+          ),
+          Icon(
+            Icons.arrow_forward_ios_rounded,
+            color: Colors.white,
           )
         ],
       ),
     );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: getBanner(banners),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.all(10),
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 4,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                  childAspectRatio: 1.0, //显示区域宽高相等
+                ),
+                itemBuilder: (context, index) {
+                  return Container(
+                    decoration: BoxDecoration(
+                        color: Theme.of(context).primaryColor,
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.build_rounded,
+                          color: Colors.white,
+                        ),
+                        SizedBox(height: 6),
+                        Text(
+                          _horWeiget[index],
+                          style: TextStyle(color: Colors.white),
+                        )
+                      ],
+                    ),
+                  );
+                },
+                itemCount: _horWeiget.length,
+                shrinkWrap: true,
+              ),
+            ),
+          ),
+          SliverFixedExtentList(
+              delegate: SliverChildBuilderDelegate(_loadList,
+                  childCount: _horWeiget.length),
+              itemExtent: 70)
+        ],
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    print("dispose");
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    print("initState");
   }
 }
