@@ -139,6 +139,26 @@ class S {
       args: [],
     );
   }
+
+  /// `App LifeCycle`
+  String get app_lifeCycle {
+    return Intl.message(
+      'App LifeCycle',
+      name: 'app_lifeCycle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `LifeCycle`
+  String get lifeCycle {
+    return Intl.message(
+      'LifeCycle',
+      name: 'lifeCycle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -7,5 +7,7 @@
   "dark_theme": "Dark Theme",
   "home_view": "Widget",
   "home_fun": "Function",
-  "home_me": "Me"
+  "home_me": "Me",
+  "app_lifeCycle": "App LifeCycle",
+  "lifeCycle": "LifeCycle"
 }

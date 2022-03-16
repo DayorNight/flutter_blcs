@@ -98,16 +98,4 @@ class _WeigetViewState extends State<WeigetView> {
       ),
     );
   }
-
-  @override
-  void dispose() {
-    super.dispose();
-    print("dispose");
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    print("initState");
-  }
 }

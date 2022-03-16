@@ -62,7 +62,7 @@ class _MyAppState extends State<MyApp> {
       routes: routes,
 
       ///初始路由，如果设置了该参数并且在 routes 找到了对应的key，将会展示对应的 Widget ，否则展示 home  //开发阶段快速定位页面
-      initialRoute: "/",
+      initialRoute: "mainView",
 
       ///当跳转路由时，如果在 routes 找不到对应的 key ，会执行该回调，会调用会返回一个 RouteSettings ，该对象中有 name 路由名称、 arguments 路由参数。
       onGenerateRoute: (settings) {
@@ -72,13 +72,12 @@ class _MyAppState extends State<MyApp> {
       },
 
       ///如果提供了 initialRoute ，则用于生成初始路由的路由生成器回调
-      onGenerateInitialRoutes: (initialRoute) {
-        print("onGenerateInitialRoutes:initialRoute= $initialRoute");
-        return [
-          MaterialPageRoute(builder: (_) => MainView()),
-        ];
-      },
-
+      // onGenerateInitialRoutes: (initialRoute) {
+      //   print("onGenerateInitialRoutes:initialRoute= $initialRoute");
+      //   return [
+          // MaterialPageRoute(builder: (_) => MainView()),
+        // ];
+      // },
       ///效果和 onGenerateRoute 一样，只是先走 onGenerateRoute ，如果onGenerateRoute无法生成路由时则在调用 onUnknownRoute
       onUnknownRoute: (settings) {
         print("onUnknownRoute:name= ${settings.name}");

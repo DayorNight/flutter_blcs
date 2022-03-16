@@ -15,7 +15,7 @@ ZoneSpecification getZoneSpecification() {
   return ZoneSpecification(
     print: (Zone self, ZoneDelegate parent, Zone zone, String line) {
       collectLog(line);
-      parent.print(zone, "========== Interceptor: $line");
+      parent.print(zone, "print: ==========: $line");
     },
     // 拦截未处理的异步错误
     handleUncaughtError: (Zone self, ZoneDelegate parent, Zone zone,

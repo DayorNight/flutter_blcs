@@ -7,5 +7,7 @@
   "dark_theme": "暗夜模式",
   "home_view": "UI",
   "home_fun": "功能",
-  "home_me": "我的"
+  "home_me": "我的",
+  "app_lifeCycle": "应用生命周期",
+  "lifeCycle": "页面生命周期"
 }

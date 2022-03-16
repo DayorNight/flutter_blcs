@@ -23,11 +23,13 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "appName": MessageLookupByLibrary.simpleMessage("玉米"),
+        "app_lifeCycle": MessageLookupByLibrary.simpleMessage("应用生命周期"),
         "dark_theme": MessageLookupByLibrary.simpleMessage("暗夜模式"),
         "home": MessageLookupByLibrary.simpleMessage("首页"),
         "home_fun": MessageLookupByLibrary.simpleMessage("功能"),
         "home_me": MessageLookupByLibrary.simpleMessage("我的"),
         "home_view": MessageLookupByLibrary.simpleMessage("UI"),
+        "lifeCycle": MessageLookupByLibrary.simpleMessage("页面生命周期"),
         "select_language": MessageLookupByLibrary.simpleMessage("选择语言"),
         "switch_language": MessageLookupByLibrary.simpleMessage("切换语言"),
         "switch_theme": MessageLookupByLibrary.simpleMessage("切换主题")

@@ -94,6 +94,7 @@ class _MainViewState extends State<MainView> {
           ///悬浮按钮
           floatingActionButton: FloatingActionButton(
             child: Icon(Icons.add),
+            backgroundColor: Colors.red,
             onPressed: () {
               print("add");
             },
@@ -148,7 +149,7 @@ class _MainViewState extends State<MainView> {
 
   /// 前往主题设置
   void _theme() {
-    Navigator.of(context).pushNamed('demoView');
+    Navigator.of(context).pushNamed('applifeView');
   }
 
   /// draw list ui

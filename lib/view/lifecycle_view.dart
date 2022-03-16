@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/utils/weiget_util.dart';
 
-class  DemoView extends StatefulWidget {
-  const DemoView({Key? key}) : super(key: key);
+class LifeCycleView extends StatefulWidget {
+  const LifeCycleView({Key? key}) : super(key: key);
 
   @override
-  _DemoViewState createState() => _DemoViewState();
-}
-
-class _DemoViewState extends State<DemoView>
-    with SingleTickerProviderStateMixin {
-
-  _DemoViewState(){
+  _LifeCycleViewState createState(){
     /*当 StatefulWidget 被创建时会立即执行 createState*/
     print("createState 当 StatefulWidget 被创建时调用");
+    return _LifeCycleViewState();
   }
+}
+
+class _LifeCycleViewState extends State<LifeCycleView> {
 
   @override
   void initState() {
@@ -30,6 +28,7 @@ class _DemoViewState extends State<DemoView>
   }
   int _pos = 0;
   var _value = "默认";
+
   @override
   Widget build(BuildContext context) {
     print("build 渲染 widget 时调用");
@@ -60,7 +59,7 @@ class _DemoViewState extends State<DemoView>
   }
 
   @override
-  void didUpdateWidget(DemoView oldWidget) {
+  void didUpdateWidget(LifeCycleView oldWidget) {
     /*该函数主要是在组件重新构建，比如说热重载，父组件发生 build 的情况下，子组件该方法才会被调用*/
     print("didUpdateWidget 组件重新构建时调用");
   }
@@ -76,6 +75,5 @@ class _DemoViewState extends State<DemoView>
     /*永久移除组件，并释放组件资源*/
     print("dispose 永久移除组件，并释放组件资源时调用");
   }
-
 
 }
