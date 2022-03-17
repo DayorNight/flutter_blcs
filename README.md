@@ -19,3 +19,7 @@ flutter_blcs
 1. 切换主题 SettingThemeView
 2. 切换语言 SwitchLanguageView
 3. 异常捕获 handleError
+
+## 其他
+1. 应用生命周期 AppLifecycleView
+2. Widget生命周期 LifeCycleView

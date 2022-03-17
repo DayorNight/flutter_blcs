@@ -27,6 +27,9 @@ dependencies:
   card_swiper : ^2.0.1
   #屏幕适配
   flutter_screenutil: ^5.3.1
+  #代码高亮
+  flutter_syntax_view: ^4.0.0
+
 
 #  http: any
 #  http_parser: any
