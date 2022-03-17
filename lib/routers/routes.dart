@@ -6,6 +6,7 @@ import 'package:flutter_blcs/view/lifecycle_view.dart';
 import 'package:flutter_blcs/view/login_view.dart';
 import 'package:flutter_blcs/view/home/main_view.dart';
 import 'package:flutter_blcs/view/register_view.dart';
+import 'package:flutter_blcs/view/screen_adapter_view.dart';
 import 'package:flutter_blcs/view/setting_theme_view.dart';
 import 'package:flutter_blcs/view/switch_language_view.dart';
 

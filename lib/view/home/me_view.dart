@@ -11,6 +11,7 @@ class _MeViewState extends State<MeView> {
   Map _datas = {
     "应用生命周期": "applifeView",
     "页面生命周期": "lifeCycleView",
+    "屏幕适配": "screenAdapterView",
   };
 
   @override
