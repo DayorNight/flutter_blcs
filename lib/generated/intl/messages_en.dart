@@ -30,6 +30,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "home_me": MessageLookupByLibrary.simpleMessage("Me"),
         "home_view": MessageLookupByLibrary.simpleMessage("Widget"),
         "lifeCycle": MessageLookupByLibrary.simpleMessage("LifeCycle"),
+        "screen_adapter":
+            MessageLookupByLibrary.simpleMessage("Screen Adapter"),
         "select_language":
             MessageLookupByLibrary.simpleMessage("Select Language"),
         "switch_language":

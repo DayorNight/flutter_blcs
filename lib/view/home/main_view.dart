@@ -5,6 +5,7 @@ import 'package:flutter_blcs/utils/function_util.dart';
 import 'package:flutter_blcs/view/home/function_view.dart';
 import 'package:flutter_blcs/view/home/me_view.dart';
 import 'package:flutter_blcs/view/home/weiget_view.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ///首页
 class MainView extends StatefulWidget {
@@ -22,6 +23,15 @@ class _MainViewState extends State<MainView> {
   PageController _pageController = PageController();
   @override
   Widget build(BuildContext context) {
+    //屏幕适配
+    ScreenUtil.init(
+        BoxConstraints(
+            maxWidth: MediaQuery.of(context).size.width,
+            maxHeight: MediaQuery.of(context).size.height),
+        designSize: Size(750, 1334),
+        context: context,
+        minTextAdapt: true,
+        orientation: Orientation.portrait);
     _s = S.of(context);
     initData();
     return WillPopScope(
@@ -149,7 +159,7 @@ class _MainViewState extends State<MainView> {
 
   /// 前往主题设置
   void _theme() {
-    Navigator.of(context).pushNamed('applifeView');
+    Navigator.of(context).pushNamed('demoView');
   }
 
   /// draw list ui

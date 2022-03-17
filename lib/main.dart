@@ -5,11 +5,12 @@ import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/global/global_theme.dart';
 import 'package:flutter_blcs/utils/handle_error_log.dart';
 import 'package:flutter_blcs/view/login_view.dart';
-import 'package:flutter_blcs/view/main_view.dart';
+import 'package:flutter_blcs/view/home/main_view.dart';
 import 'package:flutter_blcs/viewmodel/language_viewmodel.dart';
 import 'package:flutter_blcs/viewmodel/login_viewmodel.dart';
 import 'package:flutter_blcs/viewmodel/theme_viewmodel.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'routers/routes.dart';
 
@@ -136,21 +137,21 @@ class _MyAppState extends State<MyApp> {
       ],
 
       ///监听系统语言切换事件，一些安卓系统特性，可设置多语言列表，默认以第一个列表为默认语言
-      localeListResolutionCallback: (locales, supportedLocales) {
-        print("localeListResolutionCallback:locales= ${locales?.elementAt(0)}");
-        print(
-            "localeListResolutionCallback:supportedLocales= ${supportedLocales.toString()}");
+      // localeListResolutionCallback: (locales, supportedLocales) {
+        // print("localeListResolutionCallback:locales= ${locales?.elementAt(0)}");
+        // print(
+        //     "localeListResolutionCallback:supportedLocales= ${supportedLocales.toString()}");
         // return locales!.elementAt(0);
-      },
+      // },
 
       ///监听系统语言切换事件
-      localeResolutionCallback: (locale, supportedLocales) {
-        print("localeResolutionCallback:languageCode= ${locale?.languageCode}");
-        print("localeResolutionCallback:countryCode= ${locale?.countryCode}");
-        print(
-            "localeResolutionCallback:supportedLocales= ${supportedLocales.toString()}");
-        // return Locale(locale!.languageCode,'');
-      },
+      // localeResolutionCallback: (locale, supportedLocales) {
+      //   print("localeResolutionCallback:languageCode= ${locale?.languageCode}");
+      //   print("localeResolutionCallback:countryCode= ${locale?.countryCode}");
+      //   print(
+      //       "localeResolutionCallback:supportedLocales= ${supportedLocales.toString()}");
+      //   // return Locale(locale!.languageCode,'');
+      // },
 
       ///当前应用支持的 Locale 列表
       supportedLocales: S.delegate.supportedLocales,

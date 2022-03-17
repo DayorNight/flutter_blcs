@@ -159,6 +159,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Screen Adapter`
+  String get screen_adapter {
+    return Intl.message(
+      'Screen Adapter',
+      name: 'screen_adapter',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

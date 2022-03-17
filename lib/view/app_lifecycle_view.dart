@@ -23,6 +23,7 @@ class _AppLifecycleState extends State<AppLifecycleView>
   }
   @override
   void dispose() {///移除监听
+    super.dispose();
     WidgetsBinding.instance?.removeObserver(this);
   }
   @override
@@ -50,8 +51,9 @@ class _AppLifecycleState extends State<AppLifecycleView>
 
   @override
   void dispose() {
+    super.dispose();
     ///移除监听
-    WidgetsBinding.instance?.removeObserver(this);
+   WidgetsBinding.instance?.removeObserver(this);
   }
 
   @override

@@ -23,6 +23,7 @@ class _LifeCycleViewState extends State<LifeCycleView> {
 
   @override
   void didChangeDependencies() {
+    super.didChangeDependencies();
     /*依赖全局State 发生变化时会被调用*/
     print("didChangeDependencies 全局 State 发生变化时会被调用");
   }
@@ -35,18 +36,21 @@ class _LifeCycleViewState extends State<LifeCycleView> {
   
   @override
   void reassemble() {
+    super.reassemble();
     /*主要在开发阶段使用，在 debug 模式下，每次热重载都会调用该函数*/
     print("reassemble 每次热重载都会调用");
   }
 
   @override
   void didUpdateWidget(LifeCycleView oldWidget) {
+    super.didUpdateWidget(oldWidget);
     /*该函数主要是在组件重新构建，比如说热重载，父组件发生 build 的情况下，子组件该方法才会被调用*/
     print("didUpdateWidget 组件重新构建时调用");
   }
 
   @override
   void deactivate() {
+    super.deactivate();
     /*在组件被移除节点后会被调用*/
     print("deactivate 组件被移除节点后会被调用");
   }
@@ -68,6 +72,7 @@ class _LifeCycleViewState extends State<LifeCycleView> {
 
   @override
   void didChangeDependencies() {
+    super.didChangeDependencies();
     /*依赖全局State 发生变化时会被调用*/
     print("didChangeDependencies 全局 State 发生变化时会被调用");
   }
@@ -127,18 +132,21 @@ class _LifeCycleViewState extends State<LifeCycleView> {
 
   @override
   void reassemble() {
+    super.reassemble();
     /*主要在开发阶段使用，在 debug 模式下，每次热重载都会调用该函数*/
     print("reassemble 每次热重载都会调用");
   }
 
   @override
   void didUpdateWidget(LifeCycleView oldWidget) {
+    super.didUpdateWidget(oldWidget);
     /*该函数主要是在组件重新构建，比如说热重载，父组件发生 build 的情况下，子组件该方法才会被调用*/
     print("didUpdateWidget 组件重新构建时调用");
   }
 
   @override
   void deactivate() {
+    super.deactivate();
     /*在组件被移除节点后会被调用*/
     print("deactivate 组件被移除节点后会被调用");
   }

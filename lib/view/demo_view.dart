@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/global/global_theme.dart';
 import 'package:flutter_blcs/utils/weiget_util.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class  DemoView extends StatefulWidget {
   const DemoView({Key? key}) : super(key: key);
@@ -8,74 +10,93 @@ class  DemoView extends StatefulWidget {
   _DemoViewState createState() => _DemoViewState();
 }
 
-class _DemoViewState extends State<DemoView>
-    with SingleTickerProviderStateMixin {
-
-  _DemoViewState(){
-    /*当 StatefulWidget 被创建时会立即执行 createState*/
-    print("createState 当 StatefulWidget 被创建时调用");
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    /*初始化initState 只会被调用一次*/
-    print("initState 初始化initState时调用");
-  }
-
-  @override
-  void didChangeDependencies() {
-    /*依赖全局State 发生变化时会被调用*/
-    print("didChangeDependencies 全局 State 发生变化时会被调用");
-  }
-  int _pos = 0;
-  var _value = "默认";
-  @override
+class _DemoViewState extends State<DemoView> {
+    @override
   Widget build(BuildContext context) {
-    print("build 渲染 widget 时调用");
+      var width = MediaQuery.of(context).size.width;
+      var height = MediaQuery.of(context).size.height;
+      print("width= $width");
+      print("height= $height");
     return Scaffold(
       appBar: getAppBar("Demo"),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          TextButton(
-            onPressed: (){
-              setState(() {
-                _value = "xxx";
-                _pos++;
-              });
-            },
-            child: Text("click"),
+          Container(
+            width: 40,
+            height: 50,
+            color: themes[5],
           ),
-          Text("_value:$_value"),
-          Text("click: $_pos")
+          Container(
+            width: 100,
+            height: 50,
+            color: themes[0],
+          ),
+          Container(
+            width: 200,
+            height: 50,
+            color: themes[1],
+          ),
+          Container(
+            width: 300,
+            height: 50,
+            color: themes[2],
+          ),
+          Container(
+            width: 350,
+            height: 50,
+            color: themes[3],
+          ),
+          Container(
+            width: 360,
+            height: 50,
+            color: themes[5],
+          ),
+          Container(
+            width: 400,
+            height: 50,
+            color: themes[4],
+          ),
+          Container(
+            width: 750.w,
+            height: 50.h,
+            color: themes[4],
+          ),
+
+          Container(
+            child: Row(
+              children: [
+                Container(
+                  width: 180,
+                  height: 50,
+                  color: themes[1],
+                ),
+                Container(
+                  width: 180,
+                  height: 50,
+                  color: themes[2],
+                ),
+              ],
+            ),
+          ),
+          Container(
+            child: Row(
+              children: [
+                Container(
+                  width: 180.w,
+                  height: 50.w,
+                  color: themes[1],
+                ),
+                Container(
+                  width: 180.w,
+                  height: 50.h,
+                  color: themes[2],
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
   }
-
-  @override
-  void reassemble() {
-    /*主要在开发阶段使用，在 debug 模式下，每次热重载都会调用该函数*/
-    print("reassemble 每次热重载都会调用");
-  }
-
-  @override
-  void didUpdateWidget(DemoView oldWidget) {
-    /*该函数主要是在组件重新构建，比如说热重载，父组件发生 build 的情况下，子组件该方法才会被调用*/
-    print("didUpdateWidget 组件重新构建时调用");
-  }
-
-  @override
-  void deactivate() {
-    /*在组件被移除节点后会被调用*/
-    print("deactivate 组件被移除节点后会被调用");
-  }
-  @override
-  void dispose() {
-    super.dispose();
-    /*永久移除组件，并释放组件资源*/
-    print("dispose 永久移除组件，并释放组件资源时调用");
-  }
-
-
 }
