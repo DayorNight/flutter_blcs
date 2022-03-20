@@ -4,7 +4,7 @@ import 'package:flutter_blcs/common/init_launch.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/global/global_theme.dart';
 import 'package:flutter_blcs/utils/handle_error_log.dart';
-import 'package:flutter_blcs/view/login_view.dart';
+import 'package:flutter_blcs/view/login/login_view.dart';
 import 'package:flutter_blcs/view/home/main_view.dart';
 import 'package:flutter_blcs/viewmodel/language_viewmodel.dart';
 import 'package:flutter_blcs/viewmodel/login_viewmodel.dart';
@@ -12,7 +12,7 @@ import 'package:flutter_blcs/viewmodel/theme_viewmodel.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'routers/routes.dart';
+import 'routes/routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

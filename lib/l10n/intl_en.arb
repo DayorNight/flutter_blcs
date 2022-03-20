@@ -10,5 +10,6 @@
   "home_me": "Me",
   "app_lifeCycle": "App LifeCycle",
   "lifeCycle": "LifeCycle",
-  "screen_adapter": "Screen Adapter"
+  "screen_adapter": "Screen Adapter",
+  "provider": "provider"
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/view/pages.dart';
 
 class MeView extends StatefulWidget {
   const MeView({Key? key}) : super(key: key);
@@ -8,11 +9,6 @@ class MeView extends StatefulWidget {
 }
 
 class _MeViewState extends State<MeView> {
-  Map _datas = {
-    "应用生命周期": "applifeView",
-    "页面生命周期": "lifeCycleView",
-    "屏幕适配": "screenAdapterView",
-  };
 
   @override
   void didChangeDependencies() {
@@ -24,7 +20,7 @@ class _MeViewState extends State<MeView> {
     return Container(
         margin: EdgeInsets.all(10),
         child: GridView.builder(
-            itemCount: _datas.length,
+            itemCount: myPages.length,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
                 crossAxisSpacing: 10,
@@ -34,7 +30,7 @@ class _MeViewState extends State<MeView> {
               return GestureDetector(
                 onTap: () {
                   Navigator.of(context)
-                      .pushNamed(_datas.values.elementAt(index));
+                      .pushNamed(myPages.values.elementAt(index));
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -59,10 +55,10 @@ class _MeViewState extends State<MeView> {
                           height: 5,
                         ),
                         Text(
-                          _datas.keys.elementAt(index),
+                          myPages.keys.elementAt(index),
                           textAlign: TextAlign.center,
                           style: TextStyle(color: Colors.white),
-                        )
+                        ),
                       ],
                     ),
                   ),

@@ -15,14 +15,14 @@ ZoneSpecification getZoneSpecification() {
   return ZoneSpecification(
     print: (Zone self, ZoneDelegate parent, Zone zone, String line) {
       collectLog(line);
-      parent.print(zone, "print: ==========: $line");
+      parent.print(zone, "ZoneSpecification: ==========: $line");
     },
     // 拦截未处理的异步错误
     handleUncaughtError: (Zone self, ZoneDelegate parent, Zone zone,
         Object error, StackTrace stackTrace) {
       var details = makeDetails(error, stackTrace);
       reportErrorAndLog(details);
-      parent.print(zone, '========== ${error.toString()} $stackTrace');
+      parent.print(zone, 'handleUncaughtError ========== ${error.toString()} $stackTrace');
     },
   );
 }

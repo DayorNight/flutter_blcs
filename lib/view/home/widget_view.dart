@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blcs/utils/weiget_util.dart';
 
 /// UI 列表
-class WeigetView extends StatefulWidget {
-  const WeigetView({Key? key}) : super(key: key);
+class WidgetView extends StatefulWidget {
+  const WidgetView({Key? key}) : super(key: key);
 
   @override
-  _WeigetViewState createState() => _WeigetViewState();
+  _WidgetViewState createState() => _WidgetViewState();
 }
 
-class _WeigetViewState extends State<WeigetView> {
+class _WidgetViewState extends State<WidgetView> {
   var banners = ["Flutter", "Kotlin", "Android"];
   final List _horWeiget = [
     "Scaffold",

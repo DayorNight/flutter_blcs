@@ -4,7 +4,7 @@ import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/utils/function_util.dart';
 import 'package:flutter_blcs/view/home/function_view.dart';
 import 'package:flutter_blcs/view/home/me_view.dart';
-import 'package:flutter_blcs/view/home/weiget_view.dart';
+import 'package:flutter_blcs/view/home/widget_view.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ///首页
@@ -146,7 +146,7 @@ class _MainViewState extends State<MainView> {
     var _menu = [_s.home_view,_s.home_fun,_s.home_me];
     return PageView(
       controller: _pageController,
-      children: [WeigetView(), FunctionView(), MeView()],
+      children: [WidgetView(), FunctionView(), MeView()],
       onPageChanged: (index) {
         print("index $index");
         _title = _menu[index];

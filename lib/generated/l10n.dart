@@ -169,6 +169,16 @@ class S {
       args: [],
     );
   }
+
+  /// `provider`
+  String get provider {
+    return Intl.message(
+      'provider',
+      name: 'provider',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

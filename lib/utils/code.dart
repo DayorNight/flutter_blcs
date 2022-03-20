@@ -1,3 +1,89 @@
+///全局状态管理
+final String providerCode ='''//1.创建provider
+class CounterProvider extends ChangeNotifier {
+  int _counter = 100;
+  intget counter {
+    return _counter;
+  }
+  set counter(int value) {
+    _counter = value;
+    notifyListeners();
+  }
+}
+//2. 初始化provider
+runApp(ChangeNotifierProvider(
+  create: (context) => CounterProvider(),
+  child: MyApp(),
+));
+//当有多个provider 时 使用MultiProvider
+runApp(MultiProvider(
+  providers: [
+    ChangeNotifierProvider(create: (ctx) => CounterProvider()),
+    ChangeNotifierProvider(create: (ctx) => UserProvider()),
+  ],
+  child: MyApp(),
+));
+//3.使用Consumer处理数据（状态）
+//- Consumer的builder方法解析：
+//- 1. 参数一：context，每个build方法都会有上下文，目的是知道当前树的位置
+//- 1. 参数二：ChangeNotifier对应的实例，也是我们在builder函数中主要使用的对象
+//- 1. 参数三：child，目的是进行优化，如果builder下面有一颗庞大的子树，当模型发生改变的时候，我们并不希望重新build这颗子树，那么就可以将这颗子树放到Consumer的child中，在这里直接引入即可（注意我案例中的Icon所放的位置）
+body: Center(
+  child: Consumer<CounterProvider>(
+    builder: (ctx, counterPro, child) {
+      return Text("当前计数:\${counterPro.counter}");
+    }
+  ),
+)
+//4. Provider.of获取数据
+Text("当前计数:\${Provider.of<CounterProvider>(context).counter}")
+//- 优势：代码简洁
+//- 弊端：会执行build 方法 ，而Consumer只是局部刷新
+//5. Selector
+//- Consumer 会执行 builder 方法 ，特殊场景下 希望不刷新builder时 使用Selector
+floatingActionButton: Consumer<CounterProvider>(
+  builder: (ctx, counterPro, child) {
+    return FloatingActionButton(
+      child: child,
+      onPressed: () {
+        counterPro.counter += 1;
+      },
+    );
+  },
+  child: Icon(Icons.add),
+),
+//转换如下
+floatingActionButton: Selector<CounterProvider, CounterProvider>(
+  selector: (ctx, provider) => provider,
+  shouldRebuild: (pre, next) => false,
+  builder: (ctx, counterPro, child) {
+    print("floatingActionButton展示的位置builder被调用");
+    return FloatingActionButton(
+      child: child,
+      onPressed: () {
+        counterPro.counter += 1;
+      },
+    );
+  },
+  child: Icon(Icons.add),
+),
+''';
+final String providerDes ='''一、屏幕适配
+  1.引入依赖
+    dependencies: provider:^6.0.2
+  2.导包
+    import 'package:provider/provider.dart';
+  3.基本使用
+    (1)创建provider 继承 ChangeNotifier 存放需要数据（状态）.
+    - 可以使用继承自ChangeNotifier，也可以使用混入，这取决于概率是否需要继承自其它的类
+    - 我们使用一个私有的_counter，并且提供了getter和setter
+    - 在setter中我们监听到_counter的改变，就调用notifyListeners方法，通知所有的Consumer进行更新
+    (2)初始化provider
+    - 将ChangeNotifierProvider放到了顶层，这样方便在整个应用的任何地方可以使用CounterProvider
+    (3)使用Consumer/Selector/Provider.of 操作数据（状态）
+二、代码如下
+''';
+
 ///屏幕适配
 final String screenAdapterCode = """
 @override
@@ -55,7 +141,9 @@ final String screenAdapterDes = """一、屏幕适配
       width: 50.r,  //根据宽度或高度中的较小者进行调整
       width: 0.2.sw,  //屏幕宽度的0.2倍
       width: 0.5.sh,  //屏幕高度的50%
-      fontSize: 16.sp,  //适配字体""";
+      fontSize: 16.sp,  //适配字体
+二、代码如下
+""";
 
 ///生命周期
 final String lifeCycleCode = """class _LifeCycleViewState extends State<LifeCycleView> {
@@ -178,5 +266,5 @@ resumed、inactive、paused、detached 四种
 (4) detached:应用程序仍然被托管在flutter引擎上,但与任何主机视图分离
 3. 解除监听
 dispose()方法中调用WidgetsBinding.instance?.removeObserver(this);
-二、代码如下：
+二、代码如下
 """;
