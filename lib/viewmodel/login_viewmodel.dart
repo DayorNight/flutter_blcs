@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/global/global.dart';
-import 'package:flutter_blcs/main.dart';
 import 'package:flutter_blcs/models/login_model.dart';
+import 'package:flutter_blcs/app.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 ///登录通知
 class LoginViewModel extends ChangeNotifier {

@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/global/global_theme.dart';
+import 'package:flutter_blcs/sp/initConfig.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 ///切换主题通知
 class ThemeViewModel extends ChangeNotifier{
   int _color =0;
   ThemeMode _themeMode = ThemeMode.light;
+
+  ThemeViewModel(){
+    getThemeColor().then((value) => {
+      _color = value
+    });
+  }
 
   int get getColor{
     return _color;
@@ -23,4 +31,6 @@ class ThemeViewModel extends ChangeNotifier{
     _themeMode = mode;
     notifyListeners();
   }
+
+
 }

@@ -21,6 +21,7 @@ ZoneSpecification getZoneSpecification() {
     handleUncaughtError: (Zone self, ZoneDelegate parent, Zone zone,
         Object error, StackTrace stackTrace) {
       var details = makeDetails(error, stackTrace);
+      print("handleUncaughtError：=========");
       reportErrorAndLog(details);
       parent.print(zone, 'handleUncaughtError ========== ${error.toString()} $stackTrace');
     },

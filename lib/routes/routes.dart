@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blcs/view/libs/provider_view.dart';
-import 'package:flutter_blcs/view/my/app_lifecycle_view.dart';
-import 'package:flutter_blcs/view/demo_view.dart';
-import 'package:flutter_blcs/view/login/forget_psd_view.dart';
-import 'package:flutter_blcs/view/my/lifecycle_view.dart';
-import 'package:flutter_blcs/view/login/login_view.dart';
-import 'package:flutter_blcs/view/home/main_view.dart';
-import 'package:flutter_blcs/view/login/register_view.dart';
-import 'package:flutter_blcs/view/libs/screen_adapter_view.dart';
-import 'package:flutter_blcs/view/config/setting_theme_view.dart';
-import 'package:flutter_blcs/view/config/switch_language_view.dart';
+import 'package:flutter_blcs/pages/libs/provider_view.dart';
+import 'package:flutter_blcs/pages/my/app_lifecycle_view.dart';
+import 'package:flutter_blcs/pages/demo_view.dart';
+import 'package:flutter_blcs/pages/login/forget_psd_view.dart';
+import 'package:flutter_blcs/pages/my/lifecycle_view.dart';
+import 'package:flutter_blcs/pages/login/login_view.dart';
+import 'package:flutter_blcs/pages/main_view.dart';
+import 'package:flutter_blcs/pages/login/register_view.dart';
+import 'package:flutter_blcs/pages/libs/screen_adapter_view.dart';
+import 'package:flutter_blcs/pages/config/setting_theme_view.dart';
+import 'package:flutter_blcs/pages/config/switch_language_view.dart';
 
 Map<String, WidgetBuilder> routes = {
   "/":(BuildContext context) => LoginView(),

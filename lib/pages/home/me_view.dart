@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blcs/view/pages.dart';
+import 'package:flutter_blcs/pages/pages.dart';
 
 class MeView extends StatefulWidget {
   const MeView({Key? key}) : super(key: key);

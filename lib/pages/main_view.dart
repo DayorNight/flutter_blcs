@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blcs/bean/draw_list.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/utils/function_util.dart';
-import 'package:flutter_blcs/view/home/function_view.dart';
-import 'package:flutter_blcs/view/home/me_view.dart';
-import 'package:flutter_blcs/view/home/widget_view.dart';
+import 'package:flutter_blcs/pages/home/function_view.dart';
+import 'package:flutter_blcs/pages/home/me_view.dart';
+import 'package:flutter_blcs/pages/home/widget_view.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ///首页
@@ -19,8 +19,17 @@ class _MainViewState extends State<MainView> {
   late S _s;
   late List<DrawListBean> _datas;
   int _bottomIndex = 0;
-  var _title = S.current.home;
+  var _title ;
+  var _menu;
   PageController _pageController = PageController();
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _s = S.of(context);
+    _menu = [_s.home_view,_s.home_fun,_s.home_me];
+    _title = _menu[_bottomIndex];
+    print("_MainViewState $_title");
+  }
   @override
   Widget build(BuildContext context) {
     //屏幕适配
@@ -32,7 +41,7 @@ class _MainViewState extends State<MainView> {
         context: context,
         minTextAdapt: true,
         orientation: Orientation.portrait);
-    _s = S.of(context);
+
     initData();
     return WillPopScope(
         child: Scaffold(
@@ -143,7 +152,7 @@ class _MainViewState extends State<MainView> {
 
   ///home page
   Widget getPageView(int index) {
-    var _menu = [_s.home_view,_s.home_fun,_s.home_me];
+
     return PageView(
       controller: _pageController,
       children: [WidgetView(), FunctionView(), MeView()],
