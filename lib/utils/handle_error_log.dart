@@ -14,30 +14,19 @@ void handleError(){
 ZoneSpecification getZoneSpecification() {
   return ZoneSpecification(
     print: (Zone self, ZoneDelegate parent, Zone zone, String line) {
-      collectLog(line);
-      parent.print(zone, "ZoneSpecification: ==========: $line");
+      parent.print(zone,"收集日志: ==========: $line");
     },
     // 拦截未处理的异步错误
     handleUncaughtError: (Zone self, ZoneDelegate parent, Zone zone,
         Object error, StackTrace stackTrace) {
-      var details = makeDetails(error, stackTrace);
-      print("handleUncaughtError：=========");
-      reportErrorAndLog(details);
-      parent.print(zone, 'handleUncaughtError ========== ${error.toString()} $stackTrace');
+      print("================handleUncaughtError===================");
+      reportErrorAndLog(FlutterErrorDetails(exception: error));
     },
   );
 }
 
-/// 构建错误信息
-FlutterErrorDetails makeDetails(Object obj, StackTrace stack){
-  return FlutterErrorDetails(exception: obj);
-}
-
-///收集日志
-void collectLog(String line){
-
-}
 ///上报错误和日志逻辑
 void reportErrorAndLog(FlutterErrorDetails details){
-  print("异常上报： $details");
+  print("================异常上报===================\n $details");
+  print("================上报结束===================");
 }

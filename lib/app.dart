@@ -20,7 +20,6 @@ GlobalKey<ScaffoldMessengerState> scaffoldKey = GlobalKey();
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    print("build===");
     var themeColor = Provider.of<ThemeViewModel>(context).getColor;
     return MaterialApp(
       ///提供全局的 navigatorKey.currentContext
@@ -35,7 +34,7 @@ class _MyAppState extends State<MyApp> {
       routes: routes,
 
       ///初始路由，如果设置了该参数并且在 routes 找到了对应的key，将会展示对应的 Widget ，否则展示 home  //开发阶段快速定位页面
-      initialRoute: "mainView",
+      initialRoute: "/",
 
       ///当跳转路由时，如果在 routes 找不到对应的 key ，会执行该回调，会调用会返回一个 RouteSettings ，该对象中有 name 路由名称、 arguments 路由参数。
       onGenerateRoute: (settings) {

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/global/global_theme.dart';
+import 'package:flutter_blcs/sp/sp_keys.dart';
+import 'package:flutter_blcs/sp/sp.dart';
 import 'package:flutter_blcs/viewmodel/theme_viewmodel.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -37,6 +39,8 @@ class _SettingThemeViewState extends State<SettingThemeView> {
                         context
                             .read<ThemeViewModel>()
                             .setMode(value ? ThemeMode.dark : ThemeMode.light);
+                        print("ThemeMode $value");
+                        Sp.save(SP_THEME_MODEL, value);
                       });
                     }),
               ],
@@ -79,9 +83,8 @@ class _SettingThemeViewState extends State<SettingThemeView> {
               )
             : Row(),
       ),
-      onTap: () async {
-        SharedPreferences sp = await SharedPreferences.getInstance();
-        sp.setInt("themeColor", index);
+      onTap: (){
+        Sp.save(SP_THEME_COLOR, index);
         context.read<ThemeViewModel>().setColor(index);
       },
     );

@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_blcs/sp/initConfig.dart';
+import 'package:flutter_blcs/sp/sp_keys.dart';
+import 'package:flutter_blcs/sp/sp.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 ///切换语言通知
 class LanguageViewModel extends ChangeNotifier {
   String _language = 'zh';
 
   LanguageViewModel(){
-    getLanguage().then((value) => {
+    Sp.get<String>(SP_INIT_LANGUAGE).then((value) => {
       _language = value
     });
   }

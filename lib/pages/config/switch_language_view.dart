@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
+import 'package:flutter_blcs/sp/sp_keys.dart';
+import 'package:flutter_blcs/sp/sp.dart';
 import 'package:flutter_blcs/utils/weiget_util.dart';
 import 'package:flutter_blcs/viewmodel/language_viewmodel.dart';
 import 'package:provider/provider.dart';
@@ -30,12 +32,11 @@ class _SwitchLanguageViewState extends State<SwitchLanguageView> {
         itemBuilder: (mContext, index) {
           var check = Provider.of<LanguageViewModel>(context).getLocale() == _datas.values.elementAt(index);
           return GestureDetector(
-            onTap: () async {
+            onTap: (){
               String locale =_datas.values.elementAt(index);
               print(locale);
               context.read<LanguageViewModel>().setLocale(locale);
-              SharedPreferences sp =await SharedPreferences.getInstance();
-              sp.setString("init_language", locale);
+              Sp.save(SP_INIT_LANGUAGE, locale);
             },
             child: Container(
               decoration: BoxDecoration(
