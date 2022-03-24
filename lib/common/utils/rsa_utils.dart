@@ -1,7 +1,7 @@
 import 'dart:convert';
+import 'package:flutter_blcs/common/utils/rsa_data.dart';
 import 'package:pointycastle/asymmetric/api.dart';
 import 'package:encrypt/encrypt.dart';
-import 'package:flutter_blcs/utils/rsa_data.dart';
 
 ///RSA 分段加密
 Future<String> encodeString(String content) async{

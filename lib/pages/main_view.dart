@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/bean/draw_list.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
-import 'package:flutter_blcs/utils/function_util.dart';
+import 'package:flutter_blcs/common/utils/function.dart';
 import 'package:flutter_blcs/pages/home/function_view.dart';
 import 'package:flutter_blcs/pages/home/me_view.dart';
 import 'package:flutter_blcs/pages/home/widget_view.dart';

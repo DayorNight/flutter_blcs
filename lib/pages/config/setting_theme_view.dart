@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/common/sp/sp.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
-import 'package:flutter_blcs/global/global_theme.dart';
-import 'package:flutter_blcs/sp/sp_keys.dart';
-import 'package:flutter_blcs/sp/sp.dart';
+import 'package:flutter_blcs/common/theme_colors.dart';
+import 'package:flutter_blcs/common/sp/sp_keys.dart';
 import 'package:flutter_blcs/viewmodel/theme_viewmodel.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -34,7 +34,7 @@ class _SettingThemeViewState extends State<SettingThemeView> {
                 Switch(
                     value: _switchTheme,
                     onChanged: (value) {
-                      setState(() async {
+                      setState(() {
                         this._switchTheme = value;
                         context
                             .read<ThemeViewModel>()

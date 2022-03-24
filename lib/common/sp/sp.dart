@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
+/// sp封装
 class Sp {
-
   /// 通用设置持久化数据
   static save<T>(String key, T value) async{
     SharedPreferences sp = await SharedPreferences.getInstance();
@@ -25,9 +25,10 @@ class Sp {
   }
 
   /// 获取持久化数据
-  static Future<T> get<T>(String key) async{
+  static Future<T?> get<T>(String key) async{
     SharedPreferences sp = await SharedPreferences.getInstance();
-    return sp.get(key) as T;
+    var object = sp.get(key);
+    return object == null? null:object as T;
   }
   ///删除数据
   static clear(String key) async{

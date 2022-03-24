@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
-import 'package:flutter_blcs/utils/code.dart';
-import 'package:flutter_blcs/utils/weiget_util.dart';
+import 'package:flutter_blcs/common/utils/code.dart';
+import 'package:flutter_blcs/common/weiget_util.dart';
 import 'package:flutter_syntax_view/flutter_syntax_view.dart';
 
 class AppLifecycleView extends StatefulWidget {

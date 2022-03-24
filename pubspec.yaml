@@ -29,33 +29,8 @@ dependencies:
   flutter_screenutil: ^5.3.1
   #代码高亮
   flutter_syntax_view: ^4.0.0
-
-
-#  http: any
-#  http_parser: any
-#  # 缓存清理
-#  path_provider: any
-#  # 图片显示，可缓存
-#  ok_image: any
-
-#  # 图片拍照
-#  image_picker: any
-#  # 日期选择
-#  flutter_datetime_picker: any
-#  # 图形报表
-#  flutter_chart_csx: any
-#  # UI框架
-#  weui: any
-#  # 左滑删除
-#  left_scroll_actions: any
-#  # 推送
-#  jpush_flutter: any
-#  # 图片压缩
-#  flutter_luban: any
-#  # 全局状态管理
-#  provider: any
-
-#  crypto: any
+  # log打印
+  logger: ^1.1.0
 
 dev_dependencies:
   flutter_test:

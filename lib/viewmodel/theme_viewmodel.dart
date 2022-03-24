@@ -1,9 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_blcs/global/global_theme.dart';
-import 'package:flutter_blcs/sp/sp_keys.dart';
-import 'package:flutter_blcs/sp/sp.dart';
-import 'package:flutter_blcs/utils/function_util.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_blcs/common/sp/sp.dart';
+import 'package:flutter_blcs/common/theme_colors.dart';
+import 'package:flutter_blcs/common/sp/sp_keys.dart';
+import 'package:flutter_blcs/common/utils/print.dart';
 ///切换主题通知
 class ThemeViewModel extends ChangeNotifier{
   int _color =0;
@@ -11,11 +12,11 @@ class ThemeViewModel extends ChangeNotifier{
 
   ThemeViewModel(){
     Sp.get<int>(SP_THEME_COLOR).then((value) => {
-      _color = value
+      _color = value??0
     });
     Sp.get<bool>(SP_THEME_MODEL).then((value) => {
-      print2("value $value", StackTrace.current),
-      _themeMode = value?ThemeMode.dark:ThemeMode.light
+      _themeMode = (value??false)?ThemeMode.dark:ThemeMode.light,
+      println.i("_themeMode $_themeMode")
     });
   }
 
@@ -30,6 +31,7 @@ class ThemeViewModel extends ChangeNotifier{
   }
 
   ThemeMode get getThemeMode{
+    println.i("_themeMode $_themeMode");
     return _themeMode;
   }
   ///设置主题模式

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
-import 'package:flutter_blcs/utils/code.dart';
-import 'package:flutter_blcs/utils/weiget_util.dart';
+import 'package:flutter_blcs/common/utils/code.dart';
+import 'package:flutter_blcs/common/weiget_util.dart';
 
 class ProviderView extends StatefulWidget {
   const ProviderView({Key? key}) : super(key: key);

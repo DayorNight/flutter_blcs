@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blcs/utils/weiget_util.dart';
+import 'package:flutter_blcs/common/weiget_util.dart';
 ///注册页面
 class RegisterView extends StatefulWidget {
   const RegisterView({Key? key}) : super(key: key);

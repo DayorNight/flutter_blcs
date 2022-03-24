@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/common/sp/sp.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
-import 'package:flutter_blcs/sp/sp_keys.dart';
-import 'package:flutter_blcs/sp/sp.dart';
-import 'package:flutter_blcs/utils/weiget_util.dart';
+import 'package:flutter_blcs/common/sp/sp_keys.dart';
+import 'package:flutter_blcs/common/weiget_util.dart';
 import 'package:flutter_blcs/viewmodel/language_viewmodel.dart';
 import 'package:provider/provider.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class SwitchLanguageView extends StatefulWidget {
   const SwitchLanguageView({Key? key}) : super(key: key);
@@ -30,12 +29,12 @@ class _SwitchLanguageViewState extends State<SwitchLanguageView> {
       body: ListView.builder(
         padding: EdgeInsets.all(20),
         itemBuilder: (mContext, index) {
-          var check = Provider.of<LanguageViewModel>(context).getLocale() == _datas.values.elementAt(index);
+          var check = Provider.of<LanguageViewModel>(context).getLanguage() == _datas.values.elementAt(index);
           return GestureDetector(
             onTap: (){
               String locale =_datas.values.elementAt(index);
               print(locale);
-              context.read<LanguageViewModel>().setLocale(locale);
+              context.read<LanguageViewModel>().setLanguage(locale);
               Sp.save(SP_INIT_LANGUAGE, locale);
             },
             child: Container(

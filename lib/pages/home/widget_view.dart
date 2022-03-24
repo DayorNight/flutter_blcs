@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blcs/utils/weiget_util.dart';
+import 'package:flutter_blcs/common/weiget_util.dart';
 
 /// UI 列表
 class WidgetView extends StatefulWidget {

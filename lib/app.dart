@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
-import 'package:flutter_blcs/global/global_theme.dart';
+import 'package:flutter_blcs/common/theme_colors.dart';
 import 'package:flutter_blcs/pages/login/login_view.dart';
 import 'package:flutter_blcs/pages/main_view.dart';
 import 'package:flutter_blcs/routes/routes.dart';
@@ -18,6 +18,7 @@ GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 GlobalKey<ScaffoldMessengerState> scaffoldKey = GlobalKey();
 
 class _MyAppState extends State<MyApp> {
+
   @override
   Widget build(BuildContext context) {
     var themeColor = Provider.of<ThemeViewModel>(context).getColor;
@@ -97,7 +98,7 @@ class _MyAppState extends State<MyApp> {
           primarySwatch: themes[themeColor]),
 
       ///主要用于语言切换时，如果为 null 时使用系统区域
-      locale: Locale(Provider.of<LanguageViewModel>(context).getLocale(), ''),
+      locale: Provider.of<LanguageViewModel>(context).getLocale(),
 
       ///本地化委托
       localizationsDelegates: [

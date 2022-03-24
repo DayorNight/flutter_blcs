@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/http/global.dart';
 import 'package:flutter_blcs/viewmodel/login_viewmodel.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../../global/global.dart';
-import '../../utils/weiget_util.dart';
+import '../../common/weiget_util.dart';
 ///登录页面
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -30,7 +29,7 @@ class _LoginViewState extends State<LoginView> {
     super.initState();
     _user = TextEditingController();
     _pass = TextEditingController();
-    loadData();
+    // loadData();
   }
 
   void loadData() async {
