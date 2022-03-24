@@ -32,16 +32,6 @@ class _MainViewState extends State<MainView> {
   }
   @override
   Widget build(BuildContext context) {
-    //屏幕适配
-    ScreenUtil.init(
-        BoxConstraints(
-            maxWidth: MediaQuery.of(context).size.width,
-            maxHeight: MediaQuery.of(context).size.height),
-        designSize: Size(750, 1334),
-        context: context,
-        minTextAdapt: true,
-        orientation: Orientation.portrait);
-
     initData();
     return WillPopScope(
         child: Scaffold(

@@ -10,9 +10,11 @@ import 'package:flutter_blcs/pages/login/register_view.dart';
 import 'package:flutter_blcs/pages/libs/screen_adapter_view.dart';
 import 'package:flutter_blcs/pages/config/setting_theme_view.dart';
 import 'package:flutter_blcs/pages/config/switch_language_view.dart';
+import 'package:flutter_blcs/pages/splash_view.dart';
 
 Map<String, WidgetBuilder> routes = {
-  "/":(BuildContext context) => LoginView(),
+  "/":(BuildContext context) => SplashView(),
+  "loginView":(BuildContext context) => LoginView(),
   "registerView":(BuildContext context) => RegisterView(),
   "forgetPsdView":(BuildContext context) => ForgetPsdView(),
   "mainView":(BuildContext context) => MainView(),

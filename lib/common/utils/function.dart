@@ -1,5 +1,8 @@
 
 
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 /// 双击返回
 DateTime? _lastPressedAt; //上次点击时间
 bool isDoubleClick(){
@@ -12,3 +15,16 @@ bool isDoubleClick(){
   }
   return true;
 }
+
+/// 屏幕适配
+void screenInit(BuildContext context){
+  ScreenUtil.init(
+      BoxConstraints(
+          maxWidth: MediaQuery.of(context).size.width,
+          maxHeight: MediaQuery.of(context).size.height),
+      designSize: Size(750, 1334),
+      context: context,
+      minTextAdapt: true,
+      orientation: Orientation.portrait);
+}
+

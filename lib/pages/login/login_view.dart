@@ -51,7 +51,7 @@ class _LoginViewState extends State<LoginView> {
           children: [
             Center(
               child: Image.asset(
-                "images/ic_coffee.png",
+                "static/images/ic_coffee.png",
                 width: 200,
                 height: 200,
                 fit: BoxFit.fill,

@@ -31,6 +31,12 @@ dependencies:
   flutter_syntax_view: ^4.0.0
   # log打印
   logger: ^1.1.0
+  # 动画插件
+  flare_flutter: ^3.0.2
+  # 字体
+  google_fonts: ^2.3.1
+  # 自定义动画
+  simple_animations: ^4.0.1
 
 dev_dependencies:
   flutter_test:
@@ -48,8 +54,15 @@ flutter:
   uses-material-design: true
 
   assets:
-     - images/ic_coffee.png
-     - images/ic_avator.png
+     - static/images/
+     - static/assets/
+  fonts:
+    - family: wxcIconFont
+      fonts:
+        - asset: static/font/iconfont.ttf
+    - family: google_kavivanar
+      fonts:
+        - asset: static/font/google_kavivanar.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
