@@ -4,6 +4,7 @@ import 'package:flutter_blcs/common/utils/code.dart';
 import 'package:flutter_blcs/common/weiget_util.dart';
 
 class ProviderView extends StatefulWidget {
+  static final String keys = "providerView";
   const ProviderView({Key? key}) : super(key: key);
 
   @override

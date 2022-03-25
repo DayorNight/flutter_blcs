@@ -7,6 +7,7 @@ import 'package:flutter_blcs/viewmodel/language_viewmodel.dart';
 import 'package:provider/provider.dart';
 
 class SwitchLanguageView extends StatefulWidget {
+  static final String keys = "languageView";
   const SwitchLanguageView({Key? key}) : super(key: key);
 
   @override

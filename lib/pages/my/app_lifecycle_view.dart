@@ -5,6 +5,7 @@ import 'package:flutter_blcs/common/weiget_util.dart';
 import 'package:flutter_syntax_view/flutter_syntax_view.dart';
 
 class AppLifecycleView extends StatefulWidget {
+  static final String keys = "applifeView";
   const AppLifecycleView({Key? key}) : super(key: key);
 
   @override

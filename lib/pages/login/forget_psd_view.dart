@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 ///忘记密码页面
 class ForgetPsdView extends StatefulWidget {
+  static final String keys = "forgetPsdView";
+
   const ForgetPsdView({Key? key}) : super(key: key);
 
   @override

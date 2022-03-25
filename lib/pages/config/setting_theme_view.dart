@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingThemeView extends StatefulWidget {
+  static final String keys = "themeView";
   const SettingThemeView({Key? key}) : super(key: key);
 
   @override

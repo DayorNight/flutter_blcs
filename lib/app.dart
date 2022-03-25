@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/common/sp/sp.dart';
+import 'package:flutter_blcs/common/sp/sp_keys.dart';
+import 'package:flutter_blcs/common/utils/function.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/common/theme_colors.dart';
 import 'package:flutter_blcs/pages/login/login_view.dart';
 import 'package:flutter_blcs/pages/main_view.dart';
+import 'package:flutter_blcs/pages/splash_view.dart';
 import 'package:flutter_blcs/routes/routes.dart';
 import 'package:flutter_blcs/viewmodel/language_viewmodel.dart';
 import 'package:flutter_blcs/viewmodel/theme_viewmodel.dart';
@@ -18,16 +22,29 @@ GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 GlobalKey<ScaffoldMessengerState> scaffoldKey = GlobalKey();
 
 class _MyAppState extends State<MyApp> {
-
+  @override
+  void initState() {
+    super.initState();
+    //初始化主题与语言
+    Sp.get<String>(SP_INIT_LANGUAGE).then((value) => {
+      context.read<LanguageViewModel>().setLanguage(value??'')
+    });
+    Sp.get<int>(SP_THEME_COLOR).then((value) => {
+      context.read<ThemeViewModel>().setColor(value??0)
+    });
+    Sp.get<bool>(SP_THEME_MODEL).then((value) => {
+      context.read<ThemeViewModel>().setMode((value??false)?ThemeMode.dark:ThemeMode.light),
+    });
+  }
   @override
   Widget build(BuildContext context) {
     var themeColor = Provider.of<ThemeViewModel>(context).getColor;
     return MaterialApp(
       ///提供全局的 navigatorKey.currentContext
-      navigatorKey: navigatorKey,
+      // navigatorKey: navigatorKey,
 
       ///实现无 context 调用 snack bars 例 scaffoldKey.currentState.showSnackBar(SnackBar(content: Text("show SnackBar")));
-      scaffoldMessengerKey: scaffoldKey,
+      // scaffoldMessengerKey: scaffoldKey,
 
       ///程序进入后的第一个界面 不能与routes 共存
       // home: Scaffold(),
@@ -35,7 +52,7 @@ class _MyAppState extends State<MyApp> {
       routes: routes,
 
       ///初始路由，如果设置了该参数并且在 routes 找到了对应的key，将会展示对应的 Widget ，否则展示 home  //开发阶段快速定位页面
-      initialRoute: "/",
+      initialRoute: SplashView.keys,
 
       ///当跳转路由时，如果在 routes 找不到对应的 key ，会执行该回调，会调用会返回一个 RouteSettings ，该对象中有 name 路由名称、 arguments 路由参数。
       onGenerateRoute: (settings) {
@@ -63,7 +80,7 @@ class _MyAppState extends State<MyApp> {
       //   return Scaffold();
       // },
       ///Android：任务管理器的程序快照之上的title
-      title: '玉米',
+      // title: '玉米',
 
       ///如果非空，则调用此回调函数以生成任务管理器标题字符串，否则会使用 title 。每次重建页面时该方法就会回调执行。
       // onGenerateTitle: (context){
@@ -90,12 +107,12 @@ class _MyAppState extends State<MyApp> {
       themeMode: Provider.of<ThemeViewModel>(context).getThemeMode,
 
       ///当系统请求“高对比度”时使用的 ThemeData ，当该值为空时会用 theme 应用该主题
-      highContrastTheme: ThemeData(
-          primarySwatch: themes[themeColor]),
+      // highContrastTheme: ThemeData(
+      //     primarySwatch: themes[themeColor]),
 
       ///当系统再暗黑模式下请求“高对比度”时使用的 ThemeData ，当该值为空时会用 darkTheme 应用该主题。
-      highContrastDarkTheme: ThemeData(
-          primarySwatch: themes[themeColor]),
+      // highContrastDarkTheme: ThemeData(
+      //     primarySwatch: themes[themeColor]),
 
       ///主要用于语言切换时，如果为 null 时使用系统区域
       locale: Provider.of<LanguageViewModel>(context).getLocale(),
@@ -129,19 +146,19 @@ class _MyAppState extends State<MyApp> {
       supportedLocales: S.delegate.supportedLocales,
 
       ///在 debug 模式下展示基线网格
-      debugShowMaterialGrid: false,
+      // debugShowMaterialGrid: false,
 
       ///显示性能叠加，开启此模式主要用于性能测试
-      showPerformanceOverlay: false,
+      // showPerformanceOverlay: false,
 
       ///打开栅格缓存图像的棋盘格
-      checkerboardRasterCacheImages: false,
+      // checkerboardRasterCacheImages: false,
 
       ///打开渲染到屏幕外位图的层的棋盘格
-      checkerboardOffscreenLayers: false,
+      // checkerboardOffscreenLayers: false,
 
       ///打开显示可访问性信息的叠加层，展示组件之间的关系、占位大小
-      showSemanticsDebugger: false,
+      // showSemanticsDebugger: false,
 
       ///是否隐藏debug标签
       debugShowCheckedModeBanner: false,

@@ -13,16 +13,16 @@ import 'package:flutter_blcs/pages/config/switch_language_view.dart';
 import 'package:flutter_blcs/pages/splash_view.dart';
 
 Map<String, WidgetBuilder> routes = {
-  "/":(BuildContext context) => SplashView(),
-  "loginView":(BuildContext context) => LoginView(),
-  "registerView":(BuildContext context) => RegisterView(),
-  "forgetPsdView":(BuildContext context) => ForgetPsdView(),
-  "mainView":(BuildContext context) => MainView(),
-  "themeView":(BuildContext context) => SettingThemeView(),
-  "languageView":(BuildContext context) => SwitchLanguageView(),
-  "demoView":(BuildContext context) => DemoView(),
-  "applifeView":(BuildContext context) => AppLifecycleView(),
-  "lifeCycleView":(BuildContext context) => LifeCycleView(),
-  "screenAdapterView":(BuildContext context) => ScreenAdapterView(),
-  "providerView":(BuildContext context) => ProviderView(),
+  SplashView.keys:(BuildContext context) => SplashView(),
+  LoginView.keys:(BuildContext context) => LoginView(),
+  RegisterView.keys:(BuildContext context) => RegisterView(),
+  ForgetPsdView.keys:(BuildContext context) => ForgetPsdView(),
+  MainView.keys:(BuildContext context) => MainView(),
+  SettingThemeView.keys:(BuildContext context) => SettingThemeView(),
+  SwitchLanguageView.keys:(BuildContext context) => SwitchLanguageView(),
+  DemoView.keys:(BuildContext context) => DemoView(),
+  AppLifecycleView.keys:(BuildContext context) => AppLifecycleView(),
+  LifeCycleView.keys:(BuildContext context) => LifeCycleView(),
+  ScreenAdapterView.keys:(BuildContext context) => ScreenAdapterView(),
+  ProviderView.keys:(BuildContext context) => ProviderView(),
 };

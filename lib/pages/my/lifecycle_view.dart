@@ -3,6 +3,7 @@ import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/common/utils/code.dart';
 import 'package:flutter_blcs/common/weiget_util.dart';
 class LifeCycleView extends StatefulWidget {
+  static final String keys = "lifeCycleView";
   const LifeCycleView({Key? key}) : super(key: key);
   @override
   _LifeCycleViewState createState() {

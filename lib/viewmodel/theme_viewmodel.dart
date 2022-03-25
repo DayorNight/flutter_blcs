@@ -9,17 +9,6 @@ import 'package:flutter_blcs/common/utils/print.dart';
 class ThemeViewModel extends ChangeNotifier{
   int _color =0;
   ThemeMode _themeMode = ThemeMode.light;
-
-  ThemeViewModel(){
-    Sp.get<int>(SP_THEME_COLOR).then((value) => {
-      _color = value??0
-    });
-    Sp.get<bool>(SP_THEME_MODEL).then((value) => {
-      _themeMode = (value??false)?ThemeMode.dark:ThemeMode.light,
-      println.i("_themeMode $_themeMode")
-    });
-  }
-
   int get getColor{
     return _color;
   }
@@ -31,7 +20,6 @@ class ThemeViewModel extends ChangeNotifier{
   }
 
   ThemeMode get getThemeMode{
-    println.i("_themeMode $_themeMode");
     return _themeMode;
   }
   ///设置主题模式

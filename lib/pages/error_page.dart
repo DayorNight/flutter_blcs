@@ -64,7 +64,7 @@ class ErrorPageState extends State<ErrorPage> {
                 height: 11,
               ),
               Material(
-                child: new Text(
+                child: Text(
                   "Error Occur",
                   style: new TextStyle(fontSize: 24, color: Colors.white),
                 ),

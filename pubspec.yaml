@@ -56,13 +56,13 @@ flutter:
   assets:
      - static/images/
      - static/assets/
-  fonts:
-    - family: wxcIconFont
-      fonts:
-        - asset: static/font/iconfont.ttf
-    - family: google_kavivanar
-      fonts:
-        - asset: static/font/google_kavivanar.ttf
+#  fonts:
+#    - family: wxcIconFont
+#      fonts:
+#        - asset: static/font/iconfont.ttf
+#    - family: google_kavivanar
+#      fonts:
+#        - asset: static/font/google_kavivanar.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

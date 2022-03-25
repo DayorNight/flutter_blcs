@@ -48,8 +48,8 @@ class _WidgetViewState extends State<WidgetView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: CustomScrollView(
+    return Container(
+      child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
             child: getBanner(banners),

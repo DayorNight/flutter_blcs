@@ -5,6 +5,7 @@ import 'package:flutter_blcs/common/weiget_util.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ScreenAdapterView extends StatefulWidget {
+  static final String keys = "screenAdapterView";
   const ScreenAdapterView({Key? key}) : super(key: key);
 
   @override

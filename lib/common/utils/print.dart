@@ -15,7 +15,7 @@ var println = Logger(
         methodCount: 1,
         colors: true, // Colorful log messages
         printEmojis: true, // Print an emoji for each log message
-        printTime: false // 显示时间
+        printTime: true // 显示时间
     ),
   );
 

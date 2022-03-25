@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/common/utils/function.dart';
 import 'package:flutter_blcs/http/global.dart';
 import 'package:flutter_blcs/viewmodel/login_viewmodel.dart';
 import 'package:provider/provider.dart';
@@ -6,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../common/weiget_util.dart';
 ///登录页面
 class LoginView extends StatefulWidget {
+  static final String keys = "loginView";
   const LoginView({Key? key}) : super(key: key);
 
   @override
@@ -42,6 +44,7 @@ class _LoginViewState extends State<LoginView> {
 
   @override
   Widget build(BuildContext context) {
+    screenInit(context);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: getAppBar("登录"),

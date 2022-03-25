@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/weiget_util.dart';
 ///注册页面
 class RegisterView extends StatefulWidget {
+  static final String keys = "registerView";
   const RegisterView({Key? key}) : super(key: key);
 
   @override

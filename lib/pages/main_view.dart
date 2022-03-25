@@ -9,6 +9,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ///首页
 class MainView extends StatefulWidget {
+  static final String keys = "mainView";
+
   const MainView({Key? key}) : super(key: key);
 
   @override
@@ -32,12 +34,13 @@ class _MainViewState extends State<MainView> {
   }
   @override
   Widget build(BuildContext context) {
+    screenInit(context);
     initData();
     return WillPopScope(
         child: Scaffold(
           ///防止键盘遮挡
           resizeToAvoidBottomInset: false,
-          appBar: AppBar(
+          appBar: _bottomIndex==2?null:AppBar(
             title: Text(_title),
             centerTitle: true,
             actions: [
@@ -158,7 +161,7 @@ class _MainViewState extends State<MainView> {
 
   /// 前往主题设置
   void _theme() {
-    Navigator.of(context).pushNamed('demoView');
+    Navigator.of(context).pushNamed('/');
   }
 
   /// draw list ui

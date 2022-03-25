@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DemoView extends StatefulWidget {
+  static final String keys = "demoView";
   const DemoView({Key? key}) : super(key: key);
 
   @override
