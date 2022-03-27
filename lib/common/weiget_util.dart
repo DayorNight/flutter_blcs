@@ -1,5 +1,7 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/widgets/flare_logo.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_syntax_view/flutter_syntax_view.dart';
 
 ///getAppBar
@@ -61,5 +63,15 @@ Widget printCode(String content) {
     withLinesCount: true,
     //容器扩张
     expanded: false,
+  );
+}
+
+///文章logo
+Widget articleLogo(String key,Color color){
+  return Align(
+    alignment: Alignment.topRight,
+    child: Hero(
+        tag: key,
+        child: FlareLogo(size: 200.r,color: color,)),
   );
 }

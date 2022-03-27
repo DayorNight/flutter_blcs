@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/common/utils/code.dart';
 import 'package:flutter_blcs/common/weiget_util.dart';
+import 'package:flutter_blcs/widgets/article_model.dart';
 import 'package:flutter_syntax_view/flutter_syntax_view.dart';
 
 class AppLifecycleView extends StatefulWidget {
   static final String keys = "applifeView";
+
   const AppLifecycleView({Key? key}) : super(key: key);
 
   @override
@@ -17,10 +19,10 @@ class _AppLifecycleState extends State<AppLifecycleView>
   late S _s;
   String _state = "未获取到状态";
 
-
   @override
   void initState() {
     super.initState();
+
     ///监听生命周期
     WidgetsBinding.instance?.addObserver(this);
   }
@@ -29,7 +31,7 @@ class _AppLifecycleState extends State<AppLifecycleView>
   void dispose() {
     super.dispose();
     ///移除监听
-   WidgetsBinding.instance?.removeObserver(this);
+    WidgetsBinding.instance?.removeObserver(this);
   }
 
   @override
@@ -52,24 +54,36 @@ class _AppLifecycleState extends State<AppLifecycleView>
 
   @override
   Widget build(BuildContext context) {
-    _s = S.of(context);
-    return Scaffold(
-        appBar: getAppBar(_s.app_lifeCycle),
-        body: Container(
-          padding: EdgeInsets.all(10),
-          alignment: Alignment.topLeft,
-          child: ListView(
-            children: [
-              Row(
-                children: [
-                  printTxt("应用当前状态："),
-                  printTxt(_state, color: Colors.deepPurple)
-                ],
-              ),
-              printTxt(appLifeCycleDes),
-              printCode(appLifeCycleCode),
-            ],
-          ),
-        ));
+    return ArticleModel(
+      title: S.of(context).app_lifeCycle,
+      keys: AppLifecycleView.keys,
+      logoColor: Theme.of(context).primaryColor,
+      des: appLifeCycleDes,
+      code: appLifeCycleCode,
+      headerChild: Row(
+        children: [
+          printTxt("应用当前状态："),
+          printTxt(_state, color: Colors.deepPurple)
+        ],
+      ),
+    );
+    // return Scaffold(
+    //     appBar: getAppBar(_s.app_lifeCycle),
+    //     body: Container(
+    //       padding: EdgeInsets.all(10),
+    //       alignment: Alignment.topLeft,
+    //       child: ListView(
+    //         children: [
+    //           Row(
+    //             children: [
+    //               printTxt("应用当前状态："),
+    //               printTxt(_state, color: Colors.deepPurple)
+    //             ],
+    //           ),
+    //           printTxt(appLifeCycleDes),
+    //           printCode(appLifeCycleCode),
+    //         ],
+    //       ),
+    //     ));
   }
 }

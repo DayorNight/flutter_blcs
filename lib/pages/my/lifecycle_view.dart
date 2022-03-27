@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/common/utils/code.dart';
-import 'package:flutter_blcs/common/weiget_util.dart';
+import 'package:flutter_blcs/widgets/article_model.dart';
+
 class LifeCycleView extends StatefulWidget {
   static final String keys = "lifeCycleView";
+
   const LifeCycleView({Key? key}) : super(key: key);
+
   @override
   _LifeCycleViewState createState() {
     /*当 StatefulWidget 被创建时会立即执行 createState*/
@@ -29,20 +32,18 @@ class _LifeCycleViewState extends State<LifeCycleView> {
   }
 
 
-
   @override
   Widget build(BuildContext context) {
     print("build 渲染 widget 时调用");
-    return Scaffold(
-      appBar: getAppBar(S.of(context).lifeCycle),
-      body: ListView(
-        padding: EdgeInsets.all(10),
-        children: [
-          printTxt(lifeCycleDes),
-          printCode(lifeCycleCode),
-        ],
-      ),
-    );
+    return ArticleModel(title: S
+        .of(context)
+        .lifeCycle,
+        keys: LifeCycleView.keys,
+        logoColor: Theme
+            .of(context)
+            .primaryColor,
+        des: lifeCycleDes,
+        code: lifeCycleCode);
   }
 
   @override

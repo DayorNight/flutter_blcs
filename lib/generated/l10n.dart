@@ -179,6 +179,16 @@ class S {
       args: [],
     );
   }
+
+  /// `HeroView`
+  String get heroView {
+    return Intl.message(
+      'HeroView',
+      name: 'heroView',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

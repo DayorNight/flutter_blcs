@@ -3,6 +3,7 @@ import 'package:flutter_blcs/pages/libs/provider_view.dart';
 import 'package:flutter_blcs/pages/my/app_lifecycle_view.dart';
 import 'package:flutter_blcs/pages/demo_view.dart';
 import 'package:flutter_blcs/pages/login/forget_psd_view.dart';
+import 'package:flutter_blcs/pages/my/hero_view.dart';
 import 'package:flutter_blcs/pages/my/lifecycle_view.dart';
 import 'package:flutter_blcs/pages/login/login_view.dart';
 import 'package:flutter_blcs/pages/main_view.dart';
@@ -25,4 +26,5 @@ Map<String, WidgetBuilder> routes = {
   LifeCycleView.keys:(BuildContext context) => LifeCycleView(),
   ScreenAdapterView.keys:(BuildContext context) => ScreenAdapterView(),
   ProviderView.keys:(BuildContext context) => ProviderView(),
+  HeroView.keys:(BuildContext context) => HeroView(),
 };

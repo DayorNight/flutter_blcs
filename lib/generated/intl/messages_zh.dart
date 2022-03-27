@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "appName": MessageLookupByLibrary.simpleMessage("玉米"),
         "app_lifeCycle": MessageLookupByLibrary.simpleMessage("应用生命周期"),
         "dark_theme": MessageLookupByLibrary.simpleMessage("暗夜模式"),
+        "heroView": MessageLookupByLibrary.simpleMessage("Hero动画"),
         "home": MessageLookupByLibrary.simpleMessage("首页"),
         "home_fun": MessageLookupByLibrary.simpleMessage("功能"),
         "home_me": MessageLookupByLibrary.simpleMessage("我的"),

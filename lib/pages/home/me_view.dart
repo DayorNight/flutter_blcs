@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_blcs/common/static.dart';
+import 'package:flutter_blcs/pages/pages.dart';
+import 'package:flutter_blcs/widgets/flare_logo.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MeView extends StatefulWidget {
@@ -11,41 +13,114 @@ class MeView extends StatefulWidget {
 }
 
 class _MeViewState extends State<MeView> {
+  Color primaryColor = Colors.grey;
+  String _name = '登录';
+  String _signature = '个性签名：看那高楼平地起 愿有岁月可回头';
   @override
   Widget build(BuildContext context) {
-    var primaryColor = Theme.of(context).primaryColor;
+    primaryColor = Theme.of(context).primaryColor;
     return CustomScrollView(
       slivers: [
-        SliverToBoxAdapter(
-            child: Container(
-                height: 220.w,
-                color: Colors.grey,
-                margin: EdgeInsets.only(top: 50),
-                child: Row(children: [
-                  ClipOval(
-                    child: Image.asset(
-                      Images.logo,
-                      width: 200.w,
-                      height: 200.w,
+        SliverPadding(
+          padding: EdgeInsets.only(
+              left: 25.r, top: 200.r, right: 25.r, bottom: 70.r),
+          sliver: SliverToBoxAdapter(
+              child: Container(
+                  height: 150.r,
+                  child: Row(children: [
+                    ClipOval(
+                      child: Image.asset(
+                        Images.logo,
+                        width: 150.r,
+                        height: 150.r,
+                      ),
                     ),
-                  ),
-                  SizedBox(width: 20.w,),
-                  Column(
-                    crossAxisAlignment:CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        '登录',
-                        style: TextStyle(fontSize: 60.sp, color: primaryColor,fontWeight: FontWeight.bold),
-                      ),
-                      // Spacer(),
-                      Text(
-                        '个性签名：',
-                        style: TextStyle(fontSize: 40.sp, color: primaryColor),
-                      ),
-                    ],
-                  )
-                ]))),
+                    SizedBox(
+                      width: 20.r,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Spacer(
+                          flex: 1,
+                        ),
+                        Text(
+                          _name,
+                          style: TextStyle(
+                              fontSize: 50.sp,
+                              color: primaryColor,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Spacer(
+                          flex: 1,
+                        ),
+                        Container(
+                          width: 0.5.sw,
+                          child: Text(
+                            _signature,
+                            softWrap: true,
+                            maxLines: 2,
+                            style:
+                                TextStyle(fontSize: 30.sp, color: primaryColor),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        )
+                      ],
+                    ),
+                    Spacer(),
+                    Icon(
+                      Icons.qr_code_2,
+                      color: primaryColor,
+                    ),
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      color: primaryColor,
+                    ),
+                  ]))),
+        ),
+        SliverToBoxAdapter(
+          child: Container(
+            color: Colors.grey.shade300,
+            height: 20.r,
+          ),
+        ),
+        SliverFixedExtentList(
+            delegate: SliverChildBuilderDelegate(_loadList,
+                childCount: MyPages.length),
+            itemExtent: 60),
       ],
+    );
+  }
+
+  /// 加载list
+  Widget? _loadList(BuildContext context, int index) {
+    var tag = MyPages.values.elementAt(index);
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).pushNamed(tag);
+      },
+      child: Container(
+        padding: EdgeInsets.only(left: 25.r, right: 25.r),
+        decoration: BoxDecoration(
+            border:
+                Border(bottom: BorderSide(color: Colors.black12, width: 1.r))),
+        child: Row(
+          children: [
+            Hero(tag: tag, child: FlareLogo(size: 80.r,color: primaryColor)),
+            Text(
+              MyPages.keys.elementAt(index),
+              style: TextStyle(
+                  fontSize: 45.sp, color: primaryColor, height: 2.2.r),
+            ),
+            Spacer(),
+            Icon(
+              Icons.arrow_forward_ios_rounded,
+              color: primaryColor,
+              size: 40.r,
+            )
+          ],
+        ),
+      ),
     );
   }
 }

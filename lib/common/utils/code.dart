@@ -1,3 +1,51 @@
+//hero动画
+final String heroDes = '''一、Hero动画
+  1.简介
+    Hero 指的是可以在路由(页面)之间“飞行”的 widget，简单来说 Hero 动画就是在路由切换时，有一个共享的widget 可以在新旧路由间切换
+    由于共享的 widget 在新旧路由页面上的位置、外观可能有所差异，所以在路由切换时会从旧路逐渐过渡到新路由中的指定位置，这样就会产生一个 Hero 动画
+  2.常见场景
+    1.点击头像 跳转个人详情时 头像放大转场效果
+    2.微信朋友圈 点击图片 查看大图转场效果
+    3....
+  3.基本使用
+    (1)在路由A中创建Hero组件，包裹转场过渡的组件. 例：
+    - Hero(tag: 'hero-rectangle',child: Container(width: 50,height: 50,color: Colors.blue))
+    (2)在路由B中创建具有相同tag参数的Hero组件
+    - Hero(tag: 'hero-rectangle',child: Container(width: 250,height: 250,color: Colors.blue))
+    (3)当我们从A跳到B时或B返回A时会产生一个过渡的转场效果，如果位置不在同一个地方，会产生一个飞行的过渡动画。
+二、代码如下
+''';
+final String heroCode = '''class _DemoViewState extends State<DemoView> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold (
+      body: GestureDetector(
+        child: Align(
+            alignment: Alignment.topCenter,
+            child: Hero(
+              tag: 'hero',
+              child: Icon(Icons.circle,size: 50),
+            )
+        ),
+        onTap:() => _gotoDetailsPage(context) ,
+      )
+    );
+  }
+  void _gotoDetailsPage(BuildContext context) {
+    Navigator.of(context).push(MaterialPageRoute<void>(
+      builder: (BuildContext context) => Scaffold(
+        body: Align(
+            alignment: Alignment.bottomCenter,
+            child: Hero(
+              tag: 'hero',
+              child: Icon(Icons.circle,size: 100)
+            )
+        ),
+      ),
+    ));
+  }
+}
+''';
 ///全局状态管理
 final String providerCode ='''//1.创建provider
 class CounterProvider extends ChangeNotifier {
@@ -68,7 +116,7 @@ floatingActionButton: Selector<CounterProvider, CounterProvider>(
   child: Icon(Icons.add),
 ),
 ''';
-final String providerDes ='''一、屏幕适配
+final String providerDes ='''一、全局状态管理
   1.引入依赖
     dependencies: provider:^6.0.2
   2.导包
@@ -268,3 +316,4 @@ resumed、inactive、paused、detached 四种
 dispose()方法中调用WidgetsBinding.instance?.removeObserver(this);
 二、代码如下
 """;
+

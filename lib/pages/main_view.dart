@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/bean/draw_list.dart';
+import 'package:flutter_blcs/common/static.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/common/utils/function.dart';
+import 'package:flutter_blcs/pages/demo_view.dart';
 import 'package:flutter_blcs/pages/home/function_view.dart';
 import 'package:flutter_blcs/pages/home/me_view.dart';
 import 'package:flutter_blcs/pages/home/widget_view.dart';
+import 'package:flutter_blcs/widgets/flare_logo.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ///首页
@@ -55,10 +58,10 @@ class _MainViewState extends State<MainView> {
               children: <Widget>[
                 UserAccountsDrawerHeader(
                   //用户信息栏
-                  accountName: Text("blcs"),
-                  accountEmail: Text("xxxxxx@xxx.com"),
+                  accountName: Text("登录",style: TextStyle(fontSize: 38.sp),),
+                  accountEmail: Text("xxxxxxxxxxxxx@xxx.com"),
                   currentAccountPicture: CircleAvatar(
-                    backgroundImage: AssetImage("images/ic_avator.png"),
+                    backgroundImage: AssetImage(Images.logo),
                   ),
                   otherAccountsPictures: <Widget>[
                     //其他账号头像
@@ -84,14 +87,6 @@ class _MainViewState extends State<MainView> {
                   itemCount: _datas.length,
                   shrinkWrap: true,
                   padding: EdgeInsets.zero,
-                ),
-                ListTile(
-                  leading: Icon(Icons.settings),
-                  title: Text('Setting'),
-                  trailing: Icon(Icons.arrow_forward_ios_rounded),
-                  onTap: () {
-                    print("Setting");
-                  },
                 ),
               ],
             ),
@@ -161,15 +156,17 @@ class _MainViewState extends State<MainView> {
 
   /// 前往主题设置
   void _theme() {
-    Navigator.of(context).pushNamed('/');
+    Navigator.of(context).pushNamed(DemoView.keys);
   }
 
   /// draw list ui
   Widget _itemBuilder(BuildContext context, int index) {
+    var primaryColor = Theme.of(context).primaryColor;
     return ListTile(
-      leading: Icon(_datas[index].icon),
-      title: Text(_datas[index].title),
-      trailing: Icon(_datas[index].trailing),
+      // leading: Icon(_datas[index].icon),
+      leading: FlareLogo(size: 60.r,color: primaryColor,),
+      title: Text(_datas[index].title,style: TextStyle(color: primaryColor),),
+      trailing: Icon(_datas[index].trailing,color: primaryColor,),
       onTap: () {
         var title = _datas[index].title;
         if (title == _s.switch_theme) {
@@ -185,11 +182,11 @@ class _MainViewState extends State<MainView> {
   void initData() async {
     var datas = <DrawListBean>[];
     var themeSelect =
-        DrawListBean(Icons.ac_unit, _s.switch_theme, Icons.arrow_forward_sharp);
+        DrawListBean(Icons.ac_unit, _s.switch_theme, Icons.arrow_forward_ios_rounded);
     var languageSelect = DrawListBean(
-        Icons.language_rounded, _s.switch_language, Icons.arrow_forward_sharp);
+        Icons.language_rounded, _s.switch_language, Icons.arrow_forward_ios_rounded);
     var drawListBean =
-        DrawListBean(Icons.message, 'message', Icons.arrow_forward_sharp);
+        DrawListBean(Icons.message, 'message', Icons.arrow_forward_ios_rounded);
     datas.add(themeSelect);
     datas.add(languageSelect);
     datas.add(drawListBean);

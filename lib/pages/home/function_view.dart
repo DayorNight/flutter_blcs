@@ -1,9 +1,9 @@
-import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_blcs/common/static.dart';
 import 'package:flutter_blcs/pages/pages.dart';
+import 'package:flutter_blcs/widgets/flare_logo.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class FunctionView extends StatefulWidget {
@@ -15,10 +15,11 @@ class FunctionView extends StatefulWidget {
 
 class _FunctionViewState extends State<FunctionView> {
   String _title = 'Flutter libs';
+  Color color = Colors.grey;
 
   @override
   Widget build(BuildContext context) {
-    var color = Theme.of(context).primaryColor;
+    color = Theme.of(context).primaryColor;
     return CustomScrollView(
       slivers: [
         SliverPadding(
@@ -27,15 +28,7 @@ class _FunctionViewState extends State<FunctionView> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  width: 70,
-                  height: 70,
-                  child: FlareActor(Flares.logo,
-                      alignment: Alignment.topCenter,
-                      fit: BoxFit.fill,
-                      color: color,
-                      animation: "Placeholder"),
-                ),
+                FlareLogo(size: 120.r,color: color,),
                 Text(
                   _title,
                   style: GoogleFonts.playfairDisplay(
@@ -54,11 +47,11 @@ class _FunctionViewState extends State<FunctionView> {
             padding: EdgeInsets.all(10),
             sliver: SliverGrid(
                 delegate: SliverChildBuilderDelegate(_functionList,
-                    childCount: myPages.length),
+                    childCount: LibPages.length),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
-                    crossAxisSpacing: 15,
-                    mainAxisSpacing: 15,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
                     childAspectRatio: 1)))
       ],
     );
@@ -66,19 +59,16 @@ class _FunctionViewState extends State<FunctionView> {
 
   /// 加载list
   Widget? _functionList(BuildContext context, int index) {
-    var color = Theme.of(context).primaryColor;
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).pushNamed(myPages.values.elementAt(index));
+        Navigator.of(context).pushNamed(LibPages.values.elementAt(index));
       },
-      child: Container(
+      child:Container(
         decoration: BoxDecoration(
           boxShadow: [BoxShadow(color: color, blurRadius: 10)],
           color: color,
-          border: Border.all(
-              color: color,
-              width: 2,
-              style: BorderStyle.solid),
+          border:
+          Border.all(color: color, width: 2, style: BorderStyle.solid),
           borderRadius: BorderRadius.all(Radius.circular(20)),
         ),
         alignment: Alignment.center,
@@ -87,23 +77,27 @@ class _FunctionViewState extends State<FunctionView> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                Icons.flag_rounded,
-                color: Colors.white,
-                size: 50,
-              ),
+              Hero(
+                tag: LibPages.values.elementAt(index),
+                child: FlareLogo(size: 100.r,color: Colors.white,)),
               SizedBox(
                 height: 5,
               ),
               Text(
-                myPages.keys.elementAt(index),
+                LibPages.keys.elementAt(index),
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white),
-              ),
+                style: TextStyle(
+                    color: Colors.white, overflow: TextOverflow.ellipsis),
+                maxLines: 1,
+                softWrap: true,
+              )
             ],
           ),
         ),
       ),
+      // child: Hero(
+      //     tag: LibPages.values.elementAt(index),
+      //     child: ),
     );
   }
 }

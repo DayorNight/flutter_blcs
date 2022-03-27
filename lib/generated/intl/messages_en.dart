@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "appName": MessageLookupByLibrary.simpleMessage("Corn"),
         "app_lifeCycle": MessageLookupByLibrary.simpleMessage("App LifeCycle"),
         "dark_theme": MessageLookupByLibrary.simpleMessage("Dark Theme"),
+        "heroView": MessageLookupByLibrary.simpleMessage("HeroView"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "home_fun": MessageLookupByLibrary.simpleMessage("Function"),
         "home_me": MessageLookupByLibrary.simpleMessage("Me"),
