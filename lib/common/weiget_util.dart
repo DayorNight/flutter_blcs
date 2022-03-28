@@ -5,11 +5,17 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_syntax_view/flutter_syntax_view.dart';
 
 ///getAppBar
-PreferredSizeWidget getAppBar(String title) {
+PreferredSizeWidget getAppBar(BuildContext context,String title) {
   return AppBar(
     title: Text(title),
     centerTitle: true,
     elevation: 10,
+    leading: IconButton(
+      icon: Icon(Icons.arrow_back_ios_rounded),
+      onPressed: () {
+        Navigator.of(context).pop();
+      },
+    ),
   );
 }
 
@@ -67,11 +73,14 @@ Widget printCode(String content) {
 }
 
 ///文章logo
-Widget articleLogo(String key,Color color){
+Widget articleLogo(String key, Color color) {
   return Align(
     alignment: Alignment.topRight,
     child: Hero(
         tag: key,
-        child: FlareLogo(size: 200.r,color: color,)),
+        child: FlareLogo(
+          size: 200.r,
+          color: color,
+        )),
   );
 }

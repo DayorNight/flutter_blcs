@@ -49,17 +49,13 @@ class _MyAppState extends State<MyApp> {
       ///程序进入后的第一个界面 不能与routes 共存
       // home: Scaffold(),
       ///生成路由表
-      routes: routes,
+      routes: Routers.routes,
 
       ///初始路由，如果设置了该参数并且在 routes 找到了对应的key，将会展示对应的 Widget ，否则展示 home  //开发阶段快速定位页面
-      initialRoute: SplashView.keys,
+      initialRoute: Routers.initialRoute,
 
       ///当跳转路由时，如果在 routes 找不到对应的 key ，会执行该回调，会调用会返回一个 RouteSettings ，该对象中有 name 路由名称、 arguments 路由参数。
-      onGenerateRoute: (settings) {
-        print("onGenerateRoute:name= ${settings.name}");
-        print("onGenerateRoute:arguments= ${settings.arguments}");
-        return MaterialPageRoute(builder: (_) => MainView());
-      },
+      onGenerateRoute: Routers.onGenerateRoute,
 
       ///如果提供了 initialRoute ，则用于生成初始路由的路由生成器回调
       // onGenerateInitialRoutes: (initialRoute) {
@@ -69,11 +65,7 @@ class _MyAppState extends State<MyApp> {
       // ];
       // },
       ///效果和 onGenerateRoute 一样，只是先走 onGenerateRoute ，如果onGenerateRoute无法生成路由时则在调用 onUnknownRoute
-      onUnknownRoute: (settings) {
-        print("onUnknownRoute:name= ${settings.name}");
-        print("onUnknownRoute:arguments= ${settings.arguments}");
-        MaterialPageRoute(builder: (_) => LoginView());
-      },
+      onUnknownRoute: Routers.onUnknownRoute,
 
       ///当构建 Widget 前调用，主要用于字体大小、主题颜色等配置
       // builder: (context,child){

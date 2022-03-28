@@ -170,21 +170,41 @@ class S {
     );
   }
 
-  /// `provider`
+  /// `Provider`
   String get provider {
     return Intl.message(
-      'provider',
+      'Provider',
       name: 'provider',
       desc: '',
       args: [],
     );
   }
 
-  /// `HeroView`
+  /// `Hero`
   String get heroView {
     return Intl.message(
-      'HeroView',
+      'Hero',
       name: 'heroView',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Personal`
+  String get personalView {
+    return Intl.message(
+      'Personal',
+      name: 'personalView',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Personal Information`
+  String get personalInformationView {
+    return Intl.message(
+      'Personal Information',
+      name: 'personalInformationView',
       desc: '',
       args: [],
     );

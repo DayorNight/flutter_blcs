@@ -38,7 +38,7 @@ class _RegisterViewState extends State<RegisterView> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: getAppBar("注册"),
+      appBar: getAppBar(context,"注册"),
       body: Padding(
         padding: EdgeInsets.all(20),
         child: Form(

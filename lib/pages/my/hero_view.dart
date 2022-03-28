@@ -34,7 +34,7 @@ class HeroView extends StatelessWidget {
     Navigator.of(context).push(MaterialPageRoute<void>(
       builder: (BuildContext context) => Scaffold(
         body: Scaffold(
-          appBar: getAppBar(S.of(context).heroView),
+          appBar: getAppBar(context,S.of(context).heroView),
           body: Align(
               alignment: Alignment.center,
               child: Hero(

@@ -37,7 +37,9 @@ flutter_blcs
 ## my
 1. 应用生命周期 AppLifecycleView
 2. Widget生命周期 LifeCycleView
-
+3. Hero动画 HeroView
 
 ##任务
+1. 头像页
 2. 引导页
+3. 个人页

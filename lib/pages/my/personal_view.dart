@@ -1,29 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blcs/generated/l10n.dart';
+import 'package:flutter_blcs/common/weiget_util.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../common/static.dart';
-import '../common/weiget_util.dart';
-
-class DemoView extends StatefulWidget {
-  static final String keys = "demoView";
-
-  const DemoView({Key? key}) : super(key: key);
-
-  @override
-  _DemoViewState createState() => _DemoViewState();
-}
-
-class _DemoViewState extends State<DemoView> {
+import '../../common/static.dart';
+import '../../generated/l10n.dart';
+/// 个人头像
+class PersonalView extends StatelessWidget {
   static const String keys = 'personalView';
-
+  const PersonalView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
       appBar: AppBar(
-        backgroundColor: Colors.black,
         title: Text(
           S.of(context).personalView,
           style: TextStyle(color: Colors.white),
@@ -62,4 +50,3 @@ class _DemoViewState extends State<DemoView> {
     );
   }
 }
-

@@ -26,7 +26,7 @@ class _SwitchLanguageViewState extends State<SwitchLanguageView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: getAppBar(S.of(context).switch_language),
+      appBar: getAppBar(context,S.of(context).switch_language),
       body: ListView.builder(
         padding: EdgeInsets.all(20),
         itemBuilder: (mContext, index) {

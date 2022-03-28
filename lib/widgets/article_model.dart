@@ -25,7 +25,7 @@ class ArticleModel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: getAppBar(title),
+      appBar: getAppBar(context,title),
       body: Stack(
         children: [
           articleLogo(keys, logoColor),

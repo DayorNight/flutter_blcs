@@ -11,6 +11,8 @@
   "app_lifeCycle": "App LifeCycle",
   "lifeCycle": "LifeCycle",
   "screen_adapter": "Screen Adapter",
-  "provider": "provider",
-  "heroView": "HeroView"
+  "provider": "Provider",
+  "heroView": "Hero",
+  "personalView": "Personal",
+  "personalInformationView": "Personal Information"
 }

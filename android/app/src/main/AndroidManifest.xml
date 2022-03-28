@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.flutter_blcs">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="玉米"
         android:name="${applicationName}"

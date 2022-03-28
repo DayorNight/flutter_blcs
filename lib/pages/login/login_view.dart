@@ -47,7 +47,7 @@ class _LoginViewState extends State<LoginView> {
     screenInit(context);
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: getAppBar("登录"),
+      appBar: getAppBar(context,"登录"),
       body: Padding(
         padding: EdgeInsets.fromLTRB(20, 40, 20, 20),
         child: Column(
