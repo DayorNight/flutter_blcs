@@ -13,6 +13,8 @@ import 'package:flutter_blcs/pages/config/setting_theme_view.dart';
 import 'package:flutter_blcs/pages/config/switch_language_view.dart';
 import 'package:flutter_blcs/pages/splash_view.dart';
 
+import '../pages/my/animation_view.dart';
+
 Map<String, WidgetBuilder> routes = {
   SplashView.keys:(BuildContext context) => SplashView(),
   LoginView.keys:(BuildContext context) => LoginView(),
@@ -27,4 +29,5 @@ Map<String, WidgetBuilder> routes = {
   ScreenAdapterView.keys:(BuildContext context) => ScreenAdapterView(),
   ProviderView.keys:(BuildContext context) => ProviderView(),
   HeroView.keys:(BuildContext context) => HeroView(),
+  AnimationView.keys:(BuildContext context) => AnimationView(),
 };

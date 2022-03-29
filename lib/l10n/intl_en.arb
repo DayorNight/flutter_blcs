@@ -12,5 +12,6 @@
   "lifeCycle": "LifeCycle",
   "screen_adapter": "Screen Adapter",
   "provider": "provider",
-  "heroView": "HeroView"
+  "heroView": "Hero View",
+  "animationView": "Animation View"
 }

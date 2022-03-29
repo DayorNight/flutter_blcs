@@ -180,11 +180,21 @@ class S {
     );
   }
 
-  /// `HeroView`
+  /// `Hero View`
   String get heroView {
     return Intl.message(
-      'HeroView',
+      'Hero View',
       name: 'heroView',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Animation View`
+  String get animationView {
+    return Intl.message(
+      'Animation View',
+      name: 'animationView',
       desc: '',
       args: [],
     );

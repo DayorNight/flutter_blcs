@@ -12,5 +12,6 @@
   "lifeCycle": "Widget生命周期",
   "screen_adapter": "屏幕适配",
   "provider": "全局状态管理",
-  "heroView": "Hero动画"
+  "heroView": "Hero动画",
+  "animationView": "简单动画"
 }
