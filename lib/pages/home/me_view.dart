@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_blcs/common/static.dart';
 import 'package:flutter_blcs/pages/pages.dart';
 import 'package:flutter_blcs/widgets/flare_logo.dart';
@@ -26,7 +25,7 @@ class _MeViewState extends State<MeView> {
               left: 25.r, top: 200.r, right: 25.r, bottom: 70.r),
           sliver: SliverToBoxAdapter(
               child: Container(
-                  height: 150.r,
+                  height: 170.r,
                   child: Row(children: [
                     ClipOval(
                       child: Image.asset(
