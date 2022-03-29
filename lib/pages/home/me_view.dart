@@ -85,7 +85,7 @@ class _MeViewState extends State<MeView> {
         ),
         SliverFixedExtentList(
             delegate: SliverChildBuilderDelegate(_loadList,
-                childCount: MyPages.length),
+                childCount: myPages.length),
             itemExtent: 60),
       ],
     );
@@ -93,7 +93,7 @@ class _MeViewState extends State<MeView> {
 
   /// 加载list
   Widget? _loadList(BuildContext context, int index) {
-    var tag = MyPages.values.elementAt(index);
+    var tag = myPages.values.elementAt(index);
     return GestureDetector(
       onTap: () {
         Navigator.of(context).pushNamed(tag);
@@ -107,7 +107,7 @@ class _MeViewState extends State<MeView> {
           children: [
             Hero(tag: tag, child: FlareLogo(size: 80.r,color: primaryColor)),
             Text(
-              MyPages.keys.elementAt(index),
+              myPages.keys.elementAt(index),
               style: TextStyle(
                   fontSize: 45.sp, color: primaryColor, height: 2.2.r),
             ),

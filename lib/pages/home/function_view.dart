@@ -47,7 +47,7 @@ class _FunctionViewState extends State<FunctionView> {
             padding: EdgeInsets.all(10),
             sliver: SliverGrid(
                 delegate: SliverChildBuilderDelegate(_functionList,
-                    childCount: LibPages.length),
+                    childCount: libPages.length),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
                     crossAxisSpacing: 10,
@@ -61,7 +61,7 @@ class _FunctionViewState extends State<FunctionView> {
   Widget? _functionList(BuildContext context, int index) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).pushNamed(LibPages.values.elementAt(index));
+        Navigator.of(context).pushNamed(libPages.values.elementAt(index));
       },
       child:Container(
         decoration: BoxDecoration(
@@ -78,13 +78,13 @@ class _FunctionViewState extends State<FunctionView> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Hero(
-                tag: LibPages.values.elementAt(index),
+                tag: libPages.values.elementAt(index),
                 child: FlareLogo(size: 100.r,color: Colors.white,)),
               SizedBox(
                 height: 5,
               ),
               Text(
-                LibPages.keys.elementAt(index),
+                libPages.keys.elementAt(index),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: Colors.white, overflow: TextOverflow.ellipsis),
