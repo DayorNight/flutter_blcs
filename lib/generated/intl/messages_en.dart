@@ -33,6 +33,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "home_view": MessageLookupByLibrary.simpleMessage("Widget"),
         "lifeCycle": MessageLookupByLibrary.simpleMessage("LifeCycle"),
         "provider": MessageLookupByLibrary.simpleMessage("provider"),
+        "routeAnimationView":
+            MessageLookupByLibrary.simpleMessage("Route Animation View"),
         "screen_adapter":
             MessageLookupByLibrary.simpleMessage("Screen Adapter"),
         "select_language":

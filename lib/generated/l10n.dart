@@ -199,6 +199,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Route Animation View`
+  String get routeAnimationView {
+    return Intl.message(
+      'Route Animation View',
+      name: 'routeAnimationView',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

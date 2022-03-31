@@ -13,5 +13,6 @@
   "screen_adapter": "Screen Adapter",
   "provider": "provider",
   "heroView": "Hero View",
-  "animationView": "Animation View"
+  "animationView": "Animation View",
+  "routeAnimationView": "Route Animation View"
 }

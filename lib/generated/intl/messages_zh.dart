@@ -33,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "home_view": MessageLookupByLibrary.simpleMessage("UI"),
         "lifeCycle": MessageLookupByLibrary.simpleMessage("Widget生命周期"),
         "provider": MessageLookupByLibrary.simpleMessage("全局状态管理"),
+        "routeAnimationView": MessageLookupByLibrary.simpleMessage("路由动画"),
         "screen_adapter": MessageLookupByLibrary.simpleMessage("屏幕适配"),
         "select_language": MessageLookupByLibrary.simpleMessage("选择语言"),
         "switch_language": MessageLookupByLibrary.simpleMessage("切换语言"),

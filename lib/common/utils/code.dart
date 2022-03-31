@@ -1,3 +1,139 @@
+///路由动画
+const String RouteAnimationDes = '''一、路由动画
+  1.简介
+    Material组件库中提供了一个MaterialPageRoute组件，它可以使用和平台风格一致的路由切换动画，如在iOS上会左右滑动切换，而在Android上会上下滑动切换
+  2.CupertinoPageRoute
+    使用CupertinoPageRoute 也可以使android 实现左右切换风格
+    Navigator.push(context, CupertinoPageRoute(builder: (context) => pageB());
+  3.PageRouteBuilder
+    使用PageRouteBuilder来自定义路由切换动画
+  4.PageRoute
+    无论是MaterialPageRoute、CupertinoPageRoute，还是PageRouteBuilder，它们都继承自PageRoute类，而PageRouteBuilder其实只是PageRoute的一个包装，我们可以直接继承PageRoute类来实现自定义路由
+二、代码如下
+''';
+const String  RouteAnimationCode = '''
+class _DemoViewState extends State<DemoView>{
+  String value = "默认路由方式";
+  String value1 = "左右切换方式";
+  String value2 = "PageRouteBuilder自定义方式";
+  String value3 = "继承PageRoute自定义方式";
+  String pages = '页面B';
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: getAppBar('demo'),
+      body:  Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          //默认路由方式
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => pageB(),
+                    ));
+              },
+              child: Text(value)),
+          //左右切换方式
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => pageB(),
+                    ));
+              },
+              child: Text(value1)),
+          //PageRouteBuilder自定义方式
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                        pageBuilder:
+                            (context, animation, secondaryAnimation) {
+                          return FadeTransition(
+                            opacity: animation,
+                            child: pageB(),
+                          );
+                        },
+                        transitionDuration: Duration(milliseconds: 500)));
+              },
+              child: Text(value2)),
+          //继承PageRoute自定义方式
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    FadeRoute(builder: (context) => pageB()));
+              },
+              child: Text(value3)),
+        ],
+      ),
+    );
+  }
+  /**
+   * B页面
+   */
+  Scaffold pageB() {
+    return Scaffold(
+      appBar: getAppBar('demo'),
+      body: Center(
+        child: Text(pages),
+      ),
+    );
+  }
+}
+//FadeRoute
+class FadeRoute extends PageRoute {
+
+  FadeRoute({
+    required this.builder,
+    this.transitionDuration = const Duration(milliseconds: 500),
+    this.opaque = true,
+    this.barrierDismissible = false,
+    this.barrierColor,
+    this.barrierLabel,
+    this.maintainState = true,
+  });
+
+  final WidgetBuilder builder;
+
+  @override
+  final Duration transitionDuration;
+
+  @override
+  final bool opaque;
+
+  @override
+  final bool barrierDismissible;
+
+  @override
+  final Color? barrierColor;
+
+  @override
+  final String? barrierLabel;
+
+  @override
+  final bool maintainState;
+
+  @override
+  Widget buildPage(BuildContext context, Animation<double> animation,
+      Animation<double> secondaryAnimation) => builder(context);
+
+  @override
+  Widget buildTransitions(BuildContext context, Animation<double> animation,
+      Animation<double> secondaryAnimation, Widget child) {
+    return FadeTransition(
+      opacity: animation,
+      child: builder(context),
+    );
+  }
+
+}
+''';
+
 ///简单动画
 const String AnimationDes = '''一、Animation动画
   1.简介

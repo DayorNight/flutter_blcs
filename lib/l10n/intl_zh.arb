@@ -13,5 +13,6 @@
   "screen_adapter": "屏幕适配",
   "provider": "全局状态管理",
   "heroView": "Hero动画",
-  "animationView": "简单动画"
+  "animationView": "简单动画",
+  "routeAnimationView": "路由动画"
 }
