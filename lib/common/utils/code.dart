@@ -1,3 +1,13 @@
+///交织动画
+const String MixedAnimationDes = '''一、交织动画
+  1.简介
+二、代码如下
+''';
+const String  MixedAnimationCode = '''
+
+''';
+
+
 ///路由动画
 const String RouteAnimationDes = '''一、路由动画
   1.简介
