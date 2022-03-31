@@ -5,6 +5,7 @@ import 'my/app_lifecycle_view.dart';
 import 'my/hero_view.dart';
 import 'my/lifecycle_view.dart';
 
+import 'my/mixed_animation_view.dart';
 import 'my/route_animation_view.dart';
 
 final Map libPages = {
@@ -18,4 +19,5 @@ final Map myPages = {
   "Hero动画": HeroView.keys,
   "简单动画": AnimationView.keys,
   "路由动画": RouteAnimationView.keys,
+  "交织动画": MixedAnimationView.keys,
 };

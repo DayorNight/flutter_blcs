@@ -1,6 +1,11 @@
 ///交织动画
 const String MixedAnimationDes = '''一、交织动画
   1.简介
+    一些复杂的动画，可能由一个动画序列或重叠的动画组成。要实现这种效果，使用交织动画（Stagger Animation）会非常简单
+  2.交织动画需要注意以下几点：
+    1. 要创建交织动画，需要使用多个动画对象（Animation）。
+    2. 一个AnimationController控制所有的动画对象。
+    3. 给每一个动画对象指定时间间隔（Interval）
 二、代码如下
 ''';
 const String  MixedAnimationCode = '''

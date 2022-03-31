@@ -4,6 +4,7 @@ import 'package:flutter_blcs/common/utils/code.dart';
 import 'package:flutter_blcs/widgets/article_model.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../generated/l10n.dart';
+import '../../widgets/animation/image_size_animation.dart';
 
 class AnimationView extends StatefulWidget {
   static const String keys = 'animationView';
@@ -121,17 +122,3 @@ class _AnimationViewState extends State<AnimationView>
   }
 }
 
-class AnimatedImage extends AnimatedWidget {
-  AnimatedImage({required Listenable listenable})
-      : super(listenable: listenable);
-
-  @override
-  Widget build(BuildContext context) {
-    var animation = listenable as Animation<double>;
-    return Icon(
-      Icons.favorite_rounded,
-      color: Colors.red,
-      size: animation.value,
-    );
-  }
-}
