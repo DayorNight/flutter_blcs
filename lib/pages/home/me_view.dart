@@ -29,58 +29,70 @@ class _MeViewState extends State<MeView> {
           padding: EdgeInsets.only(
               left: 25.r, top: 200.r, right: 25.r, bottom: 70.r),
           sliver: SliverToBoxAdapter(
-              child: Container(
-                  height: 170.r,
-                  child: Row(children: [
-                    ClipOval(
-                      child: Image.asset(
-                        Images.logo,
-                        width: 150.r,
-                        height: 150.r,
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.of(context).pushNamed(PersonalInformationView.keys);
+                },
+                child: Container(
+                    height: 150.r,
+                    child: Row(children: [
+                      Hero(
+                          tag: 'PersonalView',
+                          child: ClipOval(
+                            child: GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context)
+                                      .pushNamed(PersonalView.keys);
+                                },
+                                child: Image.asset(
+                                  Images.logo,
+                                  width: 150.r,
+                                  height: 150.r,
+                                )),
+                          )),
+                      SizedBox(
+                        width: 20.r,
                       ),
-                    ),
-                    SizedBox(
-                      width: 20.r,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Spacer(
-                          flex: 1,
-                        ),
-                        Text(
-                          _name,
-                          style: TextStyle(
-                              fontSize: 50.sp,
-                              color: primaryColor,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        Spacer(
-                          flex: 1,
-                        ),
-                        Container(
-                          width: 0.5.sw,
-                          child: Text(
-                            _signature,
-                            softWrap: true,
-                            maxLines: 2,
-                            style:
-                                TextStyle(fontSize: 30.sp, color: primaryColor),
-                            overflow: TextOverflow.ellipsis,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Spacer(
+                            flex: 1,
                           ),
-                        )
-                      ],
-                    ),
-                    Spacer(),
-                    Icon(
-                      Icons.qr_code_2,
-                      color: primaryColor,
-                    ),
-                    Icon(
-                      Icons.arrow_forward_ios,
-                      color: primaryColor,
-                    ),
-                  ]))),
+                          Text(
+                            _name,
+                            style: TextStyle(
+                                fontSize: 50.sp,
+                                color: primaryColor,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Spacer(
+                            flex: 1,
+                          ),
+                          Container(
+                            width: 0.5.sw,
+                            child: Text(
+                              _signature,
+                              softWrap: true,
+                              maxLines: 2,
+                              style:
+                              TextStyle(fontSize: 30.sp, color: primaryColor),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          )
+                        ],
+                      ),
+                      Spacer(),
+                      Icon(
+                        Icons.qr_code_2,
+                        color: primaryColor,
+                      ),
+                      Icon(
+                        Icons.arrow_forward_ios,
+                        color: primaryColor,
+                      ),
+                    ])),
+              )),
         ),
         SliverToBoxAdapter(
           child: Container(
@@ -107,10 +119,10 @@ class _MeViewState extends State<MeView> {
         padding: EdgeInsets.only(left: 25.r, right: 25.r),
         decoration: BoxDecoration(
             border:
-                Border(bottom: BorderSide(color: Colors.black12, width: 1.r))),
+            Border(bottom: BorderSide(color: Colors.black12, width: 1.r))),
         child: Row(
           children: [
-            Hero(tag: tag, child: FlareLogo(size: 80.r,color: primaryColor)),
+            Hero(tag: tag, child: FlareLogo(size: 80.r, color: primaryColor)),
             Text(
               myPages.keys.elementAt(index),
               style: TextStyle(

@@ -12,9 +12,10 @@
   "lifeCycle": "Widget生命周期",
   "screen_adapter": "屏幕适配",
   "provider": "全局状态管理",
-  "heroView": "Hero动画",
-  "personalView": "个人头像",
-  "personalInformationView": "个人信息",
-  "animationView": "简单动画",
-  "routeAnimationView": "路由动画"
+  "hero": "Hero动画",
+  "personal": "个人头像",
+  "personalInformation": "个人信息",
+  "animation": "简单动画",
+  "routeAnimation": "路由动画",
+  "mixedAnimation": "交织动画"
 }

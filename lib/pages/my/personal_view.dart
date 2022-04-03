@@ -13,7 +13,7 @@ class PersonalView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          S.of(context).personalView,
+          S.of(context).personal,
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,

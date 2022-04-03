@@ -17,7 +17,7 @@ class RouteAnimationView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var title = S.of(context).routeAnimationView;
+    var title = S.of(context).routeAnimation;
     return ArticleModel(
       title: title,
       keys: RouteAnimationView.keys,
@@ -34,7 +34,8 @@ class RouteAnimationView extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => pageB(title),
+                        builder: (context) => pageB(context,title),
+                        //fullscreenDialog: true //上下切换
                       ));
                 },
                 child: Text(value)),
@@ -44,7 +45,7 @@ class RouteAnimationView extends StatelessWidget {
                   Navigator.push(
                       context,
                       CupertinoPageRoute(
-                        builder: (context) => pageB(title),
+                        builder: (context) => pageB(context,title),
                       ));
                 },
                 child: Text(value1)),
@@ -58,7 +59,7 @@ class RouteAnimationView extends StatelessWidget {
                               (context, animation, secondaryAnimation) {
                             return FadeTransition(
                               opacity: animation,
-                              child: pageB(title),
+                              child: pageB(context,title),
                             );
                           },
                           transitionDuration: Duration(milliseconds: 500)));
@@ -69,7 +70,7 @@ class RouteAnimationView extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                       context,
-                      FadeRoute(builder: (context) => pageB(title)));
+                      FadeRoute(builder: (context) => pageB(context,title)));
                 },
                 child: Text(value3)),
           ],
@@ -81,9 +82,9 @@ class RouteAnimationView extends StatelessWidget {
   /**
    * B页面
    */
-  Scaffold pageB(String title) {
+  Scaffold pageB(BuildContext context,String title) {
     return Scaffold(
-      appBar: getAppBar(title),
+      appBar: getAppBar(context,title),
       body: Center(
         child: Text(pages),
       ),

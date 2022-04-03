@@ -11,8 +11,9 @@ class HeroView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var title = S.of(context).hero;
     return ArticleModel(
-        title: S.of(context).heroView,
+        title: title,
         keys: keys,
         logoColor: Theme.of(context).primaryColor,
         des: heroDes,
@@ -25,16 +26,16 @@ class HeroView extends StatelessWidget {
                 child: Icon(Icons.circle,size: 50),
               )
           ),
-          onTap:() => _gotoDetailsPage(context) ,
+          onTap:() => _gotoDetailsPage(context,title) ,
         )
     );
   }
 
-  void _gotoDetailsPage(BuildContext context) {
+  void _gotoDetailsPage(BuildContext context,String title) {
     Navigator.of(context).push(MaterialPageRoute<void>(
       builder: (BuildContext context) => Scaffold(
         body: Scaffold(
-          appBar: getAppBar(context,S.of(context).heroView),
+          appBar: getAppBar(context,title),
           body: Align(
               alignment: Alignment.center,
               child: Hero(

@@ -33,7 +33,7 @@ class _PersonalInformationViewState extends State<PersonalInformationView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: getAppBar(context, S.of(context).personalInformationView),
+      appBar: getAppBar(context, S.of(context).personalInformation),
       body:ListView.separated(itemBuilder: _item, separatorBuilder: (context,index)=>Divider(height: 24.r,), itemCount: datas.length)
     );
   }

@@ -181,50 +181,60 @@ class S {
   }
 
   /// `Hero`
-  String get heroView {
+  String get hero {
     return Intl.message(
       'Hero',
-      name: 'heroView',
+      name: 'hero',
       desc: '',
       args: [],
     );
   }
 
   /// `Personal`
-  String get personalView {
+  String get personal {
     return Intl.message(
       'Personal',
-      name: 'personalView',
+      name: 'personal',
       desc: '',
       args: [],
     );
   }
 
   /// `Personal Information`
-  String get personalInformationView {
+  String get personalInformation {
     return Intl.message(
       'Personal Information',
-      name: 'personalInformationView',
+      name: 'personalInformation',
       desc: '',
       args: [],
     );
   }
 
-  /// `Animation View`
-  String get animationView {
+  /// `Animation`
+  String get animation {
     return Intl.message(
-      'Animation View',
-      name: 'animationView',
+      'Animation',
+      name: 'animation',
       desc: '',
       args: [],
     );
   }
 
-  /// `Route Animation View`
-  String get routeAnimationView {
+  /// `Route Animation`
+  String get routeAnimation {
     return Intl.message(
-      'Route Animation View',
-      name: 'routeAnimationView',
+      'Route Animation',
+      name: 'routeAnimation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mixed Animation`
+  String get mixedAnimation {
+    return Intl.message(
+      'Mixed Animation',
+      name: 'mixedAnimation',
       desc: '',
       args: [],
     );

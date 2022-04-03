@@ -12,9 +12,10 @@
   "lifeCycle": "LifeCycle",
   "screen_adapter": "Screen Adapter",
   "provider": "Provider",
-  "heroView": "Hero",
-  "personalView": "Personal",
-  "personalInformationView": "Personal Information",
-  "animationView": "Animation View",
-  "routeAnimationView": "Route Animation View"
+  "hero": "Hero",
+  "personal": "Personal",
+  "personalInformation": "Personal Information",
+  "animation": "Animation",
+  "routeAnimation": "Route Animation",
+  "mixedAnimation": "Mixed Animation"
 }

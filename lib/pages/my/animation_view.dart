@@ -73,7 +73,7 @@ class _AnimationViewState extends State<AnimationView>
   @override
   Widget build(BuildContext context) {
     return ArticleModel(
-      title: S.of(context).animationView,
+      title: S.of(context).animation,
       keys: AnimationView.keys,
       logoColor: Theme.of(context).primaryColor,
       des: AnimationDes,

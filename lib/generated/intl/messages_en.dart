@@ -22,22 +22,24 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "animationView": MessageLookupByLibrary.simpleMessage("Animation View"),
+        "animation": MessageLookupByLibrary.simpleMessage("Animation"),
         "appName": MessageLookupByLibrary.simpleMessage("Corn"),
         "app_lifeCycle": MessageLookupByLibrary.simpleMessage("App LifeCycle"),
         "dark_theme": MessageLookupByLibrary.simpleMessage("Dark Theme"),
-        "heroView": MessageLookupByLibrary.simpleMessage("Hero"),
+        "hero": MessageLookupByLibrary.simpleMessage("Hero"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "home_fun": MessageLookupByLibrary.simpleMessage("Function"),
         "home_me": MessageLookupByLibrary.simpleMessage("Me"),
         "home_view": MessageLookupByLibrary.simpleMessage("Widget"),
         "lifeCycle": MessageLookupByLibrary.simpleMessage("LifeCycle"),
-        "personalInformationView":
+        "mixedAnimation":
+            MessageLookupByLibrary.simpleMessage("Mixed Animation"),
+        "personal": MessageLookupByLibrary.simpleMessage("Personal"),
+        "personalInformation":
             MessageLookupByLibrary.simpleMessage("Personal Information"),
-        "personalView": MessageLookupByLibrary.simpleMessage("Personal"),
         "provider": MessageLookupByLibrary.simpleMessage("Provider"),
-        "routeAnimationView":
-            MessageLookupByLibrary.simpleMessage("Route Animation View"),
+        "routeAnimation":
+            MessageLookupByLibrary.simpleMessage("Route Animation"),
         "screen_adapter":
             MessageLookupByLibrary.simpleMessage("Screen Adapter"),
         "select_language":
