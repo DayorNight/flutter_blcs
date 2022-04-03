@@ -35,11 +35,13 @@ flutter_blcs
 2. 全局状态管理   ProviderView
 
 ## my
-1. 应用生命周期 AppLifecycleView
+1. 应用生命周期    AppLifecycleView
 2. Widget生命周期 LifeCycleView
-3. Hero动画 HeroView
+3. Hero动画   HeroView
+4. 简单动画    AnimationView
+5. 路由动画    RouteAnimationView
 
 ##任务
-1. 头像页
+1. 动画
+2. 自定义View
 2. 引导页
-3. 个人页

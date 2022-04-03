@@ -209,6 +209,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Animation View`
+  String get animationView {
+    return Intl.message(
+      'Animation View',
+      name: 'animationView',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Route Animation View`
+  String get routeAnimationView {
+    return Intl.message(
+      'Route Animation View',
+      name: 'routeAnimationView',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "animationView": MessageLookupByLibrary.simpleMessage("Animation View"),
         "appName": MessageLookupByLibrary.simpleMessage("Corn"),
         "app_lifeCycle": MessageLookupByLibrary.simpleMessage("App LifeCycle"),
         "dark_theme": MessageLookupByLibrary.simpleMessage("Dark Theme"),
@@ -35,6 +36,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Personal Information"),
         "personalView": MessageLookupByLibrary.simpleMessage("Personal"),
         "provider": MessageLookupByLibrary.simpleMessage("Provider"),
+        "routeAnimationView":
+            MessageLookupByLibrary.simpleMessage("Route Animation View"),
         "screen_adapter":
             MessageLookupByLibrary.simpleMessage("Screen Adapter"),
         "select_language":

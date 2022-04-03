@@ -14,5 +14,7 @@
   "provider": "全局状态管理",
   "heroView": "Hero动画",
   "personalView": "个人头像",
-  "personalInformationView": "个人信息"
+  "personalInformationView": "个人信息",
+  "animationView": "简单动画",
+  "routeAnimationView": "路由动画"
 }

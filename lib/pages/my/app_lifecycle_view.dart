@@ -16,7 +16,6 @@ class AppLifecycleView extends StatefulWidget {
 
 class _AppLifecycleState extends State<AppLifecycleView>
     with WidgetsBindingObserver {
-  late S _s;
   String _state = "未获取到状态";
 
   @override

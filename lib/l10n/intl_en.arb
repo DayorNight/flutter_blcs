@@ -14,5 +14,7 @@
   "provider": "Provider",
   "heroView": "Hero",
   "personalView": "Personal",
-  "personalInformationView": "Personal Information"
+  "personalInformationView": "Personal Information",
+  "animationView": "Animation View",
+  "routeAnimationView": "Route Animation View"
 }

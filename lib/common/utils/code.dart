@@ -1,5 +1,321 @@
-//hero动画
-final String heroDes = '''一、Hero动画
+///交织动画
+const String MixedAnimationDes = '''一、交织动画
+  1.简介
+    一些复杂的动画，可能由一个动画序列或重叠的动画组成。要实现这种效果，使用交织动画（Stagger Animation）会非常简单
+  2.交织动画需要注意以下几点：
+    1. 要创建交织动画，需要使用多个动画对象（Animation）。
+    2. 一个AnimationController控制所有的动画对象。
+    3. 给每一个动画对象指定时间间隔（Interval）
+二、代码如下
+''';
+const String  MixedAnimationCode = '''
+
+''';
+
+
+///路由动画
+const String RouteAnimationDes = '''一、路由动画
+  1.简介
+    Material组件库中提供了一个MaterialPageRoute组件，它可以使用和平台风格一致的路由切换动画，如在iOS上会左右滑动切换，而在Android上会上下滑动切换
+  2.CupertinoPageRoute
+    使用CupertinoPageRoute 也可以使android 实现左右切换风格
+    Navigator.push(context, CupertinoPageRoute(builder: (context) => pageB());
+  3.PageRouteBuilder
+    使用PageRouteBuilder来自定义路由切换动画
+  4.PageRoute
+    无论是MaterialPageRoute、CupertinoPageRoute，还是PageRouteBuilder，它们都继承自PageRoute类，而PageRouteBuilder其实只是PageRoute的一个包装，我们可以直接继承PageRoute类来实现自定义路由
+二、代码如下
+''';
+const String  RouteAnimationCode = '''
+class _DemoViewState extends State<DemoView>{
+  String value = "默认路由方式";
+  String value1 = "左右切换方式";
+  String value2 = "PageRouteBuilder自定义方式";
+  String value3 = "继承PageRoute自定义方式";
+  String pages = '页面B';
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: getAppBar('demo'),
+      body:  Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          //默认路由方式
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => pageB(),
+                    ));
+              },
+              child: Text(value)),
+          //左右切换方式
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                      builder: (context) => pageB(),
+                    ));
+              },
+              child: Text(value1)),
+          //PageRouteBuilder自定义方式
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                        pageBuilder:
+                            (context, animation, secondaryAnimation) {
+                          return FadeTransition(
+                            opacity: animation,
+                            child: pageB(),
+                          );
+                        },
+                        transitionDuration: Duration(milliseconds: 500)));
+              },
+              child: Text(value2)),
+          //继承PageRoute自定义方式
+          ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    FadeRoute(builder: (context) => pageB()));
+              },
+              child: Text(value3)),
+        ],
+      ),
+    );
+  }
+  /**
+   * B页面
+   */
+  Scaffold pageB() {
+    return Scaffold(
+      appBar: getAppBar('demo'),
+      body: Center(
+        child: Text(pages),
+      ),
+    );
+  }
+}
+//FadeRoute
+class FadeRoute extends PageRoute {
+
+  FadeRoute({
+    required this.builder,
+    this.transitionDuration = const Duration(milliseconds: 500),
+    this.opaque = true,
+    this.barrierDismissible = false,
+    this.barrierColor,
+    this.barrierLabel,
+    this.maintainState = true,
+  });
+
+  final WidgetBuilder builder;
+
+  @override
+  final Duration transitionDuration;
+
+  @override
+  final bool opaque;
+
+  @override
+  final bool barrierDismissible;
+
+  @override
+  final Color? barrierColor;
+
+  @override
+  final String? barrierLabel;
+
+  @override
+  final bool maintainState;
+
+  @override
+  Widget buildPage(BuildContext context, Animation<double> animation,
+      Animation<double> secondaryAnimation) => builder(context);
+
+  @override
+  Widget buildTransitions(BuildContext context, Animation<double> animation,
+      Animation<double> secondaryAnimation, Widget child) {
+    return FadeTransition(
+      opacity: animation,
+      child: builder(context),
+    );
+  }
+
+}
+''';
+
+///简单动画
+const String AnimationDes = '''一、Animation动画
+  1.简介
+    Flutter中也对动画进行了抽象，主要涉及 Animation、Curve、Controller、Tween这四个角色，它们一起配合来完成一个完整动画
+  2.Animation
+    1.可以通过Animation来监听动画每一帧以及执行状态的变化
+    2.addListener():可以用于给Animation添加帧监听器，在每一帧都会被调用。帧监听器中最常见的行为是改变状态后调用setState()来触发UI重建
+    3.addStatusListener():可以给Animation添加“动画状态改变”监听器；动画开始、结束、正向或反向（见AnimationStatus定义）时会调用状态改变的监听器
+    4.Flutter中，有四种动画状态，在AnimationStatus枚举类中定义
+      - dismissed:动画在起始点停止
+      - forward:动画正在正向执行
+      - reverse:动画正在反向执行
+      - completed:动画在终点停止
+  3.Curve
+    1.通过Curve（曲线）来描述动画过程，我们把匀速动画称为线性的(Curves.linear)，而非匀速动画称为非线性的
+    2.可以通过CurvedAnimation来指定动画过程是匀速的、匀加速的或者先加速后减速等
+    3.final CurvedAnimation curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+  4.AnimationController
+    1.用于控制动画，它包含动画的启动forward()、停止stop() 、反向播放 reverse()等方法
+    2.AnimationController会在动画的每一帧，就会生成一个新的值。默认情况下，AnimationController在给定的时间段内线性的生成从 0.0 到1.0（默认区间）的数字
+    3.AnimationController生成数字的区间可以通过lowerBound和upperBound来指定
+    4.final AnimationController controller = AnimationController( duration: const Duration(milliseconds: 2000), lowerBound: 10.0,upperBound: 20.0,vsync: this);
+  5.Tween
+    1.定义从输入范围到输出范围的映射。输入范围通常为[0.0，1.0]，但这不是必须的，我们可以自定义需要的范围
+    2.Animation<int> alpha = IntTween(begin: 0, end: 255).animate(controller)
+二、简单使用
+  1.创建动画控制器
+    AnimationController  controller = AnimationController(duration: Duration(milliseconds: 800), vsync: this);
+  2.创建动画执行过程
+    Animation<double> animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+  3.定义动画范围
+    Animation<double> animation = Tween(begin: 100.r, end: 250.r).animate(animation)
+  4.定义动画Widget
+    （1）方式一：继承AnimatedWidget
+    （2）方式二：使用AnimatedBuilder
+  5.动画操作
+    //动画正向执行
+    controller.forward()
+    //动画反向执行
+    controller.reverse()
+    //暂停动画
+    controller.stop();
+  6.释放动画资源
+    controller.dispose();
+三、代码如下
+''';
+const String AnimationCode = '''
+class _DemoViewState extends State<DemoView>
+    with SingleTickerProviderStateMixin {
+  late AnimationController controller;
+  late Animation<double> animation;
+
+  @override
+  void initState() {
+    super.initState();
+    //1.创建动画控制器
+    controller =
+        AnimationController(duration: Duration(milliseconds: 800), vsync: this);
+    //2.创建动画执行过程
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeIn);
+    //3.定义动画范围
+    animation = Tween(begin: 100.r, end: 250.r).animate(animation)
+      ..addStatusListener((status) {
+        if (status == AnimationStatus.completed) {
+          //动画执行结束时反向执行动画
+          controller.reverse();
+        } else if (status == AnimationStatus.dismissed) {
+          //动画恢复到初始状态时执行动画（正向）
+          controller.forward();
+        }
+      });
+    //5.启动动画
+    controller.forward();
+  }
+
+  /**
+   * 播放动画
+   */
+  void _play() {
+    if (controller.isAnimating) return;
+    if (animation.status == AnimationStatus.reverse) {
+      controller.reverse();
+    } else if (animation.status == AnimationStatus.forward) {
+      controller.forward();
+    }
+  }
+
+  /**
+   * 停止动画
+   */
+  void _stop() {
+    if (controller.isAnimating) {
+      controller.stop();
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: getAppBar('Demo'),
+      body: Column(
+        children: [
+          Row(
+            children: [
+              IconButton(
+                  iconSize: 80,
+                  onPressed: _play,
+                  icon: Icon(
+                    Icons.play_circle_outline_rounded,
+                  )),
+              IconButton(
+                  iconSize: 80,
+                  onPressed: _stop,
+                  icon: Icon(Icons.pause_circle_outline_rounded)),
+            ],
+          ),
+          Row(
+            children: [
+              //4.方式1：继承AnimatedWidget
+              AnimatedImage(
+                listenable: animation,
+              ),
+              //4.方式2：使用AnimatedBuilder
+              AnimatedBuilder(
+                  animation: animation,
+                  builder: (context, child) {
+                    return Center(
+                      child: Icon(
+                        Icons.favorite_rounded,
+                        color: Colors.red,
+                        size: animation.value,
+                      ),
+                    );
+                  })
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    //6.释放动画资源
+    controller.dispose();
+    super.dispose();
+  }
+}
+
+class AnimatedImage extends AnimatedWidget {
+  AnimatedImage({required Listenable listenable})
+      : super(listenable: listenable);
+
+  @override
+  Widget build(BuildContext context) {
+    var animation = listenable as Animation<double>;
+    return Icon(
+      Icons.favorite_rounded,
+      color: Colors.red,
+      size: animation.value,
+    );
+  }
+}
+''';
+
+///hero动画
+const String heroDes = '''一、Hero动画
   1.简介
     Hero 指的是可以在路由(页面)之间“飞行”的 widget，简单来说 Hero 动画就是在路由切换时，有一个共享的widget 可以在新旧路由间切换
     由于共享的 widget 在新旧路由页面上的位置、外观可能有所差异，所以在路由切换时会从旧路逐渐过渡到新路由中的指定位置，这样就会产生一个 Hero 动画
@@ -15,7 +331,7 @@ final String heroDes = '''一、Hero动画
     (3)当我们从A跳到B时或B返回A时会产生一个过渡的转场效果，如果位置不在同一个地方，会产生一个飞行的过渡动画。
 二、代码如下
 ''';
-final String heroCode = '''class _DemoViewState extends State<DemoView> {
+const String heroCode = '''class _DemoViewState extends State<DemoView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold (
@@ -47,7 +363,7 @@ final String heroCode = '''class _DemoViewState extends State<DemoView> {
 }
 ''';
 ///全局状态管理
-final String providerCode ='''//1.创建provider
+const String providerCode ='''//1.创建provider
 class CounterProvider extends ChangeNotifier {
   int _counter = 100;
   intget counter {
@@ -116,7 +432,7 @@ floatingActionButton: Selector<CounterProvider, CounterProvider>(
   child: Icon(Icons.add),
 ),
 ''';
-final String providerDes ='''一、全局状态管理
+const String providerDes ='''一、全局状态管理
   1.引入依赖
     dependencies: provider:^6.0.2
   2.导包
@@ -133,7 +449,7 @@ final String providerDes ='''一、全局状态管理
 ''';
 
 ///屏幕适配
-final String screenAdapterCode = """
+const String screenAdapterCode = """
 @override
 Widget build(BuildContext context) {
   //设置尺寸（填写设计中设备的屏幕尺寸）如果设计基于360dp * 690dp的屏幕
@@ -173,7 +489,7 @@ Widget build(BuildContext context) {
     ),
   );
 }""";
-final String screenAdapterDes = """一、屏幕适配
+const String screenAdapterDes = """一、屏幕适配
   1.添加依赖
     flutter_screenutil: ^5.3.1
   2.导包
@@ -194,7 +510,7 @@ final String screenAdapterDes = """一、屏幕适配
 """;
 
 ///生命周期
-final String lifeCycleCode = """class _LifeCycleViewState extends State<LifeCycleView> {
+const String lifeCycleCode = """class _LifeCycleViewState extends State<LifeCycleView> {
   @override
   void initState() {
     super.initState();
@@ -243,7 +559,7 @@ final String lifeCycleCode = """class _LifeCycleViewState extends State<LifeCycl
     print("dispose 永久移除组件，并释放组件资源时调用");
   }
 }""";
-final String lifeCycleDes = """Widget生命周期启动：createState -> initState -> didChangeDependencies -> build
+const String lifeCycleDes = """Widget生命周期启动：createState -> initState -> didChangeDependencies -> build
 Widget生命周期退出：deactivate -> dispose
 Widget生命周期热重载：reassemble -> didUpdateWidget -> build
 一、生命周期
@@ -275,7 +591,7 @@ Widget生命周期热重载：reassemble -> didUpdateWidget -> build
 """;
 
 ///APP应用生命周期
-final String appLifeCycleCode = """class _AppLifecycleState extends State<AppLifecycleView> 
+const String appLifeCycleCode = """class _AppLifecycleState extends State<AppLifecycleView> 
   with WidgetsBindingObserver {
   @override
   void initState() {///监听生命周期
@@ -302,7 +618,7 @@ final String appLifeCycleCode = """class _AppLifecycleState extends State<AppLif
     }
   }
 }""";
-final String appLifeCycleDes = """一、使用步骤
+const String appLifeCycleDes = """一、使用步骤
 1. 监听应用生命周期
 initState()方法中调用 WidgetsBinding.instance?.addObserver(this)
 2. 继承  WidgetsBindingObserver 重写 didChangeAppLifecycleState(AppLifecycleState state)
