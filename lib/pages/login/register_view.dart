@@ -151,7 +151,7 @@ class _RegisterViewState extends State<RegisterView> {
     print("pass= ${_pass.text}");
     print("time= ${_time.text}");
     print("sex= $_sex");
-    Navigator.of(context).pop();
+    Navigator.pop(context);
   }
   void _selectTime() async{
      DateTime? time = await showDatePicker(context: context, initialDate: DateTime.now(), firstDate: DateTime(2000), lastDate: DateTime(2100));

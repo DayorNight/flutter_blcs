@@ -7,6 +7,8 @@ import 'package:flutter_blcs/pages/main_view.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../common/utils/navigator.dart';
+
 class SplashView extends StatefulWidget {
   static final String keys = "/";
 
@@ -32,9 +34,9 @@ class _SplashViewState extends State<SplashView> {
     new Future.delayed(Duration(seconds: 3, milliseconds: 500), () {
       if(!mounted) return;
       if (isLogin) {//登陆
-        Navigator.of(context).popAndPushNamed(MainView.keys);
+        NavigatorUtils.fadePushAndRemove(context, MainView.keys);
       } else {
-        Navigator.of(context).popAndPushNamed(LoginView.keys);
+        NavigatorUtils.fadePushAndRemove(context, LoginView.keys);
       }
     });
   }

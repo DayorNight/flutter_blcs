@@ -3,12 +3,16 @@ import 'package:flutter_blcs/bean/draw_list.dart';
 import 'package:flutter_blcs/common/static.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/common/utils/function.dart';
+import 'package:flutter_blcs/pages/config/setting_theme_view.dart';
+import 'package:flutter_blcs/pages/config/switch_language_view.dart';
 import 'package:flutter_blcs/pages/demo_view.dart';
 import 'package:flutter_blcs/pages/home/function_view.dart';
 import 'package:flutter_blcs/pages/home/me_view.dart';
 import 'package:flutter_blcs/pages/home/widget_view.dart';
 import 'package:flutter_blcs/widgets/flare_logo.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../common/utils/navigator.dart';
 
 ///首页
 class MainView extends StatefulWidget {
@@ -67,7 +71,7 @@ class _MainViewState extends State<MainView> {
                     //其他账号头像
                     IconButton(
                         onPressed: () {
-                          Navigator.of(context).pop();
+                          Navigator.pop(context);
                         },
                         icon: Icon(Icons.exit_to_app_rounded))
                   ],
@@ -156,7 +160,7 @@ class _MainViewState extends State<MainView> {
 
   /// 前往主题设置
   void _theme() {
-    Navigator.of(context).pushNamed(DemoView.keys);
+    NavigatorUtils.fadePush(context, DemoView.keys);
   }
 
   /// draw list ui
@@ -170,9 +174,9 @@ class _MainViewState extends State<MainView> {
       onTap: () {
         var title = _datas[index].title;
         if (title == _s.switch_theme) {
-          Navigator.of(context).pushNamed('themeView');
+          NavigatorUtils.fadePush(context, SettingThemeView.keys);
         } else if (title == _s.switch_language) {
-          Navigator.of(context).pushNamed('languageView');
+          NavigatorUtils.fadePush(context, SwitchLanguageView.keys);
         }
       },
     );

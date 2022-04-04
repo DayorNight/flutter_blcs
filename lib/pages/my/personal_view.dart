@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/common/utils/print.dart';
 import 'package:flutter_blcs/common/weiget_util.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../common/static.dart';
@@ -10,6 +11,8 @@ class PersonalView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var args=ModalRoute.of(context)?.settings.arguments;
+    println.e(args);
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -23,7 +26,7 @@ class PersonalView extends StatelessWidget {
             color: Colors.white,
           ),
           onPressed: () {
-            Navigator.of(context).pop();
+            Navigator.pop(context);
           },
         ),
         actions: [

@@ -6,6 +6,7 @@ import 'package:flutter_blcs/pages/pages.dart';
 import 'package:flutter_blcs/widgets/flare_logo.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../common/utils/navigator.dart';
 import '../my/personal_information_view.dart';
 
 class MeView extends StatefulWidget {
@@ -17,7 +18,9 @@ class MeView extends StatefulWidget {
 
 class _MeViewState extends State<MeView> {
   Color primaryColor = Colors.grey;
+  String _tag = 'PersonalView';
   String _name = '登录';
+  String _avator = '头像';
   String _signature = '个性签名：看那高楼平地起 愿有岁月可回头';
 
   @override
@@ -31,67 +34,9 @@ class _MeViewState extends State<MeView> {
           sliver: SliverToBoxAdapter(
               child: GestureDetector(
                 onTap: (){
-                  Navigator.of(context).pushNamed(PersonalInformationView.keys);
+                  NavigatorUtils.fadePush(context, PersonalInformationView.keys);
                 },
-                child: Container(
-                    height: 150.r,
-                    child: Row(children: [
-                      Hero(
-                          tag: 'PersonalView',
-                          child: ClipOval(
-                            child: GestureDetector(
-                                onTap: () {
-                                  Navigator.of(context)
-                                      .pushNamed(PersonalView.keys);
-                                },
-                                child: Image.asset(
-                                  Images.logo,
-                                  width: 150.r,
-                                  height: 150.r,
-                                )),
-                          )),
-                      SizedBox(
-                        width: 20.r,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Spacer(
-                            flex: 1,
-                          ),
-                          Text(
-                            _name,
-                            style: TextStyle(
-                                fontSize: 50.sp,
-                                color: primaryColor,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Spacer(
-                            flex: 1,
-                          ),
-                          Container(
-                            width: 0.5.sw,
-                            child: Text(
-                              _signature,
-                              softWrap: true,
-                              maxLines: 2,
-                              style:
-                              TextStyle(fontSize: 30.sp, color: primaryColor),
-                              overflow: TextOverflow.ellipsis,
-                            ),
-                          )
-                        ],
-                      ),
-                      Spacer(),
-                      Icon(
-                        Icons.qr_code_2,
-                        color: primaryColor,
-                      ),
-                      Icon(
-                        Icons.arrow_forward_ios,
-                        color: primaryColor,
-                      ),
-                    ])),
+                child: buildPersonalInformation(context),
               )),
         ),
         SliverToBoxAdapter(
@@ -107,13 +52,74 @@ class _MeViewState extends State<MeView> {
       ],
     );
   }
+  ///头像信息
+  Container buildPersonalInformation(BuildContext context) {
+    return Container(
+                  height: 150.r,
+                  child: Row(children: [
+                    Hero(
+                        tag: _tag,
+                        child: ClipOval(
+                          child: GestureDetector(
+                              onTap: () {
+                                NavigatorUtils.fadePush(context,PersonalView.keys,arguments: _avator);
+                              },
+                              child: Image.asset(
+                                Images.logo,
+                                width: 150.r,
+                                height: 150.r,
+                              )),
+                        )),
+                    SizedBox(
+                      width: 20.r,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Spacer(
+                          flex: 1,
+                        ),
+                        Text(
+                          _name,
+                          style: TextStyle(
+                              fontSize: 50.sp,
+                              color: primaryColor,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Spacer(
+                          flex: 1,
+                        ),
+                        Container(
+                          width: 0.5.sw,
+                          child: Text(
+                            _signature,
+                            softWrap: true,
+                            maxLines: 2,
+                            style:
+                            TextStyle(fontSize: 30.sp, color: primaryColor),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        )
+                      ],
+                    ),
+                    Spacer(),
+                    Icon(
+                      Icons.qr_code_2,
+                      color: primaryColor,
+                    ),
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      color: primaryColor,
+                    ),
+                  ]));
+  }
 
   /// 加载list
   Widget? _loadList(BuildContext context, int index) {
     var tag = myPages.values.elementAt(index);
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).pushNamed(tag);
+        NavigatorUtils.fadePush(context, tag);
       },
       child: Container(
         padding: EdgeInsets.only(left: 25.r, right: 25.r),

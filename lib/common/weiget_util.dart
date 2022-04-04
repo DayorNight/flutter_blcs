@@ -13,7 +13,7 @@ PreferredSizeWidget getAppBar(BuildContext context,String title) {
     leading: IconButton(
       icon: Icon(Icons.arrow_back_ios_rounded),
       onPressed: () {
-        Navigator.of(context).pop();
+        Navigator.pop(context);
       },
     ),
   );

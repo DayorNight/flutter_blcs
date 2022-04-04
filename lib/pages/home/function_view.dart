@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_blcs/common/utils/navigator.dart';
 import 'package:flutter_blcs/pages/pages.dart';
 import 'package:flutter_blcs/widgets/flare_logo.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -61,7 +62,7 @@ class _FunctionViewState extends State<FunctionView> {
   Widget? _functionList(BuildContext context, int index) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).pushNamed(libPages.values.elementAt(index));
+        NavigatorUtils.fadePush(context, libPages.values.elementAt(index));
       },
       child:Container(
         decoration: BoxDecoration(

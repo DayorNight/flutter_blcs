@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/utils/function.dart';
 import 'package:flutter_blcs/http/global.dart';
+import 'package:flutter_blcs/pages/login/forget_psd_view.dart';
+import 'package:flutter_blcs/pages/login/register_view.dart';
+import 'package:flutter_blcs/pages/main_view.dart';
 import 'package:flutter_blcs/viewmodel/login_viewmodel.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../../common/utils/navigator.dart';
 import '../../common/weiget_util.dart';
 ///登录页面
 class LoginView extends StatefulWidget {
@@ -128,7 +132,7 @@ class _LoginViewState extends State<LoginView> {
                 ),
               ),
               onTap: (){
-                Navigator.of(context).pushNamed("forgetPsdView");
+                NavigatorUtils.fadePush(context, ForgetPsdView.keys);
               },
             ),
             SizedBox(height: 16),
@@ -154,7 +158,7 @@ class _LoginViewState extends State<LoginView> {
 
   void _login() async{
     var validate = (_key.currentState as FormState).validate();
-    Navigator.of(context).popAndPushNamed('mainView');
+    NavigatorUtils.fadePushAndRemove(context, MainView.keys);
     // if(validate) {
     //   if (_user.text.isEmpty) {
     //     print("账号不能为空");
@@ -168,7 +172,7 @@ class _LoginViewState extends State<LoginView> {
   }
 
   void _register(){
-    Navigator.of(context).pushNamed("registerView");
+    NavigatorUtils.fadePush(context, RegisterView.keys);
   }
 
 }

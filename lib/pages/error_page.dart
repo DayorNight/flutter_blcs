@@ -98,7 +98,7 @@ class ErrorPageState extends State<ErrorPage> {
                             Colors.white.withAlpha(100)),
                       ),
                       onPressed: () {
-                        Navigator.of(context).pop();
+                        Navigator.pop(context);
                       },
                       child: Text("Back")),
                 ],
