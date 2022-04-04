@@ -1,43 +1,64 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blcs/common/weiget_util.dart';
+import 'package:flutter_blcs/widgets/article_model.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../widgets/slide_transition_view.dart';
+import '../../generated/l10n.dart';
+import '../../common/utils/code.dart';
+import '../../widgets/slide_transition_view.dart';
 
-class DemoView extends StatefulWidget {
-  static const String keys = 'demo';
-
-  const DemoView({Key? key}) : super(key: key);
+class AnimatedSwitcherPage extends StatefulWidget {
+  static const String keys = 'animatedSwitcher';
+  const AnimatedSwitcherPage({Key? key}) : super(key: key);
 
   @override
-  _DemoViewState createState() => _DemoViewState();
+  _AnimatedSwitcherPageState createState() => _AnimatedSwitcherPageState();
 }
+class _AnimatedSwitcherPageState extends State<AnimatedSwitcherPage> {
 
-class _DemoViewState extends State<DemoView> {
   int _count1 = 1;
   int _count2 = 1;
   int _count3 = 1;
   int _count4 = 1;
   bool _isplay = true;
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: getAppBar(context, 'demo'),
-        body: GridView(
-          padding: EdgeInsets.all(10.r),
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3, ),
-          children: [
-            buildFadeItem(),
-            buildScaleItem(),
-            buildSlideXItem(),
-            buildSlideYItem(),
-            buildScaleImageItem(),
-          ],
-        ));
-  }
+    return ArticleModel(
+      title: S.of(context).animatedSwitcher,
+      keys: AnimatedSwitcherPage.keys,
+      logoColor: Theme.of(context).primaryColor,
+      des: animatedSwitcherDes,
+      code: animatedSwitcherCode,
 
+      footerChild: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              buildFadeItem(),
+              buildScaleItem(),
+              buildSlideXItem(),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              buildSlideYItem(),
+              buildScaleImageItem(),
+            ],
+          )
+        ],
+      ),
+      // footerChild: GridView(
+      //   padding: EdgeInsets.all(10.r),
+      //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      //     crossAxisCount: 2,
+      //   ),
+      //   children: [
+      //
+      //   ],
+      // ),
+    );
+  }
   ///默认 淡入淡出
   Column buildFadeItem() {
     return Column(
@@ -172,3 +193,4 @@ class _DemoViewState extends State<DemoView> {
     );
   }
 }
+

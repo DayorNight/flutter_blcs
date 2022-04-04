@@ -17,5 +17,6 @@
   "personalInformation": "个人信息",
   "animation": "简单动画",
   "routeAnimation": "路由动画",
-  "mixedAnimation": "交织动画"
+  "mixedAnimation": "交织动画",
+  "animatedSwitcher": "UI切换动画"
 }

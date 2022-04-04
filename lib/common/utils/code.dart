@@ -1,3 +1,70 @@
+///UI切换动画
+const String animatedSwitcherDes = '''一、UI切换动画
+  1.简介
+    动画切换组件,默认情况，AnimatedSwitcher会对新旧child执行“渐隐”和“渐显”动画
+  2.属性
+    1.Duration duration :新child显示动画时长
+    2.Duration? reverseDuration :旧child隐藏的动画时长
+    3.Curve switchInCurve :新child显示的动画曲线
+    4.Curve switchOutCurve :旧child隐藏的动画曲线
+    5.AnimatedSwitcherTransitionBuilder transitionBuilder :动画构建器
+    6.AnimatedSwitcherLayoutBuilder layoutBuilder :布局构建器
+二、代码如下
+''';
+const String  animatedSwitcherCode = '''
+//1.默认切换方式
+Column buildFadeItem() {
+    return Column(
+      children: [
+        AnimatedSwitcher(
+          duration: Duration(milliseconds: 500),
+          child: Text(
+            '\$_count',
+            //显示指定key，不同的key会被认为是不同的Text，这样才能执行动画
+            key: ValueKey<int>(_count),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50.sp),
+          ),
+        ),
+        OutlinedButton(
+            onPressed: () {
+              setState(() {
+                _count++;
+              });
+            },
+            child: Text('点击'))
+      ],
+    );
+  }
+//2.缩放
+Column buildScaleItem() {
+    return Column(
+      children: [
+        AnimatedSwitcher(
+          duration: Duration(milliseconds: 500),
+          reverseDuration: Duration(milliseconds: 500),
+          switchInCurve: Curves.linear,
+          switchOutCurve: Curves.linear,
+          transitionBuilder: (child, animation) {
+            return ScaleTransition(child: child, scale: animation);
+          },
+          child: Text(
+            '\$_count',
+            key: ValueKey<int>(_count),
+            style: TextStyle(fontWeight: FontWeight.w900, fontSize: 50.sp),
+          ),
+        ),
+        OutlinedButton(
+            onPressed: () {
+              setState(() {
+                _count++;
+              });
+            },
+            child: Text('点击'))
+      ],
+    );
+  }
+''';
+
 ///交织动画
 const String mixedAnimationDes = '''一、交织动画
   1.简介

@@ -17,5 +17,6 @@
   "personalInformation": "Personal Information",
   "animation": "Animation",
   "routeAnimation": "Route Animation",
-  "mixedAnimation": "Mixed Animation"
+  "mixedAnimation": "Mixed Animation",
+  "animatedSwitcher": "Animated Switcher"
 }

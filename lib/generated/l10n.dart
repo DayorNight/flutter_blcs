@@ -239,6 +239,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Animated Switcher`
+  String get animatedSwitcher {
+    return Intl.message(
+      'Animated Switcher',
+      name: 'animatedSwitcher',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

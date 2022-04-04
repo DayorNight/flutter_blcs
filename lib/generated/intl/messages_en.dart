@@ -22,6 +22,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "animatedSwitcher":
+            MessageLookupByLibrary.simpleMessage("Animated Switcher"),
         "animation": MessageLookupByLibrary.simpleMessage("Animation"),
         "appName": MessageLookupByLibrary.simpleMessage("Corn"),
         "app_lifeCycle": MessageLookupByLibrary.simpleMessage("App LifeCycle"),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/pages/my/animated_switcher_page.dart';
 import '../pages/libs/provider_view.dart';
 import '../pages/my/animation_view.dart';
 import '../pages/my/app_lifecycle_view.dart';
@@ -38,6 +39,7 @@ class Routers {
     AnimationView.keys:(BuildContext context) => AnimationView(),
     RouteAnimationView.keys:(BuildContext context) => RouteAnimationView(),
     MixedAnimationView.keys:(BuildContext context) => MixedAnimationView(),
+    AnimatedSwitcherPage.keys:(BuildContext context) => AnimatedSwitcherPage(),
   };
   //初始路由
   static final initialRoute = SplashView.keys;

@@ -1,3 +1,5 @@
+import 'package:flutter_blcs/pages/my/animated_switcher_page.dart';
+
 import 'libs/provider_view.dart';
 import 'libs/screen_adapter_view.dart';
 import 'my/animation_view.dart';
@@ -20,4 +22,5 @@ final Map myPages = {
   "简单动画": AnimationView.keys,
   "路由动画": RouteAnimationView.keys,
   "交织动画": MixedAnimationView.keys,
+  "UI切换动画": AnimatedSwitcherPage.keys,
 };
