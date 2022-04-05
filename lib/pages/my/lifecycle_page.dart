@@ -3,20 +3,20 @@ import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/common/utils/code.dart';
 import 'package:flutter_blcs/widgets/article_model.dart';
 
-class LifeCycleView extends StatefulWidget {
+class LifeCyclePage extends StatefulWidget {
   static final String keys = "lifeCycleView";
 
-  const LifeCycleView({Key? key}) : super(key: key);
+  const LifeCyclePage({Key? key}) : super(key: key);
 
   @override
-  _LifeCycleViewState createState() {
+  _LifeCyclePageState createState() {
     /*当 StatefulWidget 被创建时会立即执行 createState*/
     print("createState 当 StatefulWidget 被创建时调用");
-    return _LifeCycleViewState();
+    return _LifeCyclePageState();
   }
 }
 
-class _LifeCycleViewState extends State<LifeCycleView> {
+class _LifeCyclePageState extends State<LifeCyclePage> {
   @override
   void initState() {
     super.initState();
@@ -38,7 +38,7 @@ class _LifeCycleViewState extends State<LifeCycleView> {
     return ArticleModel(title: S
         .of(context)
         .lifeCycle,
-        keys: LifeCycleView.keys,
+        keys: LifeCyclePage.keys,
         logoColor: Theme
             .of(context)
             .primaryColor,
@@ -54,7 +54,7 @@ class _LifeCycleViewState extends State<LifeCycleView> {
   }
 
   @override
-  void didUpdateWidget(LifeCycleView oldWidget) {
+  void didUpdateWidget(LifeCyclePage oldWidget) {
     super.didUpdateWidget(oldWidget);
     /*该函数主要是在组件重新构建，比如说热重载，父组件发生 build 的情况下，子组件该方法才会被调用*/
     print("didUpdateWidget 组件重新构建时调用");

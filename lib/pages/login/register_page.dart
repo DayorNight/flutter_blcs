@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/weiget_util.dart';
 ///注册页面
-class RegisterView extends StatefulWidget {
+class RegisterPage extends StatefulWidget {
   static final String keys = "registerView";
-  const RegisterView({Key? key}) : super(key: key);
+  const RegisterPage({Key? key}) : super(key: key);
 
   @override
-  _RegisterViewState createState() => _RegisterViewState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _RegisterViewState extends State<RegisterView> {
+class _RegisterPageState extends State<RegisterPage> {
   GlobalKey _key = GlobalKey<FormState>();
   var _sex = true;
   late TextEditingController _user;

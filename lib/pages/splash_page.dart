@@ -2,24 +2,24 @@ import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/static.dart';
 import 'package:flutter_blcs/common/utils/function.dart';
-import 'package:flutter_blcs/pages/login/login_view.dart';
-import 'package:flutter_blcs/pages/main_view.dart';
+import 'package:flutter_blcs/pages/login/login_page.dart';
+import 'package:flutter_blcs/pages/main_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../common/utils/navigator.dart';
 
-class SplashView extends StatefulWidget {
+class SplashPage extends StatefulWidget {
   static final String keys = "/";
 
 
-  const SplashView({Key? key}) : super(key: key);
+  const SplashPage({Key? key}) : super(key: key);
 
   @override
-  _SplashViewState createState() => _SplashViewState();
+  _SplashPageState createState() => _SplashPageState();
 }
 
-class _SplashViewState extends State<SplashView> {
+class _SplashPageState extends State<SplashPage> {
   bool hadInit = false;
   double size = 200;
   bool isLogin = true;
@@ -34,9 +34,9 @@ class _SplashViewState extends State<SplashView> {
     new Future.delayed(Duration(seconds: 3, milliseconds: 500), () {
       if(!mounted) return;
       if (isLogin) {//登陆
-        NavigatorUtils.fadePushAndRemove(context, MainView.keys);
+        NavigatorUtils.fadePushAndRemove(context, MainPage.keys);
       } else {
-        NavigatorUtils.fadePushAndRemove(context, LoginView.keys);
+        NavigatorUtils.fadePushAndRemove(context, LoginPage.keys);
       }
     });
   }

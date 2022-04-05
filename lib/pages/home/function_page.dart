@@ -7,14 +7,14 @@ import 'package:flutter_blcs/widgets/flare_logo.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class FunctionView extends StatefulWidget {
-  const FunctionView({Key? key}) : super(key: key);
+class FunctionPage extends StatefulWidget {
+  const FunctionPage({Key? key}) : super(key: key);
 
   @override
-  _FunctionViewState createState() => _FunctionViewState();
+  _FunctionPageState createState() => _FunctionPageState();
 }
 
-class _FunctionViewState extends State<FunctionView> {
+class _FunctionPageState extends State<FunctionPage> {
   String _title = 'Flutter libs';
   Color color = Colors.grey;
 

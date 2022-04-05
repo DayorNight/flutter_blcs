@@ -6,21 +6,21 @@ import 'package:flutter_blcs/widgets/article_model.dart';
 import '../../common/utils/code.dart';
 import '../../generated/l10n.dart';
 
-class RouteAnimationView extends StatelessWidget {
+class RouteAnimationPage extends StatelessWidget {
   static const String keys = 'routeAnimationView';
   static String value = "默认路由方式";
   static String value1 = "左右切换方式";
   static String value2 = "PageRouteBuilder自定义方式";
   static String value3 = "继承PageRoute自定义方式";
   static String pages = '页面B';
-  const RouteAnimationView({Key? key}) : super(key: key);
+  const RouteAnimationPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     var title = S.of(context).routeAnimation;
     return ArticleModel(
       title: title,
-      keys: RouteAnimationView.keys,
+      keys: RouteAnimationPage.keys,
       logoColor: Theme.of(context).primaryColor,
       des: RouteAnimationDes,
       code: RouteAnimationCode,

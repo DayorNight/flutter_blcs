@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_blcs/common/static.dart';
-import 'package:flutter_blcs/pages/my/personal_view.dart';
+import 'package:flutter_blcs/pages/my/personal_page.dart';
 import 'package:flutter_blcs/pages/pages.dart';
 import 'package:flutter_blcs/widgets/flare_logo.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../common/utils/navigator.dart';
-import '../my/personal_information_view.dart';
+import '../my/personal_information_page.dart';
 
-class MeView extends StatefulWidget {
-  const MeView({Key? key}) : super(key: key);
+class MePage extends StatefulWidget {
+  const MePage({Key? key}) : super(key: key);
 
   @override
-  _MeViewState createState() => _MeViewState();
+  _MePageState createState() => _MePageState();
 }
 
-class _MeViewState extends State<MeView> {
+class _MePageState extends State<MePage> {
   Color primaryColor = Colors.grey;
   String _tag = 'PersonalView';
   String _name = '登录';
@@ -34,7 +34,7 @@ class _MeViewState extends State<MeView> {
           sliver: SliverToBoxAdapter(
               child: GestureDetector(
                 onTap: (){
-                  NavigatorUtils.fadePush(context, PersonalInformationView.keys);
+                  NavigatorUtils.fadePush(context, PersonalInformationPage.keys);
                 },
                 child: buildPersonalInformation(context),
               )),
@@ -62,7 +62,7 @@ class _MeViewState extends State<MeView> {
                         child: ClipOval(
                           child: GestureDetector(
                               onTap: () {
-                                NavigatorUtils.fadePush(context,PersonalView.keys,arguments: _avator);
+                                NavigatorUtils.fadePush(context,PersonalPage.keys,arguments: _avator);
                               },
                               child: Image.asset(
                                 Images.logo,

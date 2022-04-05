@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../pages/main_view.dart';
+import '../../pages/main_page.dart';
 import '../../routes/routes.dart';
 
 class NavigatorUtils {

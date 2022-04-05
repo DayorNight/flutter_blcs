@@ -5,14 +5,14 @@ import 'package:flutter_blcs/common/weiget_util.dart';
 import 'package:flutter_blcs/widgets/article_model.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class ScreenAdapterView extends StatelessWidget {
+class ScreenAdapterPage extends StatelessWidget {
   static final String keys = "screenAdapterView";
-  const ScreenAdapterView({Key? key}) : super(key: key);
+  const ScreenAdapterPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return ArticleModel(
       title: S.of(context).screen_adapter,
-      keys: ScreenAdapterView.keys,
+      keys: ScreenAdapterPage.keys,
       logoColor: Theme.of(context).primaryColor,
       des: screenAdapterDes,
       code: screenAdapterCode,

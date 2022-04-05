@@ -4,16 +4,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../widgets/slide_transition_view.dart';
 
-class DemoView extends StatefulWidget {
+class DemoPage extends StatefulWidget {
   static const String keys = 'demo';
 
-  const DemoView({Key? key}) : super(key: key);
+  const DemoPage({Key? key}) : super(key: key);
 
   @override
-  _DemoViewState createState() => _DemoViewState();
+  _DemoPageState createState() => _DemoPageState();
 }
 
-class _DemoViewState extends State<DemoView> {
+class _DemoPageState extends State<DemoPage> {
   int _count1 = 1;
   int _count2 = 1;
   int _count3 = 1;

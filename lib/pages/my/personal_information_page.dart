@@ -6,17 +6,17 @@ import '../../common/static.dart';
 import '../../generated/l10n.dart';
 
 //个人信息
-class PersonalInformationView extends StatefulWidget {
+class PersonalInformationPage extends StatefulWidget {
   static const String keys = 'personalInformationView';
 
-  const PersonalInformationView({Key? key}) : super(key: key);
+  const PersonalInformationPage({Key? key}) : super(key: key);
 
   @override
-  _PersonalInformationViewState createState() =>
-      _PersonalInformationViewState();
+  _PersonalInformationPageState createState() =>
+      _PersonalInformationPageState();
 }
 
-class _PersonalInformationViewState extends State<PersonalInformationView> {
+class _PersonalInformationPageState extends State<PersonalInformationPage> {
   List<String> datas = [];
 
   @override

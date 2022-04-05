@@ -4,10 +4,10 @@ import 'package:flutter_blcs/common/weiget_util.dart';
 import 'package:flutter_blcs/widgets/article_model.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
 
-class HeroView extends StatelessWidget {
+class HeroPage extends StatelessWidget {
   static final String keys = "heroView";
 
-  const HeroView({Key? key}) : super(key: key);
+  const HeroPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

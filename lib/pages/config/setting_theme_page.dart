@@ -7,15 +7,15 @@ import 'package:flutter_blcs/viewmodel/theme_viewmodel.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class SettingThemeView extends StatefulWidget {
+class SettingThemePage extends StatefulWidget {
   static final String keys = "themeView";
-  const SettingThemeView({Key? key}) : super(key: key);
+  const SettingThemePage({Key? key}) : super(key: key);
 
   @override
-  _SettingThemeViewState createState() => _SettingThemeViewState();
+  _SettingThemePageState createState() => _SettingThemePageState();
 }
 
-class _SettingThemeViewState extends State<SettingThemeView> {
+class _SettingThemePageState extends State<SettingThemePage> {
   var _switchTheme = false;
 
   @override

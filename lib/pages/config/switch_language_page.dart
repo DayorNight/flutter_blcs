@@ -6,15 +6,15 @@ import 'package:flutter_blcs/common/weiget_util.dart';
 import 'package:flutter_blcs/viewmodel/language_viewmodel.dart';
 import 'package:provider/provider.dart';
 
-class SwitchLanguageView extends StatefulWidget {
+class SwitchLanguagePage extends StatefulWidget {
   static final String keys = "languageView";
-  const SwitchLanguageView({Key? key}) : super(key: key);
+  const SwitchLanguagePage({Key? key}) : super(key: key);
 
   @override
-  _SwitchLanguageViewState createState() => _SwitchLanguageViewState();
+  _SwitchLanguagePageState createState() => _SwitchLanguagePageState();
 }
 
-class _SwitchLanguageViewState extends State<SwitchLanguageView> {
+class _SwitchLanguagePageState extends State<SwitchLanguagePage> {
   late Map _datas;
 
   @override

@@ -5,16 +5,16 @@ import 'package:flutter_blcs/common/weiget_util.dart';
 import 'package:flutter_blcs/widgets/article_model.dart';
 import 'package:flutter_syntax_view/flutter_syntax_view.dart';
 
-class AppLifecycleView extends StatefulWidget {
+class AppLifecyclePage extends StatefulWidget {
   static final String keys = "applifeView";
 
-  const AppLifecycleView({Key? key}) : super(key: key);
+  const AppLifecyclePage({Key? key}) : super(key: key);
 
   @override
   _AppLifecycleState createState() => _AppLifecycleState();
 }
 
-class _AppLifecycleState extends State<AppLifecycleView>
+class _AppLifecycleState extends State<AppLifecyclePage>
     with WidgetsBindingObserver {
   String _state = "未获取到状态";
 
@@ -55,7 +55,7 @@ class _AppLifecycleState extends State<AppLifecycleView>
   Widget build(BuildContext context) {
     return ArticleModel(
       title: S.of(context).app_lifeCycle,
-      keys: AppLifecycleView.keys,
+      keys: AppLifecyclePage.keys,
       logoColor: Theme.of(context).primaryColor,
       des: appLifeCycleDes,
       code: appLifeCycleCode,

@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/utils/function.dart';
 import 'package:flutter_blcs/http/global.dart';
-import 'package:flutter_blcs/pages/login/forget_psd_view.dart';
-import 'package:flutter_blcs/pages/login/register_view.dart';
-import 'package:flutter_blcs/pages/main_view.dart';
+import 'package:flutter_blcs/pages/login/forget_psd_page.dart';
+import 'package:flutter_blcs/pages/login/register_page.dart';
+import 'package:flutter_blcs/pages/main_page.dart';
 import 'package:flutter_blcs/viewmodel/login_viewmodel.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../common/utils/navigator.dart';
 import '../../common/weiget_util.dart';
 ///登录页面
-class LoginView extends StatefulWidget {
+class LoginPage extends StatefulWidget {
   static final String keys = "loginView";
-  const LoginView({Key? key}) : super(key: key);
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
-  _LoginViewState createState() => _LoginViewState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class _LoginViewState extends State<LoginView> {
+class _LoginPageState extends State<LoginPage> {
   GlobalKey _key = GlobalKey<FormState>();
   late TextEditingController _user;
   late TextEditingController _pass;
@@ -132,7 +132,7 @@ class _LoginViewState extends State<LoginView> {
                 ),
               ),
               onTap: (){
-                NavigatorUtils.fadePush(context, ForgetPsdView.keys);
+                NavigatorUtils.fadePush(context, ForgetPsdPage.keys);
               },
             ),
             SizedBox(height: 16),
@@ -158,7 +158,7 @@ class _LoginViewState extends State<LoginView> {
 
   void _login() async{
     var validate = (_key.currentState as FormState).validate();
-    NavigatorUtils.fadePushAndRemove(context, MainView.keys);
+    NavigatorUtils.fadePushAndRemove(context, MainPage.keys);
     // if(validate) {
     //   if (_user.text.isEmpty) {
     //     print("账号不能为空");
@@ -172,7 +172,7 @@ class _LoginViewState extends State<LoginView> {
   }
 
   void _register(){
-    NavigatorUtils.fadePush(context, RegisterView.keys);
+    NavigatorUtils.fadePush(context, RegisterPage.keys);
   }
 
 }

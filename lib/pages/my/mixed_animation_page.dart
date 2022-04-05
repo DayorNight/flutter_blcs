@@ -8,16 +8,16 @@ import '../../common/weiget_util.dart';
 import '../../generated/l10n.dart';
 import '../../widgets/animation/stagger_animation.dart';
 
-class MixedAnimationView extends StatefulWidget {
+class MixedAnimationPage extends StatefulWidget {
   static final String keys = "mixedAnimationView";
 
-  const MixedAnimationView({Key? key}) : super(key: key);
+  const MixedAnimationPage({Key? key}) : super(key: key);
 
   @override
-  _MixedAnimationViewState createState() => _MixedAnimationViewState();
+  _MixedAnimationPageState createState() => _MixedAnimationPageState();
 }
 
-class _MixedAnimationViewState extends State<MixedAnimationView>
+class _MixedAnimationPageState extends State<MixedAnimationPage>
     with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> animation;
@@ -89,7 +89,7 @@ class _MixedAnimationViewState extends State<MixedAnimationView>
       children: [
         ArticleModel(
           title: S.of(context).mixedAnimation,
-          keys: MixedAnimationView.keys,
+          keys: MixedAnimationPage.keys,
           logoColor: Theme.of(context).primaryColor,
           des: mixedAnimationDes,
           code: mixedAnimationCode,

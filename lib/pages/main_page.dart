@@ -3,28 +3,28 @@ import 'package:flutter_blcs/bean/draw_list.dart';
 import 'package:flutter_blcs/common/static.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/common/utils/function.dart';
-import 'package:flutter_blcs/pages/config/setting_theme_view.dart';
-import 'package:flutter_blcs/pages/config/switch_language_view.dart';
-import 'package:flutter_blcs/pages/demo_view.dart';
-import 'package:flutter_blcs/pages/home/function_view.dart';
-import 'package:flutter_blcs/pages/home/me_view.dart';
-import 'package:flutter_blcs/pages/home/widget_view.dart';
+import 'package:flutter_blcs/pages/config/setting_theme_page.dart';
+import 'package:flutter_blcs/pages/config/switch_language_page.dart';
+import 'package:flutter_blcs/pages/demo_page.dart';
+import 'package:flutter_blcs/pages/home/function_page.dart';
+import 'package:flutter_blcs/pages/home/me_page.dart';
+import 'package:flutter_blcs/pages/home/widget_page.dart';
 import 'package:flutter_blcs/widgets/flare_logo.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../common/utils/navigator.dart';
 
 ///首页
-class MainView extends StatefulWidget {
+class MainPage extends StatefulWidget {
   static final String keys = "mainView";
 
-  const MainView({Key? key}) : super(key: key);
+  const MainPage({Key? key}) : super(key: key);
 
   @override
-  _MainViewState createState() => _MainViewState();
+  _MainPageState createState() => _MainPageState();
 }
 
-class _MainViewState extends State<MainView> {
+class _MainPageState extends State<MainPage> {
   late S _s;
   late List<DrawListBean> _datas;
   int _bottomIndex = 0;
@@ -147,7 +147,7 @@ class _MainViewState extends State<MainView> {
 
     return PageView(
       controller: _pageController,
-      children: [WidgetView(), FunctionView(), MeView()],
+      children: [WidgetPage(), FunctionPage(), MePage()],
       onPageChanged: (index) {
         print("index $index");
         _title = _menu[index];
@@ -160,7 +160,7 @@ class _MainViewState extends State<MainView> {
 
   /// 前往主题设置
   void _theme() {
-    NavigatorUtils.fadePush(context, DemoView.keys);
+    NavigatorUtils.fadePush(context, DemoPage.keys);
   }
 
   /// draw list ui
@@ -174,9 +174,9 @@ class _MainViewState extends State<MainView> {
       onTap: () {
         var title = _datas[index].title;
         if (title == _s.switch_theme) {
-          NavigatorUtils.fadePush(context, SettingThemeView.keys);
+          NavigatorUtils.fadePush(context, SettingThemePage.keys);
         } else if (title == _s.switch_language) {
-          NavigatorUtils.fadePush(context, SwitchLanguageView.keys);
+          NavigatorUtils.fadePush(context, SwitchLanguagePage.keys);
         }
       },
     );

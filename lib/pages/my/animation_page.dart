@@ -6,16 +6,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../generated/l10n.dart';
 import '../../widgets/animation/image_size_animation.dart';
 
-class AnimationView extends StatefulWidget {
+class AnimationPage extends StatefulWidget {
   static const String keys = 'animationView';
 
-  const AnimationView({Key? key}) : super(key: key);
+  const AnimationPage({Key? key}) : super(key: key);
 
   @override
-  _AnimationViewState createState() => _AnimationViewState();
+  _AnimationPageState createState() => _AnimationPageState();
 }
 
-class _AnimationViewState extends State<AnimationView>
+class _AnimationPageState extends State<AnimationPage>
     with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation<double> animation;
@@ -74,7 +74,7 @@ class _AnimationViewState extends State<AnimationView>
   Widget build(BuildContext context) {
     return ArticleModel(
       title: S.of(context).animation,
-      keys: AnimationView.keys,
+      keys: AnimationPage.keys,
       logoColor: Theme.of(context).primaryColor,
       des: AnimationDes,
       code: AnimationCode,

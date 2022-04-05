@@ -5,9 +5,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../common/static.dart';
 import '../../generated/l10n.dart';
 /// 个人头像
-class PersonalView extends StatelessWidget {
+class PersonalPage extends StatelessWidget {
   static const String keys = 'personalView';
-  const PersonalView({Key? key}) : super(key: key);
+  const PersonalPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
