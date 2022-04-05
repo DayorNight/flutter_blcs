@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingThemePage extends StatefulWidget {
-  static final String keys = "themeView";
+  static final String keys = "SettingThemePage";
   const SettingThemePage({Key? key}) : super(key: key);
 
   @override
@@ -22,7 +22,7 @@ class _SettingThemePageState extends State<SettingThemePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(S.of(context).switch_theme),
+        title: Text(S.of(context).switchTheme),
         centerTitle: true,
       ),
       body: Padding(
@@ -31,7 +31,7 @@ class _SettingThemePageState extends State<SettingThemePage> {
           children: [
             Row(
               children: [
-                Text(S.of(context).dark_theme),
+                Text(S.of(context).darkTheme),
                 Switch(
                     value: _switchTheme,
                     onChanged: (value) {

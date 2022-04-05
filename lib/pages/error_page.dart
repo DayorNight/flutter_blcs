@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/log_interceptor.dart';
 import 'package:flutter_blcs/common/utils/print.dart';
+import 'package:flutter_blcs/widgets/flare_logo.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../common/static.dart';
+import '../config/config.dart';
+import '../generated/l10n.dart';
 
 class ErrorPage extends StatefulWidget {
   final String errorMessage;
@@ -13,101 +18,56 @@ class ErrorPage extends StatefulWidget {
 }
 
 class ErrorPageState extends State<ErrorPage> {
-  static List<Map<String, dynamic>?> sErrorStack = [];
-  static List<String?> sErrorName = [];
-
-  final TextEditingController textEditingController =
-      new TextEditingController();
-
-  addError(FlutterErrorDetails details) {
-    try {
-      var map = Map<String, dynamic>();
-      map["error"] = details.toString();
-      LogsInterceptors.addLogic(
-          sErrorName, details.exception.runtimeType.toString());
-      LogsInterceptors.addLogic(sErrorStack, map);
-    } catch (e) {
-      print(e);
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
-    double width =
-        MediaQueryData.fromWindow(WidgetsBinding.instance!.window).size.width;
-    var primaryColor = Theme.of(context).primaryColor;
     return Container(
-      color: primaryColor,
-      child: new Center(
-        child: Container(
-          alignment: Alignment.center,
-          width: width,
-          height: width,
-          decoration: new BoxDecoration(
-            color: Colors.white.withAlpha(30),
-            gradient:
-                RadialGradient(tileMode: TileMode.mirror, radius: 0.1, colors: [
-              Colors.white.withAlpha(10),
-              Color(0xFF24292E).withAlpha(100),
-            ]),
-            borderRadius: BorderRadius.all(Radius.circular(width / 2)),
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
+      alignment: Alignment.center,
+      color: Colors.red,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          FlareLogo(color: Colors.white,size: 300.r,),
+          /*错误详情*/
+          Config.DEBUG ? buildErrorDetailText():Text('ERROR',style: TextStyle(color: Colors.white,fontSize: 100.sp,decoration: null),),
+          SizedBox(height:50.r,),
+          /*按钮*/
+          Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              new Image(
-                  image: new AssetImage('static/images/ic_coffee.png'),
-                  width: 90.0,
-                  height: 90.0),
-              new SizedBox(
-                height: 11,
+              /*上报*/
+              OutlinedButton(
+                style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.white)),
+                onPressed: () {
+                  //Todo 上报错误
+                  println.e('上报错误');
+                  // String content = widget.errorMessage;
+                  // println.e(content);
+                },
+                child: Text(S.of(context).report),
               ),
-              Material(
-                child: Text(
-                  "Error Occur",
-                  style: new TextStyle(fontSize: 24, color: Colors.white),
-                ),
-                color: primaryColor,
-              ),
-              new SizedBox(
-                height: 40,
-              ),
-              new Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  new TextButton(
-                    style: ButtonStyle(
-                      backgroundColor: ButtonStyleButton.allOrNull<Color>(
-                          primaryColor.withAlpha(100)),
-                    ),
-                    onPressed: () {
-                      String content = widget.errorMessage;
-                      textEditingController.text = content;
-                      println.e(content);
-                    },
-                    child: Text("Report"),
-                  ),
-                  new SizedBox(
-                    width: 40,
-                  ),
-                  new TextButton(
-                      style: ButtonStyle(
-                        backgroundColor: ButtonStyleButton.allOrNull<Color>(
-                            Colors.white.withAlpha(100)),
-                      ),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      child: Text("Back")),
-                ],
-              )
+              /*返回*/
+              OutlinedButton(
+                  style: ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.white)),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text(S.of(context).back)),
             ],
-          ),
-        ),
+          )
+        ],
       ),
     );
   }
+
+  Widget buildErrorDetailText() => Container(
+    height: 0.65.sh,
+    width: 0.8.sw,
+    child: ListView(
+      children: [
+        Text(widget.errorMessage,style: TextStyle(color: Colors.white,fontSize: 15.sp)),
+      ],
+    ),
+  );
 }
 

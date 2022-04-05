@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/static.dart';
 import 'package:flutter_blcs/common/utils/function.dart';
 import 'package:flutter_blcs/pages/login/login_page.dart';
-import 'package:flutter_blcs/pages/main_page.dart';
+import 'package:flutter_blcs/pages/main/main_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 

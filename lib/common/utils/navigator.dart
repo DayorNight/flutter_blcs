@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../pages/main_page.dart';
+import '../../pages/main/main_page.dart';
 import '../../routes/routes.dart';
 
 class NavigatorUtils {
@@ -8,10 +8,13 @@ class NavigatorUtils {
   static fadePush(BuildContext context,String routeName,{Object? arguments}){
       Navigator.push(context,route(routeName,arguments: arguments));
   }
+
   static fadePushAndRemove(BuildContext context,String routeName,{Object? arguments}){
     Navigator.pushAndRemoveUntil(context, route(routeName,arguments: arguments) , (route) => false);
   }
+
   static Route route(String routeName,{Object? arguments}){
+   var route = Routers.routes[routeName];
    return PageRouteBuilder(
         settings: RouteSettings(
           name: routeName,
@@ -20,11 +23,10 @@ class NavigatorUtils {
         pageBuilder: (context, animation, secondaryAnimation) {
           return FadeTransition(
             opacity: animation,
-            child: Builder(builder: Routers.routes[routeName]!,),
+            child: Builder(builder: route??Routers.errrorRoute),
           );
         },
         transitionDuration: Duration(milliseconds: 500));
   }
-
 
 }

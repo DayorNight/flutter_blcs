@@ -7,7 +7,7 @@ import 'package:flutter_blcs/viewmodel/language_viewmodel.dart';
 import 'package:provider/provider.dart';
 
 class SwitchLanguagePage extends StatefulWidget {
-  static final String keys = "languageView";
+  static final String keys = "SwitchLanguagePage";
   const SwitchLanguagePage({Key? key}) : super(key: key);
 
   @override
@@ -26,7 +26,7 @@ class _SwitchLanguagePageState extends State<SwitchLanguagePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: getAppBar(context,S.of(context).switch_language),
+      appBar: getAppBar(context,S.of(context).switchLanguage),
       body: ListView.builder(
         padding: EdgeInsets.all(20),
         itemBuilder: (mContext, index) {

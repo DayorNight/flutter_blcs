@@ -71,80 +71,80 @@ class S {
   }
 
   /// `Switch Theme`
-  String get switch_theme {
+  String get switchTheme {
     return Intl.message(
       'Switch Theme',
-      name: 'switch_theme',
+      name: 'switchTheme',
       desc: '',
       args: [],
     );
   }
 
   /// `Switch Language`
-  String get switch_language {
+  String get switchLanguage {
     return Intl.message(
       'Switch Language',
-      name: 'switch_language',
+      name: 'switchLanguage',
       desc: '',
       args: [],
     );
   }
 
   /// `Select Language`
-  String get select_language {
+  String get selectLanguage {
     return Intl.message(
       'Select Language',
-      name: 'select_language',
+      name: 'selectLanguage',
       desc: '',
       args: [],
     );
   }
 
   /// `Dark Theme`
-  String get dark_theme {
+  String get darkTheme {
     return Intl.message(
       'Dark Theme',
-      name: 'dark_theme',
+      name: 'darkTheme',
       desc: '',
       args: [],
     );
   }
 
   /// `Widget`
-  String get home_view {
+  String get homeView {
     return Intl.message(
       'Widget',
-      name: 'home_view',
+      name: 'homeView',
       desc: '',
       args: [],
     );
   }
 
   /// `Function`
-  String get home_fun {
+  String get homeFun {
     return Intl.message(
       'Function',
-      name: 'home_fun',
+      name: 'homeFun',
       desc: '',
       args: [],
     );
   }
 
   /// `Me`
-  String get home_me {
+  String get homeMe {
     return Intl.message(
       'Me',
-      name: 'home_me',
+      name: 'homeMe',
       desc: '',
       args: [],
     );
   }
 
   /// `App LifeCycle`
-  String get app_lifeCycle {
+  String get appLifeCycle {
     return Intl.message(
       'App LifeCycle',
-      name: 'app_lifeCycle',
+      name: 'appLifeCycle',
       desc: '',
       args: [],
     );
@@ -161,10 +161,10 @@ class S {
   }
 
   /// `Screen Adapter`
-  String get screen_adapter {
+  String get screenAdapter {
     return Intl.message(
       'Screen Adapter',
-      name: 'screen_adapter',
+      name: 'screenAdapter',
       desc: '',
       args: [],
     );
@@ -245,6 +245,36 @@ class S {
     return Intl.message(
       'Animated Switcher',
       name: 'animatedSwitcher',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Basic Knowledge`
+  String get basicKnowledge {
+    return Intl.message(
+      'Basic Knowledge',
+      name: 'basicKnowledge',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Report`
+  String get report {
+    return Intl.message(
+      'Report',
+      name: 'report',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Back`
+  String get back {
+    return Intl.message(
+      'Back',
+      name: 'back',
       desc: '',
       args: [],
     );

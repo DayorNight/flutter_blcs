@@ -3,7 +3,7 @@ import 'package:flutter_blcs/common/utils/function.dart';
 import 'package:flutter_blcs/http/global.dart';
 import 'package:flutter_blcs/pages/login/forget_psd_page.dart';
 import 'package:flutter_blcs/pages/login/register_page.dart';
-import 'package:flutter_blcs/pages/main_page.dart';
+import 'package:flutter_blcs/pages/main/main_page.dart';
 import 'package:flutter_blcs/viewmodel/login_viewmodel.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';

@@ -25,14 +25,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "animatedSwitcher":
             MessageLookupByLibrary.simpleMessage("Animated Switcher"),
         "animation": MessageLookupByLibrary.simpleMessage("Animation"),
+        "appLifeCycle": MessageLookupByLibrary.simpleMessage("App LifeCycle"),
         "appName": MessageLookupByLibrary.simpleMessage("Corn"),
-        "app_lifeCycle": MessageLookupByLibrary.simpleMessage("App LifeCycle"),
-        "dark_theme": MessageLookupByLibrary.simpleMessage("Dark Theme"),
+        "back": MessageLookupByLibrary.simpleMessage("Back"),
+        "basicKnowledge":
+            MessageLookupByLibrary.simpleMessage("Basic Knowledge"),
+        "darkTheme": MessageLookupByLibrary.simpleMessage("Dark Theme"),
         "hero": MessageLookupByLibrary.simpleMessage("Hero"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
-        "home_fun": MessageLookupByLibrary.simpleMessage("Function"),
-        "home_me": MessageLookupByLibrary.simpleMessage("Me"),
-        "home_view": MessageLookupByLibrary.simpleMessage("Widget"),
+        "homeFun": MessageLookupByLibrary.simpleMessage("Function"),
+        "homeMe": MessageLookupByLibrary.simpleMessage("Me"),
+        "homeView": MessageLookupByLibrary.simpleMessage("Widget"),
         "lifeCycle": MessageLookupByLibrary.simpleMessage("LifeCycle"),
         "mixedAnimation":
             MessageLookupByLibrary.simpleMessage("Mixed Animation"),
@@ -40,14 +43,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "personalInformation":
             MessageLookupByLibrary.simpleMessage("Personal Information"),
         "provider": MessageLookupByLibrary.simpleMessage("Provider"),
+        "report": MessageLookupByLibrary.simpleMessage("Report"),
         "routeAnimation":
             MessageLookupByLibrary.simpleMessage("Route Animation"),
-        "screen_adapter":
-            MessageLookupByLibrary.simpleMessage("Screen Adapter"),
-        "select_language":
+        "screenAdapter": MessageLookupByLibrary.simpleMessage("Screen Adapter"),
+        "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Select Language"),
-        "switch_language":
+        "switchLanguage":
             MessageLookupByLibrary.simpleMessage("Switch Language"),
-        "switch_theme": MessageLookupByLibrary.simpleMessage("Switch Theme")
+        "switchTheme": MessageLookupByLibrary.simpleMessage("Switch Theme")
       };
 }

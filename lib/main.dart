@@ -21,7 +21,7 @@ void main() async {
     var onError = FlutterError.onError;
     FlutterError.onError = (FlutterErrorDetails details) {
       onError?.call(details);
-      println.e('error2: $details');
+      println.w('error2: $details');
     };
     // HandleError.handleUIError();
     runApp(MultiProvider(

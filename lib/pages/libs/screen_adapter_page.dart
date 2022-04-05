@@ -11,7 +11,7 @@ class ScreenAdapterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ArticleModel(
-      title: S.of(context).screen_adapter,
+      title: S.of(context).screenAdapter,
       keys: ScreenAdapterPage.keys,
       logoColor: Theme.of(context).primaryColor,
       des: screenAdapterDes,

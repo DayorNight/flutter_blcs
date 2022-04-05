@@ -54,7 +54,7 @@ class _AppLifecycleState extends State<AppLifecyclePage>
   @override
   Widget build(BuildContext context) {
     return ArticleModel(
-      title: S.of(context).app_lifeCycle,
+      title: S.of(context).appLifeCycle,
       keys: AppLifecyclePage.keys,
       logoColor: Theme.of(context).primaryColor,
       des: appLifeCycleDes,

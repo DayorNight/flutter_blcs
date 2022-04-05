@@ -5,7 +5,7 @@ import 'package:flutter_blcs/common/utils/function.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/common/theme_colors.dart';
 import 'package:flutter_blcs/pages/login/login_page.dart';
-import 'package:flutter_blcs/pages/main_page.dart';
+import 'package:flutter_blcs/pages/main/main_page.dart';
 import 'package:flutter_blcs/pages/splash_page.dart';
 import 'package:flutter_blcs/routes/routes.dart';
 import 'package:flutter_blcs/viewmodel/language_viewmodel.dart';
