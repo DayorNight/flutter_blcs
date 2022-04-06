@@ -45,3 +45,11 @@ flutter_blcs
 1. 动画
 2. 自定义View
 2. 引导页
+
+
+## 补充
+1. json转换
+- 工具: mac搜索‘Paste JSON as Code’下载
+- 在线转换：https://app.quicktype.io/  或  https://javiercbk.github.io/json_to_dart/
+- Android studio 插件 JsonToDart
+
