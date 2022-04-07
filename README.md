@@ -4,8 +4,7 @@
 
 flutter_blcs
 ├── android
-├── images          //保存图片
-├── ios         
+├── ios
 ├── lib             //代码部分
     ├── bean        // 实体
     ├── common      //一些工具类，如通用方法类、网络接口类、保存全局变量的静态类等
@@ -16,7 +15,8 @@ flutter_blcs
     ├── routes      //路由地址
     ├── viewmodel   //交互逻辑
     └── widgets     //APP内封装的一些Widget组件都在该目录下
-└── test        
+├── static          //本地文件
+└── test
 
 # 功能运用
 1. 异常捕获
@@ -40,12 +40,13 @@ flutter_blcs
 3. Hero动画   HeroView
 4. 简单动画    AnimationView
 5. 路由动画    RouteAnimationView
+6. 交织动画     MixedAnimationPage
+7. UI切换动画   AnimatedSwitcherPage
 
 ##任务
-1. 动画
-2. 自定义View
+1. 自定义View
 2. 引导页
-
+3. json解析
 
 ## 补充
 1. json转换

@@ -36,7 +36,6 @@ class _MainPageState extends State<MainPage> {
   var _imgPath =
       'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2491682377,1019940373&fm=26&gp=0.jpg';
 
-  PageController _pageController = PageController();
 
   @override
   void didChangeDependencies() {
@@ -142,7 +141,7 @@ class _MainPageState extends State<MainPage> {
       currentIndex: _bottomIndex,
       onTap: (index) {
         print("index: $index");
-        _pageController.jumpToPage(index);
+        _title = _menu[index];
         setState(() {
           _bottomIndex = index;
         });
@@ -152,16 +151,9 @@ class _MainPageState extends State<MainPage> {
 
   ///home page
   Widget getPageView(int index) {
-    return PageView(
-      controller: _pageController,
+    return IndexedStack(
+      index: _bottomIndex,
       children: pages,
-      onPageChanged: (index) {
-        print("index $index");
-        _title = _menu[index];
-        setState(() {
-          _bottomIndex = index;
-        });
-      },
     );
   }
 
@@ -192,9 +184,4 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  @override
-  void dispose() {
-    super.dispose();
-    _pageController.dispose();
-  }
 }
