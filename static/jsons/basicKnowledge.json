@@ -1,39 +1,39 @@
 [
   {
     "issue": "1.Widget的生命周期?",
-    "parse": "1.createState\n2.initState\n3.didChangeDependencies\n4.build\n5.reassemble\n6.didUpdateWidget\n7.deactivate\n8.dispose"
+    "parse": ""
   },
   {
     "issue": "2.widget是什么?",
-    "parse": "是 flutter 里一些UI组件，分为两大类\n1.无状态的 StatelessWidget\n2.有状态的 StatefulWidget"
+    "parse": ""
   },
   {
     "issue": "3.Dart是什么?",
-    "parse": "是Google开发的一种面向对象的计算机编程语言，与java类似"
+    "parse": ""
   },
   {
     "issue": "4.Flutter是什么?",
-    "parse": "flutter 是 Google推出的一套开源跨平台UI框架，可以快速地在Android、iOS和Web平台上构建高质量的原生用户界面"
+    "parse": ""
   },
   {
     "issue": "5.Dart和Flutter是什么关系?",
-    "parse": "dart是flutter的程序开发语言"
+    "parse": ""
   },
   {
     "issue": "6.main()和runApp()函数在flutter的作用分别是什么?",
-    "parse": "1.main 函数类似于 java语言的程序运行入口函数\n2.runApp 函数是渲染根Widget树的函数\n3.runApp 函数会在 main 函数里执行"
+    "parse": ""
   },
   {
     "issue": "7.Hot Restart 和 Hot Reload 有什么区别?",
-    "parse": "1.Hot Reload比Hot Restart快\n2.Hot Reload会编译我们文件里新加的代码并发送给dart虚拟机，dart会更新widgets来改变UI\n3.Hot Restart会让dart 虚拟机重新编译应用\n4.Hot Reload会保留之前的state，而Hot Restart回你重置所有的state回到初始值"
+    "parse": ""
   },
   {
     "issue": "8.flutter里 async 和 await?",
-    "parse": "1.async和await实际上是Dart异步编程用于简化异步API操作的两个关键字，用于处理异步耗时操作\n2.async关键字修饰的函数总是返回一个Future对象，所以async并不会阻塞当前线程\n3.await的操作，不会影响方法外后续代码的执行;只会阻塞async方法的后续代码\n4.await关键字必须在async函数内部使用,在async内部等待耗时任务返回结果"
+    "parse": ""
   },
   {
     "issue": "9.future 和steam有什么不一样?",
-    "parse": "在 Flutter 中有两种处理异步操作的方式 Future 和 Stream\n1.Future 用于处理单个异步操作\n2.Stream 用来处理连续的异步操作\n3.Stream也用于接收异步数据，与Future不同在于可以接收多个异步返回结果。可以通过多次触发成功或失败来传递数据或错误异常，使用场景：多次读取数据的异步任务场景，网络内容下载，文件读取等"
+    "parse": ""
   },
   {
     "issue": "10.什么是flutter里的key? 有什么用?",
