@@ -24,6 +24,9 @@ flutter_blcs
 3. sp封装
 4. 轮播图
 
+## 引入库
+1. UME Flutter 应用内调试工具平台
+
 # pages
 1. 切换主题 SettingThemeView
 2. 切换语言 SwitchLanguageView
@@ -31,8 +34,9 @@ flutter_blcs
 ## widget
 
 ## libs
-1. 屏幕适配     ScreenAdapterView
-2. 全局状态管理   ProviderView
+1. ScreenAdapterView：屏幕适配
+2. ProviderView：全局状态管理
+3. flutter_ume：应用内调试工具平台
 
 ## my
 1. 应用生命周期    AppLifecycleView

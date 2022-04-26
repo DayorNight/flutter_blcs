@@ -19,11 +19,8 @@ bool isDoubleClick(){
 /// 屏幕适配
 void screenInit(BuildContext context){
   ScreenUtil.init(
-      BoxConstraints(
-          maxWidth: MediaQuery.of(context).size.width,
-          maxHeight: MediaQuery.of(context).size.height),
+      context,
       designSize: Size(750, 1334),
-      context: context,
       minTextAdapt: true,
       orientation: Orientation.portrait);
 }

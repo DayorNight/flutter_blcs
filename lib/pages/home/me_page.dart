@@ -82,7 +82,7 @@ class _MePageState extends State<MePage> {
                         Text(
                           _name,
                           style: TextStyle(
-                              fontSize: 50.sp,
+                              fontSize: 40.sp,
                               color: primaryColor,
                               fontWeight: FontWeight.bold),
                         ),

@@ -44,6 +44,16 @@ dev_dependencies:
     sdk: flutter
 
   flutter_lints: ^1.0.4
+  # UME  应用内调试工具
+  flutter_ume: ^0.3.0+1
+  flutter_ume_kit_ui: ^0.3.0+1
+  flutter_ume_kit_device: ^0.3.0
+  flutter_ume_kit_perf: ^0.3.0
+  flutter_ume_kit_show_code: ^0.3.0
+  flutter_ume_kit_console: ^0.3.0
+  flutter_ume_kit_dio: ^0.3.0
+
+
 #  # 支持自动化json
   json_serializable: ^6.1.4
   build_runner: ^2.1.7

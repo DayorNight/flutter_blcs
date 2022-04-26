@@ -153,7 +153,7 @@ class _MyAppState extends State<MyApp> {
       // showSemanticsDebugger: false,
 
       ///是否隐藏debug标签
-      debugShowCheckedModeBanner: false,
+      // debugShowCheckedModeBanner: false,
 
       ///应用程序意图的键盘快捷键的默认映射
       // shortcuts: <ShortcutActivator, Intent>{
