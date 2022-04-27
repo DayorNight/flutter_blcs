@@ -2,12 +2,13 @@ import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/static.dart';
 import 'package:flutter_blcs/common/utils/function.dart';
+import 'package:flutter_blcs/config/config.dart';
 import 'package:flutter_blcs/pages/login/login_page.dart';
 import 'package:flutter_blcs/pages/main/main_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../common/utils/navigator.dart';
+import '../../common/utils/navigator.dart';
 
 class SplashPage extends StatefulWidget {
   static final String keys = "/";
@@ -22,7 +23,6 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   bool hadInit = false;
   double size = 200;
-  bool isLogin = true;
   String text = "Welcome";
   @override
   void didChangeDependencies() {
@@ -33,7 +33,7 @@ class _SplashPageState extends State<SplashPage> {
     hadInit = true;
     new Future.delayed(Duration(seconds: 3, milliseconds: 500), () {
       if(!mounted) return;
-      if (isLogin) {//登陆
+      if (Config.DEBUG) {//登陆
         NavigatorUtils.fadePushAndRemove(context, MainPage.keys);
       } else {
         NavigatorUtils.fadePushAndRemove(context, LoginPage.keys);

@@ -279,6 +279,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Custom Widget`
+  String get customWidget {
+    return Intl.message(
+      'Custom Widget',
+      name: 'customWidget',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

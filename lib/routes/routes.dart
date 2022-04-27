@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/pages/my/animated_switcher_page.dart';
+import 'package:flutter_blcs/pages/my/custom_page.dart';
 import '../pages/libs/provider_page.dart';
 import '../pages/main/left_draw/basic_knowledge_page.dart';
 import '../pages/my/animation_page.dart';
@@ -17,7 +18,7 @@ import '../pages/main/left_draw/switch_language_page.dart';
 import '../pages/my/mixed_animation_page.dart';
 import '../pages/my/personal_information_page.dart';
 import '../pages/my/route_animation_page.dart';
-import '../pages/splash_page.dart';
+import '../pages/login/splash_page.dart';
 import '../pages/my/personal_page.dart';
 class Routers {
   //路由表
@@ -42,6 +43,7 @@ class Routers {
     MixedAnimationPage.keys:(BuildContext context) => MixedAnimationPage(),
     AnimatedSwitcherPage.keys:(BuildContext context) => AnimatedSwitcherPage(),
     BasicKnowledgePage.keys:(BuildContext context) => BasicKnowledgePage(),
+    CustomPage.keys:(BuildContext context) => CustomPage(),
   };
   //初始路由
   static final initialRoute = SplashPage.keys;

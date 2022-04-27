@@ -30,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "back": MessageLookupByLibrary.simpleMessage("Back"),
         "basicKnowledge":
             MessageLookupByLibrary.simpleMessage("Basic Knowledge"),
+        "customWidget": MessageLookupByLibrary.simpleMessage("Custom Widget"),
         "darkTheme": MessageLookupByLibrary.simpleMessage("Dark Theme"),
         "hero": MessageLookupByLibrary.simpleMessage("Hero"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),

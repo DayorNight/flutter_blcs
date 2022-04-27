@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/sp/sp.dart';
 import 'package:flutter_blcs/common/sp/sp_keys.dart';
-import 'package:flutter_blcs/common/utils/function.dart';
-import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/common/theme_colors.dart';
-import 'package:flutter_blcs/pages/login/login_page.dart';
-import 'package:flutter_blcs/pages/main/main_page.dart';
-import 'package:flutter_blcs/pages/splash_page.dart';
+import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/routes/routes.dart';
 import 'package:flutter_blcs/viewmodel/language_viewmodel.dart';
 import 'package:flutter_blcs/viewmodel/theme_viewmodel.dart';

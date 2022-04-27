@@ -21,5 +21,6 @@
   "animatedSwitcher": "UI切换动画",
   "basicKnowledge": "基础知识",
   "report": "上报",
-  "back": "返回"
+  "back": "返回",
+  "customWidget": "自定义Widget"
 }

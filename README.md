@@ -18,6 +18,26 @@ flutter_blcs
 ├── static          //本地文件
 └── test
 
+# pages
+1. 切换主题 SettingThemePage
+2. 切换语言 SwitchLanguagePage
+
+## widget
+
+## function
+1. ScreenAdapterPage：屏幕适配
+2. ProviderPage：全局状态管理
+
+## my
+1. 应用生命周期    AppLifecyclePage
+2. Widget生命周期 LifeCyclePage
+3. Hero动画   HeroPage
+4. 简单动画    AnimationPage
+5. 路由动画    RouteAnimationPage
+6. 交织动画     MixedAnimationPage
+7. UI切换动画   AnimatedSwitcherPage
+8. 自定义View   CustomPage
+
 # 功能运用
 1. 异常捕获
 2. 双击返回 
@@ -25,32 +45,27 @@ flutter_blcs
 4. 轮播图
 
 ## 引入库
-1. UME Flutter 应用内调试工具平台
-
-# pages
-1. 切换主题 SettingThemeView
-2. 切换语言 SwitchLanguageView
-
-## widget
-
-## libs
-1. ScreenAdapterView：屏幕适配
-2. ProviderView：全局状态管理
-3. flutter_ume：应用内调试工具平台
-
-## my
-1. 应用生命周期    AppLifecycleView
-2. Widget生命周期 LifeCycleView
-3. Hero动画   HeroView
-4. 简单动画    AnimationView
-5. 路由动画    RouteAnimationView
-6. 交织动画     MixedAnimationPage
-7. UI切换动画   AnimatedSwitcherPage
+1. flutter_ume: Flutter 应用内调试工具平台
+2. dio:网络请求
+3. encrypt:RSA加密
+4. provider:全局状态管理
+5. shared_preferences:持久化操作
+6. card_swiper:轮播图
+7. flutter_screenutil:屏幕适配
+8. flutter_syntax_view:代码高亮
+9. logger:log打印
+10. flare_flutter:动画插件
+11. google_fonts:google字体
+12. simple_animations:自定义动画
+13. json_annotation:支持自动化json
 
 ##任务
-1. 自定义View
 2. 引导页
 3. json解析
+4. 网络加载
+5. 拍照
+6. 视频播放
+
 
 ## 补充
 1. json转换

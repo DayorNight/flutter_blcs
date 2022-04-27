@@ -1,3 +1,58 @@
+///自定义Widget
+const String customWidgetDes = '''一、自定义Widget
+  1.简介
+    在Flutter中自定义组件有三种方式：通过组合其它组件、自绘和实现RenderObject
+  1.1.组合多个Widget
+    通过拼装多个组件来组合成一个新的组件。例如我们之前介绍的Container就是一个组合组件，它是由DecoratedBox、ConstrainedBox、Transform、Padding、Align等组件组成
+  1.2.自绘
+    如果遇到无法通过现有的组件来实现需要的UI时，我们可以通过自绘组件的方式来实现
+    可以通过Flutter中提供的CustomPaint和Canvas来实现UI自绘
+  1.3.实现RenderObject
+     Flutter提供的自身具有UI外观的组件，如文本Text、Image都是通过相应的RenderObject渲染出来的，如Text是由RenderParagraph渲染，而Image是由RenderImage渲染
+二、以自绘为主举例如下
+''';
+const String  customWidgetCode = '''
+class MyPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    print('paint \$size');
+    print('paint \${Offset.zero}');
+    var rect = Offset.zero & size;
+    //绘制背景
+    var paint = Paint()
+      ..isAntiAlias = true //抗锯齿
+      ..style = PaintingStyle.fill //填充类型
+      ..color = Color(0xFFDCC48C); //颜色
+    canvas.drawRect(rect, paint);
+    //画横线
+    paint
+      ..style = PaintingStyle.stroke
+      ..color = Colors.black38
+      ..strokeWidth = 1.0;
+    for (int i = 0; i <= 3; ++i) {
+      double dy = rect.top + rect.height / 3 * i;
+      canvas.drawLine(Offset(rect.left, dy), Offset(rect.right, dy), paint);
+    }
+    //画竖线
+    for (int i = 0; i <= 3; ++i) {
+      double dx = rect.left + rect.width / 3 * i;
+      canvas.drawLine(Offset(dx, rect.top), Offset(dx, rect.bottom), paint);
+    }
+    //画圆
+    paint.style = PaintingStyle.fill;
+    for(int i = 0; i <= 8; ++i) {
+      double dy = rect.height / 3 * (i%3) +rect.height/6;
+      double dx = rect.width/3 * (i~/3) + rect.width/6;
+      paint.color =(i%2==0)?Colors.black:Colors.white;
+      canvas.drawCircle(Offset(dx, dy),rect.height/8, paint);
+    }
+
+  }
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => false;
+}
+''';
+
 ///UI切换动画
 const String animatedSwitcherDes = '''一、UI切换动画
   1.简介
