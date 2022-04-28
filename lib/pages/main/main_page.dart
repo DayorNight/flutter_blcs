@@ -5,7 +5,7 @@ import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/common/utils/function.dart';
 import 'package:flutter_blcs/pages/main/left_draw/setting_theme_page.dart';
 import 'package:flutter_blcs/pages/main/left_draw/switch_language_page.dart';
-import 'package:flutter_blcs/pages/demo_page.dart';
+import 'package:flutter_blcs/pages/login/demo_page.dart';
 import 'package:flutter_blcs/pages/home/function_page.dart';
 import 'package:flutter_blcs/pages/home/me_page.dart';
 import 'package:flutter_blcs/pages/home/widget_page.dart';

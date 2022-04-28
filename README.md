@@ -19,6 +19,11 @@ flutter_blcs
 └── test
 
 # pages
+1. 欢迎  SplashPage
+2. 引导  GuidePage
+3. 登录  LoginPage
+4. 注册  RegisterPage
+5. 忘记密码 ForgetPsdPage
 1. 切换主题 SettingThemePage
 2. 切换语言 SwitchLanguagePage
 
@@ -58,18 +63,17 @@ flutter_blcs
 11. google_fonts:google字体
 12. simple_animations:自定义动画
 13. json_annotation:支持自动化json
-
-##任务
-2. 引导页
-3. json解析
-4. 网络加载
-5. 拍照
-6. 视频播放
-
+14. introduction_screen:引导页、介绍页
 
 ## 补充
 1. json转换
 - 工具: mac搜索‘Paste JSON as Code’下载
 - 在线转换：https://app.quicktype.io/  或  https://javiercbk.github.io/json_to_dart/
 - Android studio 插件 JsonToDart
+
+##任务
+3. json解析
+4. 网络加载
+5. 拍照
+6. 视频播放
 

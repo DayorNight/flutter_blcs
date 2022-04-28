@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/common/utils/print.dart';
 import 'package:flutter_blcs/pages/my/animated_switcher_page.dart';
 import 'package:flutter_blcs/pages/my/custom_page.dart';
 import '../pages/libs/provider_page.dart';
+import '../pages/login/guide_page.dart';
 import '../pages/main/left_draw/basic_knowledge_page.dart';
 import '../pages/my/animation_page.dart';
 import '../pages/my/app_lifecycle_page.dart';
-import '../pages/demo_page.dart';
+import '../pages/login/demo_page.dart';
 import '../pages/login/forget_psd_page.dart';
 import '../pages/my/hero_page.dart';
 import '../pages/my/lifecycle_page.dart';
@@ -24,6 +26,7 @@ class Routers {
   //路由表
   static final Map<String, WidgetBuilder> routes = {
     SplashPage.keys:(BuildContext context) => SplashPage(),
+    GuidePage.keys:(BuildContext context) => GuidePage(),
     LoginPage.keys:(BuildContext context) => LoginPage(),
     RegisterPage.keys:(BuildContext context) => RegisterPage(),
     ForgetPsdPage.keys:(BuildContext context) => ForgetPsdPage(),
@@ -54,6 +57,7 @@ class Routers {
   static final onGenerateRoute = (settings) {
     print("onGenerateRoute:name= ${settings.name}");
     print("onGenerateRoute:arguments= ${settings.arguments}");
+    println.e('路由出错 前往登录页');
     return MaterialPageRoute(builder: errrorRoute);
   };
 
@@ -61,6 +65,7 @@ class Routers {
   static final onUnknownRoute = (settings) {
     print("onUnknownRoute:name= ${settings.name}");
     print("onUnknownRoute:arguments= ${settings.arguments}");
+    println.e('路由出错 前往登录页');
     MaterialPageRoute(builder: errrorRoute);
   };
 }

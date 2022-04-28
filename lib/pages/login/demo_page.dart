@@ -6,8 +6,16 @@ import '../../common/utils/navigator.dart';
 import '../../generated/l10n.dart';
 import 'login_page.dart';
 
-class GuidePage extends StatelessWidget {
-  static final String keys = "guidePage";
+class DemoPage extends StatefulWidget {
+  static const String keys = 'demo';
+
+  const DemoPage({Key? key}) : super(key: key);
+
+  @override
+  _DemoPageState createState() => _DemoPageState();
+}
+
+class _DemoPageState extends State<DemoPage> {
   static const String imgUrl1= 'https://img.zcool.cn/community/01521b5af17218a801219b7f91cbec.jpg';
   static const String imgUrl2= 'https://images.pexels.com/photos/1024984/pexels-photo-1024984.jpeg';
   static const String imgUrl3= 'https://images.pexels.com/photos/1378723/pexels-photo-1378723.jpeg';
@@ -15,8 +23,6 @@ class GuidePage extends StatelessWidget {
   static const String skip = 'Skip';
   static const String next = 'Next';
   static const String done = 'Done';
-  const GuidePage({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     screenInit(context);
@@ -30,7 +36,8 @@ class GuidePage extends StatelessWidget {
       skip: const Text(skip),
       next: const Text(next),
       done: const Text(done, style: TextStyle(fontWeight: FontWeight.bold)),
-      onChange: (value) {//todo 页面切换监听
+      onChange: (value) {
+        //todo 页面切换监听
         print("onChange $value");
       },
       onDone: () {
@@ -79,10 +86,10 @@ class GuidePage extends StatelessWidget {
           // image: Image.asset(Images.launchBg,height: 100.sh,fit:BoxFit.fill,),
           image: Image.network(imgUrl1,fit: BoxFit.cover,height: 100.sh,),
           decoration: const PageDecoration(
-              contentMargin: EdgeInsets.zero,
+            contentMargin: EdgeInsets.zero,
               //   pageColor: Colors.blue,
               titleTextStyle: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold,fontSize: 30),
-              bodyTextStyle: TextStyle(fontSize: 20),
+                bodyTextStyle: TextStyle(fontSize: 20),
               fullScreen: true)),
       PageViewModel(
         title: '',
@@ -108,13 +115,16 @@ class GuidePage extends StatelessWidget {
         footer: Container(
           margin: EdgeInsets.only(top: 300.r),
           child: OutlinedButton(
-            onPressed: (){//登录
-              NavigatorUtils.fadePushAndRemove(context, LoginPage.keys);
-            },
+            onPressed: _goLogin,
             child: const Text(goBtn),
           ),
         ),
       ),
     ];
+  }
+
+  //登录
+  void _goLogin() {
+    NavigatorUtils.fadePushAndRemove(context, LoginPage.keys);
   }
 }
