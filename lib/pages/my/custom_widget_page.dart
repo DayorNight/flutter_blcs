@@ -6,16 +6,15 @@ import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/widgets/article_model.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomPage extends StatelessWidget {
-  static final String keys = "CustomPage";
+class CustomWidgetPage extends StatelessWidget {
+  static final String keys = "CustomWidgetPage";
 
-  const CustomPage({Key? key}) : super(key: key);
+  const CustomWidgetPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var title = S.of(context).customWidget;
     return ArticleModel(
-      title: title,
+      title: S.of(context).customWidget,
       keys: keys,
       logoColor: Theme.of(context).primaryColor,
       des: customWidgetDes,

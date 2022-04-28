@@ -14,5 +14,8 @@ class Flares{
 
 // json
 class Json{
-  static final String knowledge = "static/jsons/basicKnowledge.json";
+  static final String knowledge = "static/jsons/basicKnowledge";
+  static final String jsonDemo = "static/jsons/jsonDemo";
+  static final String jsonListDemo = "static/jsons/jsonListDemo";
+  static final String jsonMulDemo = "static/jsons/jsonMulDemo";
 }

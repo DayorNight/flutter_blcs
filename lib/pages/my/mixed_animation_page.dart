@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blcs/common/utils/print.dart';
 import 'package:flutter_blcs/widgets/article_model.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../common/utils/code.dart';
-import '../../common/weiget_util.dart';
 import '../../generated/l10n.dart';
-import '../../widgets/animation/stagger_animation.dart';
 
 class MixedAnimationPage extends StatefulWidget {
   static final String keys = "mixedAnimationView";

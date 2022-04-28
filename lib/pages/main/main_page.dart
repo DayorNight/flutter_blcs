@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blcs/bean/draw_list.dart';
 import 'package:flutter_blcs/common/static.dart';
-import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/common/utils/function.dart';
-import 'package:flutter_blcs/pages/main/left_draw/setting_theme_page.dart';
-import 'package:flutter_blcs/pages/main/left_draw/switch_language_page.dart';
-import 'package:flutter_blcs/pages/login/demo_page.dart';
-import 'package:flutter_blcs/pages/home/function_page.dart';
-import 'package:flutter_blcs/pages/home/me_page.dart';
-import 'package:flutter_blcs/pages/home/widget_page.dart';
+import 'package:flutter_blcs/generated/l10n.dart';
+import 'package:flutter_blcs/pages/demo_page.dart';
 import 'package:flutter_blcs/widgets/flare_logo.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

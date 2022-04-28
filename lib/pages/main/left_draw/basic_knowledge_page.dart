@@ -24,7 +24,7 @@ class BasicKnowledgePage extends StatelessWidget {
 
   Widget _builder(ctx, AsyncSnapshot<List<Knowledge>> snapshot) {
     var data = snapshot.data;
-    if (snapshot.hasData && data != null) {
+    if (data!=null) {
       return ListView.separated(
           itemBuilder: (ctx, index) {
             var primaryColor = Theme.of(ctx).primaryColor;

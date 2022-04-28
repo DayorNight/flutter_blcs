@@ -1,3 +1,53 @@
+///JSON解析
+const String jsonParseDes ='''一、JSON解析
+  1.简介
+    将 JSON 格式的字符串转为Dart对象，常用于请求网络成功返回的数据转化为方便使用的对象。
+    主要分为两步：1.将JSON字符串转化为模型。2.创建JSON模型 
+
+  2.将 JSON 格式字符串转化为模型
+    JSON 格式的字符串转为 Dart 对象，这个可以通过 dart:convert 中内置的 JSON 解码器json.decode()来实现；
+    该方法可以根据 JSON 字符串具体内容将其转为 List 或 Map，这样我们就可以通过他们来查找所需的值；
+    由于json.decode()仅返回一个Map<String, dynamic>，这意味着直到运行时我们才知道值的类型；
+    通过预定义一些与 Json 结构对应的 Model 类，然后在请求到数据后再动态根据数据创建出 Model 类的实例；
+  
+  3.创建 JSON 模型
+     介绍几种生成模型方法：
+    （1）手动编写 缺点：容易出错，效率低
+    （2）通过json_serializable package包自动生成Model 缺点：引入其他库，生成多个类，拓展差
+    （3）线上转换 https://app.quicktype.io/ 与 https://javiercbk.github.io/json_to_dart/ 
+    （4）AndroidStudio插件JsonToDart自动生成,使用方式：Alt+Shift+D 或 鼠标移至左边存放model目录 > 右击鼠标 > NEW > Json To Dart
+    （5）MAC 下载 “Paste JSON as Code”工具 进行转换。
+   二、举个粟子、代码如下
+''';
+const String jsonParseCode ='''
+//JSON 模拟数据
+{
+  "name": "玉米",
+  "age": 18,
+  "sex": false
+}
+//JSON 文件地址
+static final String jsonDemo = "static/jsons/jsonDemo";
+//解析JSON文件
+Future<JsonDemo> getJsonDemo() async{
+  // 读取JSON文件
+  String jsonStr = await rootBundle.loadString(Json.jsonDemo);
+  // 转化为model
+  JsonDemo json = jsonDemoFromJson(jsonStr);
+  return json;
+}
+//UI显示数据
+FutureBuilder<JsonDemo>(builder: _josnDemoUI,future: getJsonDemo(),)
+Widget _josnDemoUI(BuildContext context, AsyncSnapshot<JsonDemo> snapshot) {
+  if(snapshot.hasData){
+    var json = jsonDemoToJson(snapshot.data!);
+    return Text('解析一：\$json');
+  }else{
+    return errorUI(snapshot.error);
+  }
+}
+''';
+
 ///自定义Widget
 const String customWidgetDes = '''一、自定义Widget
   1.简介

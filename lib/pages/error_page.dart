@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blcs/common/log_interceptor.dart';
 import 'package:flutter_blcs/common/utils/print.dart';
 import 'package:flutter_blcs/widgets/flare_logo.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../common/static.dart';
+
 import '../config/config.dart';
 import '../generated/l10n.dart';
 

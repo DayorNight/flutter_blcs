@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/utils/print.dart';
 import 'package:flutter_blcs/pages/my/animated_switcher_page.dart';
-import 'package:flutter_blcs/pages/my/custom_page.dart';
+import 'package:flutter_blcs/pages/my/custom_widget_page.dart';
 import '../pages/libs/provider_page.dart';
 import '../pages/login/guide_page.dart';
 import '../pages/main/left_draw/basic_knowledge_page.dart';
 import '../pages/my/animation_page.dart';
 import '../pages/my/app_lifecycle_page.dart';
-import '../pages/login/demo_page.dart';
+import '../pages/demo_page.dart';
 import '../pages/login/forget_psd_page.dart';
 import '../pages/my/hero_page.dart';
+import '../pages/my/json_parse_page.dart';
 import '../pages/my/lifecycle_page.dart';
 import '../pages/login/login_page.dart';
 import '../pages/main/main_page.dart';
@@ -46,7 +47,8 @@ class Routers {
     MixedAnimationPage.keys:(BuildContext context) => MixedAnimationPage(),
     AnimatedSwitcherPage.keys:(BuildContext context) => AnimatedSwitcherPage(),
     BasicKnowledgePage.keys:(BuildContext context) => BasicKnowledgePage(),
-    CustomPage.keys:(BuildContext context) => CustomPage(),
+    CustomWidgetPage.keys:(BuildContext context) => CustomWidgetPage(),
+    JsonParsePage.keys:(BuildContext context) => JsonParsePage(),
   };
   //初始路由
   static final initialRoute = SplashPage.keys;

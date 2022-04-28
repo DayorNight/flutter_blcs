@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import '../../common/utils/function.dart';
-import '../../common/utils/navigator.dart';
-import '../../generated/l10n.dart';
-import 'login_page.dart';
+import '../common/utils/function.dart';
+import '../common/utils/navigator.dart';
+import '../generated/l10n.dart';
+import 'login/login_page.dart';
 
 class DemoPage extends StatefulWidget {
   static const String keys = 'demo';
@@ -50,9 +50,7 @@ class _DemoPageState extends State<DemoPage> {
       nextFlex: 0,
       curve: Curves.fastLinearToSlowEaseIn,
       controlsMargin: const EdgeInsets.all(16),
-      controlsPadding: false
-          ? const EdgeInsets.all(12.0)
-          : const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 4.0),
+      controlsPadding: const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 4.0),
       dotsDecorator: const DotsDecorator(
         size: Size(10.0, 10.0),
         color: Color(0xFFBDBDBD),

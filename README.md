@@ -19,14 +19,34 @@ flutter_blcs
 └── test
 
 # pages
-1. 欢迎  SplashPage
-2. 引导  GuidePage
-3. 登录  LoginPage
-4. 注册  RegisterPage
-5. 忘记密码 ForgetPsdPage
-1. 切换主题 SettingThemePage
-2. 切换语言 SwitchLanguagePage
-
+|序号|页面|类名|
+|--|--|--|
+|1  |欢迎        |SplashPage
+|2  |引导        |GuidePage
+|3  |登录        |LoginPage
+|4  |注册        |RegisterPage
+|5  |忘记密码     |ForgetPsdPage
+|6  |menu功能    |FunctionPage
+|7  |menu我的    |MePage
+|8  |menuUI      |WidgetPage
+|9  |全局状态管理 |ProviderPage
+|10 |屏幕适配     |ScreenAdapterPage
+|11 |基础知识     |BasicKnowledgePage
+|12 |切换主题     |SettingThemePage
+|13 |切换语言     |SwitchLanguagePage
+|14 |首页         |MainPage
+|15 |UI切换动画    |AnimatedSwitcherPage
+|16 |简单动画      |AnimationPage
+|17 |应用生命周期   |AppLifecyclePage
+|18 |自定义Widget  |CustomWidgetPage
+|19 |Hero动画      |HeroPage
+|20 |JSON解析      |JsonParsePage
+|21 |Widget生命周期 |LifeCyclePage
+|22 |交织动画       |MixedAnimationPage
+|23 |个人信息       |PersonalInformationPage
+|24 |头像           |PersonalPage
+|25 |路由动画       |RouteAnimationPage
+|26 |flutter错误展示 |ErrorPage
 ## widget
 
 ## function
@@ -72,7 +92,6 @@ flutter_blcs
 - Android studio 插件 JsonToDart
 
 ##任务
-3. json解析
 4. 网络加载
 5. 拍照
 6. 视频播放
