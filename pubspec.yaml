@@ -16,7 +16,9 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   # 网络请求库
-  dio: ^4.0.4
+  dio: ^4.0.6
+  # cookie管理
+  dio_cookie_manager: ^2.0.0
   # RSA加密
   encrypt: ^5.0.1
   # 全局状态管理

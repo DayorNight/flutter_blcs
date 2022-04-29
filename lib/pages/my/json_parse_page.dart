@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/bean/json_demo.dart';
 import 'package:flutter_blcs/bean/json_mul_demo.dart';

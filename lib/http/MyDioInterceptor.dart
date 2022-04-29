@@ -45,6 +45,11 @@ class MyDioInterceptor extends Interceptor {
     //   options.headers['token'] = token;
     //   return handler.next(options);
     // }
+
+    // 如果你想完成请求/响应并返回自定义数据，你可以resolve一个 Response 对象或返回 handler.resolve(data)的结果。
+    // 如果你想终止(触发一个错误，上层catchError会被调用)一个请求/响应，那么可以reject一个DioError 对象或返回 handler.reject(errMsg) 的结果.
+    // return handler.resolve(Response(requestOptions:options,data:'fake data'));
+    // return handler.reject(DioError(requestOptions: RequestOptions(path: 'path')));
   }
 
   @override

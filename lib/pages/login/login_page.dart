@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/utils/function.dart';
-import 'package:flutter_blcs/http/global.dart';
+import 'package:flutter_blcs/http/dio_helper.dart';
 import 'package:flutter_blcs/pages/login/forget_psd_page.dart';
 import 'package:flutter_blcs/pages/login/register_page.dart';
 import 'package:flutter_blcs/pages/main/main_page.dart';
@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
     SharedPreferences sp = await SharedPreferences.getInstance();
     String? token = sp.getString("token");
     print(token);
-    Global.getInstance().dio.options.headers["token"] = token;
+    DioHelper.getInstance().http.options.headers["token"] = token;
     context.read<LoginViewModel>().tokenLogin(token!);
   }
 
@@ -157,7 +157,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _login() async{
-    var validate = (_key.currentState as FormState).validate();
+    // var validate = (_key.currentState as FormState).validate();
     NavigatorUtils.fadePushAndRemove(context, MainPage.keys);
     // if(validate) {
     //   if (_user.text.isEmpty) {

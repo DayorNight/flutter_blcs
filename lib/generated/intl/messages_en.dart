@@ -40,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "lifeCycle": MessageLookupByLibrary.simpleMessage("LifeCycle"),
         "mixedAnimation":
             MessageLookupByLibrary.simpleMessage("Mixed Animation"),
+        "netWork": MessageLookupByLibrary.simpleMessage("Net Work"),
         "personal": MessageLookupByLibrary.simpleMessage("Personal"),
         "personalInformation":
             MessageLookupByLibrary.simpleMessage("Personal Information"),

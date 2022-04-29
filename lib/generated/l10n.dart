@@ -289,6 +289,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Net Work`
+  String get netWork {
+    return Intl.message(
+      'Net Work',
+      name: 'netWork',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
