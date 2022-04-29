@@ -1,6 +1,7 @@
 import 'package:flutter_blcs/pages/my/animated_switcher_page.dart';
 import 'package:flutter_blcs/pages/my/json_parse_page.dart';
 
+import 'libs/camera_page.dart';
 import 'libs/net_work_page.dart';
 import 'libs/provider_page.dart';
 import 'libs/screen_adapter_page.dart';
@@ -16,6 +17,7 @@ final Map libPages = {
   "全局状态管理": ProviderPage.keys,
   "屏幕适配": ScreenAdapterPage.keys,
   "网络请求": NetWorkPage.keys,
+  "相机": CameraPage.keys,
 };
 
 final Map myPages = {

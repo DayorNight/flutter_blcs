@@ -1,3 +1,24 @@
+///相机
+const String cameraDes='''一、使用 Camera 插件实现拍照功能
+  详情【https://flutter.cn/docs/cookbook/plugins/picture-using-camera】
+  1.简介
+    很多应用都需要使用到设备的相机模块拍摄图片和视频。因此，Flutter 提供了 camera 插件。 camera 插件提供了一系列可用的相机，并使用特定的相机展示相机预览、拍照、录视频。
+  2.步骤
+    (1)添加依赖:camera  path_provider path
+    (2)获取可用相机列表
+    (3)创建并初始化 CameraController
+    (4)使用 CameraPreview 展示相机的帧流
+    (5)使用 CameraController 拍摄一张图片
+    (6)使用 Image 组件展示图片
+  3.注意：
+    针对 Android 来说，工程的 minSdkVersion 需要设置为 21 或者更高。
+    在 iOS 上，在 ios/Runner/Info.plist 中添加下面几行以访问摄像头。
+    <key>NSCameraUsageDescription</key>
+    <string>Explanation on why the camera access is needed.</string>
+''';
+const String cameraCode='''
+''';
+
 ///网络请求
 const String netWorkDes='''一、Dio
   1.简介

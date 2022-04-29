@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "appName": MessageLookupByLibrary.simpleMessage("玉米"),
         "back": MessageLookupByLibrary.simpleMessage("返回"),
         "basicKnowledge": MessageLookupByLibrary.simpleMessage("基础知识"),
+        "camera": MessageLookupByLibrary.simpleMessage("相机"),
         "customWidget": MessageLookupByLibrary.simpleMessage("自定义Widget"),
         "darkTheme": MessageLookupByLibrary.simpleMessage("暗夜模式"),
         "hero": MessageLookupByLibrary.simpleMessage("Hero动画"),

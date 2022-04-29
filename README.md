@@ -47,23 +47,29 @@ flutter_blcs
 |25 |路由动画       |RouteAnimationPage
 |26 |flutter错误展示 |ErrorPage
 |27 |网络请求       |NetWorkPage
+|28 |相机       |CameraPage
 ## widget
 
 ## function
-1. ScreenAdapterPage：屏幕适配
-2. ProviderPage：全局状态管理
-3. NetWorkPage：网络请求
+|序号|页面|类名|
+|--|--|--|
+|1  |屏幕适配      |ScreenAdapterPage
+|2  |全局状态管理   |ProviderPage
+|3  |网络请求      |NetWorkPage
 
 ## my
-1. 应用生命周期    AppLifecyclePage
-2. Widget生命周期 LifeCyclePage
-3. Hero动画   HeroPage
-4. 简单动画    AnimationPage
-5. 路由动画    RouteAnimationPage
-6. 交织动画     MixedAnimationPage
-7. UI切换动画   AnimatedSwitcherPage
-8. 自定义View   CustomPage
-9. JSON解析   JsonParsePage
+|序号|页面|类名|
+|--|--|--|
+|1  |应用生命周期      |AppLifecyclePage
+|2  |Widget生命周期   |LifeCyclePage
+|3  |Hero动画    |HeroPage
+|4  |简单动画    |AnimationPage
+|5  |路由动画    |RouteAnimationPage
+|6  |交织动画    |MixedAnimationPage
+|7  |UI切换动画  |AnimatedSwitcherPage
+|8  |自定义View  |CustomPage
+|9  |JSON解析   |JsonParsePage
+|10 |相机      |CameraPage
 
 # 功能运用
 1. 异常捕获
@@ -84,7 +90,7 @@ flutter_blcs
 |8  |flutter_syntax_view    |代码高亮
 |9  |logger         |log打印
 |10 |flare_flutter  |动画插件
-|11 |google_fonts   |google字体
+|11 |google_fonts   |google字体 
 |12 |simple_animations  |自定义动画
 |13 |json_annotation    |支持自动化json
 |14 |introduction_screen    |引导页、介绍页
@@ -97,7 +103,6 @@ flutter_blcs
 - Android studio 插件 JsonToDart
 
 ## 任务
-1. 网络加载
-2. 拍照
+1. 拍照
 3. 视频播放
 

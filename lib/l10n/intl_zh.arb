@@ -23,5 +23,6 @@
   "report": "上报",
   "back": "返回",
   "customWidget": "自定义Widget",
-  "netWork": "网络请求"
+  "netWork": "网络请求",
+  "camera": "相机"
 }

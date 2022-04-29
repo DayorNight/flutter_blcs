@@ -1,3 +1,4 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/static.dart';
 import 'package:flutter_blcs/common/utils/function.dart';
@@ -18,7 +19,7 @@ class MainPage extends StatefulWidget {
   @override
   _MainPageState createState() => _MainPageState();
 }
-
+List<CameraDescription> cameras = [];
 class _MainPageState extends State<MainPage> {
   late S _s;
   int _bottomIndex = 0;
@@ -152,7 +153,8 @@ class _MainPageState extends State<MainPage> {
   }
 
   /// 前往主题设置
-  void _theme() {
+  void _theme() async{
+    cameras = await availableCameras();
     NavigatorUtils.fadePush(context, DemoPage.keys);
   }
 

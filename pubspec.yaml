@@ -15,6 +15,14 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
+  # 视频
+  video_player: ^2.4.0
+  # 相机
+  camera: ^0.9.4+21
+  # 用于查找文件系统上常用位置
+  path_provider: ^2.0.9
+  # 适配任何平台的路径
+  path: ^1.8.1
   # 网络请求库
   dio: ^4.0.6
   # cookie管理
@@ -27,9 +35,9 @@ dependencies:
   shared_preferences: ^2.0.13
   # 轮播图
   card_swiper : ^2.0.1
-  #屏幕适配
+  # 屏幕适配
   flutter_screenutil: ^5.3.1
-  #代码高亮
+  # 代码高亮
   flutter_syntax_view: ^4.0.0
   # log打印
   logger: ^1.1.0
