@@ -84,3 +84,9 @@ Widget articleLogo(String key, Color color) {
         )),
   );
 }
+
+///提示
+void showInSnackBar(BuildContext context,String message) {
+  ScaffoldMessenger.of(context)
+      .showSnackBar(SnackBar(content: Text(message)));
+}

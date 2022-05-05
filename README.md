@@ -95,6 +95,7 @@ flutter_blcs
 |13 |json_annotation    |支持自动化json
 |14 |introduction_screen    |引导页、介绍页
 |15 |dio_cookie_manager     |cookie管理
+|16 |flutter_svg            |引入SVG图
 
 ## 补充
 1. json转换

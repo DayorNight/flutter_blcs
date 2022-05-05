@@ -4,6 +4,11 @@ class Images{
   static final String logo = "static/images/ic_avator.png";
   static final String coffee = "static/images/ic_coffee.png";
   static final String launchBg = "static/images/launch_image.png";
+  static final String takePhone = "static/images/ic_take_phone.png";
+}
+/// 本地图片
+class Svgs{
+  static final String focus = "static/svgs/svg_focus.svg";
 
 }
 
