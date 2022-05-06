@@ -5,7 +5,7 @@ import 'package:flutter_blcs/widgets/article_model.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
 
 class HeroPage extends StatelessWidget {
-  static final String keys = "heroView";
+  static final String keys = "HeroPage";
 
   const HeroPage({Key? key}) : super(key: key);
 

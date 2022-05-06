@@ -309,6 +309,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Isolate`
+  String get isolate {
+    return Intl.message(
+      'Isolate',
+      name: 'isolate',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -24,5 +24,6 @@
   "back": "Back",
   "customWidget": "Custom Widget",
   "netWork": "Net Work",
-  "camera": "Camera"
+  "camera": "Camera",
+  "isolate": "Isolate"
 }

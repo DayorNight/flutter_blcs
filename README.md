@@ -47,7 +47,8 @@ flutter_blcs
 |25 |路由动画       |RouteAnimationPage
 |26 |flutter错误展示 |ErrorPage
 |27 |网络请求       |NetWorkPage
-|28 |相机       |CameraPage
+|28 |相机          |CameraPage
+|29 |Isolate       |IsolatePage
 ## widget
 
 ## function
@@ -56,7 +57,7 @@ flutter_blcs
 |1  |屏幕适配      |ScreenAdapterPage
 |2  |全局状态管理   |ProviderPage
 |3  |网络请求      |NetWorkPage
-
+|4  |相机         |CameraPage
 ## my
 |序号|页面|类名|
 |--|--|--|
@@ -68,8 +69,8 @@ flutter_blcs
 |6  |交织动画    |MixedAnimationPage
 |7  |UI切换动画  |AnimatedSwitcherPage
 |8  |自定义View  |CustomPage
-|9  |JSON解析   |JsonParsePage
-|10 |相机      |CameraPage
+|9  |JSON解析    |JsonParsePage
+|10 |Isolate    |IsolatePage
 
 # 功能运用
 1. 异常捕获

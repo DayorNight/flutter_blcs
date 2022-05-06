@@ -9,6 +9,7 @@ import 'my/animation_page.dart';
 import 'my/app_lifecycle_page.dart';
 import 'my/custom_widget_page.dart';
 import 'my/hero_page.dart';
+import 'my/isolate_page.dart';
 import 'my/lifecycle_page.dart';
 import 'my/mixed_animation_page.dart';
 import 'my/route_animation_page.dart';
@@ -30,4 +31,5 @@ final Map myPages = {
   "UI切换动画": AnimatedSwitcherPage.keys,
   "自定义Widget": CustomWidgetPage.keys,
   "JSON解析": JsonParsePage.keys,
+  "Isolate": IsolatePage.keys,
 };

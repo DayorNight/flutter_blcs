@@ -36,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "homeFun": MessageLookupByLibrary.simpleMessage("功能"),
         "homeMe": MessageLookupByLibrary.simpleMessage("我的"),
         "homeView": MessageLookupByLibrary.simpleMessage("UI"),
+        "isolate": MessageLookupByLibrary.simpleMessage("Isolate"),
         "lifeCycle": MessageLookupByLibrary.simpleMessage("Widget生命周期"),
         "mixedAnimation": MessageLookupByLibrary.simpleMessage("交织动画"),
         "netWork": MessageLookupByLibrary.simpleMessage("网络请求"),

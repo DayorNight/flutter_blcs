@@ -1,3 +1,29 @@
+///Isolate
+const String isolateDes = '''一、Isolate
+  1.简介
+    - 所有的 Dart 代码都在 isolate 中运行。
+    - isolate 有独立的运行线程，每一个 isolate 会有自己的堆内存，
+    - 从而确保 isolate 之间互相隔离，无法互相访问状态，它们无法与其他 isolate 共享可变对象。
+    - 在需要进行通信的场景里，isolate 会使用消息机制。
+    - 大部分 Dart 应用只会使用一个 isolate（即 主 isolate），
+    - 同时你也可以创建更多的 isolate，从而在多个处理器内核上达成并行执行代码的目的。
+  2.示例代码
+''';
+const String isolateCode = '''
+Future<JsonDemo> _parseInBackground() async {
+  //接收端口
+  final p = ReceivePort();
+  //生成并启动一个在后台运行的 isolate 工作对象
+  await Isolate.spawn(_readAndParseJson, p.sendPort);
+  return await p.first as JsonDemo;
+}
+
+Future<void> _readAndParseJson(SendPort p) async {
+  // 转化为model
+  JsonDemo json = jsonDemoFromJson(jsonStr);
+  // 退出isolate
+  Isolate.exit(p, json);
+}''';
 ///相机
 const String cameraDes='''一、使用 Camera 插件实现拍照功能
   详情【https://flutter.cn/docs/cookbook/plugins/picture-using-camera】
