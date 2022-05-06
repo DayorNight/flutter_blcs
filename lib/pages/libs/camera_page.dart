@@ -388,6 +388,7 @@ class _CameraPageState extends State<CameraPage>
         children: [
           Container(
               width: 1.sw,
+              height: 1.sh,
               child: Listener(
                 onPointerDown: (_) => _pointers++,
                 onPointerUp: (_) => _pointers--,
