@@ -1,5 +1,9 @@
 # flutter_blcs
 - flutter初学者简单用例
+
+## [下载地址](https://www.pgyer.com/corn)
+![二维码](https://github.com/flutter_blcs/static/images/corn_download.png)
+
 ## 工程目录
 flutter_blcs
 - ├── android
