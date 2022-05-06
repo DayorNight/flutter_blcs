@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import '../common/utils/function.dart';
 import '../common/utils/navigator.dart';
+import '../common/utils/print.dart';
 import '../generated/l10n.dart';
 import '../main.dart';
 import 'login/login_page.dart';
@@ -227,10 +228,10 @@ class _DemoPageState extends State<DemoPage>
     if (controller == null || _pointers != 2) {
       return;
     }
-
+    println.w('scale= ${details.scale} _baseScale= $_baseScale _minAvailableZoom= $_minAvailableZoom _maxAvailableZoom= $_maxAvailableZoom');
     _currentScale = (_baseScale * details.scale)
         .clamp(_minAvailableZoom, _maxAvailableZoom);
-
+    println.e('_currentScale $_currentScale');
     await controller!.setZoomLevel(_currentScale);
   }
 

@@ -11,5 +11,5 @@
     <rect x="0" y="930" width="5" height="70" />
     <rect x="0" y="995" width="70" height="5" />
 
-    <circle cx="512" cy="512" r="10"/>
+    <circle cx="512" cy="512" r="3"/>
 </svg>

@@ -104,6 +104,5 @@ flutter_blcs
 - Android studio 插件 JsonToDart
 
 ## 任务
-1. 拍照
-3. 视频播放
+1.
 
