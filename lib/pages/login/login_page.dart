@@ -51,7 +51,12 @@ class _LoginPageState extends State<LoginPage> {
     screenInit(context);
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: getAppBar(context,"登录"),
+      appBar: AppBar(
+        title: Text('登陆'),
+        centerTitle: true,
+        elevation: 10,
+        automaticallyImplyLeading: false,
+      ),
       body: Padding(
         padding: EdgeInsets.fromLTRB(20, 40, 20, 20),
         child: Column(

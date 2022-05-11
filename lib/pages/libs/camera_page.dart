@@ -696,6 +696,7 @@ class _CameraPageState extends State<CameraPage>
       if (cameraController.value.hasError) {
         showInSnackBar(
             context, 'Camera error ${cameraController.value.errorDescription}');
+        Navigator.pop(context);
       }
     });
 
@@ -720,6 +721,7 @@ class _CameraPageState extends State<CameraPage>
       ]);
     } on CameraException catch (e) {
       showInSnackBar(context, 'Error: ${e.code}\n${e.description}');
+      Navigator.pop(context);
     }
     if (mounted) {
       setState(() {});

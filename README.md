@@ -1,26 +1,36 @@
 # flutter_blcs
 - flutter初学者简单用例
+- 一款集合各种常用widget、功能、开源库简单运用的示例Demo,方便知识学习与回顾。
+- 主要功能：目前分为五个模块：登录、组件、开源库、应用配置、功能 等模块
+1.  登录模块：包含欢迎、引导、登录、注册、修改密码等页面
+2.  组件模块：常用widget介绍与运用
+3.  开源库模块：常用开源库介绍与运用如：Camera,Dio
+4.  应用配置模块：常见应用配置运用如：语言国际化、主题颜色
+5.  功能模块：常见功能介绍及使用如：动画及自定义widget
 
 ## [下载地址](https://www.pgyer.com/corn)
 ![二维码](https://github.com/DayorNight/flutter_blcs/blob/master/static/images/corn_download.png)
 
 ## 工程目录
 flutter_blcs
-- ├── android
-- ├── ios
-- ├── lib             //代码部分
--     ├── bean        // 实体
--     ├── common      //一些工具类，如通用方法类、网络接口类、保存全局变量的静态类等
--     ├── generated   //多语言插件生成的代码
--     ├── l10n        //多语言文字设置
--     ├── models      //数据处理类
--     ├── pages       //存放页面  
--     ├── routes      //路由地址
--     ├── viewmodel   //交互逻辑
--     └── widgets     //APP内封装的一些Widget组件都在该目录下
-- ├── static          //本地文件
-- └── test
-
+```
+├── android
+├── ios
+├── lib             // 代码部分
+    ├── bean        // 存放基类
+    ├── bean        // 实体类
+    ├── common      // 一些工具类，如通用方法类、网络接口类、保存全局变量的静态类等
+    ├── bean        // 存放应用配置信息
+    ├── generated   // 多语言插件生成的代码
+    ├── l10n        // 多语言文字设置
+    ├── models      // 数据处理类
+    ├── pages       // 存放页面  
+    ├── routes      // 路由地址
+    ├── viewmodel   // 交互逻辑
+    └── widgets     // 自定义widget
+├── static          // 本地文件
+└── test
+```
 # pages
 |序号|页面|类名|
 |--|--|--|
@@ -109,5 +119,7 @@ flutter_blcs
 - Android studio 插件 JsonToDart
 
 ## 任务
-1.
-
+1. get 
+2. image_picker
+3. mixin
+4. extension 
