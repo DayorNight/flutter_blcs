@@ -38,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "homeFun": MessageLookupByLibrary.simpleMessage("Function"),
         "homeMe": MessageLookupByLibrary.simpleMessage("Me"),
         "homeView": MessageLookupByLibrary.simpleMessage("Widget"),
+        "imagePicker": MessageLookupByLibrary.simpleMessage("ImagePicker"),
         "isolate": MessageLookupByLibrary.simpleMessage("Isolate"),
         "lifeCycle": MessageLookupByLibrary.simpleMessage("LifeCycle"),
         "mixedAnimation":

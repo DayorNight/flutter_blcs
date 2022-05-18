@@ -319,6 +319,16 @@ class S {
       args: [],
     );
   }
+
+  /// `ImagePicker`
+  String get imagePicker {
+    return Intl.message(
+      'ImagePicker',
+      name: 'imagePicker',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

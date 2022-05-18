@@ -1,24 +1,23 @@
-import 'dart:async';
 import 'dart:io';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_blcs/common/utils/print.dart';
-import 'package:flutter_blcs/common/weiget_util.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:video_player/video_player.dart';
 
-class DemoPage extends StatefulWidget {
-  static const String keys = 'DemoPage';
+import '../../common/weiget_util.dart';
+import '../../generated/l10n.dart';
 
-  const DemoPage({Key? key}) : super(key: key);
+class ImagePickerPage extends StatefulWidget {
+  static const keys = 'ImagePickerPage';
+  const ImagePickerPage({Key? key}) : super(key: key);
 
   @override
-  _DemoPageState createState() => _DemoPageState();
+  _ImagePickerPageState createState() => _ImagePickerPageState();
 }
 
-class _DemoPageState extends State<DemoPage> {
+class _ImagePickerPageState extends State<ImagePickerPage> {
   List<XFile>? _imageFileList;
   int _bottomIndex = 0;
 
@@ -40,7 +39,7 @@ class _DemoPageState extends State<DemoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: getAppBar(context, S.of(context).appName),
+      appBar: getAppBar(context, S.of(context).imagePicker),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _bottomIndex,
         type: BottomNavigationBarType.fixed,
@@ -171,42 +170,42 @@ class _DemoPageState extends State<DemoPage> {
     } else if (isMultiImage) {
       //多选
       await _displayPickImageDialog(context!,
-          (double? maxWidth, double? maxHeight, int? quality) async {
-        try {
-          final List<XFile>? pickedFileList = await _picker.pickMultiImage(
-            maxWidth: maxWidth?.r,
-            maxHeight: maxHeight?.r,
-            imageQuality: quality,
-          );
-          setState(() {
-            _imageFileList = pickedFileList;
+              (double? maxWidth, double? maxHeight, int? quality) async {
+            try {
+              final List<XFile>? pickedFileList = await _picker.pickMultiImage(
+                maxWidth: maxWidth?.r,
+                maxHeight: maxHeight?.r,
+                imageQuality: quality,
+              );
+              setState(() {
+                _imageFileList = pickedFileList;
+              });
+            } catch (e) {
+              setState(() {
+                _pickImageError = e;
+              });
+            }
           });
-        } catch (e) {
-          setState(() {
-            _pickImageError = e;
-          });
-        }
-      });
     } else {
       //单选
       await _displayPickImageDialog(context!,
-          (double? maxWidth, double? maxHeight, int? quality) async {
-        try {
-          final XFile? pickedFile = await _picker.pickImage(
-            source: source,
-            maxWidth: maxWidth?.r,
-            maxHeight: maxHeight?.r,
-            imageQuality: quality,
-          );
-          setState(() {
-            _setImageFileListFromFile(pickedFile);
+              (double? maxWidth, double? maxHeight, int? quality) async {
+            try {
+              final XFile? pickedFile = await _picker.pickImage(
+                source: source,
+                maxWidth: maxWidth?.r,
+                maxHeight: maxHeight?.r,
+                imageQuality: quality,
+              );
+              setState(() {
+                _setImageFileListFromFile(pickedFile);
+              });
+            } catch (e) {
+              setState(() {
+                _pickImageError = e;
+              });
+            }
           });
-        } catch (e) {
-          setState(() {
-            _pickImageError = e;
-          });
-        }
-      });
     }
   }
 
@@ -350,14 +349,14 @@ class _DemoPageState extends State<DemoPage> {
                 TextField(
                   controller: maxWidthController,
                   keyboardType:
-                      const TextInputType.numberWithOptions(decimal: true),
+                  const TextInputType.numberWithOptions(decimal: true),
                   decoration: const InputDecoration(
                       hintText: '输入最大宽度，宽度最大值750'),
                 ),
                 TextField(
                   controller: maxHeightController,
                   keyboardType:
-                      const TextInputType.numberWithOptions(decimal: true),
+                  const TextInputType.numberWithOptions(decimal: true),
                   decoration: const InputDecoration(
                       hintText: '输入最大高度，高度最大值1334'),
                 ),

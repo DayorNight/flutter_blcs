@@ -25,5 +25,6 @@
   "customWidget": "Custom Widget",
   "netWork": "Net Work",
   "camera": "Camera",
-  "isolate": "Isolate"
+  "isolate": "Isolate",
+  "imagePicker": "ImagePicker"
 }

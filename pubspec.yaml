@@ -15,6 +15,8 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.2
+  # 图片视频选择
+  image_picker: ^0.8.5+3
   # svg图
   flutter_svg: ^1.0.3
   # 视频

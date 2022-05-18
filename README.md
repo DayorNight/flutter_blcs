@@ -63,6 +63,7 @@ flutter_blcs
 |27 |网络请求       |NetWorkPage
 |28 |相机          |CameraPage
 |29 |Isolate       |IsolatePage
+|30 |ImagePicker   |ImagePickerPage
 ## widget
 
 ## function
@@ -72,6 +73,7 @@ flutter_blcs
 |2  |全局状态管理   |ProviderPage
 |3  |网络请求      |NetWorkPage
 |4  |相机         |CameraPage
+|5  |ImagePicker  |ImagePickerPage
 ## my
 |序号|页面|类名|
 |--|--|--|
@@ -111,6 +113,8 @@ flutter_blcs
 |14 |introduction_screen    |引导页、介绍页
 |15 |dio_cookie_manager     |cookie管理
 |16 |flutter_svg            |引入SVG图
+|17 |image_picker           |图片视频选择器
+
 
 ## 补充
 1. json转换
@@ -120,6 +124,5 @@ flutter_blcs
 
 ## 任务
 1. get 
-2. image_picker
-3. mixin
-4. extension 
+2. mixin
+3. extension 

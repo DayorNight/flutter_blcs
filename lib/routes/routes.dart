@@ -3,6 +3,7 @@ import 'package:flutter_blcs/common/utils/print.dart';
 import 'package:flutter_blcs/pages/my/animated_switcher_page.dart';
 import 'package:flutter_blcs/pages/my/custom_widget_page.dart';
 import '../pages/libs/camera_page.dart';
+import '../pages/libs/image_picker_page.dart';
 import '../pages/libs/net_work_page.dart';
 import '../pages/libs/provider_page.dart';
 import '../pages/login/guide_page.dart';
@@ -55,6 +56,7 @@ class Routers {
     NetWorkPage.keys:(BuildContext context) => NetWorkPage(),
     CameraPage.keys:(BuildContext context) => CameraPage(),
     IsolatePage.keys:(BuildContext context) => IsolatePage(),
+    ImagePickerPage.keys:(BuildContext context) => ImagePickerPage(),
   };
   //初始路由
   static final initialRoute = SplashPage.keys;
