@@ -21,7 +21,6 @@ void screenInit(BuildContext context){
   ScreenUtil.init(
       context,
       designSize: Size(750, 1334),
-      minTextAdapt: true,
-      orientation: Orientation.portrait);
+      minTextAdapt: true,);
 }
 

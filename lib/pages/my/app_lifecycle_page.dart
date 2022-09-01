@@ -22,14 +22,14 @@ class _AppLifecycleState extends State<AppLifecyclePage>
     super.initState();
 
     ///监听生命周期
-    WidgetsBinding.instance?.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
   }
 
   @override
   void dispose() {
     super.dispose();
     ///移除监听
-    WidgetsBinding.instance?.removeObserver(this);
+    WidgetsBinding.instance.removeObserver(this);
   }
 
   @override

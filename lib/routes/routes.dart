@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/utils/print.dart';
+import 'package:flutter_blcs/pages/home/widget/dialog_page.dart';
 import 'package:flutter_blcs/pages/my/animated_switcher_page.dart';
 import 'package:flutter_blcs/pages/my/custom_widget_page.dart';
 import '../pages/libs/camera_page.dart';
@@ -57,6 +58,7 @@ class Routers {
     CameraPage.keys:(BuildContext context) => CameraPage(),
     IsolatePage.keys:(BuildContext context) => IsolatePage(),
     ImagePickerPage.keys:(BuildContext context) => ImagePickerPage(),
+    DialogPage.keys:(BuildContext context) => DialogPage(),
   };
   //初始路由
   static final initialRoute = SplashPage.keys;

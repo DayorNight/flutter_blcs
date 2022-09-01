@@ -1,6 +1,7 @@
 import 'package:flutter_blcs/pages/my/animated_switcher_page.dart';
 import 'package:flutter_blcs/pages/my/json_parse_page.dart';
 
+import 'home/widget/dialog_page.dart';
 import 'libs/camera_page.dart';
 import 'libs/image_picker_page.dart';
 import 'libs/net_work_page.dart';
@@ -34,4 +35,8 @@ final Map myPages = {
   "自定义Widget": CustomWidgetPage.keys,
   "JSON解析": JsonParsePage.keys,
   "Isolate": IsolatePage.keys,
+};
+
+final Map horWidget = {
+  "弹窗": DialogPage.keys,
 };

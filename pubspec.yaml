@@ -53,6 +53,8 @@ dependencies:
   simple_animations: ^4.0.1
   # 引导页、介绍页
   introduction_screen: ^3.0.1
+  # bruno组件
+  bruno: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -60,13 +62,13 @@ dev_dependencies:
 
   flutter_lints: ^1.0.4
   # UME  应用内调试工具
-  flutter_ume: ^0.3.0+1
-  flutter_ume_kit_ui: ^0.3.0+1
-  flutter_ume_kit_device: ^0.3.0
-  flutter_ume_kit_perf: ^0.3.0
-  flutter_ume_kit_show_code: ^0.3.0
-  flutter_ume_kit_console: ^0.3.0
-  flutter_ume_kit_dio: ^0.3.0
+#  flutter_ume: ^0.3.0+1
+#  flutter_ume_kit_ui: ^0.3.0+1
+#  flutter_ume_kit_device: ^0.3.0
+#  flutter_ume_kit_perf: ^0.3.0
+#  flutter_ume_kit_show_code: ^0.3.0
+#  flutter_ume_kit_console: ^0.3.0
+#  flutter_ume_kit_dio: ^0.3.0
 
 #  # 支持自动化json
 #  json_serializable: ^6.1.4
