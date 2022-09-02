@@ -1,3 +1,8 @@
+import 'package:flutter_blcs/pages/home/widget/Button_page.dart';
+import 'package:flutter_blcs/pages/home/widget/calendar_page.dart';
+import 'package:flutter_blcs/pages/home/widget/navigation_page.dart';
+import 'package:flutter_blcs/pages/home/widget/picker_page.dart';
+import 'package:flutter_blcs/pages/home/widget/progress_page.dart';
 import 'package:flutter_blcs/pages/my/animated_switcher_page.dart';
 import 'package:flutter_blcs/pages/my/json_parse_page.dart';
 
@@ -39,4 +44,10 @@ final Map myPages = {
 
 final Map horWidget = {
   "弹窗": DialogPage.keys,
+  "进度条": ProgressPage.keys,
+  "选择器": PickerPage.keys,
+  "图表": PickerPage.keys,
+  "导航": NavigationPage.keys,
+  "按钮": ButtonPage.keys,
+  "日历": CalendarPage.keys,
 };

@@ -3,15 +3,15 @@ import 'package:flutter_blcs/common/weiget_util.dart';
 import 'package:flutter_blcs/widgets/article_model.dart';
 
 
-class DialogPage extends StatelessWidget {
-  static final String keys = "DialogPage";
+class ProgressPage extends StatelessWidget {
+  static final String keys = "ProgressPage";
 
-  const DialogPage({Key? key}) : super(key: key);
+  const ProgressPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ArticleModel(
-      title: '弹窗',
+      title: '进度条',
       keys: keys,
       logoColor: Theme.of(context).primaryColor,
       headerChild: Column(

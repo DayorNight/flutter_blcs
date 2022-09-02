@@ -90,3 +90,29 @@ void showInSnackBar(BuildContext context,String message) {
   ScaffoldMessenger.of(context)
       .showSnackBar(SnackBar(content: Text(message)));
 }
+
+///共同按钮
+OutlinedButton commonButton({required String content,required String des,VoidCallback? onTop}) {
+  return OutlinedButton(
+      onPressed: onTop,
+      child: SizedBox(
+        width: 0.8.sw,
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.all(10.w),
+            child: Column(
+              children: [
+                Text(
+                  content,
+                  style: TextStyle(fontSize: 30.sp),
+                ),
+                Text(
+                  des,
+                  style: TextStyle(fontSize: 20.sp,color: Colors.black26),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ));
+}

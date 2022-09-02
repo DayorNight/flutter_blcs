@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/utils/print.dart';
+import 'package:flutter_blcs/pages/home/widget/Button_page.dart';
+import 'package:flutter_blcs/pages/home/widget/calendar_page.dart';
 import 'package:flutter_blcs/pages/home/widget/dialog_page.dart';
+import 'package:flutter_blcs/pages/home/widget/navigation_page.dart';
+import 'package:flutter_blcs/pages/home/widget/picker_page.dart';
+import 'package:flutter_blcs/pages/home/widget/progress_page.dart';
 import 'package:flutter_blcs/pages/my/animated_switcher_page.dart';
 import 'package:flutter_blcs/pages/my/custom_widget_page.dart';
 import '../pages/libs/camera_page.dart';
@@ -59,6 +64,11 @@ class Routers {
     IsolatePage.keys:(BuildContext context) => IsolatePage(),
     ImagePickerPage.keys:(BuildContext context) => ImagePickerPage(),
     DialogPage.keys:(BuildContext context) => DialogPage(),
+    PickerPage.keys:(BuildContext context) => PickerPage(),
+    ButtonPage.keys:(BuildContext context) => ButtonPage(),
+    CalendarPage.keys:(BuildContext context) => CalendarPage(),
+    NavigationPage.keys:(BuildContext context) => NavigationPage(),
+    ProgressPage.keys:(BuildContext context) => ProgressPage(),
   };
   //初始路由
   static final initialRoute = SplashPage.keys;

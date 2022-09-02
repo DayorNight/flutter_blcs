@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/utils/navigator.dart';
+import 'package:flutter_blcs/common/utils/print.dart';
 import 'package:flutter_blcs/common/weiget_util.dart';
 import 'package:flutter_blcs/pages/pages.dart';
 import 'package:flutter_blcs/widgets/flare_logo.dart';
@@ -15,17 +16,6 @@ class WidgetPage extends StatefulWidget {
 
 class _WidgetPageState extends State<WidgetPage> {
   var banners = ["Flutter", "Kotlin", "Android"];
-  final List _hotWeiget = [
-    "弹窗",
-    "进度条",
-    "图表",
-    "Scaffold",
-    "Scaffold",
-    "Scaffold",
-    "Scaffold",
-    "Scaffold"
-  ];
-
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +38,7 @@ class _WidgetPageState extends State<WidgetPage> {
                   childAspectRatio: 1.0, //显示区域宽高相等
                 ),
                 itemBuilder: _horWidget,
-                itemCount: _hotWeiget.length,
+                itemCount: horWidget.length,
                 shrinkWrap: true,
               ),
             ),
@@ -57,7 +47,7 @@ class _WidgetPageState extends State<WidgetPage> {
           ///底部列表
           SliverFixedExtentList(
               delegate: SliverChildBuilderDelegate(_loadList,
-                  childCount: _hotWeiget.length),
+                  childCount: horWidget.length),
               itemExtent: 70),
         ],
       ),
@@ -68,7 +58,7 @@ class _WidgetPageState extends State<WidgetPage> {
   Widget _horWidget(context, index) {
     return GestureDetector(
       onTap: (){
-        NavigatorUtils.fadePush(context, horWidget[_hotWeiget[index]]);
+        NavigatorUtils.fadePush(context, horWidget.values.elementAt(index));
       },
       child: Container(
         decoration: BoxDecoration(
@@ -79,30 +69,11 @@ class _WidgetPageState extends State<WidgetPage> {
           children: [
             FlareLogo(size: 90.r,color: Colors.white,),
             Text(
-              _hotWeiget[index],
+              horWidget.keys.elementAt(index),
               style: TextStyle(color: Colors.white,fontSize: 30.sp),
             )
           ],
         ),
-      ),
-    );
-    return Container(
-      decoration: BoxDecoration(
-          color: Theme.of(context).primaryColor,
-          borderRadius: BorderRadius.all(Radius.circular(10))),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.build_rounded,
-            color: Colors.white,
-          ),
-          SizedBox(height: 16.w),
-          Text(
-            _hotWeiget[index],
-            style: TextStyle(color: Colors.white,fontSize: 30.sp),
-          )
-        ],
       ),
     );
   }
@@ -119,7 +90,7 @@ class _WidgetPageState extends State<WidgetPage> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            _hotWeiget[index],
+            horWidget.keys.elementAt(index),
             style: TextStyle(fontSize:30.sp, color: Colors.white),
           ),
           Icon(
