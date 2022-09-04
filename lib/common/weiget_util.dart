@@ -92,8 +92,9 @@ void showInSnackBar(BuildContext context,String message) {
 }
 
 ///共同按钮
-OutlinedButton commonButton({required String content,required String des,VoidCallback? onTop}) {
+OutlinedButton commonButton({Key? key,required String content,required String des,VoidCallback? onTop}) {
   return OutlinedButton(
+      key: key,
       onPressed: onTop,
       child: SizedBox(
         width: 0.8.sw,

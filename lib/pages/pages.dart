@@ -46,7 +46,7 @@ final Map horWidget = {
   "弹窗": DialogPage.keys,
   "进度条": ProgressPage.keys,
   "选择器": PickerPage.keys,
-  "图表": PickerPage.keys,
+  // "图表": PickerPage.keys,
   "导航": NavigationPage.keys,
   "按钮": ButtonPage.keys,
   "日历": CalendarPage.keys,

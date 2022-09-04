@@ -57,7 +57,7 @@ class _WidgetPageState extends State<WidgetPage> {
   ///水平列表item
   Widget _horWidget(context, index) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         NavigatorUtils.fadePush(context, horWidget.values.elementAt(index));
       },
       child: Container(
@@ -67,10 +67,15 @@ class _WidgetPageState extends State<WidgetPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            FlareLogo(size: 90.r,color: Colors.white,),
+            Hero(
+                tag: horWidget.values.elementAt(index),
+                child: FlareLogo(
+                  size: 90.r,
+                  color: Colors.white,
+                )),
             Text(
               horWidget.keys.elementAt(index),
-              style: TextStyle(color: Colors.white,fontSize: 30.sp),
+              style: TextStyle(color: Colors.white, fontSize: 30.sp),
             )
           ],
         ),
@@ -91,7 +96,7 @@ class _WidgetPageState extends State<WidgetPage> {
         children: [
           Text(
             horWidget.keys.elementAt(index),
-            style: TextStyle(fontSize:30.sp, color: Colors.white),
+            style: TextStyle(fontSize: 30.sp, color: Colors.white),
           ),
           Icon(
             Icons.arrow_forward_ios_rounded,
@@ -101,5 +106,4 @@ class _WidgetPageState extends State<WidgetPage> {
       ),
     );
   }
-
 }

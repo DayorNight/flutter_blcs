@@ -37,34 +37,20 @@ class _HeroPageState extends State<HeroPage>{
     );
   }
 
-  void _gotoDetailsPage(BuildContext context,String title) {
-    Navigator.of(context).push(PageRouteBuilder(
-      pageBuilder: (context,animation,seAnimation) => Scaffold(
+  void _gotoDetailsPage(BuildContext context,title) {
+    Navigator.of(context).push(MaterialPageRoute<void>(
+      builder: (BuildContext context) => Scaffold(
         body: Scaffold(
           appBar: getAppBar(context,title),
           body: Align(
               alignment: Alignment.center,
               child: Hero(
-                tag: 'hero',
-                child: Icon(Icons.circle,size: 150),
-                transitionOnUserGestures: true,
-                flightShuttleBuilder: (context, anim, direction, fromContext, toContext) {
-                  final Hero toHero = toContext.widget as Hero;
-                  if (direction == HeroFlightDirection.pop) {
-                    return ScaleTransition(
-                      scale:Tween(begin: 1.0,end: 2.0).animate(anim),
-                      child: toHero.child,
-                    );
-                  } else {
-                    return toHero.child;
-                  }
-                },
+                  tag: 'hero',
+                  child: Icon(Icons.circle,size: 150)
               )
           ),
         ),
       ),
-      transitionDuration: Duration(milliseconds: 3000),
-      reverseTransitionDuration:  Duration(milliseconds: 3000),
     ));
   }
 }
