@@ -1,4 +1,5 @@
 import 'package:bruno/bruno.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_blcs/common/weiget_util.dart';
@@ -11,6 +12,12 @@ List<Widget> listDialog(BuildContext context) {
         des: "显示一个Material对话框",
         onTop: () {
           _showDialog(context);
+        }),
+    commonButton(
+        content: "showCupertinoDialog",
+        des: "显示一个showCupertinoDialog对话框",
+        onTop: () {
+          _showCupertinoDialog(context);
         }),
     commonButton(
         content: "Dialog",
@@ -29,6 +36,12 @@ List<Widget> listDialog(BuildContext context) {
         des: "显示一个SimpleDialog对话框",
         onTop: () {
           _simpleDialog(context);
+        }),
+    commonButton(
+        content: "CupertinoAlertDialog",
+        des: "显示一个CupertinoAlertDialog对话框",
+        onTop: () {
+          _cupertinoAlertDialog(context);
         }),
     commonButton(
         content: "BrnDialog",
@@ -94,7 +107,7 @@ List<Widget> listDialog(BuildContext context) {
 }
 
 ///适用于单选弹窗列表 https://bruno.ke.com/page/v2.2.0/widgets/brn-single-select-dialog
-Future<void> _brnSingleSelectDialog(BuildContext context) async{
+Future<void> _brnSingleSelectDialog(BuildContext context) async {
   String hintText = "感兴趣待跟进";
   int selectedIndex = 0;
   var conditions = [
@@ -111,57 +124,57 @@ Future<void> _brnSingleSelectDialog(BuildContext context) async{
   showDialog(
       context: context,
       builder: (_) => StatefulBuilder(
-        builder: (context, state) {
-          return BrnSingleSelectDialog(
-              isClose: true,
-              title: '请选择无效客源原因',
-              messageText: '请您评价该条线索请您评价该条线索请您评价该条线索请您评价该条线索请您评价该条线索',
-              conditions: conditions,
-              checkedItem: conditions[selectedIndex],
-              submitText: '提交',
-              isCustomFollowScroll: true,
-              customWidget: TextField(
-                //光标颜色
-                maxLines: 2,
-                cursorColor: Color(0xFF0984F9),
-                //光标圆角弧度
-                cursorRadius: Radius.circular(2.0),
-                style: TextStyle(fontSize: 14, color: Color(0xFF222222)),
-                maxLengthEnforcement: MaxLengthEnforcement.enforced,
-                onChanged: (value) {},
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.all(8.0),
-                  hintText: hintText,
-                  hintStyle:
-                  TextStyle(fontSize: 14, color: Color(0xFFCCCCCC)),
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(2.0),
-                      borderSide: BorderSide(
-                        width: 0.5,
-                        color: Color(0xFFCCCCCC),
-                      )),
-                  focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(2.0),
-                      borderSide: BorderSide(
-                        width: 0.5,
-                        color: Color(0xFFCCCCCC),
-                      )),
-                ),
-              ),
-              onItemClick: (BuildContext context, int index) {
-                hintText = conditions[index];
-                selectedIndex = index;
-                state(() {});
-              },
-              onSubmitClick: (data) {
-                BrnToast.show(data!, context);
-              });
-        },
-      ));
+            builder: (context, state) {
+              return BrnSingleSelectDialog(
+                  isClose: true,
+                  title: '请选择无效客源原因',
+                  messageText: '请您评价该条线索请您评价该条线索请您评价该条线索请您评价该条线索请您评价该条线索',
+                  conditions: conditions,
+                  checkedItem: conditions[selectedIndex],
+                  submitText: '提交',
+                  isCustomFollowScroll: true,
+                  customWidget: TextField(
+                    //光标颜色
+                    maxLines: 2,
+                    cursorColor: Color(0xFF0984F9),
+                    //光标圆角弧度
+                    cursorRadius: Radius.circular(2.0),
+                    style: TextStyle(fontSize: 14, color: Color(0xFF222222)),
+                    maxLengthEnforcement: MaxLengthEnforcement.enforced,
+                    onChanged: (value) {},
+                    decoration: InputDecoration(
+                      contentPadding: EdgeInsets.all(8.0),
+                      hintText: hintText,
+                      hintStyle:
+                          TextStyle(fontSize: 14, color: Color(0xFFCCCCCC)),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(2.0),
+                          borderSide: BorderSide(
+                            width: 0.5,
+                            color: Color(0xFFCCCCCC),
+                          )),
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(2.0),
+                          borderSide: BorderSide(
+                            width: 0.5,
+                            color: Color(0xFFCCCCCC),
+                          )),
+                    ),
+                  ),
+                  onItemClick: (BuildContext context, int index) {
+                    hintText = conditions[index];
+                    selectedIndex = index;
+                    state(() {});
+                  },
+                  onSubmitClick: (data) {
+                    BrnToast.show(data!, context);
+                  });
+            },
+          ));
 }
 
 /// 分享专用 Dialog https://bruno.ke.com/page/v2.2.0/widgets/brn-share-dialog
-Future<void> _brnShareDialog(BuildContext context) async{
+Future<void> _brnShareDialog(BuildContext context) async {
   BrnShareDialog brnShareDialog = new BrnShareDialog(
     context: context,
     shareChannels: [
@@ -202,13 +215,13 @@ Future<void> _brnShareDialog(BuildContext context) async{
 }
 
 ///纯文本 Dialog 超过定高可滚动 https://bruno.ke.com/page/v2.2.0/widgets/brn-scrollable-text-dialog
-Future<void>  _brnScrollableTextDialog(BuildContext context) async{
+Future<void> _brnScrollableTextDialog(BuildContext context) async {
   showDialog(
       context: context,
       builder: (_) => BrnScrollableTextDialog(
           title: "纯文本标题",
           contentText:
-          "纯本文呢表纯本文呢表\<font color = '#008886'\>纯本文呢呢表纯\</font\>本文呢表纯本文呢表纯本文呢表纯本文\<a href='www.baidu.com'\>XXXXX\</a\>纯本文呢表纯本文呢表纯本文呢呢表纯本文呢表纯本文"
+              "纯本文呢表纯本文呢表\<font color = '#008886'\>纯本文呢呢表纯\</font\>本文呢表纯本文呢表纯本文呢表纯本文\<a href='www.baidu.com'\>XXXXX\</a\>纯本文呢表纯本文呢表纯本文呢呢表纯本文呢表纯本文"
               "呢表纯本文呢表纯本文呢呢表纯本文呢表纯本文呢表纯本文呢表纯本文呢呢表纯本文呢表纯本文呢表纯本文呢表纯本文呢呢表纯"
               "本文呢表纯本文呢表纯本文呢表纯本文呢呢表纯本文呢表纯本文呢表纯本文呢表纯本文呢呢表纯本文呢表纯本文呢"
               "表纯本文呢表纯本文呢呢表纯本文呢表纯本文呢表纯本文呢表纯本文呢呢表纯本文呢表纯本文呢表纯本文呢表纯本文呢呢表"
@@ -242,59 +255,60 @@ Future<void> _brnMultiSelectDialog(BuildContext context) async {
   showDialog(
       context: context,
       builder: (_) => StatefulBuilder(builder: (context, state) {
-        return BrnMultiSelectDialog(
-            title: "请您评价该条线索Widget",
-            messageWidget: Row(
-              children: <Widget>[
-                Text(
-                  "选择放弃原因（多选）",
-                  style: cContentTextStyle,
+            return BrnMultiSelectDialog(
+                title: "请您评价该条线索Widget",
+                messageWidget: Row(
+                  children: <Widget>[
+                    Text(
+                      "选择放弃原因（多选）",
+                      style: cContentTextStyle,
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            isClose: true,
-            conditions: data,
-            isCustomFollowScroll: false,
-            customWidget: TextField(
-              //光标颜色
-              maxLines: 2,
-              cursorColor: Color(0xFF0984F9),
-              //光标圆角弧度
-              cursorRadius: Radius.circular(2.0),
-              style: TextStyle(fontSize: 14, color: Color(0xFF222222)),
-              maxLengthEnforced: true,
-              onChanged: (value) {},
-              decoration: InputDecoration(
-                contentPadding: EdgeInsets.all(8.0),
-                hintText: hintText,
-                hintStyle: TextStyle(fontSize: 14, color: Color(0xFFCCCCCC)),
-                enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(2.0),
-                    borderSide: BorderSide(
-                      width: 0.5,
-                      color: Color(0xFFCCCCCC),
-                    )),
-                focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(2.0),
-                    borderSide: BorderSide(
-                      width: 0.5,
-                      color: Color(0xFFCCCCCC),
-                    )),
-              ),
-            ),
-            onItemClick: (BuildContext contex, int index) {
-              hintText = data[index].content;
-              state(() {});
-            },
-            onSubmitClick: (List<MultiSelectItem> data) {
-              var str = "";
-              data.forEach((item) {
-                str = str + item.content + "  ";
-              });
-              BrnToast.show(str, context);
-              return true;
-            });
-      }));
+                isClose: true,
+                conditions: data,
+                isCustomFollowScroll: false,
+                customWidget: TextField(
+                  //光标颜色
+                  maxLines: 2,
+                  cursorColor: Color(0xFF0984F9),
+                  //光标圆角弧度
+                  cursorRadius: Radius.circular(2.0),
+                  style: TextStyle(fontSize: 14, color: Color(0xFF222222)),
+                  maxLengthEnforced: true,
+                  onChanged: (value) {},
+                  decoration: InputDecoration(
+                    contentPadding: EdgeInsets.all(8.0),
+                    hintText: hintText,
+                    hintStyle:
+                        TextStyle(fontSize: 14, color: Color(0xFFCCCCCC)),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(2.0),
+                        borderSide: BorderSide(
+                          width: 0.5,
+                          color: Color(0xFFCCCCCC),
+                        )),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(2.0),
+                        borderSide: BorderSide(
+                          width: 0.5,
+                          color: Color(0xFFCCCCCC),
+                        )),
+                  ),
+                ),
+                onItemClick: (BuildContext contex, int index) {
+                  hintText = data[index].content;
+                  state(() {});
+                },
+                onSubmitClick: (List<MultiSelectItem> data) {
+                  var str = "";
+                  data.forEach((item) {
+                    str = str + item.content + "  ";
+                  });
+                  BrnToast.show(str, context);
+                  return true;
+                });
+          }));
 }
 
 /// 带输入框的弹窗
@@ -349,15 +363,15 @@ Future<void> _showConfirmDialog(BuildContext context) async {
         padding: const EdgeInsets.only(top: 6, left: 24, right: 24),
         child: BrnCSS2Text.toTextView(
             "这是一条增使用标签修改文字颜色的demo\<font color = '#8ac6d1'\>我是带颜色的文字</font>，"
-                "这是颜色标签后边的文字",
-            linksCallback: (String? text, String? linkUrl) {
-              BrnToast.show('$text clicked!  Url is $linkUrl', context);
-            }),
+            "这是颜色标签后边的文字", linksCallback: (String? text, String? linkUrl) {
+          BrnToast.show('$text clicked!  Url is $linkUrl', context);
+        }),
       ),
-      onCancel: (){
+      onCancel: () {
         Navigator.of(context).pop();
       },
-      showIcon: true, onConfirm: () {
+      showIcon: true,
+      onConfirm: () {
         BrnToast.show("确定", context);
         Navigator.of(context).pop();
       });
@@ -374,9 +388,9 @@ Future<void> _showMoreButtonDialog(BuildContext context) async {
       ],
       message: "辅助内容信息辅助内容信息辅助内容信息辅助内容信息辅助内容信息。",
       indexedActionClickCallback: (index) {
-        BrnToast.show("$index", context);
-        Navigator.of(context).pop();
-      });
+    BrnToast.show("$index", context);
+    Navigator.of(context).pop();
+  });
 }
 
 /// 当前内容上方显示一个Material对话框
@@ -385,6 +399,20 @@ Future<void> _showDialog(BuildContext context) async {
     context: context,
     barrierDismissible: true, //点击背景部分是否关闭弹窗
     barrierColor: Colors.black26, //背景颜色
+    builder: (BuildContext context) {
+      return Center(
+        child: ElevatedButton(
+          onPressed: () => Navigator.of(context).pop(),
+          child: const Text('显示一个按钮'),
+        ),
+      );
+    },
+  );
+}/// 当前内容上方显示一个Material对话框
+Future<void> _showCupertinoDialog(BuildContext context) async {
+  return showCupertinoDialog<void>(
+    context: context,
+    barrierDismissible: true, //点击背景部分是否关闭弹窗
     builder: (BuildContext context) {
       return Center(
         child: ElevatedButton(
@@ -409,14 +437,14 @@ Future<void> _dialog(BuildContext context) async {
               ListTile(title: Text("请选择")),
               Expanded(
                   child: ListView.builder(
-                    itemCount: 30,
-                    itemBuilder: (BuildContext context, int index) {
-                      return ListTile(
-                        title: Text("$index"),
-                        onTap: () => Navigator.of(context).pop(index),
-                      );
-                    },
-                  )),
+                itemCount: 30,
+                itemBuilder: (BuildContext context, int index) {
+                  return ListTile(
+                    title: Text("$index"),
+                    onTap: () => Navigator.of(context).pop(index),
+                  );
+                },
+              )),
             ],
           ),
         );
@@ -472,6 +500,32 @@ Future<void> _simpleDialog(BuildContext context) async {
       });
 }
 
+/// showDialog + CupertinoAlertDialog
+Future<void> _cupertinoAlertDialog(BuildContext context) async {
+  return showCupertinoDialog<void>(
+    context: context,
+    builder: (BuildContext context) => CupertinoAlertDialog(
+      title: const Text('Alert'),
+      content: const Text('Proceed with destructive action?'),
+      actions: <CupertinoDialogAction>[
+        CupertinoDialogAction(
+          child: const Text('No'),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        CupertinoDialogAction(
+          child: const Text('Yes'),
+          isDestructiveAction: true,
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        )
+      ],
+    ),
+  );
+}
+
 ///https://bruno.ke.com/page/v2.2.0/widgets/brn-dialog
 Future<void> _brnDialog(BuildContext context) async {
   return showDialog<void>(
@@ -492,7 +546,7 @@ _showSingleButtonDialog(BuildContext context) async {
       title: '标题内容',
       warning: '错误文案展示/警示文案展示',
       message: "辅助内容信息辅助内容信息辅助内容信息辅助内容信息辅助内容信息。", onTap: () {
-        BrnToast.show('知道了', context);
-        Navigator.of(context).pop();
-      });
+    BrnToast.show('知道了', context);
+    Navigator.of(context).pop();
+  });
 }
