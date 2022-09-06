@@ -1,3 +1,5 @@
+
+
 import 'package:bruno/bruno.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/widgets/article_model.dart';
@@ -18,7 +20,7 @@ class _NavigationPageState extends State<NavigationPage> {
     // ItemEntity(value: ""),
     // ItemEntity(value: ""),
   ];
-  String? _selection;
+  String? _selection = "顶部导航";
   @override
   Widget build(BuildContext context) {
     return ArticleModel(
@@ -41,6 +43,7 @@ class _NavigationPageState extends State<NavigationPage> {
   }
 
   _listWidget(BuildContext context) {
+     print("_selection $_selection");
       switch (_selection) {
         case "顶部导航":
           return topBar(context);
@@ -51,6 +54,7 @@ class _NavigationPageState extends State<NavigationPage> {
   ///顶部导航
   topBar(BuildContext context) {
     return [
+      Text("data"),
 
     ];
   }
@@ -59,24 +63,52 @@ class _NavigationPageState extends State<NavigationPage> {
   ///底部导航
   bottomBar(BuildContext context) {
     return [
-      // BrnBottomTabBar(
-      //   fixedColor: Colors.blue,
-      //   currentIndex: _selectedIndex,
-      //   onTap: _onItemSelected,
-      //   badgeColor: Colors.red,
-      //   items: <BottomTabBarItem>[
-      //     BottomTabBarItem(
-      //         icon: Image(image: AssetImage("assets/icons/navbar\_fangyuan.png")),activeIcon: Image(image: AssetImage("assets/icons/navbar\_fangyuan.png")), title: Text(titles[0])),
-      //     BottomTabBarItem(icon: Image(image: AssetImage("assets/icons/navbar\_fangyuan.png")), title: Text(titles[1])),
-      //     BottomTabBarItem(icon: Image(image: AssetImage("assets/icons/navbar\_fangyuan.png")), title: Text(titles[2])),
-      //     BottomTabBarItem(
-      //         icon: Image(image: AssetImage("assets/icons/navbar\_fangyuan.png")),
-      //         activeIcon: Image(image: AssetImage("assets/icons/navbar\_fangyuan.png")),
-      //         title: Text(titles[3])),
-      //     BottomTabBarItem(icon: Image(image: AssetImage("assets/icons/navbar\_fangyuan.png")), title: Text(titles[4])),
-      //     BottomTabBarItem(icon: Image(image: AssetImage("assets/icons/navbar\_fangyuan.png")), title: Text(titles[5])),
-      //   ],
-      // ),
+      Text("XXXXXX"),
+      Text("XXXXXX"),
     ];
+  }
+}
+
+class TabBar extends StatelessWidget {
+  const TabBar({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox();
+    // return DefaultTabController(
+    //   initialIndex: 1,
+    //   length: 3,
+    //   child: Scaffold(
+    //     appBar: AppBar(
+    //       title: const Text('TabBar Widget'),
+    //       bottom: const TabBar(
+    //         tabs: <Widget>[
+    //           Tab(
+    //             icon: Icon(Icons.cloud_outlined),
+    //           ),
+    //           Tab(
+    //             icon: Icon(Icons.beach_access_sharp),
+    //           ),
+    //           Tab(
+    //             icon: Icon(Icons.brightness_5_sharp),
+    //           ),
+    //         ],
+    //       ),
+    //     ),
+    //     body: const TabBarView(
+    //       children: <Widget>[
+    //         Center(
+    //           child: Text("It's cloudy here"),
+    //         ),
+    //         Center(
+    //           child: Text("It's rainy here"),
+    //         ),
+    //         Center(
+    //           child: Text("It's sunny here"),
+    //         ),
+    //       ],
+    //     ),
+    //   ),
+    // );
   }
 }
