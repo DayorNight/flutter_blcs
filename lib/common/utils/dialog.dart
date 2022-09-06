@@ -275,7 +275,7 @@ Future<void> _brnMultiSelectDialog(BuildContext context) async {
                   //光标圆角弧度
                   cursorRadius: Radius.circular(2.0),
                   style: TextStyle(fontSize: 14, color: Color(0xFF222222)),
-                  maxLengthEnforced: true,
+                  // maxLengthEnforced: true,
                   onChanged: (value) {},
                   decoration: InputDecoration(
                     contentPadding: EdgeInsets.all(8.0),
