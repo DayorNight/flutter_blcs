@@ -6,6 +6,7 @@ import 'package:flutter_blcs/pages/home/widget/dialog_page.dart';
 import 'package:flutter_blcs/pages/home/widget/navigation_page.dart';
 import 'package:flutter_blcs/pages/home/widget/picker_page.dart';
 import 'package:flutter_blcs/pages/home/widget/progress_page.dart';
+import 'package:flutter_blcs/pages/home/widget/tabs_page.dart';
 import 'package:flutter_blcs/pages/my/animated_switcher_page.dart';
 import 'package:flutter_blcs/pages/my/custom_widget_page.dart';
 import '../pages/libs/camera_page.dart';
@@ -68,6 +69,7 @@ class Routers {
     ButtonPage.keys:(BuildContext context) => ButtonPage(),
     CalendarPage.keys:(BuildContext context) => CalendarPage(),
     NavigationPage.keys:(BuildContext context) => NavigationPage(),
+    TabsPage.keys:(BuildContext context) => TabsPage(),
     ProgressPage.keys:(BuildContext context) => ProgressPage(),
   };
   //初始路由

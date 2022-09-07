@@ -29,4 +29,10 @@ class NavigatorUtils {
         transitionDuration: Duration(milliseconds: 500));
   }
 
+  static toClass(BuildContext context,Widget widget){
+    Navigator.push(context, MaterialPageRoute(builder: (context) {
+      return widget;
+    }));
+  }
 }
+

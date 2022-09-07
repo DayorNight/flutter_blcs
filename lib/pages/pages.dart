@@ -3,6 +3,7 @@ import 'package:flutter_blcs/pages/home/widget/calendar_page.dart';
 import 'package:flutter_blcs/pages/home/widget/navigation_page.dart';
 import 'package:flutter_blcs/pages/home/widget/picker_page.dart';
 import 'package:flutter_blcs/pages/home/widget/progress_page.dart';
+import 'package:flutter_blcs/pages/home/widget/tabs_page.dart';
 import 'package:flutter_blcs/pages/my/animated_switcher_page.dart';
 import 'package:flutter_blcs/pages/my/json_parse_page.dart';
 
@@ -48,6 +49,7 @@ final Map horWidget = {
   "选择器": PickerPage.keys,
   // "图表": PickerPage.keys,
   "导航": NavigationPage.keys,
+  "Tabs": TabsPage.keys,
   "按钮": ButtonPage.keys,
   "日历": CalendarPage.keys,
 };
