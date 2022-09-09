@@ -47,7 +47,7 @@ class _WidgetPageState extends State<WidgetPage> {
           ///底部列表
           SliverFixedExtentList(
               delegate: SliverChildBuilderDelegate(_loadList,
-                  childCount: horWidget.length),
+                  childCount: columnWidget.length),
               itemExtent: 70),
         ],
       ),
@@ -91,18 +91,30 @@ class _WidgetPageState extends State<WidgetPage> {
       decoration: BoxDecoration(
           color: Theme.of(context).primaryColor,
           borderRadius: BorderRadius.all(Radius.circular(10))),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            horWidget.keys.elementAt(index),
-            style: TextStyle(fontSize: 30.sp, color: Colors.white),
-          ),
-          Icon(
-            Icons.arrow_forward_ios_rounded,
-            color: Colors.white,
-          )
-        ],
+      child: InkWell(
+        onTap: () {
+          NavigatorUtils.fadePush(context, columnWidget.values.elementAt(index));
+        },
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Hero(
+                tag: columnWidget.values.elementAt(index),
+                child: FlareLogo(
+                  size: 90.r,
+                  color: Colors.white,
+                )),
+            Expanded(
+                child: Text(
+              columnWidget.keys.elementAt(index),
+              style: TextStyle(fontSize: 30.sp, color: Colors.white),
+            )),
+            Icon(
+              Icons.arrow_forward_ios_rounded,
+              color: Colors.white,
+            )
+          ],
+        ),
       ),
     );
   }

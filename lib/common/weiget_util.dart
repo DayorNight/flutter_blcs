@@ -60,9 +60,9 @@ Widget printCode(String content) {
     //语言
     syntax: Syntax.DART,
     //主题
-    syntaxTheme: SyntaxTheme.monokaiSublime(),
+    syntaxTheme: SyntaxTheme.ayuDark(),
     //字体大小
-    fontSize: 12,
+    fontSize: 13,
     //启用缩放
     withZoom: true,
     //启用行号

@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/utils/print.dart';
-import 'package:flutter_blcs/pages/home/widget/Button_page.dart';
-import 'package:flutter_blcs/pages/home/widget/calendar_page.dart';
-import 'package:flutter_blcs/pages/home/widget/dialog_page.dart';
-import 'package:flutter_blcs/pages/home/widget/navigation_page.dart';
-import 'package:flutter_blcs/pages/home/widget/picker_page.dart';
-import 'package:flutter_blcs/pages/home/widget/progress_page.dart';
-import 'package:flutter_blcs/pages/home/widget/tabs_page.dart';
+import 'package:flutter_blcs/pages/widget/Button_page.dart';
+import 'package:flutter_blcs/pages/widget/dialog_page.dart';
+import 'package:flutter_blcs/pages/widget/list/app_bar_page.dart';
+import 'package:flutter_blcs/pages/widget/list/material_app_page.dart';
+import 'package:flutter_blcs/pages/widget/list/scaffold_page.dart';
+import 'package:flutter_blcs/pages/widget/picker_page.dart';
+import 'package:flutter_blcs/pages/widget/progress_page.dart';
 import 'package:flutter_blcs/pages/my/animated_switcher_page.dart';
 import 'package:flutter_blcs/pages/my/custom_widget_page.dart';
+import 'package:flutter_blcs/pages/widget/calendar_page.dart';
+import 'package:flutter_blcs/pages/widget/navigation_page.dart';
+import 'package:flutter_blcs/pages/widget/tabs_page.dart';
 import '../pages/libs/camera_page.dart';
 import '../pages/libs/image_picker_page.dart';
 import '../pages/libs/net_work_page.dart';
@@ -71,6 +74,9 @@ class Routers {
     NavigationPage.keys:(BuildContext context) => NavigationPage(),
     TabsPage.keys:(BuildContext context) => TabsPage(),
     ProgressPage.keys:(BuildContext context) => ProgressPage(),
+    MaterialAppPage.keys:(BuildContext context) => MaterialAppPage(),
+    ScaffoldPage.keys:(BuildContext context) => ScaffoldPage(),
+    AppBarPage.keys:(BuildContext context) => AppBarPage(),
   };
   //初始路由
   static final initialRoute = SplashPage.keys;

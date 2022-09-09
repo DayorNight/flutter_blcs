@@ -1,13 +1,16 @@
-import 'package:flutter_blcs/pages/home/widget/Button_page.dart';
-import 'package:flutter_blcs/pages/home/widget/calendar_page.dart';
-import 'package:flutter_blcs/pages/home/widget/navigation_page.dart';
-import 'package:flutter_blcs/pages/home/widget/picker_page.dart';
-import 'package:flutter_blcs/pages/home/widget/progress_page.dart';
-import 'package:flutter_blcs/pages/home/widget/tabs_page.dart';
 import 'package:flutter_blcs/pages/my/animated_switcher_page.dart';
 import 'package:flutter_blcs/pages/my/json_parse_page.dart';
+import 'package:flutter_blcs/pages/widget/Button_page.dart';
+import 'package:flutter_blcs/pages/widget/calendar_page.dart';
+import 'package:flutter_blcs/pages/widget/dialog_page.dart';
+import 'package:flutter_blcs/pages/widget/list/app_bar_page.dart';
+import 'package:flutter_blcs/pages/widget/list/material_app_page.dart';
+import 'package:flutter_blcs/pages/widget/list/scaffold_page.dart';
+import 'package:flutter_blcs/pages/widget/navigation_page.dart';
+import 'package:flutter_blcs/pages/widget/picker_page.dart';
+import 'package:flutter_blcs/pages/widget/progress_page.dart';
+import 'package:flutter_blcs/pages/widget/tabs_page.dart';
 
-import 'home/widget/dialog_page.dart';
 import 'libs/camera_page.dart';
 import 'libs/image_picker_page.dart';
 import 'libs/net_work_page.dart';
@@ -52,4 +55,10 @@ final Map horWidget = {
   "Tabs": TabsPage.keys,
   "按钮": ButtonPage.keys,
   "日历": CalendarPage.keys,
+};
+
+final Map columnWidget = {
+  "AppBar": AppBarPage.keys,
+  "MaterialApp": MaterialAppPage.keys,
+  "Scaffold": ScaffoldPage.keys,
 };
