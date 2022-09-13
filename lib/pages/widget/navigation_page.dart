@@ -2,7 +2,11 @@ import 'package:bruno/bruno.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/utils/navigator.dart';
 import 'package:flutter_blcs/common/weiget_util.dart';
+import 'package:flutter_blcs/pages/widget/list/app_bar_page.dart';
 import 'package:flutter_blcs/widgets/article_model.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'tabs_page.dart';
 
 class NavigationPage extends StatefulWidget {
   static final String keys = "NavigationPage";
@@ -14,13 +18,6 @@ class NavigationPage extends StatefulWidget {
 }
 
 class _NavigationPageState extends State<NavigationPage> {
-  // List<ItemEntity> lists = [
-  //   ItemEntity(name: "顶部导航", value: "顶部导航"),
-  //   ItemEntity(name: "底部导航", value: "底部导航"),
-  //   // ItemEntity(value: ""),
-  //   // ItemEntity(value: ""),
-  // ];
-  // String? _selection = "顶部导航";
 
   @override
   Widget build(BuildContext context) {
@@ -28,38 +25,36 @@ class _NavigationPageState extends State<NavigationPage> {
       title: '导航',
       keys: NavigationPage.keys,
       logoColor: Theme.of(context).primaryColor,
-      // headerChild: BrnSimpleSelection.radio(
-      //   menuName: lists[0].name,
-      //   menuKey: lists[0].name,
-      //   items: lists,
-      //   defaultValue: lists[0].name,
-      //   onSimpleSelectionChanged: (List<ItemEntity> filterParams) {
-      //     _selection = filterParams.first.value;
-      //   },
-      // ),
-      // footerChild: Column(
-      //   children: _listWidget(context),
-      // ),
+      headerChild: Column(
+        children: [
+          commonButton(content: "Appbar", des: "普通导航栏:左侧+标题+右侧",onTop: ()=> {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return AppBarDemo1();
+            }))
+          }),
+          commonButton(content: "Appbar", des: "普通导航栏:左侧+标题+右侧+tabs",onTop: ()=> {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return AppBarDemo2();
+            }))
+          }),
+          commonButton(content: "自定义导航", des: "左侧+标题+右侧"),
+          SizedBox(height: 10.w,),
+          Container(
+            color: Theme.of(context).primaryColor,
+            padding: EdgeInsets.all(15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Icon(Icons.arrow_back_ios,color: Colors.white,),
+                Text("自定义导航",style:TextStyle(color: Colors.white),),
+                Text("设置",style:TextStyle(color: Colors.white),),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 
-  // _listWidget(BuildContext context) {
-  //   print("_selection $_selection");
-  //   switch (_selection) {
-  //     case "顶部导航":
-  //       return topBar(context);
-  //     case "底部导航":
-  //       return bottomBar(context);
-  //   }
-  // }
-  //
-  // ///顶部导航
-  // topBar(BuildContext context) {
-  //   return [
-  //     commonButton(
-  //         content: "TabBar + TabBarView",
-  //         des: "导航栏",
-  //         onTop: () => NavigatorUtils.toClass(context, TabBarDemo())),
-  //   ];
-  // }
+
 }
