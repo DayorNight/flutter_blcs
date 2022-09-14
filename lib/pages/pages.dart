@@ -6,6 +6,8 @@ import 'package:flutter_blcs/pages/widget/dialog_page.dart';
 import 'package:flutter_blcs/pages/widget/list/app_bar_page.dart';
 import 'package:flutter_blcs/pages/widget/list/material_app_page.dart';
 import 'package:flutter_blcs/pages/widget/list/scaffold_page.dart';
+import 'package:flutter_blcs/pages/widget/list/tab_bar_page.dart';
+import 'package:flutter_blcs/pages/widget/list/tab_bar_view_page.dart';
 import 'package:flutter_blcs/pages/widget/navigation_page.dart';
 import 'package:flutter_blcs/pages/widget/picker_page.dart';
 import 'package:flutter_blcs/pages/widget/progress_page.dart';
@@ -61,4 +63,6 @@ final Map columnWidget = {
   "AppBar": AppBarPage.keys,
   "MaterialApp": MaterialAppPage.keys,
   "Scaffold": ScaffoldPage.keys,
+  "TabBar": TabBarPage.keys,
+  "TabBarView": TabBarViewPage.keys,
 };

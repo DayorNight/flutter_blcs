@@ -28,7 +28,6 @@ class ArticleModel extends StatelessWidget {
       appBar: getAppBar(context, title),
       body: Stack(
         children: [
-          articleLogo(keys, logoColor),
           ListView(
             padding: EdgeInsets.all(10),
             children: [
@@ -37,7 +36,8 @@ class ArticleModel extends StatelessWidget {
               if (code != null) printCode(code!),
               footerChild ?? SizedBox()
             ],
-          )
+          ),
+          articleLogo(keys, logoColor),
         ],
       ),
     );

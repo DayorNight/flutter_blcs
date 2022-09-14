@@ -70,7 +70,7 @@ class AppBarPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ArticleModel(
-      title: 'AppBarPage',
+      title: 'AppBar',
       keys: keys,
       logoColor: Theme.of(context).primaryColor,
       des: "AppBar是基于Material Design设计风格的应用栏，一般使用在Scaffold内部，作为顶部导航栏",

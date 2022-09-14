@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blcs/common/utils/print.dart';
-import 'package:flutter_blcs/pages/widget/Button_page.dart';
-import 'package:flutter_blcs/pages/widget/dialog_page.dart';
-import 'package:flutter_blcs/pages/widget/list/app_bar_page.dart';
-import 'package:flutter_blcs/pages/widget/list/material_app_page.dart';
-import 'package:flutter_blcs/pages/widget/list/scaffold_page.dart';
-import 'package:flutter_blcs/pages/widget/picker_page.dart';
-import 'package:flutter_blcs/pages/widget/progress_page.dart';
-import 'package:flutter_blcs/pages/my/animated_switcher_page.dart';
-import 'package:flutter_blcs/pages/my/custom_widget_page.dart';
-import 'package:flutter_blcs/pages/widget/calendar_page.dart';
-import 'package:flutter_blcs/pages/widget/navigation_page.dart';
-import 'package:flutter_blcs/pages/widget/tabs_page.dart';
+import '../common/utils/print.dart';
+import '../pages/widget/Button_page.dart';
+import '../pages/widget/dialog_page.dart';
+import '../pages/widget/list/app_bar_page.dart';
+import '../pages/widget/list/material_app_page.dart';
+import '../pages/widget/list/scaffold_page.dart';
+import '../pages/widget/list/tab_bar_page.dart';
+import '../pages/widget/picker_page.dart';
+import '../pages/widget/progress_page.dart';
+import '../pages/my/animated_switcher_page.dart';
+import '../pages/my/custom_widget_page.dart';
+import '../pages/widget/calendar_page.dart';
+import '../pages/widget/navigation_page.dart';
+import '../pages/widget/tabs_page.dart';
 import '../pages/libs/camera_page.dart';
 import '../pages/libs/image_picker_page.dart';
 import '../pages/libs/net_work_page.dart';
@@ -37,6 +38,7 @@ import '../pages/my/personal_information_page.dart';
 import '../pages/my/route_animation_page.dart';
 import '../pages/login/splash_page.dart';
 import '../pages/my/personal_page.dart';
+import '../pages/widget/list/tab_bar_view_page.dart';
 class Routers {
   //路由表
   static final Map<String, WidgetBuilder> routes = {
@@ -77,6 +79,8 @@ class Routers {
     MaterialAppPage.keys:(BuildContext context) => MaterialAppPage(),
     ScaffoldPage.keys:(BuildContext context) => ScaffoldPage(),
     AppBarPage.keys:(BuildContext context) => AppBarPage(),
+    TabBarPage.keys:(BuildContext context) => TabBarPage(),
+    TabBarViewPage.keys:(BuildContext context) => TabBarViewPage(),
   };
   //初始路由
   static final initialRoute = SplashPage.keys;
