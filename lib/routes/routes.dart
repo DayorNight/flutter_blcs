@@ -3,6 +3,8 @@ import '../common/utils/print.dart';
 import '../pages/widget/Button_page.dart';
 import '../pages/widget/dialog_page.dart';
 import '../pages/widget/list/app_bar_page.dart';
+import '../pages/widget/list/circular_progress_indicator_page.dart';
+import '../pages/widget/list/linear_progress_indicator_page.dart';
 import '../pages/widget/list/material_app_page.dart';
 import '../pages/widget/list/scaffold_page.dart';
 import '../pages/widget/list/tab_bar_page.dart';
@@ -81,12 +83,14 @@ class Routers {
     AppBarPage.keys:(BuildContext context) => AppBarPage(),
     TabBarPage.keys:(BuildContext context) => TabBarPage(),
     TabBarViewPage.keys:(BuildContext context) => TabBarViewPage(),
+    LinearProgressIndicatorPage.keys:(BuildContext context) => LinearProgressIndicatorPage(),
+    CircularProgressIndicatorPage.keys:(BuildContext context) => CircularProgressIndicatorPage(),
   };
+
   //初始路由
   static final initialRoute = SplashPage.keys;
   //出错默认路由
   static final errrorRoute = (BuildContext context) => LoginPage();
-
   //路由出错调用
   static final onGenerateRoute = (settings) {
     print("onGenerateRoute:name= ${settings.name}");

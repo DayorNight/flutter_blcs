@@ -26,6 +26,8 @@ import 'my/isolate_page.dart';
 import 'my/lifecycle_page.dart';
 import 'my/mixed_animation_page.dart';
 import 'my/route_animation_page.dart';
+import 'widget/list/circular_progress_indicator_page.dart';
+import 'widget/list/linear_progress_indicator_page.dart';
 
 final Map libPages = {
   "全局状态管理": ProviderPage.keys,
@@ -65,4 +67,6 @@ final Map columnWidget = {
   "Scaffold": ScaffoldPage.keys,
   "TabBar": TabBarPage.keys,
   "TabBarView": TabBarViewPage.keys,
+  "LinearProgressIndicator": LinearProgressIndicatorPage.keys,
+  "CircularProgressIndicator": CircularProgressIndicatorPage.keys,
 };
