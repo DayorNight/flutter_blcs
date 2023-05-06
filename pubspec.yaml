@@ -22,7 +22,7 @@ dependencies:
   # 视频
   video_player: ^2.4.0
   # 相机
-  camera: ^0.9.4+21
+  camera: ^0.10.5
   # 用于查找文件系统上常用位置
   path_provider: ^2.0.9
   # 适配任何平台的路径
@@ -52,9 +52,9 @@ dependencies:
   # 自定义动画
   simple_animations: ^4.0.1
   # 引导页、介绍页
-  introduction_screen: ^3.0.1
+  introduction_screen: ^3.1.8
   # bruno组件
-  bruno: ^3.0.0
+  bruno: ^3.3.0
 
 dev_dependencies:
   flutter_test:
