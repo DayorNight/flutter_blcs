@@ -1,8 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_blcs/pages/my/animated_switcher_page.dart';
 import 'package:flutter_blcs/pages/my/json_parse_page.dart';
 import 'package:flutter_blcs/pages/widget/Button_page.dart';
 import 'package:flutter_blcs/pages/widget/calendar_page.dart';
 import 'package:flutter_blcs/pages/widget/dialog_page.dart';
+import 'package:flutter_blcs/pages/widget/list/about_dialog_page.dart';
 import 'package:flutter_blcs/pages/widget/list/app_bar_page.dart';
 import 'package:flutter_blcs/pages/widget/list/material_app_page.dart';
 import 'package:flutter_blcs/pages/widget/list/scaffold_page.dart';
@@ -62,6 +64,7 @@ final Map horWidget = {
 };
 
 final Map columnWidget = {
+  "AboutDialog": AboutDialogPage.keys,
   "AppBar": AppBarPage.keys,
   "MaterialApp": MaterialAppPage.keys,
   "Scaffold": ScaffoldPage.keys,

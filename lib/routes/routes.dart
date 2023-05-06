@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/pages/widget/list/about_dialog_page.dart';
 import '../common/utils/print.dart';
 import '../pages/widget/Button_page.dart';
 import '../pages/widget/dialog_page.dart';
@@ -81,6 +82,7 @@ class Routers {
     MaterialAppPage.keys:(BuildContext context) => MaterialAppPage(),
     ScaffoldPage.keys:(BuildContext context) => ScaffoldPage(),
     AppBarPage.keys:(BuildContext context) => AppBarPage(),
+    AboutDialogPage.keys:(BuildContext context) => AboutDialogPage(),
     TabBarPage.keys:(BuildContext context) => TabBarPage(),
     TabBarViewPage.keys:(BuildContext context) => TabBarViewPage(),
     LinearProgressIndicatorPage.keys:(BuildContext context) => LinearProgressIndicatorPage(),
