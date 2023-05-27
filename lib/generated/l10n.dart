@@ -329,6 +329,26 @@ class S {
       args: [],
     );
   }
+
+  /// `请输入搜索关键字`
+  String get inputSearchTip {
+    return Intl.message(
+      '请输入搜索关键字',
+      name: 'inputSearchTip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `搜索框`
+  String get searchTitle {
+    return Intl.message(
+      '搜索框',
+      name: 'searchTitle',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

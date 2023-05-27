@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/pages/libs/custom_search_bar_page.dart';
 import 'package:flutter_blcs/pages/my/animated_switcher_page.dart';
 import 'package:flutter_blcs/pages/my/json_parse_page.dart';
 import 'package:flutter_blcs/pages/widget/Button_page.dart';
@@ -37,6 +38,7 @@ final Map libPages = {
   "网络请求": NetWorkPage.keys,
   "相机": CameraPage.keys,
   "ImagePicker": ImagePickerPage.keys,
+  "搜索框": CustomSearchBarPage.keys,
 };
 
 final Map myPages = {

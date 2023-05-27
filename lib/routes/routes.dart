@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/pages/libs/custom_search_bar_page.dart';
 import 'package:flutter_blcs/pages/widget/list/about_dialog_page.dart';
 import '../common/utils/print.dart';
 import '../pages/widget/Button_page.dart';
@@ -72,6 +73,7 @@ class Routers {
     CameraPage.keys:(BuildContext context) => CameraPage(),
     IsolatePage.keys:(BuildContext context) => IsolatePage(),
     ImagePickerPage.keys:(BuildContext context) => ImagePickerPage(),
+    CustomSearchBarPage.keys:(BuildContext context) => CustomSearchBarPage(),
     DialogPage.keys:(BuildContext context) => DialogPage(),
     PickerPage.keys:(BuildContext context) => PickerPage(),
     ButtonPage.keys:(BuildContext context) => ButtonPage(),

@@ -26,5 +26,7 @@
   "netWork": "网络请求",
   "camera": "相机",
   "isolate": "Isolate",
-  "imagePicker": "ImagePicker"
+  "imagePicker": "ImagePicker",
+  "inputSearchTip": "请输入搜索关键字",
+  "searchTitle": "搜索框"
 }

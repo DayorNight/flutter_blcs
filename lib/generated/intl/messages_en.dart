@@ -39,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "homeMe": MessageLookupByLibrary.simpleMessage("Me"),
         "homeView": MessageLookupByLibrary.simpleMessage("Widget"),
         "imagePicker": MessageLookupByLibrary.simpleMessage("ImagePicker"),
+        "inputSearchTip": MessageLookupByLibrary.simpleMessage("请输入搜索关键字"),
         "isolate": MessageLookupByLibrary.simpleMessage("Isolate"),
         "lifeCycle": MessageLookupByLibrary.simpleMessage("LifeCycle"),
         "mixedAnimation":
@@ -52,6 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "routeAnimation":
             MessageLookupByLibrary.simpleMessage("Route Animation"),
         "screenAdapter": MessageLookupByLibrary.simpleMessage("Screen Adapter"),
+        "searchTitle": MessageLookupByLibrary.simpleMessage("搜索框"),
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Select Language"),
         "switchLanguage":

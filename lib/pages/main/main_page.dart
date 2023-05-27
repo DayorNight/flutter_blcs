@@ -135,7 +135,6 @@ class _MainPageState extends State<MainPage> {
       items: bottomItems,
       currentIndex: _bottomIndex,
       onTap: (index) {
-        print("index: $index");
         _title = _menu[index];
         setState(() {
           _bottomIndex = index;
