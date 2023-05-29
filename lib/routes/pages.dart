@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/pages/libs/anchor_tab_page.dart';
 import 'package:flutter_blcs/pages/libs/custom_search_bar_page.dart';
 import 'package:flutter_blcs/pages/my/animated_switcher_page.dart';
 import 'package:flutter_blcs/pages/my/json_parse_page.dart';
@@ -16,21 +17,21 @@ import 'package:flutter_blcs/pages/widget/picker_page.dart';
 import 'package:flutter_blcs/pages/widget/progress_page.dart';
 import 'package:flutter_blcs/pages/widget/tabs_page.dart';
 
-import 'libs/camera_page.dart';
-import 'libs/image_picker_page.dart';
-import 'libs/net_work_page.dart';
-import 'libs/provider_page.dart';
-import 'libs/screen_adapter_page.dart';
-import 'my/animation_page.dart';
-import 'my/app_lifecycle_page.dart';
-import 'my/custom_widget_page.dart';
-import 'my/hero_page.dart';
-import 'my/isolate_page.dart';
-import 'my/lifecycle_page.dart';
-import 'my/mixed_animation_page.dart';
-import 'my/route_animation_page.dart';
-import 'widget/list/circular_progress_indicator_page.dart';
-import 'widget/list/linear_progress_indicator_page.dart';
+import '../pages/libs/camera_page.dart';
+import '../pages/libs/image_picker_page.dart';
+import '../pages/libs/net_work_page.dart';
+import '../pages/libs/provider_page.dart';
+import '../pages/libs/screen_adapter_page.dart';
+import '../pages/my/animation_page.dart';
+import '../pages/my/app_lifecycle_page.dart';
+import '../pages/my/custom_widget_page.dart';
+import '../pages/my/hero_page.dart';
+import '../pages/my/isolate_page.dart';
+import '../pages/my/lifecycle_page.dart';
+import '../pages/my/mixed_animation_page.dart';
+import '../pages/my/route_animation_page.dart';
+import '../pages/widget/list/circular_progress_indicator_page.dart';
+import '../pages/widget/list/linear_progress_indicator_page.dart';
 
 final Map libPages = {
   "全局状态管理": ProviderPage.keys,
@@ -39,6 +40,7 @@ final Map libPages = {
   "相机": CameraPage.keys,
   "ImagePicker": ImagePickerPage.keys,
   "搜索框": CustomSearchBarPage.keys,
+  "Anchor锚点": AnchorTabPage.keys,
 };
 
 final Map myPages = {

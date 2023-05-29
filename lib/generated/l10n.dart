@@ -349,6 +349,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Anchor锚点`
+  String get AnchorTab {
+    return Intl.message(
+      'Anchor锚点',
+      name: 'AnchorTab',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

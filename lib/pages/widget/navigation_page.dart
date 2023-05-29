@@ -18,7 +18,12 @@ class NavigationPage extends StatefulWidget {
 }
 
 class _NavigationPageState extends State<NavigationPage> {
+  var actionKey = GlobalKey();
 
+  int currentIndex = 0;
+
+  var selectedHeiStyle = TextStyle(color:Colors.white);
+  var unSelectedHeiStyle = TextStyle(color:Colors.grey);
   @override
   Widget build(BuildContext context) {
     return ArticleModel(
@@ -50,9 +55,104 @@ class _NavigationPageState extends State<NavigationPage> {
                 Text("设置",style:TextStyle(color: Colors.white),),
               ],
             ),
-          )
+          ),
+          SizedBox(height: 10.r,),
+          BrnAppBar(
+        brightness: Brightness.dark,
+        title: Row(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              "标题名称",
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 4),
+              child: Icon(Icons.expand_circle_down),
+            )
+          ],
+        ),
+      ),
+          SizedBox(height: 10.r,),
+          BrnAppBar(
+            //自定义左侧icon
+            leading: Icon(Icons.search),
+            brightness: Brightness.dark,
+            //文本title
+            title: '标题名称',
+          ),
+          SizedBox(height: 10.r,),
+          BrnAppBar(
+            //默认显示返回按钮
+            automaticallyImplyLeading: true,
+            brightness: Brightness.dark,
+            title: '名称名称',
+            //自定义的右侧文本
+            actions: BrnTextAction(
+              '文本按钮',
+            ),
+          ),
+          SizedBox(height: 10.r,),
+          BrnAppBar(
+        title: '标题名称',
+        brightness: Brightness.dark,
+        leading: BrnDoubleLeading(
+          first: BrnBackLeading(child: Icon(Icons.arrow_back_ios_new_rounded),),
+          second: BrnBackLeading(
+            child: Icon(Icons.clear),
+          ),
+        ),
+        actions: BrnTextAction(
+          '弹出菜单',
+          key: actionKey,
+          iconPressed: () {
+            BrnPopupListWindow.showPopListWindow(context, actionKey,
+                offset: 10, data: ["买卖买卖", "租赁租"]);
+          },
+        ),
+      ),
+          SizedBox(height: 10.r,),
+      BrnAppBar(
+        brightness: Brightness.dark,
+        //自定义leading
+        leading: Icon(Icons.arrow_back_ios_rounded),
+        //自定义title
+        title: Container(
+          height: 44,
+          padding: EdgeInsets.only(left: 24,right: 12),
+          child: ListView.separated(
+            itemCount: 10,
+            //横滑
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: () {
+                  setState(() {
+                    this.currentIndex = index;
+                  });
+                },
+                child: Center(
+                  child: Text(
+                    index == 2 ?'标题' : '标题多文字',
+                    style: index == currentIndex
+                        ? selectedHeiStyle
+                        : unSelectedHeiStyle,
+                  ),
+                ),
+              );
+            },
+            separatorBuilder: (context, index) {
+              return SizedBox(
+                width: 24,
+              );
+            },
+          ),
+        ),
+        actions: IconButton(onPressed: (){}, icon: Icon(Icons.add)),
+      ),
         ],
       ),
+
     );
   }
 

@@ -28,5 +28,6 @@
   "isolate": "Isolate",
   "imagePicker": "ImagePicker",
   "inputSearchTip": "请输入搜索关键字",
-  "searchTitle": "搜索框"
+  "searchTitle": "搜索框",
+  "AnchorTab": "Anchor锚点"
 }

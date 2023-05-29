@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/pages/libs/anchor_tab_page.dart';
 import 'package:flutter_blcs/pages/libs/custom_search_bar_page.dart';
 import 'package:flutter_blcs/pages/widget/list/about_dialog_page.dart';
 import '../common/utils/print.dart';
@@ -89,6 +90,7 @@ class Routers {
     TabBarViewPage.keys:(BuildContext context) => TabBarViewPage(),
     LinearProgressIndicatorPage.keys:(BuildContext context) => LinearProgressIndicatorPage(),
     CircularProgressIndicatorPage.keys:(BuildContext context) => CircularProgressIndicatorPage(),
+    AnchorTabPage.keys:(BuildContext context) => AnchorTabPage(),
   };
 
   //初始路由

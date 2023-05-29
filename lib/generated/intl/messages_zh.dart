@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "AnchorTab": MessageLookupByLibrary.simpleMessage("Anchor锚点"),
         "animatedSwitcher": MessageLookupByLibrary.simpleMessage("UI切换动画"),
         "animation": MessageLookupByLibrary.simpleMessage("简单动画"),
         "appLifeCycle": MessageLookupByLibrary.simpleMessage("应用生命周期"),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_blcs/common/static.dart';
 import 'package:flutter_blcs/pages/my/personal_page.dart';
-import 'package:flutter_blcs/pages/pages.dart';
+import 'package:flutter_blcs/routes/pages.dart';
 import 'package:flutter_blcs/widgets/flare_logo.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
