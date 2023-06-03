@@ -33,6 +33,76 @@ listBottomMenu(BuildContext context) {
             title: "标题",
           ).show(context);
         }),
+    commonButton(
+        content: "BrnBottomPicker",
+        des: "自定义的从底部弹出的 picker 框，支持高度的自定义（内容、头部）。解决了 picker 中有输入框，键盘遮挡等问题",
+        onTop: () {
+          BrnBottomPicker.show(context,
+              barrierDismissible: false,
+              contentWidget: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    '键盘抬起，不遮挡picker',
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                  ),
+                  TextField(
+                    decoration: InputDecoration(hintText: '请输入'),
+                  )
+                ],
+              ));
+        }),
+
+    commonButton(
+        content: "BrnBottomWritePicker",
+        des: "从底部弹出带输入框的 Picker",
+        onTop: () {
+          BrnBottomWritePicker.show(context,  title: '写跟进',
+            hintText: '请输入',
+            confirmDismiss: true,
+            onConfirm: (context, string) {
+              // return;
+            },
+            onCancel: (_){
+
+            },
+            defaultText: '',);
+        }),
+
+    commonButton(
+        content: "BrnDatePicker",
+        des: "可用于页面底部弹出选择【单个】时间点的情况",
+        onTop: () {
+          BrnDatePicker.showDatePicker(context,
+              // initialDateTime: DateTime.parse('2020-01-01 18:26:59'),
+              // 支持DateTimePickerMode.date、DateTimePickerMode.datetime、DateTimePickerMode.time
+              // pickerMode: BrnDateTimePickerMode.date,
+              // minuteDivider: 30,
+              // pickerTitleConfig: BrnPickerTitleConfig.Default,
+              // dateFormat: BrnIntl.of(context).localizedResource.dateFormate_yyyy_MM_dd,
+              onConfirm: (dateTime, list) {
+                BrnToast.show("onConfirm:  $dateTime   $list", context);
+              },
+              onClose: () {
+                print("onClose");
+              },
+              onCancel: () {
+                print("onCancel");
+              },
+              onChange: (dateTime, list) {
+                print("onChange:  $dateTime    $list");
+              });
+        }),
+
+    commonButton(
+        content: "BrnDatePicker",
+        des: "可用于页面底部弹出选择【单个】时间点的情况",
+        onTop: () {
+
+        }),
   ];
 }
 
