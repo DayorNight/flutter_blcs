@@ -40,7 +40,7 @@ final Map libPages = {
   "相机": CameraPage.keys,
   "ImagePicker": ImagePickerPage.keys,
   "搜索框": CustomSearchBarPage.keys,
-  "Anchor锚点": AnchorTabPage.keys,
+  "Form表单": FormPage.keys,
 };
 
 final Map myPages = {

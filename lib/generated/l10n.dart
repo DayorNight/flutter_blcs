@@ -350,11 +350,11 @@ class S {
     );
   }
 
-  /// `Anchor锚点`
-  String get AnchorTab {
+  /// `Form表单`
+  String get form_title {
     return Intl.message(
-      'Anchor锚点',
-      name: 'AnchorTab',
+      'Form表单',
+      name: 'form_title',
       desc: '',
       args: [],
     );

@@ -22,7 +22,6 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "AnchorTab": MessageLookupByLibrary.simpleMessage("Anchor锚点"),
         "animatedSwitcher": MessageLookupByLibrary.simpleMessage("UI切换动画"),
         "animation": MessageLookupByLibrary.simpleMessage("简单动画"),
         "appLifeCycle": MessageLookupByLibrary.simpleMessage("应用生命周期"),
@@ -34,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "common_confirm": MessageLookupByLibrary.simpleMessage("确定"),
         "customWidget": MessageLookupByLibrary.simpleMessage("自定义Widget"),
         "darkTheme": MessageLookupByLibrary.simpleMessage("暗夜模式"),
+        "form_title": MessageLookupByLibrary.simpleMessage("Form表单"),
         "hero": MessageLookupByLibrary.simpleMessage("Hero动画"),
         "home": MessageLookupByLibrary.simpleMessage("首页"),
         "homeFun": MessageLookupByLibrary.simpleMessage("功能"),

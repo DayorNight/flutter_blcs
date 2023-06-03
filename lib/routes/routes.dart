@@ -90,7 +90,8 @@ class Routers {
     TabBarViewPage.keys:(BuildContext context) => TabBarViewPage(),
     LinearProgressIndicatorPage.keys:(BuildContext context) => LinearProgressIndicatorPage(),
     CircularProgressIndicatorPage.keys:(BuildContext context) => CircularProgressIndicatorPage(),
-    AnchorTabPage.keys:(BuildContext context) => AnchorTabPage(),
+    FormPage.keys:(BuildContext context) => FormPage(),
+    BrnExpandableGroupWidget.keys:(BuildContext context) => BrnExpandableGroupWidget(),
   };
 
   //初始路由
