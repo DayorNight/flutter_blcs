@@ -1,6 +1,7 @@
 import 'package:bruno/bruno.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/weiget_util.dart';
+import 'package:flutter_blcs/widgets/common_edit_bottom_dialog.dart';
 
 listBottomMenu(BuildContext context) {
   return [
@@ -21,6 +22,16 @@ listBottomMenu(BuildContext context) {
         des: "底部弹出分享菜单",
         onTop: () {
           _brnShareActionSheet(context);
+        }),
+    commonButton(
+        content: "BrnEditActionSheet",
+        des: "底部弹出编辑框",
+        onTop: () {
+          CommonEditBottomDialog(
+            onConfirmCallBack: (value)=>{},
+            onCancelCallBack: ()=>{},
+            title: "标题",
+          ).show(context);
         }),
   ];
 }

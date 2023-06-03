@@ -32,6 +32,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "basicKnowledge":
             MessageLookupByLibrary.simpleMessage("Basic Knowledge"),
         "camera": MessageLookupByLibrary.simpleMessage("Camera"),
+        "common_cancel": MessageLookupByLibrary.simpleMessage("取消"),
+        "common_confirm": MessageLookupByLibrary.simpleMessage("确定"),
         "customWidget": MessageLookupByLibrary.simpleMessage("Custom Widget"),
         "darkTheme": MessageLookupByLibrary.simpleMessage("Dark Theme"),
         "hero": MessageLookupByLibrary.simpleMessage("Hero"),

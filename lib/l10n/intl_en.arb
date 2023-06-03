@@ -29,5 +29,7 @@
   "imagePicker": "ImagePicker",
   "inputSearchTip": "请输入搜索关键字",
   "searchTitle": "搜索框",
-  "AnchorTab": "Anchor锚点"
+  "AnchorTab": "Anchor锚点",
+  "common_cancel": "取消",
+  "common_confirm": "确定"
 }

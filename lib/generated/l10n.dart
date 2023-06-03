@@ -359,6 +359,26 @@ class S {
       args: [],
     );
   }
+
+  /// `取消`
+  String get common_cancel {
+    return Intl.message(
+      '取消',
+      name: 'common_cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `确定`
+  String get common_confirm {
+    return Intl.message(
+      '确定',
+      name: 'common_confirm',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

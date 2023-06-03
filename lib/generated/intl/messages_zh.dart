@@ -30,6 +30,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "back": MessageLookupByLibrary.simpleMessage("返回"),
         "basicKnowledge": MessageLookupByLibrary.simpleMessage("基础知识"),
         "camera": MessageLookupByLibrary.simpleMessage("相机"),
+        "common_cancel": MessageLookupByLibrary.simpleMessage("取消"),
+        "common_confirm": MessageLookupByLibrary.simpleMessage("确定"),
         "customWidget": MessageLookupByLibrary.simpleMessage("自定义Widget"),
         "darkTheme": MessageLookupByLibrary.simpleMessage("暗夜模式"),
         "hero": MessageLookupByLibrary.simpleMessage("Hero动画"),
