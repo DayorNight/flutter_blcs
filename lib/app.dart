@@ -1,3 +1,4 @@
+import 'package:bruno/bruno.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/sp/sp.dart';
 import 'package:flutter_blcs/common/sp/sp_keys.dart';
@@ -111,6 +112,7 @@ class _MyAppState extends State<MyApp> {
         GlobalMaterialLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
+        BrnLocalizationDelegate.delegate,
       ],
 
       ///监听系统语言切换事件，一些安卓系统特性，可设置多语言列表，默认以第一个列表为默认语言

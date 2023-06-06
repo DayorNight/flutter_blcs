@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_blcs/common/weiget_util.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /// Dialog
 List<Widget> listDialog(BuildContext context) {
@@ -12,6 +13,12 @@ List<Widget> listDialog(BuildContext context) {
         des: "显示一个Material对话框",
         onTop: () {
           _showDialog(context);
+        }),
+    commonButton(
+        content: "showGeneralDialog",
+        des: "显示一个showGeneralDialog对话框",
+        onTop: () {
+          _showGeneralDialog(context);
         }),
     commonButton(
         content: "showCupertinoDialog",
@@ -408,7 +415,21 @@ Future<void> _showDialog(BuildContext context) async {
       );
     },
   );
-}/// 当前内容上方显示一个Material对话框
+}
+
+///
+Future<Future<Object?>> _showGeneralDialog(BuildContext context) async {
+  return showGeneralDialog(context: context, pageBuilder:(context,animation,_){
+    return Dialog(
+      child: Container(
+        height: 100.r,
+        alignment: Alignment.center,
+        child: Text("xxx"),
+      ),
+    );
+  });
+}
+/// 当前内容上方显示一个Material对话框
 Future<void> _showCupertinoDialog(BuildContext context) async {
   return showCupertinoDialog<void>(
     context: context,
