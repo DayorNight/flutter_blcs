@@ -60,6 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "searchTitle": MessageLookupByLibrary.simpleMessage("搜索框"),
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Select Language"),
+        "selection_title": MessageLookupByLibrary.simpleMessage("筛选"),
         "switchLanguage":
             MessageLookupByLibrary.simpleMessage("Switch Language"),
         "switchTheme": MessageLookupByLibrary.simpleMessage("Switch Theme")

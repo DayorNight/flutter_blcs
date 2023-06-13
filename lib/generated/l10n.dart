@@ -389,6 +389,16 @@ class S {
       args: [],
     );
   }
+
+  /// `筛选`
+  String get selection_title {
+    return Intl.message(
+      '筛选',
+      name: 'selection_title',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -32,5 +32,6 @@
   "form_title": "Form表单",
   "input_title": "输入组件",
   "common_cancel": "取消",
-  "common_confirm": "确定"
+  "common_confirm": "确定",
+  "selection_title": "筛选"
 }

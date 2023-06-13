@@ -54,6 +54,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "screenAdapter": MessageLookupByLibrary.simpleMessage("屏幕适配"),
         "searchTitle": MessageLookupByLibrary.simpleMessage("搜索框"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("选择语言"),
+        "selection_title": MessageLookupByLibrary.simpleMessage("筛选"),
         "switchLanguage": MessageLookupByLibrary.simpleMessage("切换语言"),
         "switchTheme": MessageLookupByLibrary.simpleMessage("切换主题")
       };
