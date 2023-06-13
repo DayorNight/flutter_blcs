@@ -360,6 +360,16 @@ class S {
     );
   }
 
+  /// `输入组件`
+  String get input_title {
+    return Intl.message(
+      '输入组件',
+      name: 'input_title',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `取消`
   String get common_cancel {
     return Intl.message(

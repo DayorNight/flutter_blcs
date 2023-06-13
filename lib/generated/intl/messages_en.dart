@@ -43,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "homeView": MessageLookupByLibrary.simpleMessage("Widget"),
         "imagePicker": MessageLookupByLibrary.simpleMessage("ImagePicker"),
         "inputSearchTip": MessageLookupByLibrary.simpleMessage("请输入搜索关键字"),
+        "input_title": MessageLookupByLibrary.simpleMessage("输入组件"),
         "isolate": MessageLookupByLibrary.simpleMessage("Isolate"),
         "lifeCycle": MessageLookupByLibrary.simpleMessage("LifeCycle"),
         "mixedAnimation":

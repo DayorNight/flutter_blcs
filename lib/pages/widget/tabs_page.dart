@@ -20,6 +20,8 @@ class _TabsPageState extends State<TabsPage> with SingleTickerProviderStateMixin
     // ItemEntity(value: ""),
     // ItemEntity(value: ""),
   ];
+  var titles = ['One', 'Two', 'Three', 'Four', 'Five','Six'];
+
   String? _selection = "顶部Tabs";
   late TabController tabController;
   List<BadgeTab> tabs = [BadgeTab(text: "需求1", badgeNum: 26),BadgeTab(text: "需求2")];
@@ -70,7 +72,16 @@ class _TabsPageState extends State<TabsPage> with SingleTickerProviderStateMixin
       commonButton(
           content: "BrnTabBar",
           des: "文字+角标",),
-      // _brnTabBar(),
+    BrnTabBar(
+      controller: tabController,
+      tabs: tabs,
+      hasDivider: true,
+      hasIndex: true,
+      onTap: (state, index) {
+        state.refreshBadgeState(index);
+      },
+    ),
+
     ];
   }
 
@@ -82,15 +93,6 @@ class _TabsPageState extends State<TabsPage> with SingleTickerProviderStateMixin
     ];
   }
 
-  _brnTabBar() {
-    return BrnTabBar(
-      controller: tabController,
-      tabs: tabs,
-      onTap: (state, index) {
-        state.refreshBadgeState(index);
-      },
-    );
-  }
 }
 
 class TabBarDemo extends StatelessWidget {

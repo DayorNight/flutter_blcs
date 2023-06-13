@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blcs/pages/libs/anchor_tab_page.dart';
+import 'package:flutter_blcs/pages/libs/form_page.dart';
 import 'package:flutter_blcs/pages/libs/custom_search_bar_page.dart';
+import 'package:flutter_blcs/pages/libs/input_page.dart';
 import 'package:flutter_blcs/pages/my/animated_switcher_page.dart';
 import 'package:flutter_blcs/pages/my/json_parse_page.dart';
 import 'package:flutter_blcs/pages/widget/Button_page.dart';
@@ -41,6 +42,7 @@ final Map libPages = {
   "ImagePicker": ImagePickerPage.keys,
   "搜索框": CustomSearchBarPage.keys,
   "Form表单": FormPage.keys,
+  "输入组件": InputPage.keys,
 };
 
 final Map myPages = {
