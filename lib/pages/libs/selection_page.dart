@@ -30,6 +30,7 @@ class _SelectionPageState extends State<SelectionPage> {
       logoColor: Theme.of(context).primaryColor,
       footerChild: ListView(
         shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
         children: [
           commonButton(content: 'BrnFlatSelection',des:'区间+输入混合一级筛选' ),
           BrnFlatSelection(
@@ -77,7 +78,8 @@ class _SelectionPageState extends State<SelectionPage> {
                 Map<String, String> filterParams,
                 Map<String, String> customParams,
                 BrnSetCustomSelectionMenuTitle setCustomTitleFunction) {},
-          ),BrnSelectionView(
+          ),
+          BrnSelectionView(
             originalSelectionData: _filterData,
             onCustomSelectionMenuClick: (int index, BrnSelectionEntity customMenuItem,
                 BrnSetCustomSelectionParams customHandleCallBack) {
@@ -123,6 +125,9 @@ class _SelectionPageState extends State<SelectionPage> {
               BrnToast.show(filterParams.map((e) => e.value).toList().join(','), context);
             },
           ),
+          SizedBox(
+            height: 600.r,
+          )
         ],
       ),
     );

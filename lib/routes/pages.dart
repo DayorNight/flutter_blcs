@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/pages/libs/bubble_page.dart';
 import 'package:flutter_blcs/pages/libs/form_page.dart';
 import 'package:flutter_blcs/pages/libs/custom_search_bar_page.dart';
 import 'package:flutter_blcs/pages/libs/input_page.dart';
+import 'package:flutter_blcs/pages/libs/notification_page.dart';
 import 'package:flutter_blcs/pages/libs/selection_page.dart';
+import 'package:flutter_blcs/pages/libs/step_bar_page.dart';
 import 'package:flutter_blcs/pages/my/animated_switcher_page.dart';
 import 'package:flutter_blcs/pages/my/json_parse_page.dart';
 import 'package:flutter_blcs/pages/widget/Button_page.dart';
@@ -45,6 +48,9 @@ final Map libPages = {
   "Form表单": FormPage.keys,
   "输入组件": InputPage.keys,
   "筛选": SelectionPage.keys,
+  "气泡": BubblePage.keys,
+  "步骤条": StepBarPage.keys,
+  "通知": NotificationPage.keys,
 };
 
 final Map myPages = {

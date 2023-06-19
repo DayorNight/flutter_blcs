@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/pages/libs/bubble_page.dart';
 import 'package:flutter_blcs/pages/libs/form_page.dart';
 import 'package:flutter_blcs/pages/libs/custom_search_bar_page.dart';
 import 'package:flutter_blcs/pages/libs/input_page.dart';
+import 'package:flutter_blcs/pages/libs/notification_page.dart';
 import 'package:flutter_blcs/pages/libs/selection_page.dart';
+import 'package:flutter_blcs/pages/libs/step_bar_page.dart';
 import 'package:flutter_blcs/pages/widget/list/about_dialog_page.dart';
 import '../common/utils/print.dart';
 import '../pages/widget/Button_page.dart';
@@ -95,7 +98,9 @@ class Routers {
     FormPage.keys:(BuildContext context) => FormPage(),
     InputPage.keys:(BuildContext context) => InputPage(),
     BrnMultiChoicePortraitInputFormItemWidget.keys:(BuildContext context) => BrnMultiChoicePortraitInputFormItemWidget(),
-    SelectionPage.keys:(BuildContext context) => SelectionPage(),
+    BubblePage.keys:(BuildContext context) => BubblePage(),
+    StepBarPage.keys:(BuildContext context) => StepBarPage(),
+    NotificationPage.keys:(BuildContext context) => NotificationPage(),
   };
 
   //初始路由

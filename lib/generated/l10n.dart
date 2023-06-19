@@ -399,6 +399,36 @@ class S {
       args: [],
     );
   }
+
+  /// `气泡`
+  String get bubble_title {
+    return Intl.message(
+      '气泡',
+      name: 'bubble_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `步骤条`
+  String get step_bar_title {
+    return Intl.message(
+      '步骤条',
+      name: 'step_bar_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `通知`
+  String get notification_title {
+    return Intl.message(
+      '通知',
+      name: 'notification_title',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

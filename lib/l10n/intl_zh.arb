@@ -33,6 +33,9 @@
   "input_title": "输入组件",
   "common_cancel": "取消",
   "common_confirm": "确定",
-  "selection_title": "筛选"
+  "selection_title": "筛选",
+  "bubble_title": "气泡",
+  "step_bar_title": "步骤条",
+  "notification_title": "通知"
 
 }

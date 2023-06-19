@@ -30,6 +30,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "back": MessageLookupByLibrary.simpleMessage("Back"),
         "basicKnowledge":
             MessageLookupByLibrary.simpleMessage("Basic Knowledge"),
+        "bubble_title": MessageLookupByLibrary.simpleMessage("气泡"),
         "camera": MessageLookupByLibrary.simpleMessage("Camera"),
         "common_cancel": MessageLookupByLibrary.simpleMessage("取消"),
         "common_confirm": MessageLookupByLibrary.simpleMessage("确定"),
@@ -49,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "mixedAnimation":
             MessageLookupByLibrary.simpleMessage("Mixed Animation"),
         "netWork": MessageLookupByLibrary.simpleMessage("Net Work"),
+        "notification_title": MessageLookupByLibrary.simpleMessage("通知"),
         "personal": MessageLookupByLibrary.simpleMessage("Personal"),
         "personalInformation":
             MessageLookupByLibrary.simpleMessage("Personal Information"),
@@ -61,6 +63,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Select Language"),
         "selection_title": MessageLookupByLibrary.simpleMessage("筛选"),
+        "step_bar_title": MessageLookupByLibrary.simpleMessage("步骤条"),
         "switchLanguage":
             MessageLookupByLibrary.simpleMessage("Switch Language"),
         "switchTheme": MessageLookupByLibrary.simpleMessage("Switch Theme")

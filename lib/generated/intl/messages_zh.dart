@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "appName": MessageLookupByLibrary.simpleMessage("玉米"),
         "back": MessageLookupByLibrary.simpleMessage("返回"),
         "basicKnowledge": MessageLookupByLibrary.simpleMessage("基础知识"),
+        "bubble_title": MessageLookupByLibrary.simpleMessage("气泡"),
         "camera": MessageLookupByLibrary.simpleMessage("相机"),
         "common_cancel": MessageLookupByLibrary.simpleMessage("取消"),
         "common_confirm": MessageLookupByLibrary.simpleMessage("确定"),
@@ -46,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "lifeCycle": MessageLookupByLibrary.simpleMessage("Widget生命周期"),
         "mixedAnimation": MessageLookupByLibrary.simpleMessage("交织动画"),
         "netWork": MessageLookupByLibrary.simpleMessage("网络请求"),
+        "notification_title": MessageLookupByLibrary.simpleMessage("通知"),
         "personal": MessageLookupByLibrary.simpleMessage("个人头像"),
         "personalInformation": MessageLookupByLibrary.simpleMessage("个人信息"),
         "provider": MessageLookupByLibrary.simpleMessage("全局状态管理"),
@@ -55,6 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "searchTitle": MessageLookupByLibrary.simpleMessage("搜索框"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("选择语言"),
         "selection_title": MessageLookupByLibrary.simpleMessage("筛选"),
+        "step_bar_title": MessageLookupByLibrary.simpleMessage("步骤条"),
         "switchLanguage": MessageLookupByLibrary.simpleMessage("切换语言"),
         "switchTheme": MessageLookupByLibrary.simpleMessage("切换主题")
       };
