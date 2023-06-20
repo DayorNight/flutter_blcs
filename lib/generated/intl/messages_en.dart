@@ -33,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Basic Knowledge"),
         "bubble_title": MessageLookupByLibrary.simpleMessage("气泡"),
         "button_title": MessageLookupByLibrary.simpleMessage("按钮组件"),
+        "calendar_titile": MessageLookupByLibrary.simpleMessage("日历组件"),
         "camera": MessageLookupByLibrary.simpleMessage("Camera"),
         "city_selection_title": MessageLookupByLibrary.simpleMessage("城市选择"),
         "common_cancel": MessageLookupByLibrary.simpleMessage("取消"),
@@ -59,6 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "personalInformation":
             MessageLookupByLibrary.simpleMessage("Personal Information"),
         "provider": MessageLookupByLibrary.simpleMessage("Provider"),
+        "rating_titile": MessageLookupByLibrary.simpleMessage("星级组件"),
         "report": MessageLookupByLibrary.simpleMessage("Report"),
         "routeAnimation":
             MessageLookupByLibrary.simpleMessage("Route Animation"),
@@ -70,6 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "step_bar_title": MessageLookupByLibrary.simpleMessage("步骤条"),
         "switchLanguage":
             MessageLookupByLibrary.simpleMessage("Switch Language"),
-        "switchTheme": MessageLookupByLibrary.simpleMessage("Switch Theme")
+        "switchTheme": MessageLookupByLibrary.simpleMessage("Switch Theme"),
+        "tag_titile": MessageLookupByLibrary.simpleMessage("标签组件")
       };
 }

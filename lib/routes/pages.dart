@@ -1,7 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_blcs/pages/libs/anchor_page.dart';
 import 'package:flutter_blcs/pages/libs/brn_button_page.dart';
+import 'package:flutter_blcs/pages/libs/brn_calendar_page.dart';
 import 'package:flutter_blcs/pages/libs/brn_guide_page.dart';
+import 'package:flutter_blcs/pages/libs/brn_rating_page.dart';
+import 'package:flutter_blcs/pages/libs/brn_tag_page.dart';
 import 'package:flutter_blcs/pages/libs/bubble_page.dart';
 import 'package:flutter_blcs/pages/libs/city_selection_page.dart';
 import 'package:flutter_blcs/pages/libs/form_page.dart';
@@ -59,6 +61,9 @@ final Map libPages = {
   "气泡组件": BubblePage.keys,
   "步骤条": StepBarPage.keys,
   "通知组件": NotificationPage.keys,
+  "标签组件": BrnTagPage.keys,
+  "星级组件": BrnRatingPage.keys,
+  "日历组件": BrnCalendarPage.keys,
 };
 
 final Map myPages = {

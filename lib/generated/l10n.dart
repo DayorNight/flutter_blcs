@@ -469,6 +469,36 @@ class S {
       args: [],
     );
   }
+
+  /// `日历组件`
+  String get calendar_titile {
+    return Intl.message(
+      '日历组件',
+      name: 'calendar_titile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `星级组件`
+  String get rating_titile {
+    return Intl.message(
+      '星级组件',
+      name: 'rating_titile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `标签组件`
+  String get tag_titile {
+    return Intl.message(
+      '标签组件',
+      name: 'tag_titile',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
