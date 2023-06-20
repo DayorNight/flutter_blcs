@@ -49,7 +49,10 @@ class ArticleModel extends StatelessWidget {
         ],
       );
     }else{
-     return buidlBody ?? SizedBox();
+     return Padding(
+       padding: const EdgeInsets.all(10.0),
+       child: buidlBody ?? SizedBox(),
+     );
     }
   }
 }

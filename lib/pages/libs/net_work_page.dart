@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/common/BasePageWidget.dart';
 import 'package:flutter_blcs/widgets/article_model.dart';
 import '../../common/utils/code.dart';
 import '../../generated/l10n.dart';
 
-class NetWorkPage extends StatelessWidget {
+class NetWorkPage extends BasePageWidget {
   static const String keys = "NetWorkPage";
-  const NetWorkPage({Key? key}) : super(key: key);
+  @override
+  String? get getKeys => keys;
 
   @override
-  Widget build(BuildContext context) {
-    return ArticleModel(
-      title: S.of(context).netWork,
-      keys: keys,
-      logoColor: Theme.of(context).primaryColor,
-      des: netWorkDes,
-      code: netWorkCode,
-    );
-  }
+  String? get getTitle => S.current.netWork;
+
+
+  @override
+  String? get getDes => netWorkDes;
+
+  @override
+  String? get getCode => netWorkCode;
+
 }

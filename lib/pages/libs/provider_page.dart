@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/common/BasePageWidget.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/common/utils/code.dart';
 import 'package:flutter_blcs/widgets/article_model.dart';
 
-class ProviderPage extends StatelessWidget {
+class ProviderPage extends BasePageWidget {
   static final String keys = "providerView";
+  @override
+  String? get getKeys => keys;
 
   @override
-  Widget build(BuildContext context) {
-    return ArticleModel(
-      title: S.of(context).provider,
-      keys: ProviderPage.keys,
-      logoColor: Theme.of(context).primaryColor,
-      des: providerDes,
-      code: providerCode,
-    );
-  }
+  String? get getTitle => S.current.provider;
+
+  @override
+  String? get getDes => providerDes;
+
+
+  @override
+  String? get getCode => providerCode;
+
 }
 
