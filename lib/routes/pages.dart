@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/pages/libs/anchor_page.dart';
+import 'package:flutter_blcs/pages/libs/brn_button_page.dart';
+import 'package:flutter_blcs/pages/libs/brn_guide_page.dart';
 import 'package:flutter_blcs/pages/libs/bubble_page.dart';
+import 'package:flutter_blcs/pages/libs/city_selection_page.dart';
 import 'package:flutter_blcs/pages/libs/form_page.dart';
 import 'package:flutter_blcs/pages/libs/custom_search_bar_page.dart';
 import 'package:flutter_blcs/pages/libs/input_page.dart';
@@ -42,15 +46,19 @@ final Map libPages = {
   "全局状态管理": ProviderPage.keys,
   "屏幕适配": ScreenAdapterPage.keys,
   "网络请求": NetWorkPage.keys,
-  "相机": CameraPage.keys,
+  "相机组件": CameraPage.keys,
   "ImagePicker": ImagePickerPage.keys,
   "搜索框": CustomSearchBarPage.keys,
   "Form表单": FormPage.keys,
   "输入组件": InputPage.keys,
-  "筛选": SelectionPage.keys,
-  "气泡": BubblePage.keys,
+  "筛选组件": SelectionPage.keys,
+  "城市选择": CitySelectionPage.keys,
+  "锚点组件": AnchorPage.keys,
+  "引导组件": BrnGuidePage.keys,
+  "按钮组件": BrnButtonPage.keys,
+  "气泡组件": BubblePage.keys,
   "步骤条": StepBarPage.keys,
-  "通知": NotificationPage.keys,
+  "通知组件": NotificationPage.keys,
 };
 
 final Map myPages = {

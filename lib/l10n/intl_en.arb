@@ -36,5 +36,10 @@
   "selection_title": "筛选",
   "bubble_title": "气泡",
   "step_bar_title": "步骤条",
-  "notification_title": "通知"
+  "notification_title": "通知",
+  "city_selection_title": "城市选择",
+  "anchor_title": "锚点组件",
+  "guide_title": "引导组件",
+  "button_title": "按钮组件"
+
 }

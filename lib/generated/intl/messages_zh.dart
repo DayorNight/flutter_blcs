@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "anchor_title": MessageLookupByLibrary.simpleMessage("锚点组件"),
         "animatedSwitcher": MessageLookupByLibrary.simpleMessage("UI切换动画"),
         "animation": MessageLookupByLibrary.simpleMessage("简单动画"),
         "appLifeCycle": MessageLookupByLibrary.simpleMessage("应用生命周期"),
@@ -29,12 +30,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "back": MessageLookupByLibrary.simpleMessage("返回"),
         "basicKnowledge": MessageLookupByLibrary.simpleMessage("基础知识"),
         "bubble_title": MessageLookupByLibrary.simpleMessage("气泡"),
+        "button_title": MessageLookupByLibrary.simpleMessage("按钮组件"),
         "camera": MessageLookupByLibrary.simpleMessage("相机"),
+        "city_selection_title": MessageLookupByLibrary.simpleMessage("城市选择"),
         "common_cancel": MessageLookupByLibrary.simpleMessage("取消"),
         "common_confirm": MessageLookupByLibrary.simpleMessage("确定"),
         "customWidget": MessageLookupByLibrary.simpleMessage("自定义Widget"),
         "darkTheme": MessageLookupByLibrary.simpleMessage("暗夜模式"),
         "form_title": MessageLookupByLibrary.simpleMessage("Form表单"),
+        "guide_title": MessageLookupByLibrary.simpleMessage("引导组件"),
         "hero": MessageLookupByLibrary.simpleMessage("Hero动画"),
         "home": MessageLookupByLibrary.simpleMessage("首页"),
         "homeFun": MessageLookupByLibrary.simpleMessage("功能"),

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/pages/libs/anchor_page.dart';
+import 'package:flutter_blcs/pages/libs/brn_button_page.dart';
+import 'package:flutter_blcs/pages/libs/brn_guide_page.dart';
 import 'package:flutter_blcs/pages/libs/bubble_page.dart';
+import 'package:flutter_blcs/pages/libs/city_selection_page.dart';
 import 'package:flutter_blcs/pages/libs/form_page.dart';
 import 'package:flutter_blcs/pages/libs/custom_search_bar_page.dart';
 import 'package:flutter_blcs/pages/libs/input_page.dart';
@@ -101,6 +105,10 @@ class Routers {
     BubblePage.keys:(BuildContext context) => BubblePage(),
     StepBarPage.keys:(BuildContext context) => StepBarPage(),
     NotificationPage.keys:(BuildContext context) => NotificationPage(),
+    AnchorPage.keys:(BuildContext context) => AnchorPage(),
+    BrnButtonPage.keys:(BuildContext context) => BrnButtonPage(),
+    BrnGuidePage.keys:(BuildContext context) => BrnGuidePage(),
+    CitySelectionPage.keys:(BuildContext context) => CitySelectionPage(),
   };
 
   //初始路由

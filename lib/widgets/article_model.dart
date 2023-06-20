@@ -10,6 +10,7 @@ class ArticleModel extends StatelessWidget {
   final String? code; //代码码
   final Widget? footerChild;
   final Widget? headerChild;
+  final Widget? buidlBody;
 
   const ArticleModel(
       {Key? key,
@@ -19,6 +20,7 @@ class ArticleModel extends StatelessWidget {
       this.des,
       this.code,
       this.headerChild,
+      this.buidlBody,
       this.footerChild})
       : super(key: key);
 
@@ -28,18 +30,26 @@ class ArticleModel extends StatelessWidget {
       appBar: getAppBar(context, title),
       body: Stack(
         children: [
-          ListView(
-            padding: EdgeInsets.all(10),
-            children: [
-              headerChild ?? SizedBox(),
-              if (des != null) printTxt(des!),
-              if (code != null) printCode(code!),
-              footerChild ?? SizedBox()
-            ],
-          ),
+          buildBody(),
           articleLogo(keys, logoColor),
         ],
       ),
     );
+  }
+
+  Widget buildBody(){
+    if(buidlBody==null){
+     return ListView(
+        padding: EdgeInsets.all(10),
+        children: [
+          headerChild ?? SizedBox(),
+          if (des != null) printTxt(des!),
+          if (code != null) printCode(code!),
+          footerChild ?? SizedBox()
+        ],
+      );
+    }else{
+     return buidlBody ?? SizedBox();
+    }
   }
 }

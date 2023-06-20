@@ -429,6 +429,46 @@ class S {
       args: [],
     );
   }
+
+  /// `城市选择`
+  String get city_selection_title {
+    return Intl.message(
+      '城市选择',
+      name: 'city_selection_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `锚点组件`
+  String get anchor_title {
+    return Intl.message(
+      '锚点组件',
+      name: 'anchor_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `引导组件`
+  String get guide_title {
+    return Intl.message(
+      '引导组件',
+      name: 'guide_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `按钮组件`
+  String get button_title {
+    return Intl.message(
+      '按钮组件',
+      name: 'button_title',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
