@@ -499,6 +499,16 @@ class S {
       args: [],
     );
   }
+
+  /// `更多组件`
+  String get widget_more_titile {
+    return Intl.message(
+      '更多组件',
+      name: 'widget_more_titile',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

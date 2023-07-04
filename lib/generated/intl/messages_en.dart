@@ -73,6 +73,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "switchLanguage":
             MessageLookupByLibrary.simpleMessage("Switch Language"),
         "switchTheme": MessageLookupByLibrary.simpleMessage("Switch Theme"),
-        "tag_titile": MessageLookupByLibrary.simpleMessage("标签组件")
+        "tag_titile": MessageLookupByLibrary.simpleMessage("标签组件"),
+        "widget_more_titile": MessageLookupByLibrary.simpleMessage("更多组件")
       };
 }

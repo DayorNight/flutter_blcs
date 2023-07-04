@@ -14,6 +14,7 @@ import 'package:flutter_blcs/pages/libs/notification_page.dart';
 import 'package:flutter_blcs/pages/libs/selection_page.dart';
 import 'package:flutter_blcs/pages/libs/step_bar_page.dart';
 import 'package:flutter_blcs/pages/widget/list/about_dialog_page.dart';
+import 'package:flutter_blcs/pages/widget/more_widget_page.dart';
 import '../common/utils/print.dart';
 import '../pages/widget/Button_page.dart';
 import '../pages/widget/dialog_page.dart';
@@ -115,6 +116,9 @@ class Routers {
     BrnCalendarPage.keys:(BuildContext context) => BrnCalendarPage(),
     BrnRatingPage.keys:(BuildContext context) => BrnRatingPage(),
     BrnTagPage.keys:(BuildContext context) => BrnTagPage(),
+    SelectionPage.keys:(BuildContext context) => SelectionPage(),
+    MoreWidgetPage.keys:(BuildContext context) => MoreWidgetPage(),
+    CalendarPage.keys:(BuildContext context) => CalendarPage(),
   };
 
   //初始路由

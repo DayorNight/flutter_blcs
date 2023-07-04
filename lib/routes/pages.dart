@@ -23,6 +23,7 @@ import 'package:flutter_blcs/pages/widget/list/material_app_page.dart';
 import 'package:flutter_blcs/pages/widget/list/scaffold_page.dart';
 import 'package:flutter_blcs/pages/widget/list/tab_bar_page.dart';
 import 'package:flutter_blcs/pages/widget/list/tab_bar_view_page.dart';
+import 'package:flutter_blcs/pages/widget/more_widget_page.dart';
 import 'package:flutter_blcs/pages/widget/navigation_page.dart';
 import 'package:flutter_blcs/pages/widget/picker_page.dart';
 import 'package:flutter_blcs/pages/widget/progress_page.dart';
@@ -50,20 +51,7 @@ final Map libPages = {
   "网络请求": NetWorkPage.keys,
   "相机组件": CameraPage.keys,
   "ImagePicker": ImagePickerPage.keys,
-  "搜索框": CustomSearchBarPage.keys,
-  "Form表单": FormPage.keys,
-  "输入组件": InputPage.keys,
-  "筛选组件": SelectionPage.keys,
-  "城市选择": CitySelectionPage.keys,
-  "锚点组件": AnchorPage.keys,
-  "引导组件": BrnGuidePage.keys,
-  "按钮组件": BrnButtonPage.keys,
-  "气泡组件": BubblePage.keys,
-  "步骤条": StepBarPage.keys,
-  "通知组件": NotificationPage.keys,
-  "标签组件": BrnTagPage.keys,
-  "星级组件": BrnRatingPage.keys,
-  "日历组件": BrnCalendarPage.keys,
+
 };
 
 final Map myPages = {
@@ -88,6 +76,7 @@ final Map horWidget = {
   "Tabs": TabsPage.keys,
   "按钮": ButtonPage.keys,
   "日历": CalendarPage.keys,
+  "更多...": MoreWidgetPage.keys,
 };
 
 final Map columnWidget = {
@@ -99,4 +88,29 @@ final Map columnWidget = {
   "TabBarView": TabBarViewPage.keys,
   "LinearProgressIndicator": LinearProgressIndicatorPage.keys,
   "CircularProgressIndicator": CircularProgressIndicatorPage.keys,
+};
+
+final Map moreWidget = {
+  "弹窗": DialogPage.keys,
+  "进度条": ProgressPage.keys,
+  "选择器": PickerPage.keys,
+  // "图表": PickerPage.keys,
+  "导航": NavigationPage.keys,
+  "Tabs": TabsPage.keys,
+  "按钮": ButtonPage.keys,
+  "日历": CalendarPage.keys,
+  "搜索框": CustomSearchBarPage.keys,
+  "Form表单": FormPage.keys,
+  "输入组件": InputPage.keys,
+  "筛选组件": SelectionPage.keys,
+  "城市选择": CitySelectionPage.keys,
+  "锚点组件": AnchorPage.keys,
+  "引导组件": BrnGuidePage.keys,
+  "按钮组件": BrnButtonPage.keys,
+  "气泡组件": BubblePage.keys,
+  "步骤条": StepBarPage.keys,
+  "通知组件": NotificationPage.keys,
+  "标签组件": BrnTagPage.keys,
+  "星级组件": BrnRatingPage.keys,
+  "日历组件": BrnCalendarPage.keys,
 };
