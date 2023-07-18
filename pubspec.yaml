@@ -55,6 +55,8 @@ dependencies:
   introduction_screen: ^3.1.8
   # bruno组件
   bruno: ^3.3.0
+  # 提供上拉加载和下拉刷新
+  pull_to_refresh: ^2.0.0
 
 dev_dependencies:
   flutter_test:

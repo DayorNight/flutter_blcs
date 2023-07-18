@@ -12,6 +12,7 @@ import 'package:flutter_blcs/pages/libs/custom_search_bar_page.dart';
 import 'package:flutter_blcs/pages/libs/input_page.dart';
 import 'package:flutter_blcs/pages/libs/notification_page.dart';
 import 'package:flutter_blcs/pages/libs/selection_page.dart';
+import 'package:flutter_blcs/pages/libs/shared_preferences_page.dart';
 import 'package:flutter_blcs/pages/libs/step_bar_page.dart';
 import 'package:flutter_blcs/pages/widget/list/about_dialog_page.dart';
 import 'package:flutter_blcs/pages/widget/more_widget_page.dart';
@@ -119,6 +120,7 @@ class Routers {
     SelectionPage.keys:(BuildContext context) => SelectionPage(),
     MoreWidgetPage.keys:(BuildContext context) => MoreWidgetPage(),
     CalendarPage.keys:(BuildContext context) => CalendarPage(),
+    SharedPreferencesPage.keys:(BuildContext context) => SharedPreferencesPage(),
   };
 
   //初始路由

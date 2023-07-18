@@ -44,6 +44,7 @@
   "calendar_titile": "日历组件",
   "rating_titile": "星级组件",
   "tag_titile": "标签组件",
-  "widget_more_titile": "更多组件"
+  "widget_more_titile": "更多组件",
+  "shared_preferences_titile": "SharedPreferences"
 
 }

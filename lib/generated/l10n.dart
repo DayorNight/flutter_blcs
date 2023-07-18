@@ -509,6 +509,16 @@ class S {
       args: [],
     );
   }
+
+  /// `SharedPreferences`
+  String get shared_preferences_titile {
+    return Intl.message(
+      'SharedPreferences',
+      name: 'shared_preferences_titile',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

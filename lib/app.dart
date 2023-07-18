@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/sp/sp.dart';
 import 'package:flutter_blcs/common/sp/sp_keys.dart';
 import 'package:flutter_blcs/common/theme_colors.dart';
+import 'package:flutter_blcs/common/utils/sp_utils.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/routes/routes.dart';
 import 'package:flutter_blcs/viewmodel/language_viewmodel.dart';
@@ -22,6 +23,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
+    SpUtils().init();
     //初始化主题与语言
     Sp.get<String>(SP_INIT_LANGUAGE).then((value) => {
       context.read<LanguageViewModel>().setLanguage(value??'')

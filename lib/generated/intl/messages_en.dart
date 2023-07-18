@@ -69,6 +69,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Select Language"),
         "selection_title": MessageLookupByLibrary.simpleMessage("筛选"),
+        "shared_preferences_titile":
+            MessageLookupByLibrary.simpleMessage("SharedPreferences"),
         "step_bar_title": MessageLookupByLibrary.simpleMessage("步骤条"),
         "switchLanguage":
             MessageLookupByLibrary.simpleMessage("Switch Language"),
