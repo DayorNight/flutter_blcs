@@ -10,6 +10,7 @@ import 'package:flutter_blcs/pages/libs/form_page.dart';
 import 'package:flutter_blcs/pages/libs/custom_search_bar_page.dart';
 import 'package:flutter_blcs/pages/libs/input_page.dart';
 import 'package:flutter_blcs/pages/libs/notification_page.dart';
+import 'package:flutter_blcs/pages/libs/pull_refresh_page.dart';
 import 'package:flutter_blcs/pages/libs/selection_page.dart';
 import 'package:flutter_blcs/pages/libs/shared_preferences_page.dart';
 import 'package:flutter_blcs/pages/libs/step_bar_page.dart';
@@ -53,6 +54,7 @@ final Map libPages = {
   "相机组件": CameraPage.keys,
   "ImagePicker": ImagePickerPage.keys,
   "SharedPreferences": SharedPreferencesPage.keys,
+  "pull_To_refresh": PullRefreshPage.keys,
 };
 
 final Map myPages = {

@@ -33,7 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Basic Knowledge"),
         "bubble_title": MessageLookupByLibrary.simpleMessage("气泡"),
         "button_title": MessageLookupByLibrary.simpleMessage("按钮组件"),
-        "calendar_titile": MessageLookupByLibrary.simpleMessage("日历组件"),
+        "calendar_title": MessageLookupByLibrary.simpleMessage("日历组件"),
         "camera": MessageLookupByLibrary.simpleMessage("Camera"),
         "city_selection_title": MessageLookupByLibrary.simpleMessage("城市选择"),
         "common_cancel": MessageLookupByLibrary.simpleMessage("取消"),
@@ -60,7 +60,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "personalInformation":
             MessageLookupByLibrary.simpleMessage("Personal Information"),
         "provider": MessageLookupByLibrary.simpleMessage("Provider"),
-        "rating_titile": MessageLookupByLibrary.simpleMessage("星级组件"),
+        "pull_refresh_titile":
+            MessageLookupByLibrary.simpleMessage("pull and refresh"),
+        "rating_title": MessageLookupByLibrary.simpleMessage("星级组件"),
         "report": MessageLookupByLibrary.simpleMessage("Report"),
         "routeAnimation":
             MessageLookupByLibrary.simpleMessage("Route Animation"),
@@ -69,13 +71,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Select Language"),
         "selection_title": MessageLookupByLibrary.simpleMessage("筛选"),
-        "shared_preferences_titile":
+        "shared_preferences_title":
             MessageLookupByLibrary.simpleMessage("SharedPreferences"),
         "step_bar_title": MessageLookupByLibrary.simpleMessage("步骤条"),
         "switchLanguage":
             MessageLookupByLibrary.simpleMessage("Switch Language"),
         "switchTheme": MessageLookupByLibrary.simpleMessage("Switch Theme"),
-        "tag_titile": MessageLookupByLibrary.simpleMessage("标签组件"),
-        "widget_more_titile": MessageLookupByLibrary.simpleMessage("更多组件")
+        "tag_title": MessageLookupByLibrary.simpleMessage("标签组件"),
+        "widget_more_title": MessageLookupByLibrary.simpleMessage("更多组件")
       };
 }

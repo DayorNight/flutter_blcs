@@ -41,11 +41,12 @@
   "anchor_title": "锚点组件",
   "guide_title": "引导组件",
   "button_title": "按钮组件",
-  "calendar_titile": "日历组件",
-  "rating_titile": "星级组件",
-  "tag_titile": "标签组件",
-  "widget_more_titile": "更多组件",
-  "shared_preferences_titile": "SharedPreferences"
+  "calendar_title": "日历组件",
+  "rating_title": "星级组件",
+  "tag_title": "标签组件",
+  "widget_more_title": "更多组件",
+  "shared_preferences_title": "SharedPreferences",
+  "pull_refresh_titile": "pull and refresh"
 
 
 

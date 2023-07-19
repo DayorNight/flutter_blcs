@@ -17,6 +17,7 @@ import 'package:flutter_blcs/pages/libs/step_bar_page.dart';
 import 'package:flutter_blcs/pages/widget/list/about_dialog_page.dart';
 import 'package:flutter_blcs/pages/widget/more_widget_page.dart';
 import '../common/utils/print.dart';
+import '../pages/libs/pull_refresh_page.dart';
 import '../pages/widget/Button_page.dart';
 import '../pages/widget/dialog_page.dart';
 import '../pages/widget/list/app_bar_page.dart';
@@ -121,6 +122,7 @@ class Routers {
     MoreWidgetPage.keys:(BuildContext context) => MoreWidgetPage(),
     CalendarPage.keys:(BuildContext context) => CalendarPage(),
     SharedPreferencesPage.keys:(BuildContext context) => SharedPreferencesPage(),
+    PullRefreshPage.keys:(BuildContext context) => PullRefreshPage(),
   };
 
   //初始路由

@@ -471,50 +471,60 @@ class S {
   }
 
   /// `日历组件`
-  String get calendar_titile {
+  String get calendar_title {
     return Intl.message(
       '日历组件',
-      name: 'calendar_titile',
+      name: 'calendar_title',
       desc: '',
       args: [],
     );
   }
 
   /// `星级组件`
-  String get rating_titile {
+  String get rating_title {
     return Intl.message(
       '星级组件',
-      name: 'rating_titile',
+      name: 'rating_title',
       desc: '',
       args: [],
     );
   }
 
   /// `标签组件`
-  String get tag_titile {
+  String get tag_title {
     return Intl.message(
       '标签组件',
-      name: 'tag_titile',
+      name: 'tag_title',
       desc: '',
       args: [],
     );
   }
 
   /// `更多组件`
-  String get widget_more_titile {
+  String get widget_more_title {
     return Intl.message(
       '更多组件',
-      name: 'widget_more_titile',
+      name: 'widget_more_title',
       desc: '',
       args: [],
     );
   }
 
   /// `SharedPreferences`
-  String get shared_preferences_titile {
+  String get shared_preferences_title {
     return Intl.message(
       'SharedPreferences',
-      name: 'shared_preferences_titile',
+      name: 'shared_preferences_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `pull and refresh`
+  String get pull_refresh_titile {
+    return Intl.message(
+      'pull and refresh',
+      name: 'pull_refresh_titile',
       desc: '',
       args: [],
     );

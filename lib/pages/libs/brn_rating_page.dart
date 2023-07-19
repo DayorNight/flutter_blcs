@@ -10,7 +10,7 @@ class BrnRatingPage extends BasePageWidget {
   String? get getKeys => keys;
 
   @override
-  String? get getTitle => S.current.rating_titile;
+  String? get getTitle => S.current.rating_title;
 
   @override
   Widget? buildBody(BuildContext context) {

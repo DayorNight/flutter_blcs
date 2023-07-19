@@ -12,7 +12,7 @@ class MoreWidgetPage extends BasePageWidget {
   String? get getKeys => keys;
 
   @override
-  String? get getTitle => S.current.widget_more_titile;
+  String? get getTitle => S.current.widget_more_title;
 
   final title = moreWidget.keys.toList();
   @override

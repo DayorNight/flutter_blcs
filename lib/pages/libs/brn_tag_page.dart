@@ -11,7 +11,7 @@ class BrnTagPage extends BasePageWidget {
   String? get getKeys => keys;
 
   @override
-  String? get getTitle => S.current.tag_titile;
+  String? get getTitle => S.current.tag_title;
 
   @override
   Widget? buildHeaderBody(BuildContext context) {

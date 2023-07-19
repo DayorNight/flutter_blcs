@@ -10,7 +10,7 @@ class BrnCalendarPage extends BasePageWidget {
   String? get getKeys => keys;
 
   @override
-  String? get getTitle => S.current.calendar_titile;
+  String? get getTitle => S.current.calendar_title;
 
   @override
   Widget? buildHeaderBody(BuildContext context) {

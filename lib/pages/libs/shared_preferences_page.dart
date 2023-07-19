@@ -14,7 +14,7 @@ class SharedPreferencesPage extends BasePageWidget {
   String? get getKeys => keys;
 
   @override
-  String? get getTitle => S.current.shared_preferences_titile;
+  String? get getTitle => S.current.shared_preferences_title;
 
   final TextEditingController controller = TextEditingController();
 
