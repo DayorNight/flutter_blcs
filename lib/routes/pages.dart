@@ -8,6 +8,7 @@ import 'package:flutter_blcs/pages/libs/bubble_page.dart';
 import 'package:flutter_blcs/pages/libs/city_selection_page.dart';
 import 'package:flutter_blcs/pages/libs/form_page.dart';
 import 'package:flutter_blcs/pages/libs/custom_search_bar_page.dart';
+import 'package:flutter_blcs/pages/libs/hive_page.dart';
 import 'package:flutter_blcs/pages/libs/input_page.dart';
 import 'package:flutter_blcs/pages/libs/notification_page.dart';
 import 'package:flutter_blcs/pages/libs/pull_refresh_page.dart';
@@ -55,6 +56,7 @@ final Map libPages = {
   "ImagePicker": ImagePickerPage.keys,
   "SharedPreferences": SharedPreferencesPage.keys,
   "pull_To_refresh": PullRefreshPage.keys,
+  "Hive": HivePage.keys,
 };
 
 final Map myPages = {

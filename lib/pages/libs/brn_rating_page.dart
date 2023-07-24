@@ -1,6 +1,6 @@
 import 'package:bruno/bruno.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_blcs/common/BasePageWidget.dart';
+import 'package:flutter_blcs/common/base_page_widget.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
 
 class BrnRatingPage extends BasePageWidget {

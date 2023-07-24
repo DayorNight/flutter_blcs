@@ -9,6 +9,7 @@ import 'package:flutter_blcs/pages/libs/bubble_page.dart';
 import 'package:flutter_blcs/pages/libs/city_selection_page.dart';
 import 'package:flutter_blcs/pages/libs/form_page.dart';
 import 'package:flutter_blcs/pages/libs/custom_search_bar_page.dart';
+import 'package:flutter_blcs/pages/libs/hive_page.dart';
 import 'package:flutter_blcs/pages/libs/input_page.dart';
 import 'package:flutter_blcs/pages/libs/notification_page.dart';
 import 'package:flutter_blcs/pages/libs/selection_page.dart';
@@ -123,6 +124,7 @@ class Routers {
     CalendarPage.keys:(BuildContext context) => CalendarPage(),
     SharedPreferencesPage.keys:(BuildContext context) => SharedPreferencesPage(),
     PullRefreshPage.keys:(BuildContext context) => PullRefreshPage(),
+    HivePage.keys:(BuildContext context) => HivePage(),
   };
 
   //初始路由

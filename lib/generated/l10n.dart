@@ -529,6 +529,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Hive`
+  String get hive_page_title {
+    return Intl.message(
+      'Hive',
+      name: 'hive_page_title',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

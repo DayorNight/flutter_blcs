@@ -43,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "form_title": MessageLookupByLibrary.simpleMessage("Form表单"),
         "guide_title": MessageLookupByLibrary.simpleMessage("引导组件"),
         "hero": MessageLookupByLibrary.simpleMessage("Hero"),
+        "hive_page_title": MessageLookupByLibrary.simpleMessage("Hive"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "homeFun": MessageLookupByLibrary.simpleMessage("Function"),
         "homeMe": MessageLookupByLibrary.simpleMessage("Me"),
