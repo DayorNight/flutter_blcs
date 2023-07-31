@@ -6,8 +6,11 @@ import 'package:flutter_blcs/common/weiget_util.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
 
 class HivePage extends BasePageStateWidget {
-  static const keys = 'FormPage';
-  static const Box = 'box_name';
+  static const keys = 'HivePage';
+  static const object_box = 'object_box';
+  static const object_key = 'object_key';
+  static const base_box = 'base_box';
+  static const base_key = 'base_key';
 
   @override
   String? get getKeys => keys;
@@ -15,9 +18,8 @@ class HivePage extends BasePageStateWidget {
   @override
   String? get getTitle => S.current.hive_page_title;
 
-  var age = 11;
 
-  final ValueNotifier<int?> ages = ValueNotifier(-1);
+  final ValueNotifier<String?> notifier = ValueNotifier(null);
 
   @override
   Widget? buildBody(BuildContext context) {
@@ -25,28 +27,46 @@ class HivePage extends BasePageStateWidget {
       children: [
         commonButton(
             content: 'put',
-            des: '存储',
+            des: '存储对象',
             onTop: () {
               var person = Person(
                 name: 'Dave',
-                age: age,
-                friends: ['Linda', 'Marc', 'Anne'],
+                age: 18,
               );
-              HiveUtils.put<Person>('Person', person);
-              age++;
+              HiveUtils.put<Person>(object_key, person, boxName: object_box,adapter: PersonAdapter());
+              // person.save()//更新
+              // person.delete()//删除
             }),
+
         commonButton(
             content: 'get',
-            des: '获取',
+            des: '获取对象',
             onTop: () async {
-              var future = await HiveUtils.get<Person>('Person');
-              ages.value = future?.age;
+              var person = await HiveUtils.get<Person>(object_key, boxName: object_box);
+              print("person ${person?.name}");
+              notifier.value = person?.name;
             }),
+        commonButton(
+            content: 'put',
+            des: '存储基本数据',
+            onTop: () {
+              HiveUtils.put(base_key, 3333,boxName:base_box);
+            }),
+
+        commonButton(
+            content: 'get',
+            des: '获取基本数据',
+            onTop: () async {
+              var value = await HiveUtils.get(base_key, boxName: base_box);
+              print("value $value");
+              notifier.value = value.toString();
+            }),
+
         Center(
           child: ValueListenableBuilder(
-            valueListenable: ages,
+            valueListenable: notifier,
             builder: (context,value,__) {
-              return Text("age = $value");
+              return Text("value = $value");
             }
           ),
         )
@@ -55,7 +75,7 @@ class HivePage extends BasePageStateWidget {
   }
 
   @override
-  void initState() {
-
+  void initState() async{
+     await HiveUtils().init();
   }
 }
