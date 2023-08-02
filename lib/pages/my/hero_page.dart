@@ -1,43 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/common/base_page_state_widget.dart';
 import 'package:flutter_blcs/common/utils/code.dart';
 import 'package:flutter_blcs/common/weiget_util.dart';
-import 'package:flutter_blcs/widgets/article_model.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class HeroPage extends StatefulWidget {
+class HeroPage extends BasePageStateWidget {
   static final String keys = "HeroPage";
-  const HeroPage({Key? key}) : super(key: key);
+  @override
+  String? get getKeys => keys;
 
   @override
-  State<HeroPage> createState() => _HeroPageState();
-}
+  String? get getTitle => S.current.hero;
 
-class _HeroPageState extends State<HeroPage>{
   late Animation<double> animate;
+
   @override
-  Widget build(BuildContext context) {
-    var title = S.of(context).hero;
-    return ArticleModel(
-        title: title,
-        keys: HeroPage.keys,
-        logoColor: Theme.of(context).primaryColor,
-        des: heroDes,
-        code: heroCode,
-        footerChild: GestureDetector(
-          child: Align(
-              alignment: Alignment.topCenter,
-              child: Hero(
-                tag: 'hero',
-                child: Icon(Icons.circle,size: 50),
-              )
-          ),
-          onTap:() => _gotoDetailsPage(context,title) ,
-        )
+  String? get getDes => heroDes;
+
+  @override
+  String? get getCode => heroCode;
+
+  @override
+  Widget? buildBody(BuildContext context) {
+    return GestureDetector(
+      child: Align(
+          alignment: Alignment.topCenter,
+          child: Hero(
+            tag: 'hero',
+            child: Icon(Icons.circle,size: 50),
+          )
+      ),
+      onTap:() => _gotoDetailsPage(context,S.current.hero) ,
     );
   }
 
-  void _gotoDetailsPage(BuildContext context,title) {
+  void _gotoDetailsPage(BuildContext context,String title) {
     Navigator.of(context).push(MaterialPageRoute<void>(
       builder: (BuildContext context) => Scaffold(
         body: Scaffold(

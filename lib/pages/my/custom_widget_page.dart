@@ -1,29 +1,32 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/common/base_page_widget.dart';
 import 'package:flutter_blcs/common/utils/code.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/widgets/article_model.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class CustomWidgetPage extends StatelessWidget {
+class CustomWidgetPage extends BasePageWidget {
   static final String keys = "CustomWidgetPage";
-
-  const CustomWidgetPage({Key? key}) : super(key: key);
+  @override
+  String? get getKeys => keys;
 
   @override
-  Widget build(BuildContext context) {
-    return ArticleModel(
-      title: S.of(context).customWidget,
-      keys: keys,
-      logoColor: Theme.of(context).primaryColor,
-      des: customWidgetDes,
-      code: customWidgetCode,
-      footerChild: Center(
-        child: CustomPaint(
-          size: Size(300.r, 300.r),
-          painter: MyPainter(),
-        ),
+  String? get getTitle => S.current.customWidget;
+
+  @override
+  String? get getDes => customWidgetDes;
+
+  @override
+  String? get getCode => customWidgetCode;
+
+ @override
+  Widget? buildBody(BuildContext context) {
+    return Center(
+      child: CustomPaint(
+        size: Size(300.r, 300.r),
+        painter: MyPainter(),
       ),
     );
   }

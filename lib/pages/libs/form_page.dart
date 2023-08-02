@@ -6,7 +6,6 @@ import 'package:flutter_blcs/common/utils/navigator.dart';
 import 'package:flutter_blcs/common/utils/print.dart';
 import 'package:flutter_blcs/common/weiget_util.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
-import 'package:flutter_blcs/widgets/article_model.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 String selectedStr = '';

@@ -1,31 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/bean/json_demo.dart';
 import 'package:flutter_blcs/bean/json_mul_demo.dart';
+import 'package:flutter_blcs/common/base_page_state_widget.dart';
 import 'package:flutter_blcs/models/json_parse_model.dart';
 import '../../common/utils/code.dart';
 import '../../generated/l10n.dart';
-import '../../widgets/article_model.dart';
 
-class JsonParsePage extends StatelessWidget{
+class JsonParsePage extends BasePageStateWidget{
   static final String keys = "JsonParsePage";
+  @override
+  String? get getKeys => keys;
+
+  @override
+  String? get getTitle => S.current.customWidget;
+
+  @override
+  String? get getCode => jsonParseCode;
+
+  @override
+  String? get getDes => jsonParseDes;
+
   const JsonParsePage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return ArticleModel(
-      title: S.of(context).customWidget,
-      keys: keys,
-      logoColor: Theme.of(context).primaryColor,
-      des: jsonParseDes,
-      code: jsonParseCode,
-      footerChild: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          FutureBuilder<JsonDemo>(builder: _josnDemoUI,future: getJsonDemo(),),
-          FutureBuilder<List<JsonDemo>>(builder: _josnListDemoUI,future: getJsonListDemo(),),
-          FutureBuilder<JsonMulDemo>(builder: _josnMulDemoUI,future: getJsonMulDemo(),),
-        ],
-      ),
+  Widget? buildBody(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        FutureBuilder<JsonDemo>(builder: _josnDemoUI,future: getJsonDemo(),),
+        FutureBuilder<List<JsonDemo>>(builder: _josnListDemoUI,future: getJsonListDemo(),),
+        FutureBuilder<JsonMulDemo>(builder: _josnMulDemoUI,future: getJsonMulDemo(),),
+      ],
     );
   }
 

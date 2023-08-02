@@ -1,26 +1,21 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_blcs/common/base_page_state_widget.dart';
 import 'package:flutter_blcs/common/utils/navigator.dart';
+import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/routes/pages.dart';
 import 'package:flutter_blcs/widgets/flare_logo.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class FunctionPage extends StatefulWidget {
-  const FunctionPage({Key? key}) : super(key: key);
+class FunctionPage extends BasePageStateWidget {
+  static const  title = 'Flutter libs';
 
   @override
-  _FunctionPageState createState() => _FunctionPageState();
-}
-
-class _FunctionPageState extends State<FunctionPage> {
-  String _title = 'Flutter libs';
-  Color color = Colors.grey;
+  String? get getTitle => S.current.hive_page_title;
 
   @override
-  Widget build(BuildContext context) {
-    color = Theme.of(context).primaryColor;
+  Widget? buildBody(BuildContext context) {
+    Color color = Theme.of(context).primaryColor;
     return CustomScrollView(
       slivers: [
         SliverPadding(
@@ -31,7 +26,7 @@ class _FunctionPageState extends State<FunctionPage> {
               children: [
                 FlareLogo(size: 120.r,color: color,),
                 Text(
-                  _title,
+                  title,
                   style: GoogleFonts.playfairDisplay(
                     textStyle: Theme.of(context).textTheme.headline4,
                     fontSize: 40,
@@ -60,6 +55,7 @@ class _FunctionPageState extends State<FunctionPage> {
 
   /// 加载list
   Widget? _functionList(BuildContext context, int index) {
+    Color color = Theme.of(context).primaryColor;
     return GestureDetector(
       onTap: () {
         NavigatorUtils.fadePush(context, libPages.values.elementAt(index));

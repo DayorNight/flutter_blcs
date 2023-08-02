@@ -1,29 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/common/base_page_widget.dart';
 import 'package:flutter_blcs/common/weiget_util.dart';
-import 'package:flutter_blcs/widgets/article_model.dart';
 
 
-class CalendarPage extends StatelessWidget {
+class CalendarPage extends BasePageWidget {
   static final String keys = "CalendarPage";
+  @override
+  String? get getKeys => keys;
+
+  @override
+  String? get getTitle => '日历';
 
   const CalendarPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return ArticleModel(
-      title: '日历',
-      keys: keys,
-      logoColor: Theme.of(context).primaryColor,
-      headerChild: Column(
-        children: _listWidget(context),
-      ),
+  Widget? buildBody(BuildContext context) {
+    return Column(
+      children: [
+        commonButton(content: "日历",des: "说明",onTop: (){}),
+      ],
     );
   }
 
-  List<Widget> _listWidget(BuildContext context) {
-    return [
-      commonButton(content: "日历",des: "说明",onTop: (){}),
-    ];
-  }
 
 }

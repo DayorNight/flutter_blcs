@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/base_page_widget.dart';
 import 'package:flutter_blcs/common/utils/print.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
-import 'package:flutter_blcs/widgets/article_model.dart';
 ///https://bruno.ke.com/page/widgets/brn-input-text
 class InputPage extends BasePageWidget {
   static const keys = 'InputPage';

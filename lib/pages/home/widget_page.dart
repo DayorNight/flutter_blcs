@@ -1,31 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/common/base_page_state_widget.dart';
 import 'package:flutter_blcs/common/utils/navigator.dart';
-import 'package:flutter_blcs/common/utils/print.dart';
 import 'package:flutter_blcs/common/weiget_util.dart';
 import 'package:flutter_blcs/routes/pages.dart';
 import 'package:flutter_blcs/widgets/flare_logo.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /// UI 列表
-class WidgetPage extends StatefulWidget {
-  const WidgetPage({Key? key}) : super(key: key);
+class WidgetPage extends BasePageStateWidget {
+  final List<String> banners = ["Flutter", "Kotlin", "Android"];
 
   @override
-  _WidgetPageState createState() => _WidgetPageState();
-}
-
-class _WidgetPageState extends State<WidgetPage> {
-  var banners = ["Flutter", "Kotlin", "Android"];
-
-  @override
-  Widget build(BuildContext context) {
+  Widget buildBody(BuildContext context) {
     return Container(
       child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
             child: getBanner(banners),
           ),
-
           ///中间列表
           SliverToBoxAdapter(
             child: Padding(

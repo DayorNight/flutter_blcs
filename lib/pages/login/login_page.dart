@@ -8,7 +8,6 @@ import 'package:flutter_blcs/viewmodel/login_viewmodel.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../common/utils/navigator.dart';
-import '../../common/weiget_util.dart';
 ///登录页面
 class LoginPage extends StatefulWidget {
   static final String keys = "loginView";

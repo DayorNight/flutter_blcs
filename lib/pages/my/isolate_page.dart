@@ -1,41 +1,42 @@
 import 'dart:isolate';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_blcs/bean/json_demo.dart';
-import 'package:flutter_blcs/common/static.dart';
-import 'package:flutter_blcs/common/utils/print.dart';
+import 'package:flutter_blcs/common/base_page_state_widget.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
-import 'package:flutter_blcs/widgets/article_model.dart';
 import '../../common/utils/code.dart';
 
-class IsolatePage extends StatelessWidget {
+class IsolatePage extends BasePageStateWidget {
   static final String keys = "IsolatePage";
+
+  @override
+  String? get getKeys => keys;
+
+  @override
+  String? get getTitle => S.current.isolate;
+
+  @override
+  String? get getDes => isolateDes;
+
+  @override
+  String? get getCode => isolateCode;
+
   static const String jsonStr = ''' {
     "name": "玉米",
     "age": 18,
     "sex": false
     }
   ''';
-  const IsolatePage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return FutureBuilder(builder: builder,
-      future: _parseInBackground(),);
-  }
-
-  Widget builder(BuildContext context,
-      AsyncSnapshot<JsonDemo> snapshot) {
-    return ArticleModel(title: S
-        .of(context)
-        .isolate,
-        keys: keys,
-        logoColor: Theme
-            .of(context)
-            .primaryColor,
-        des: isolateDes,
-        code: isolateCode,
-        headerChild:snapshot.hasData?Text(jsonDemoToJson(snapshot.data as JsonDemo)):CircularProgressIndicator(),);
+  Widget? buildBody(BuildContext context) {
+    return FutureBuilder(
+      builder: (ctx, snapshot) {
+        return snapshot.hasData
+            ? Text(jsonDemoToJson(snapshot.data as JsonDemo))
+            : CircularProgressIndicator();
+      },
+      future: _parseInBackground(),
+    );
   }
 
   Future<JsonDemo> _parseInBackground() async {
@@ -52,7 +53,4 @@ class IsolatePage extends StatelessWidget {
     // 退出isolate
     Isolate.exit(p, json);
   }
-
 }
-
-

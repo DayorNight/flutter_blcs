@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/base_page_widget.dart';
-import 'package:flutter_blcs/widgets/article_model.dart';
+
 import '../../common/utils/code.dart';
 import '../../generated/l10n.dart';
 

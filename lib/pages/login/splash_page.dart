@@ -1,6 +1,5 @@
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_blcs/common/sp/sp.dart';
 import 'package:flutter_blcs/common/static.dart';
 import 'package:flutter_blcs/common/utils/function.dart';
 import 'package:flutter_blcs/common/utils/print.dart';

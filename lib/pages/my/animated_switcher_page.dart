@@ -1,82 +1,74 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_blcs/widgets/article_model.dart';
+import 'package:flutter_blcs/common/base_page_state_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../generated/l10n.dart';
 import '../../common/utils/code.dart';
 import '../../widgets/slide_transition_view.dart';
 
-class AnimatedSwitcherPage extends StatefulWidget {
+class AnimatedSwitcherPage extends BasePageStateWidget {
   static const String keys = 'animatedSwitcher';
-  const AnimatedSwitcherPage({Key? key}) : super(key: key);
 
   @override
-  _AnimatedSwitcherPageState createState() => _AnimatedSwitcherPageState();
-}
-class _AnimatedSwitcherPageState extends State<AnimatedSwitcherPage> {
+  String? get getKeys => keys;
 
-  int _count1 = 1;
-  int _count2 = 1;
-  int _count3 = 1;
-  int _count4 = 1;
-  bool _isplay = true;
   @override
-  Widget build(BuildContext context) {
-    return ArticleModel(
-      title: S.of(context).animatedSwitcher,
-      keys: AnimatedSwitcherPage.keys,
-      logoColor: Theme.of(context).primaryColor,
-      des: animatedSwitcherDes,
-      code: animatedSwitcherCode,
+  String? get getTitle => S.current.animatedSwitcher;
 
-      footerChild: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              buildFadeItem(),
-              buildScaleItem(),
-              buildSlideXItem(),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              buildSlideYItem(),
-              buildScaleImageItem(),
-            ],
-          )
-        ],
-      ),
-      // footerChild: GridView(
-      //   padding: EdgeInsets.all(10.r),
-      //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-      //     crossAxisCount: 2,
-      //   ),
-      //   children: [
-      //
-      //   ],
-      // ),
+  @override
+  String? get getDes => animatedSwitcherDes;
+
+  @override
+  String? get getCode => animatedSwitcherCode;
+  ValueNotifier<int> _count1 = ValueNotifier(1);
+  ValueNotifier<int> _count2 = ValueNotifier(1);
+  ValueNotifier<int> _count3 = ValueNotifier(1);
+  ValueNotifier<int> _count4 = ValueNotifier(1);
+  ValueNotifier<bool> _isplay = ValueNotifier(true);
+
+  @override
+  Widget? buildBody(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            buildFadeItem(),
+            buildScaleItem(),
+            buildSlideXItem(),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            buildSlideYItem(),
+            buildScaleImageItem(),
+          ],
+        )
+      ],
     );
   }
+
   ///默认 淡入淡出
   Column buildFadeItem() {
     return Column(
       children: [
         AnimatedSwitcher(
           duration: Duration(milliseconds: 500),
-          child: Text(
-            '$_count1',
-            //显示指定key，不同的key会被认为是不同的Text，这样才能执行动画
-            key: ValueKey<int>(_count1),
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50.sp),
+          child: ValueListenableBuilder<int>(
+            valueListenable: _count1,
+            builder: (_,value,__){
+              return Text(
+                '$value',
+                //显示指定key，不同的key会被认为是不同的Text，这样才能执行动画
+                key: ValueKey<int>(value),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50.sp),
+              );
+            },
           ),
         ),
         OutlinedButton(
             onPressed: () {
-              setState(() {
-                _count1++;
-              });
+              _count1.value= _count1.value++;
             },
             child: Text('点击'))
       ],
@@ -94,17 +86,20 @@ class _AnimatedSwitcherPageState extends State<AnimatedSwitcherPage> {
           transitionBuilder: (child, animation) {
             return ScaleTransition(child: child, scale: animation);
           },
-          child: Text(
-            '$_count2',
-            key: ValueKey<int>(_count2),
-            style: TextStyle(fontWeight: FontWeight.w900, fontSize: 50.sp),
+          child: ValueListenableBuilder<int>(
+            valueListenable: _count2,
+            builder: (context,value,__) {
+              return Text(
+                '$value',
+                key: ValueKey<int>(value),
+                style: TextStyle(fontWeight: FontWeight.w900, fontSize: 50.sp),
+              );
+            }
           ),
         ),
         OutlinedButton(
             onPressed: () {
-              setState(() {
-                _count2++;
-              });
+              _count2.value = _count2.value++;
             },
             child: Text('点击'))
       ],
@@ -123,17 +118,20 @@ class _AnimatedSwitcherPageState extends State<AnimatedSwitcherPage> {
               position: animation,
             );
           },
-          child: Text(
-            '$_count3',
-            key: ValueKey<int>(_count3),
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50.sp),
+          child: ValueListenableBuilder<int>(
+            valueListenable: _count3,
+            builder: (context,value,_) {
+              return Text(
+                '$value',
+                key: ValueKey<int>(value),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50.sp),
+              );
+            }
           ),
         ),
         OutlinedButton(
             onPressed: () {
-              setState(() {
-                _count3++;
-              });
+              _count3.value = _count3.value++;
             },
             child: Text('点击'))
       ],
@@ -152,17 +150,20 @@ class _AnimatedSwitcherPageState extends State<AnimatedSwitcherPage> {
               position: animation,
             );
           },
-          child: Text(
-            '$_count4',
-            key: ValueKey<int>(_count4),
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50.sp),
+          child: ValueListenableBuilder<int>(
+            valueListenable: _count4,
+            builder: (context,value,__) {
+              return Text(
+                '$value',
+                key: ValueKey<int>(value),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 50.sp),
+              );
+            }
           ),
         ),
         OutlinedButton(
             onPressed: () {
-              setState(() {
-                _count4++;
-              });
+              _count4.value = _count4.value++;
             },
             child: Text('点击'))
       ],
@@ -180,17 +181,21 @@ class _AnimatedSwitcherPageState extends State<AnimatedSwitcherPage> {
           transitionBuilder: (child, animation) {
             return ScaleTransition(child: child, scale: animation);
           },
-          child: Icon(_isplay?Icons.stop_circle_outlined:Icons.play_circle_fill_rounded,key: ValueKey<int>(_isplay?0:1),size: 60.r,),
+          child: ValueListenableBuilder<bool>(
+            valueListenable: _isplay,
+            builder: (context,value,_) {
+              return Icon(value?Icons.stop_circle_outlined:Icons.play_circle_fill_rounded,key: ValueKey<int>(value?0:1),size: 60.r,);
+            }
+          ),
         ),
         OutlinedButton(
             onPressed: () {
-              setState(() {
-                _isplay=!_isplay;
-              });
+              _isplay.value = !_isplay.value;
             },
             child: Text('点击'))
       ],
     );
   }
+
 }
 

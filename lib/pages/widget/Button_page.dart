@@ -1,29 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/common/base_page_widget.dart';
 import 'package:flutter_blcs/common/weiget_util.dart';
-import 'package:flutter_blcs/widgets/article_model.dart';
 
-
-class ButtonPage extends StatelessWidget {
+class ButtonPage extends BasePageWidget {
   static final String keys = "ButtonPage";
-
-  const ButtonPage({Key? key}) : super(key: key);
+  @override
+  String? get getKeys => keys;
 
   @override
-  Widget build(BuildContext context) {
-    return ArticleModel(
-      title: '选择器',
-      keys: keys,
-      logoColor: Theme.of(context).primaryColor,
-      headerChild: Column(
-        children: _listWidget(context),
-      ),
-    );
-  }
+  String? get getTitle => '选择器';
 
-  List<Widget> _listWidget(BuildContext context) {
-    return [
-      commonButton(content: "普通弹窗",des: "说明",onTop: (){}),
-    ];
+  @override
+  Widget? buildBody(BuildContext context) {
+    return Column(
+      children: [
+        commonButton(content: "普通弹窗",des: "说明",onTop: (){}),
+      ],
+    );
   }
 
 }

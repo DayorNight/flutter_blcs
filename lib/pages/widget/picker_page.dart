@@ -1,29 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_blcs/common/base_page_state_widget.dart';
 import 'package:flutter_blcs/common/weiget_util.dart';
-import 'package:flutter_blcs/widgets/article_model.dart';
 
 
-class PickerPage extends StatelessWidget {
+class PickerPage extends BasePageStateWidget {
   static final String keys = "PickerPage";
 
-  const PickerPage({Key? key}) : super(key: key);
+  @override
+  String? get getKeys => keys;
 
   @override
-  Widget build(BuildContext context) {
-    return ArticleModel(
-      title: '按钮',
-      keys: keys,
-      logoColor: Theme.of(context).primaryColor,
-      headerChild: Column(
-        children: _listWidget(context),
-      ),
+  String? get getTitle => '按钮';
+
+
+  @override
+  Widget? buildBody(BuildContext context) {
+    return Column(
+      children: [
+        commonButton(content: "普通弹窗",des: "说明",onTop: (){}),
+      ],
     );
   }
-
-  List<Widget> _listWidget(BuildContext context) {
-    return [
-      commonButton(content: "普通弹窗",des: "说明",onTop: (){}),
-    ];
-  }
-
 }

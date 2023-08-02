@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/base_page_widget.dart';
 import 'package:flutter_blcs/common/weiget_util.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
-import 'package:flutter_blcs/widgets/article_model.dart';
 
 class BubblePage extends BasePageWidget {
   static const keys = 'BubblePage';

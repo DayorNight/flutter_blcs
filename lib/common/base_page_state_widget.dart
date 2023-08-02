@@ -32,16 +32,14 @@ abstract class BasePageStateWidget extends StatefulWidget {
   }
 
   void initState() {
-    return null;
   }
 
-  Widget? dispose() {
-    return null;
+  void dispose() {
   }
 
 }
 
-class BasePageStateWidgetState extends State<BasePageStateWidget> {
+class BasePageStateWidgetState extends State<BasePageStateWidget>  with SingleTickerProviderStateMixin{
 
   @override
   void initState() {
@@ -56,8 +54,12 @@ class BasePageStateWidgetState extends State<BasePageStateWidget> {
     widget.dispose();
   }
 
+
   @override
   Widget build(BuildContext context) {
+    if(widget.getKeys == null){
+      return widget.buildBody(context)??Text('keys is null');
+    }
     return ArticleModel(
       title: widget.getTitle ?? runtimeType.toString(),
       keys: widget.getKeys ?? runtimeType.toString(),
