@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/base_page_state_widget.dart';
-import 'package:flutter_blcs/common/static.dart';
 import 'package:flutter_blcs/common/utils/navigator.dart';
+import 'package:flutter_blcs/generated/assets.dart';
 import 'package:flutter_blcs/pages/my/personal_information_page.dart';
 import 'package:flutter_blcs/pages/my/personal_page.dart';
 import 'package:flutter_blcs/routes/pages.dart';
@@ -58,7 +58,7 @@ class MePage extends BasePageStateWidget {
                           arguments: _avator);
                     },
                     child: Image.asset(
-                      Images.logo,
+                      Assets.imagesIcAvator,
                       width: 150.r,
                       height: 150.r,
                     )),

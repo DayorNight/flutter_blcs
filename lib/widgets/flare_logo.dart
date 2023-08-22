@@ -1,6 +1,6 @@
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_blcs/common/static.dart';
+import 'package:flutter_blcs/generated/assets.dart';
 
 class FlareLogo extends StatelessWidget {
   final double? size;
@@ -12,7 +12,7 @@ class FlareLogo extends StatelessWidget {
     return Container(
       width: size,
       height: size,
-      child: FlareActor(Flares.logo,
+      child: FlareActor(Assets.assetsFlareFlutterLogo,
           fit: BoxFit.fill,
           color: color,
           animation: "Placeholder"),

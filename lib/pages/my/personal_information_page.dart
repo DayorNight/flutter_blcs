@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/weiget_util.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../common/static.dart';
 import '../../generated/l10n.dart';
 
 //个人信息

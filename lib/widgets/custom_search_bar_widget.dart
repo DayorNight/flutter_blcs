@@ -1,13 +1,10 @@
-import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/custom_color.dart';
-import 'package:flutter_blcs/common/static.dart';
 import 'package:flutter_blcs/common/utils/print.dart';
+import 'package:flutter_blcs/generated/assets.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:logger/logger.dart';
 
 class CustomSearchBarWidget extends StatefulWidget {
   final double height;
@@ -92,7 +89,7 @@ class _CustomSearchBarWidgetState extends State<CustomSearchBarWidget> {
           prefix: Padding(
             padding: widget.leftIconPadding,
             child: widget.leftIcon??Image.asset(
-              Images.commonSearchIcon,
+              Assets.imagesCommonSearchIcon,
               color: Colors.white,
               width: 20,
               height: 20,

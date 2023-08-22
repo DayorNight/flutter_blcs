@@ -1,9 +1,9 @@
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_blcs/common/static.dart';
 import 'package:flutter_blcs/common/utils/function.dart';
 import 'package:flutter_blcs/common/utils/print.dart';
 import 'package:flutter_blcs/config/config.dart';
+import 'package:flutter_blcs/generated/assets.dart';
 import 'package:flutter_blcs/pages/login/login_page.dart';
 import 'package:flutter_blcs/pages/main/main_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -75,7 +75,7 @@ class _SplashPageState extends State<SplashPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           ClipOval(
-            child: Image.asset(Images.logo),
+            child: Image.asset(Assets.imagesIcAvator),
           ),
           SizedBox(
             height: 0.1.sh,
@@ -83,7 +83,7 @@ class _SplashPageState extends State<SplashPage> {
           Container(
             width: size,
             height: size,
-            child: FlareActor(Flares.logo,
+            child: FlareActor(Assets.assetsFlareFlutterLogo,
                 alignment: Alignment.topCenter,
                 fit: BoxFit.fill,
                 color: primaryColor,

@@ -1,7 +1,7 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_blcs/common/static.dart';
 import 'package:flutter_blcs/common/utils/function.dart';
+import 'package:flutter_blcs/generated/assets.dart';
 import 'package:flutter_blcs/generated/l10n.dart';
 import 'package:flutter_blcs/pages/demo_page.dart';
 import 'package:flutter_blcs/widgets/flare_logo.dart';
@@ -99,7 +99,7 @@ class _MainPageState extends State<MainPage> {
             ),
             accountEmail: Text(_email),
             currentAccountPicture: CircleAvatar(
-              backgroundImage: AssetImage(Images.logo),
+              backgroundImage: AssetImage(Assets.imagesIcAvator),
             ),
             otherAccountsPictures: <Widget>[
               //其他账号头像

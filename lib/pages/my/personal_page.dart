@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/common/utils/print.dart';
-import 'package:flutter_blcs/common/weiget_util.dart';
+import 'package:flutter_blcs/generated/assets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../common/static.dart';
 import '../../generated/l10n.dart';
 /// 个人头像
 class PersonalPage extends StatelessWidget {
@@ -43,7 +42,7 @@ class PersonalPage extends StatelessWidget {
         tag: 'PersonalView',
         child: Center(
           child: Image(
-            image: AssetImage(Images.logo),
+            image: AssetImage(Assets.imagesIcAvator),
             width: 750.r,
             height: 750.r,
             fit: BoxFit.fill,

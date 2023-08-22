@@ -1,9 +1,9 @@
 import 'dart:io';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_blcs/common/static.dart';
 import 'package:flutter_blcs/common/utils/print.dart';
 import 'package:flutter_blcs/common/weiget_util.dart';
+import 'package:flutter_blcs/generated/assets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:video_player/video_player.dart';
@@ -312,7 +312,7 @@ class _CameraPageState extends State<CameraPage>
           picturePre,
           IconButton(
             iconSize: 150.r,
-            icon: Image.asset(Images.takePhone),
+            icon: Image.asset(Assets.imagesIcTakePhone),
             onPressed: isControllerInit ? onTakePictureButtonPressed : null,
           ),
           IconButton(
@@ -341,7 +341,7 @@ class _CameraPageState extends State<CameraPage>
   Widget get picturePre {
     if (imageFile == null) {
       return Image.asset(
-        Images.logo,
+        Assets.imagesIcAvator,
         width: 120.r,
         height: 120.r,
       );
@@ -410,7 +410,7 @@ class _CameraPageState extends State<CameraPage>
             child: FadeTransition(
               opacity: _fadeAnimation,
               child: SvgPicture.asset(
-                Svgs.focus,
+                Assets.svgsSvgFocus,
                 semanticsLabel: 'focus icon',
                 fit: BoxFit.fill,
                 color: isVideoRecording?Colors.red:Colors.white,
