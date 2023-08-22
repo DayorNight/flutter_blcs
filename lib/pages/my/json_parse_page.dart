@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blcs/bean/json_demo.dart';
 import 'package:flutter_blcs/bean/json_mul_demo.dart';
+import 'package:flutter_blcs/bean/json_object_entity.dart';
 import 'package:flutter_blcs/common/base_page_state_widget.dart';
 import 'package:flutter_blcs/models/json_parse_model.dart';
 import '../../common/utils/code.dart';
@@ -30,6 +31,7 @@ class JsonParsePage extends BasePageStateWidget{
         FutureBuilder<JsonDemo>(builder: _josnDemoUI,future: getJsonDemo(),),
         FutureBuilder<List<JsonDemo>>(builder: _josnListDemoUI,future: getJsonListDemo(),),
         FutureBuilder<JsonMulDemo>(builder: _josnMulDemoUI,future: getJsonMulDemo(),),
+        FutureBuilder<JsonObjectEntity>(builder: _josnJsonObjectUI,future: getJsonObject(),),
       ],
     );
   }
@@ -57,6 +59,15 @@ class JsonParsePage extends BasePageStateWidget{
     if(snapshot.hasData){
       var jsonStr = jsonMulDemoToJson(snapshot.data!);
       return Text('解析三：$jsonStr');
+    }else{
+      return errorUI(snapshot.error);
+    }
+  }
+
+  Widget _josnJsonObjectUI(BuildContext context, AsyncSnapshot<JsonObjectEntity> snapshot) {
+    if(snapshot.hasData){
+      var data = snapshot.data;
+      return Text('解析四：data $data');
     }else{
       return errorUI(snapshot.error);
     }

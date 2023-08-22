@@ -14,6 +14,7 @@ class Assets {
   static const String jsonsJsonDemo = 'static/jsons/jsonDemo';
   static const String jsonsJsonListDemo = 'static/jsons/jsonListDemo';
   static const String jsonsJsonMulDemo = 'static/jsons/jsonMulDemo';
+  static const String jsonsJsonObject = 'static/jsons/jsonObject';
   static const String svgsSvgFocus = 'static/svgs/svg_focus.svg';
 
 }
