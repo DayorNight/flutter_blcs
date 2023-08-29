@@ -539,6 +539,16 @@ class S {
       args: [],
     );
   }
+
+  /// `getwidget`
+  String get get_widget_title {
+    return Intl.message(
+      'getwidget',
+      name: 'get_widget_title',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

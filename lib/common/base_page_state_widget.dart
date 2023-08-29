@@ -37,6 +37,8 @@ abstract class BasePageStateWidget extends StatefulWidget {
   void dispose() {
   }
 
+  void initStateTicker(TickerProvider vsync) {}
+
 }
 
 class BasePageStateWidgetState extends State<BasePageStateWidget>  with SingleTickerProviderStateMixin{
@@ -45,6 +47,7 @@ class BasePageStateWidgetState extends State<BasePageStateWidget>  with SingleTi
   void initState() {
     super.initState();
     widget.initState();
+    widget.initStateTicker(this);
   }
 
 

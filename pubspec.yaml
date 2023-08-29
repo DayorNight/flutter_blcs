@@ -59,6 +59,8 @@ dependencies:
   pull_to_refresh: ^2.0.0
   # 数据库hive
   hive_flutter: ^1.1.0
+  # 通用组件
+  getwidget: ^2.0.4
 
 dev_dependencies:
   flutter_test:

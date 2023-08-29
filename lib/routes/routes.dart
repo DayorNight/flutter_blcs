@@ -9,6 +9,12 @@ import 'package:flutter_blcs/pages/libs/bubble_page.dart';
 import 'package:flutter_blcs/pages/libs/city_selection_page.dart';
 import 'package:flutter_blcs/pages/libs/form_page.dart';
 import 'package:flutter_blcs/pages/libs/custom_search_bar_page.dart';
+import 'package:flutter_blcs/pages/libs/get_widget_page.dart';
+import 'package:flutter_blcs/pages/libs/gf_animation_page.dart';
+import 'package:flutter_blcs/pages/libs/gf_bottom_sheet_page.dart';
+import 'package:flutter_blcs/pages/libs/gf_drawer_page.dart';
+import 'package:flutter_blcs/pages/libs/gf_sticky_hearder_builder_page.dart';
+import 'package:flutter_blcs/pages/libs/gf_tab_bar_page.dart';
 import 'package:flutter_blcs/pages/libs/hive_page.dart';
 import 'package:flutter_blcs/pages/libs/input_page.dart';
 import 'package:flutter_blcs/pages/libs/notification_page.dart';
@@ -17,6 +23,7 @@ import 'package:flutter_blcs/pages/libs/shared_preferences_page.dart';
 import 'package:flutter_blcs/pages/libs/step_bar_page.dart';
 import 'package:flutter_blcs/pages/widget/list/about_dialog_page.dart';
 import 'package:flutter_blcs/pages/widget/more_widget_page.dart';
+import 'package:getwidget/components/animation/gf_animation.dart';
 import '../common/utils/print.dart';
 import '../pages/libs/pull_refresh_page.dart';
 import '../pages/widget/Button_page.dart';
@@ -125,6 +132,12 @@ class Routers {
     SharedPreferencesPage.keys:(BuildContext context) => SharedPreferencesPage(),
     PullRefreshPage.keys:(BuildContext context) => PullRefreshPage(),
     HivePage.keys:(BuildContext context) => HivePage(),
+    GetWidgetPage.keys:(BuildContext context) => GetWidgetPage(),
+    GFDrawerPage.keys:(BuildContext context) => GFDrawerPage(),
+    GFTabBarPage.keys:(BuildContext context) => GFTabBarPage(),
+    GFAnimationPage.keys:(BuildContext context) => GFAnimationPage(),
+    GFBottomSheetPage.keys:(BuildContext context) => GFBottomSheetPage(),
+    GFStickyHeaderBuilderPage.keys:(BuildContext context) => GFStickyHeaderBuilderPage(),
   };
 
   //初始路由

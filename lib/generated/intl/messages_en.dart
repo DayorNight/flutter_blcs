@@ -41,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "customWidget": MessageLookupByLibrary.simpleMessage("Custom Widget"),
         "darkTheme": MessageLookupByLibrary.simpleMessage("Dark Theme"),
         "form_title": MessageLookupByLibrary.simpleMessage("Form表单"),
+        "get_widget_title": MessageLookupByLibrary.simpleMessage("getwidget"),
         "guide_title": MessageLookupByLibrary.simpleMessage("引导组件"),
         "hero": MessageLookupByLibrary.simpleMessage("Hero"),
         "hive_page_title": MessageLookupByLibrary.simpleMessage("Hive"),

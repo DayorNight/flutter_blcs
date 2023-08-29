@@ -47,6 +47,7 @@
   "widget_more_title": "更多组件",
   "shared_preferences_title": "SharedPreferences",
   "pull_refresh_titile": "pull and refresh",
-  "hive_page_title": "Hive"
+  "hive_page_title": "Hive",
+  "get_widget_title": "getwidget"
 
 }
